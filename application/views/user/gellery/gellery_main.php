@@ -29,10 +29,11 @@
                 <a target="_blank" href="<?=$v_images->img_link;?>" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
-              <div class="portfolio-info">
-                <h4><a target="_blank" href="<?=$v_images->img_link;?>"><?=$v_images->img_title;?></a></h4>
-                <p><?=$v_images->img_date;?></p>
-              </div>
+                <div class="text-center" style="padding: 10px;">
+                  <a target="_blank" title="<?=$v_images->img_title;?>" href="<?=$v_images->img_link;?>">                    
+                     <?php if(strlen($v_images->img_title)>40){echo mb_substr($v_images->img_title,0,30).'...';}else{echo $v_images->img_title;}?>
+                  </a>
+                </div>
             </div>
           </div>
         <?php endforeach; ?>
