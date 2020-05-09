@@ -70,15 +70,29 @@
   <script src="<?=base_url()?>/asset/user/vendor/venobox/venobox.min.js"></script>
   <script src="<?=base_url()?>/asset/user/vendor/owl.carousel/owl.carousel.min.js"></script>
 
+  <script src="<?=base_url()?>asset/js/jquery.inputmask.min.js"></script>
+  <script src="<?=base_url()?>asset/js/imagesloaded.pkgd.min.js"></script>
   <!-- Template Main JS File -->
   <script src="<?=base_url()?>/asset/user/js/main.js?v=1000"></script>
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
   
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 </body>
     <script>
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+          $(":input").inputmask();         
+        });
        
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
@@ -119,6 +133,22 @@
 
       $("#recruit_img").change(function() {
         readURL(this);
+      });
+
+
+      $('#container').imagesLoaded()
+      .always( function( instance ) {
+        console.log('all images loaded');
+      })
+      .done( function( instance ) {
+        console.log('all images successfully loaded');
+      })
+      .fail( function() {
+        console.log('all images loaded, at least one is broken');
+      })
+      .progress( function( instance, image ) {
+        var result = image.isLoaded ? 'loaded' : 'broken';
+        console.log( 'image is ' + result + ' for ' + image.img.src );
       });
 
   </script> 

@@ -17,7 +17,7 @@ class Control_aboutschool extends CI_Controller {
 	public function dataAll()
 	{
 		
-		
+		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน		
 		$data['banner'] =	$this->db->get('tb_banner')->result(); //ประชาสัมพันธ์

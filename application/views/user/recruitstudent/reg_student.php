@@ -1,3 +1,9 @@
+<style>
+   label{
+    font-weight: 800;
+    color:#000;
+  }
+</style>
 <section id="breadcrumbs" class="breadcrumbs team" style="background: #e9ebee;">
     <!-- ======= Team Section ======= -->
       <div class="container">
@@ -17,7 +23,7 @@
             <div class="row">
                 <div class="col-md-4 mb-3">
                 <label for="recruit_idCard">เลขประจำตัวประชาชน 13 หลัก</label>
-                <input type="text" class="form-control" id="recruit_idCard" name="recruit_idCard" placeholder="xxxxxxxxxxxxx" required maxlength="13" >
+                <input type="text" class="form-control" id="recruit_idCard" name="recruit_idCard"  required  data-inputmask="'mask': '9-9999-99999-99-9'" data-toggle="tooltip" data-placement="top" title="หมายเลขประชาชนของนักเรียน">
                 <div class="invalid-feedback">
                   ระบุเลขประจำตัวประชาชน 13 หลัก
                 </div>
@@ -27,7 +33,7 @@
             <div class="row">
               <div class="col-md-2 mb-3">
                 <label for="recruit_prefix">คำนำหน้า</label>
-                <select class="form-control" id="recruit_prefix" name="recruit_prefix" required>
+                <select class="form-control" id="recruit_prefix" name="recruit_prefix" required data-toggle="tooltip" data-placement="top" title="คำนำหน้า">
                   <option value="">เลือก...</option>
                   <option value="เด็กชาย">เด็กชาย</option>
                   <option value="เด็กหญิง">เด็กหญิง</option>
@@ -39,17 +45,17 @@
                 </div>
               </div>
               <div class="col-md-5 mb-3">
-                <label for="recruit_firstName">ชื่อผู้สมัคร</label>
-                <input type="text" class="form-control" id="recruit_firstName" name="recruit_firstName" placeholder required>
+                <label for="recruit_firstName">ชื่อ</label>
+                <input type="text" class="form-control" id="recruit_firstName" name="recruit_firstName" placeholder required data-toggle="tooltip" data-placement="top" title="ชื่อของนักเรียน">
                 <div class="invalid-feedback">
-                  ระบุชื่อจริง
+                  ระบุชื่อของนักเรียน
                 </div>
               </div>
               <div class="col-md-5 mb-3">
                 <label for="recruit_lastName">นามสกุล</label>
-                <input type="text" class="form-control" id="recruit_lastName" name="recruit_lastName" placeholder required>
+                <input type="text" class="form-control" id="recruit_lastName" name="recruit_lastName" placeholder required data-toggle="tooltip" data-placement="top" title="นามสกุลของนักเรียน">
                 <div class="invalid-feedback">
-                  ระบุนามสกุล
+                  ระบุนามสกุลของนักเรียน
                 </div>
               </div>
             </div>
@@ -57,23 +63,23 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="recruit_oldSchool">จบการศึกษาจากโรงเรียน</label>
-                <input type="text" class="form-control" id="recruit_oldSchool" name="recruit_oldSchool" placeholder required>
+                <input type="text" class="form-control" id="recruit_oldSchool" name="recruit_oldSchool" placeholder required data-toggle="tooltip" data-placement="top" title="จบการศึกษาจากโรงเรียน">
                 <div class="invalid-feedback">
-                  ระบุโรงเรียนที่ศึกษาอยู่
+                  ระบุโรงเรียนที่จบการศึกษา
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="recruit_district">อำเภอของโรงเรียน</label>
-                <input type="text" class="form-control" id="recruit_district" name="recruit_district" placeholder required>
+                <label for="recruit_district">อำเภอ</label>
+                <input type="text" class="form-control" id="recruit_district" name="recruit_district" placeholder required data-toggle="tooltip" data-placement="top" title="อำเภอของโรงเรียนที่จบการศึกษา">
                 <div class="invalid-feedback">
-                  ระบุอำเภอของโรงเรียน
+                  ระอำเภอของโรงเรียนที่จบการศึกษา
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="recruit_province">จังหวัดของโรงเรียน</label>
-                <input type="text" class="form-control" id="recruit_province" name="recruit_province" placeholder required>
+                <label for="recruit_province">จังหวัด</label>
+                <input type="text" class="form-control" id="recruit_province" name="recruit_province" placeholder required data-toggle="tooltip" data-placement="top" title="จังหวัดของโรงเรียนที่จบการศึกษา">
                 <div class="invalid-feedback">
-                  ระบุจังหวัดของโรงเรียน
+                  ระบุจังหวัดของโรงเรียนที่จบการศึกษา
                 </div>
               </div>
             </div>
@@ -198,7 +204,7 @@
                 <div class="row">
                   <div class="col-md-4 mb-3">
                      <label for="recruit_phone">หมายเลขโทรศัพท์ที่สามาติดต่อได้</label>
-                    <input type="tel" class="form-control" id="recruit_phone" name="recruit_phone" placeholder required maxlength="10">
+                    <input type="tel" class="form-control" id="recruit_phone" name="recruit_phone" placeholder required data-inputmask="'mask': '99-9999-9999'">
                     <div class="invalid-feedback">
                       ระบุหมายเลขโทรศัพท์ที่สามาติดต่อได้
                     </div>
@@ -207,7 +213,7 @@
 
            
              <div class="mb-3">
-              <label for="recruit_img">อัพโหลดรูปถ่าย (รูปถ่ายหน้าตรงชุดนักเรียน) <a href="#" data-toggle="tooltip" data-html="true" data-placement="top" title="<img class='img-fluid' src=&quot;<?=base_url('uploads/recruitstudent/Eximg.jpg')?>&quot;>">ตัวอย่างรูปที่ถูกต้อง</a></label>
+              <label for="recruit_img">อัพโหลดรูปถ่าย (รูปถ่ายหน้าตรงชุดนักเรียน) <a href="#" data-toggle="tooltip" data-placement="top" data-html="true" title="<img class='img-fluid' src=&quot;<?=base_url('uploads/recruitstudent/Eximg.jpg')?>&quot;>">ตัวอย่างรูปที่ถูกต้อง</a></label>
              <input type="file" class="form-control" id="recruit_img" name="recruit_img" >
                 <div class="invalid-feedback">
                   อัพโหลดรูปภาพ

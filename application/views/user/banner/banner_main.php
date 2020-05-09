@@ -1,4 +1,5 @@
-<section>
+<section  class="content-area" style="padding-top: 159px;">
+	
 	
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
 			<ol class="carousel-indicators">

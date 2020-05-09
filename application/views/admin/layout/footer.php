@@ -67,15 +67,15 @@
   <script src="<?=base_url();?>asset/vendor/datatables/buttons.html5.min.js"></script>
   <!-- Page level custom scripts -->
   <script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1000"></script>
-
+  <script src="<?=base_url()?>asset/js/jquery.inputmask.min.js"></script>
   <script src="<?=base_url();?>asset/vendor/sweetalert.min.js"></script>
 
  <script src="https://cdn.tiny.cloud/1/y6b2omlkddg6mbwjuwhrf96ufg0wjfhrf5xw1xes3o6oahi4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<?php $this->load->view('user/recruitstudent/chart/report_bar.php'); ?>
+<?php $this->load->view('admin/recruitstudent/chart/report_bar.php'); ?>
 </body>
 <script type="text/javascript">
   $(document).ready(function() {
-
+    $(":input").inputmask();  
     $( ".sidebar" ).sortable();
     $( ".sidebar" ).disableSelection();
     

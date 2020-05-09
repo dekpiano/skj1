@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -16,6 +15,7 @@ class Control_recruitstudent extends CI_Controller {
 
 	public function dataAll()
 	{
+		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		$data['title'] = self::$title;
 		$data['description'] = self::$description;
 		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ
@@ -50,10 +50,12 @@ class Control_recruitstudent extends CI_Controller {
 			$this->load->view('user/layout/header.php',$data);
 			$this->load->view('user/layout/footer.php'); 
 			;?>
-			<script type="text/javascript">
-				setTimeout(function(){ window.history.back(); }, 5000);
-			</script>
-		<?php }else{
+<script type="text/javascript">
+setTimeout(function() {
+    window.history.back();
+}, 5000);
+</script>
+<?php }else{
 			redirect('RegStudent');
 		}
 	}
@@ -347,42 +349,13 @@ class Control_recruitstudent extends CI_Controller {
 			$this->upload->initialize($config);
 			if($this->upload->do_upload($do_upload))
 			{
-				$this->image_lib->clear();
+				
 				$image_data = $this->upload->data();
 				
 				// print_r($data);
 				@unlink("./uploads/recruitstudent/m".$this->input->post('recruit_regLevel').'/'.$foder.'/'.$img);
 
-					$config = array();
-                    $config['image_library'] = 'gd2';
-                    $config['source_image'] = $image_data['full_path']; //get original image
-                    $config['maintain_ratio']  = TRUE;
-                    
-                    
-                    // -- Check EXIF
-					$exif = @exif_read_data($config['source_image']);
-					//print_r($exif); exit();
-					if($exif && isset($exif['Orientation']))
-					{
-						$ort = $exif['Orientation'];
-					 
-						if ($ort == 6 || $ort == 5)
-							$config['rotation_angle'] = '270';
-						if ($ort == 3 || $ort == 4)
-							$config['rotation_angle'] = '180';
-						if ($ort == 8 || $ort == 7)
-							$config['rotation_angle'] = '90';
-					}
-
-					$this->load->library('image_lib',$config);
-                    $this->image_lib->initialize($config); 
- 
-					if ( ! $this->image_lib->rotate())
-					{
-						// Error Message here
-						echo $this->image_lib->display_errors();
-					}
-					 
+				
 					$this->image_lib->clear();
 				
 

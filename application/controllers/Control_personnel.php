@@ -13,6 +13,7 @@ class Control_personnel extends CI_Controller {
 
 	public function show_per_all()
 	{
+		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		// print_r($id);
 		$data['title'] = self::$title;
 		$data['description'] = self::$description;
@@ -45,7 +46,7 @@ class Control_personnel extends CI_Controller {
 	}
 
 	public function show_per_type($name){
-
+		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		$data['title'] = self::$title;
 		$data['description'] = self::$description;
 		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ	

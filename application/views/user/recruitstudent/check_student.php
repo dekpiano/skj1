@@ -29,7 +29,7 @@
                     </div>
                     <!--end of col-->
                     <div class="col">
-                        <input class="form-control form-control-lg form-control-borderless " name="search_stu" type="text" placeholder="ระบุ เลขประจำตัวประชาชน" value="<?=@$stu->recruit_idCard == '' ? '' : $stu->recruit_idCard ?>" required maxlength="13">
+                        <input class="form-control form-control-lg form-control-borderless " name="search_stu" type="text" placeholder="ระบุ เลขประจำตัวประชาชน" value="<?=@$stu->recruit_idCard == '' ? '' : $stu->recruit_idCard ?>" required data-inputmask="'mask': '9-9999-99999-99-9'">
                         <div class="invalid-feedback">
                           ระบุเลขประจำตัวประชาชน 13 หลัก
                         </div>

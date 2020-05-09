@@ -1,5 +1,10 @@
 
-
+<style>
+  label{
+    font-weight: 800;
+    color:#000;
+  }
+</style>
         <!-- Begin Page Content -->
         <div class="container-fluid">     
           <!-- Page Heading -->
@@ -38,7 +43,7 @@
                      <div class="row">
                         <div class="col-md-4 mb-3">
                         <label for="recruit_idCard">เลขประจำตัวประชาชน 13 หลัก</label>
-                        <input type="number" class="form-control" id="recruit_idCard" name="recruit_idCard" placeholder="xxxxxxxxxxxxx" required maxlength="13" value="<?=$recruit[0]->recruit_idCard;?>">
+                        <input type="text" class="form-control" id="recruit_idCard" name="recruit_idCard" required  value="<?=$recruit[0]->recruit_idCard;?>" data-inputmask="'mask': '9-9999-99999-99-9'">
                         <div class="invalid-feedback">
                           ระบุเลขประจำตัวประชาชน 13 หลัก
                         </div>
@@ -225,9 +230,9 @@
                 </div>
 
                 <div class="row">
-                 <div class="col-md-4 mb-3">
+                 <div class="col-md-3 mb-3">
                      <label for="recruit_phone">หมายเลขโทรศัพท์ที่สามาติดต่อได้</label>
-                    <input type="text" class="form-control" id="recruit_phone" name="recruit_phone" value="<?=$recruit[0]->recruit_phone?>" required>
+                    <input type="text" class="form-control" id="recruit_phone" name="recruit_phone" value="<?=$recruit[0]->recruit_phone?>" required data-inputmask="'mask': '99-9999-9999'">
                     <div class="invalid-feedback">
                       ระบุหมายเลขโทรศัพท์ที่สามาติดต่อได้
                     </div>

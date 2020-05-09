@@ -14,45 +14,56 @@ class Control_admin_recruitstudent extends CI_Controller {
 		}
 	}
 
+
+	public function report_student()
+	{		
+		$chart_re1 = $this->db->select('COUNT(recruit_regLevel) AS C_count,
+		tb_recruitstudent.recruit_regLevel, 
+		tb_recruitstudent.recruit_tpyeRoom')
+				->from('tb_recruitstudent')
+				->where('recruit_regLevel',1)
+				->group_by('recruit_tpyeRoom')
+				->order_by('recruit_tpyeRoom','DESC')
+				->get()->result();
+			$chart_re4 = $this->db->select('COUNT(recruit_regLevel) AS C_count,
+					tb_recruitstudent.recruit_regLevel, 
+					tb_recruitstudent.recruit_tpyeRoom')
+				->from('tb_recruitstudent')
+				->where('recruit_regLevel',4)
+				->group_by('recruit_tpyeRoom')
+
+				->order_by('recruit_tpyeRoom','DESC')
+				->get()->result();
+			$chart_All = $this->db->select('COUNT(recruit_regLevel) AS C_count,
+					tb_recruitstudent.recruit_regLevel, 
+					tb_recruitstudent.recruit_tpyeRoom')
+				->from('tb_recruitstudent')
+				->group_by('recruit_tpyeRoom')					
+				->order_by('recruit_tpyeRoom','DESC')
+				->get()->result();
+			$data['chart_1'] = json_encode(array_column($chart_re1,'C_count'));	
+			$data['chart_4'] = json_encode(array_column($chart_re4,'C_count'));
+			$data['chart_All'] = json_encode(array_column($chart_All,'C_count'));
+			
+			return $data;
+	}
 	
 
 	public function index()
 	{	
+		$data = $this->report_student();
+
 		$data['title'] = $this->title;
 		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
 		$this->db->select('*');
 		$this->db->from('tb_recruitstudent');
 		$this->db->order_by('recruit_id','DESC');
 		$data['recruit'] =	$this->db->get()->result();
-
-
-		 $chart_re1 = $this->db->select('COUNT(recruit_regLevel) AS C_count,
-						tb_recruitstudent.recruit_regLevel, 
-						tb_recruitstudent.recruit_tpyeRoom')
-					->from('tb_recruitstudent')
-					->where('recruit_regLevel',1)
-					->group_by('recruit_tpyeRoom')
-					->order_by('recruit_tpyeRoom','DESC')
-					->get()->result();
-		$chart_re4 = $this->db->select('COUNT(recruit_regLevel) AS C_count,
-						tb_recruitstudent.recruit_regLevel, 
-						tb_recruitstudent.recruit_tpyeRoom')
-					->from('tb_recruitstudent')
-					->where('recruit_regLevel',4)
-					->group_by('recruit_tpyeRoom')
-
-					->order_by('recruit_tpyeRoom','DESC')
-					->get()->result();
-		$chart_All = $this->db->select('COUNT(recruit_regLevel) AS C_count,
-						tb_recruitstudent.recruit_regLevel, 
-						tb_recruitstudent.recruit_tpyeRoom')
-					->from('tb_recruitstudent')
-					->group_by('recruit_tpyeRoom')					
-					->order_by('recruit_tpyeRoom','DESC')
-					->get()->result();
-		$data['chart_1'] = json_encode(array_column($chart_re1,'C_count'));	
-		$data['chart_4'] = json_encode(array_column($chart_re4,'C_count'));
-		$data['chart_All'] = json_encode(array_column($chart_All,'C_count'));				
+		
+		$data['chart_1'];
+		$data['chart_4'];
+		$data['chart_All'];
+			
 
 		$this->load->view('admin/layout/header.php',$data);
 		$this->load->view('admin/layout/navber.php');
@@ -64,7 +75,10 @@ class Control_admin_recruitstudent extends CI_Controller {
 
 	public function add()
 	{
-		 
+		$data = $this->report_student(); 
+		$data['chart_1'];
+		$data['chart_4'];
+		$data['chart_All'];
 		$data['title'] = $this->title;
 		$data['icon'] = '<i class="far fa-plus-square"></i>';
 		$data['color'] = 'primary';
@@ -105,6 +119,10 @@ class Control_admin_recruitstudent extends CI_Controller {
 
 	public function edit_recruitstudent($id)
 	{
+		$data = $this->report_student(); 
+		$data['chart_1'];
+		$data['chart_4'];
+		$data['chart_All'];
 		/* Bread crum */
 		$data['title'] = $this->title;
 		$data['icon'] = '<i class="fas fa-edit"></i>';
