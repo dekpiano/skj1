@@ -165,8 +165,9 @@ header {
                             </div>
                         </li>
                         <li class="nav-item animated  heartBeat delay-1s">
-                            <a class="text-white nav-link" href="<?=base_url('RegStudent');?>"><i
-                                    class="icofont-download "></i> รับสมัครนักเรียน</a>
+                            <a class="text-white nav-link" href="<?=base_url('PrintStudent');?>"><i
+                                    class="icofont-download "></i> ประกาศผลสมัครสอบ</a>
+</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">

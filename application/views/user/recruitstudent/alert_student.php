@@ -19,7 +19,7 @@
         </button>
       </div>
       <div class="modal-body text-center">
-        <?php if($this->session->flashdata('messge') == 'แก้ไขข้อมูลสำเร็จ') : ?>
+        <?php if($this->session->flashdata('messge') == 'แก้ไขข้อมูลสำเร็จ รอตรวจสอบข้อมูล... 4 - 6 ชั่วโมง') : ?>
         <img src="<?=base_url();?>asset/img/check/checkmark.gif">
         <?php else: ?>
         <img src="<?=base_url();?>asset/img/check/alert-sign.gif">
