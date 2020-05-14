@@ -22,16 +22,24 @@ label {
     </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-3  mb-4">            
+            <?php $this->load->view('user/recruitstudent/menu_student.php') ?>
+        </div>
+        <div class="col-md-9 order-md-1">
+
+                
 <form class="needs-validation contact-block" enctype="multipart/form-data" method="post" novalidate=""
-        action="<?=base_url('control_recruitstudent/reg_insert')?>">
-        <input hidden type="text" name="recruit_regLevel" id="recruit_regLevel" value="<?=$this->uri->segment(2);?>">
-<div class="container ">
+    action="<?=base_url('control_recruitstudent/reg_insert')?>">
+    <input hidden type="text" name="recruit_regLevel" id="recruit_regLevel" value="<?=$this->uri->segment(2);?>">
+    <div class="container ">
         <div id="smartwizard">
             <ul>
                 <li><a href="#step-1">Step 1<br /><small>เลขประจำตัวประชาชน</small></a></li>
                 <li><a href="#step-2">Step 2<br /><small>ประวัติส่วนตัว</small></a></li>
                 <li><a href="#step-3">Step 3<br /><small>จบการศึกษาจากโรงเรียน</small></a></li>
-                <li><a href="#step-4">Step 4<br /><small>หลักสูตรที่ต้องการศึกษาต่อ</small></a></li>
+                <li><a href="#step-4">Step 4<br /><small>หลักสูตร</small></a></li>
                 <li><a href="#step-5">Step 5<br /><small>หลักฐานการสมัคร</small></a></li>
                 <li><a href="#step-6">Step 6<br /><small>ยืนยันการสมัคร</small></a></li>
             </ul>
@@ -40,7 +48,7 @@ label {
                 <div id="step-1" class="p-5">
                     <div class="row ">
                         <div class="col-md-4 mb-3">
-                        
+
                             <label for="recruit_idCard">เลขประจำตัวประชาชน 13 หลัก</label>
                             <input type="text" class="form-control" id="recruit_idCard" name="recruit_idCard" required
                                 data-inputmask="'mask': '9-9999-99999-99-9'" data-toggle="tooltip" data-placement="top"
@@ -352,7 +360,7 @@ label {
                     </div>
                     <hr class="mb-4">
                     <button class="btn btn-primary btn-lg btn-block" type="submit">สมัครเรียน</button>
-    </form>
+</form>
 </div>
 <center>
     <button class="btn btn-primary" id="prev-btn" type="button">ย้อนกลับ</button>
@@ -361,4 +369,8 @@ label {
 
 </div>
 </div>
+</div>
+
+        </div>
+    </div>
 </div>

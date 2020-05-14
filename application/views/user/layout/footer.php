@@ -1,4 +1,4 @@
-<?php if($this->uri->segment(1) != 'login' && $this->uri->segment(1) != 'RegStudent' && $this->uri->segment(1) != 'checkRegister'): ?>
+<?php if($this->uri->segment(1) != 'login' && $this->uri->segment(1) != 'RegStudent' && $this->uri->segment(1) != 'checkRegister' && $this->uri->segment(1) != 'Announce' && $this->uri->segment(1) != 'Admissions'): ?> 
 
 <!-- ======= Footer ======= -->
 <footer id="footer" class="services section-bg">
@@ -88,7 +88,8 @@
 <script src="<?=base_url()?>asset/js/jquery.inputmask.min.js"></script>
 <script src="<?=base_url()?>asset/js/imagesloaded.pkgd.min.js"></script>
 <!-- Template Main JS File -->
-<script src="<?=base_url()?>/asset/user/js/main.js?v=1000"></script>
+<script src="<?=base_url()?>/asset/user/js/main.js?v=1001"></script>
+<script src="<?=base_url()?>/asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

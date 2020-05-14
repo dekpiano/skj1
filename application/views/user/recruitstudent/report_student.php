@@ -5,7 +5,7 @@
                 <div class="full center">
                     <div class="heading_main text_align_center">
                         <h2 class="text-center">
-                            <span class="theme_color"><i class="fas fa-bullhorn"></i> ประกาศผลการสมัครสอบ
+                            <span class="theme_color"><i class="fas fa-bullhorn"></i> ประกาศรายชื่อผู้มีสิทธิ์สอบ
                             </span>ปีการศึกษา <?=(date('Y')+543);?>
                         </h2>
                         <p class="large">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
@@ -32,7 +32,16 @@
     margin: 20px;
 }
 </style>
-<div class="bs-example">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3  mb-4">
+           
+            <?php $this->load->view('user/recruitstudent/menu_student.php') ?>
+        </div>
+        <div class="col-md-9 order-md-1">
+
+        <div class="bs-example">
     <div id="accordion" class="accordion">
         <div class="card mb-0 bg-primary">
             <div class="card-header">
@@ -130,19 +139,23 @@
                                                                 </td>
                                                                 <td class="h5">
                                                                     <?php if($v_m1->recruit_status == 'ผ่านการตรวจสอบ'): ?>
-                                                                    <span class="text-success"><i class="icofont-check-circled"></i>
+                                                                    <span class="text-success"><i
+                                                                            class="icofont-check-circled"></i>
                                                                         <?=$v_m1->recruit_status?></span>
-                                                                    <span class="badge badge-secondary badge-pill"><i class="icofont-print"></i>
-                                                                            <a href="#"  stuid="<?=$v_m1->recruit_id;?>"
+                                                                    <span class="badge badge-secondary badge-pill"><i
+                                                                            class="icofont-print"></i>
+                                                                        <a href="#" stuid="<?=$v_m1->recruit_id;?>"
                                                                             target="_blank" data-toggle="modal"
                                                                             data-target="#staticBackdrop"
                                                                             class="text-white stu_id">พิมพ์ใบสมัครสอบ</a>
                                                                         <!-- <?=base_url('control_recruitstudent/pdf/').$v_m1->recruit_id;?> -->
                                                                     </span>
                                                                     <?php else : ?>
-                                                                    <span class="text-warning"><i class="icofont-exclamation-circle"></i>
+                                                                    <span class="text-warning"><i
+                                                                            class="icofont-exclamation-circle"></i>
                                                                         <?=$v_m1->recruit_status?></span>
-                                                                    <span class="badge badge-danger badge-pill"><i class="icofont-edit"></i>
+                                                                    <span class="badge badge-danger badge-pill"><i
+                                                                            class="icofont-edit"></i>
                                                                         <a href="<?=base_url('checkRegister?edit=0');?>"
                                                                             class="text-white">กลับไปแก้ไข</a>
                                                                     </span>
@@ -251,7 +264,7 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <?php  foreach ($m4 as $key => $v_m4) : ?>
+                                                            <?php  foreach ($m4 as $key => $v_m4) : ?>
                                                             <?php if($v_Room == $v_m4->recruit_tpyeRoom) : ?>
                                                             <tr>
                                                                 <th scope="row">
@@ -260,19 +273,23 @@
                                                                 </td>
                                                                 <td class="h5">
                                                                     <?php if($v_m4->recruit_status == 'ผ่านการตรวจสอบ'): ?>
-                                                                    <span class="text-success"><i class="icofont-check-circled"></i>
+                                                                    <span class="text-success"><i
+                                                                            class="icofont-check-circled"></i>
                                                                         <?=$v_m4->recruit_status?></span>
-                                                                    <span class="badge badge-secondary badge-pill"><i class="icofont-print"></i>
-                                                                            <a href="#"  stuid="<?=$v_m4->recruit_id;?>"
+                                                                    <span class="badge badge-secondary badge-pill"><i
+                                                                            class="icofont-print"></i>
+                                                                        <a href="#" stuid="<?=$v_m4->recruit_id;?>"
                                                                             target="_blank" data-toggle="modal"
                                                                             data-target="#staticBackdrop"
                                                                             class="text-white stu_id">พิมพ์ใบสมัครสอบ</a>
                                                                         <!-- <?=base_url('control_recruitstudent/pdf/').$v_m4->recruit_id;?> -->
                                                                     </span>
                                                                     <?php else : ?>
-                                                                    <span class="text-warning"><i class="icofont-exclamation-circle"></i>
+                                                                    <span class="text-warning"><i
+                                                                            class="icofont-exclamation-circle"></i>
                                                                         <?=$v_m4->recruit_status?></span>
-                                                                    <span class="badge badge-danger badge-pill"><i class="icofont-edit"></i>
+                                                                    <span class="badge badge-danger badge-pill"><i
+                                                                            class="icofont-edit"></i>
                                                                         <a href="<?=base_url('checkRegister?edit=0');?>"
                                                                             class="text-white">กลับไปแก้ไข</a>
                                                                     </span>
@@ -304,6 +321,13 @@
         <p class="mb-0">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
     </div>
 </div>
+           
+        </div>
+    </div>
+</div>
+
+
+
 
 
 
@@ -329,7 +353,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-row">
-                    <input hidden type="text"  id="idstu">
+                        <input hidden type="text" id="idstu">
                         <div class="col">
                             <select class="form-control" id="recruit_birthdayD" name="recruit_birthdayD" required>
                                 <option value="">วันที่...</option>
@@ -371,7 +395,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                <button type="button" id="report_stu" class="btn btn-primary " > พิมพ์ใบสมัครสอบ</button>
+                <button type="button" id="report_stu" class="btn btn-primary "> พิมพ์ใบสมัครสอบ</button>
             </div>
         </div>
     </div>

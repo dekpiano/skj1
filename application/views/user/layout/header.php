@@ -43,9 +43,11 @@
     <link href="<?=base_url()?>/asset/user/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+    
     <!-- Template Main CSS File -->
     <link href="<?=base_url()?>/asset/user/css/style.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="<?=base_url()?>asset/user/css/smartwizard/smart_wizard.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>asset/user/css/smartwizard/smart_wizard_theme_arrows.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165844207-1"></script>
     <script>
@@ -93,8 +95,6 @@ header {
 .img-hover-zoom--basic:hover img {
     transform: scale(1.5);
 }
-
-
 </style>
 
 <body style="background-color: #f8f9fa;">
@@ -108,7 +108,7 @@ header {
                     <div class="logo mr-auto">
                         <a class="e" href="<?=base_url()?>">
                             <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav1.png" alt="">
-                        </a>                     
+                        </a>
                     </div>
                 </div>
                 <div class="col-2 text-center">
@@ -165,9 +165,9 @@ header {
                             </div>
                         </li>
                         <li class="nav-item animated  heartBeat delay-1s">
-                            <a class="text-white nav-link" href="<?=base_url('PrintStudent');?>"><i
-                                    class="icofont-download "></i> ประกาศผลสมัครสอบ</a>
-</a>
+                            <a class="text-white nav-link" href="<?=base_url('Admissions?a=1');?>"><i
+                                    class="icofont-download "></i> รับสมัครนักเรียน</a>
+                            </a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">

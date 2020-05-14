@@ -2,16 +2,21 @@
     <div class="container ">
    
             <!--- หัวข้อ --->
-            <div id="topic" class="row">
-                <div class="centered ex-bl">
-                    <div class="text-block">
-                        SKJ Gellery
+            <div class="section ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="full center">
+                                <div class="heading_main text_align_center text-center">
+                                    <h2><span class="theme_color">SKJ</span> Gellery</h2>
+                                    <p class="large">สวนกุหลาบวิทยาลัย จิรประวัติ</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <img id="img_topic" src="<?=base_url()?>asset/user/img/b1.png">
-                </div>
             </div>
+           
             <!--- หัวข้อ --->
 
             <!-- เนื้อหา -->

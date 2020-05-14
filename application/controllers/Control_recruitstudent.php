@@ -29,13 +29,25 @@ class Control_recruitstudent extends CI_Controller {
 
 	public function index()
 	{
-		redirect('CloseStudent'); 
+		//redirect('CloseStudent'); 
+		$data = $this->dataAll();
+		//$this->session->sess_destroy();
+		$this->load->view('user/layout/header.php',$data);
+		$this->load->view('user/recruitstudent/news_student.php');
+		$this->load->view('user/layout/footer.php');
+	}
+
+	public function select_regis()
+	{
+		//redirect('CloseStudent'); 
 		$data = $this->dataAll();
 		//$this->session->sess_destroy();
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/recruitstudent/main_student.php');
 		$this->load->view('user/layout/footer.php');
 	}
+
+
 
 	public function welcome_student($id=''){
 
@@ -65,7 +77,7 @@ setTimeout(function() {
 
 	public function reg_student($id)
 	{
-		redirect('CloseStudent'); 
+		//redirect('CloseStudent'); 
 		$data = $this->dataAll();
 
 		if ($id > 0) {
@@ -334,7 +346,7 @@ setTimeout(function() {
 			}
 
 			
-		redirect('checkRegister/dataStudent?search_stu='.$this->input->post('recruit_idCard').'&Succeed=1');
+		redirect('checkRegister/dataStudent?a=3&search_stu='.$this->input->post('recruit_idCard').'&Succeed=1');
 			
 		
 	}
