@@ -48,7 +48,7 @@
                             <div class="card-body">
                                 <p>
                                     <h2>
-                                        วันเสาร์ที่ 30 พฤษภาคม 2563
+                                        <b><u>วันเสาร์ที่ 30 พฤษภาคม 2563</u></b>
                                         นักเรียนสอบเข้าศึกษาต่อระดับชั้นมัธยมศึกษาปีที่ 1 </h2>
                                 </p>
                                 <table class="table">
@@ -130,11 +130,9 @@
                                                                 </td>
                                                                 <td class="h5">
                                                                     <?php if($v_m1->recruit_status == 'ผ่านการตรวจสอบ'): ?>
-                                                                    <span class="badge badge-success badge-pill"><i
-                                                                            class="fas fa-check-circle"></i>
+                                                                    <span class="text-success"><i class="icofont-check-circled"></i>
                                                                         <?=$v_m1->recruit_status?></span>
-                                                                    <span class="badge badge-secondary badge-pill"><i
-                                                                            class="fas fa-print"></i> 
+                                                                    <span class="badge badge-secondary badge-pill"><i class="icofont-print"></i>
                                                                             <a href="#"  stuid="<?=$v_m1->recruit_id;?>"
                                                                             target="_blank" data-toggle="modal"
                                                                             data-target="#staticBackdrop"
@@ -142,11 +140,9 @@
                                                                         <!-- <?=base_url('control_recruitstudent/pdf/').$v_m1->recruit_id;?> -->
                                                                     </span>
                                                                     <?php else : ?>
-                                                                    <span class="badge badge-warning badge-pill"><i
-                                                                            class="fas fa-exclamation-circle"></i>
+                                                                    <span class="text-warning"><i class="icofont-exclamation-circle"></i>
                                                                         <?=$v_m1->recruit_status?></span>
-                                                                    <span class="badge badge-danger badge-pill"><i
-                                                                            class="fas fa-edit"></i>
+                                                                    <span class="badge badge-danger badge-pill"><i class="icofont-edit"></i>
                                                                         <a href="<?=base_url('checkRegister?edit=0');?>"
                                                                             class="text-white">กลับไปแก้ไข</a>
                                                                     </span>
@@ -255,7 +251,7 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <?php  foreach ($m4 as $key => $v_m4) : ?>
+                                                        <?php  foreach ($m4 as $key => $v_m4) : ?>
                                                             <?php if($v_Room == $v_m4->recruit_tpyeRoom) : ?>
                                                             <tr>
                                                                 <th scope="row">
@@ -264,19 +260,22 @@
                                                                 </td>
                                                                 <td class="h5">
                                                                     <?php if($v_m4->recruit_status == 'ผ่านการตรวจสอบ'): ?>
-                                                                    <span class="badge badge-success badge-pill"><i
-                                                                            class="fas fa-check-circle"></i>
+                                                                    <span class="text-success"><i class="icofont-check-circled"></i>
                                                                         <?=$v_m4->recruit_status?></span>
-                                                                    <span class="badge badge-secondary badge-pill"><i
-                                                                            class="fas fa-print"></i>
-                                                                        พิมพ์ใบสมัครสอบ</span>
+                                                                    <span class="badge badge-secondary badge-pill"><i class="icofont-print"></i>
+                                                                            <a href="#"  stuid="<?=$v_m4->recruit_id;?>"
+                                                                            target="_blank" data-toggle="modal"
+                                                                            data-target="#staticBackdrop"
+                                                                            class="text-white stu_id">พิมพ์ใบสมัครสอบ</a>
+                                                                        <!-- <?=base_url('control_recruitstudent/pdf/').$v_m4->recruit_id;?> -->
+                                                                    </span>
                                                                     <?php else : ?>
-                                                                    <span class="badge badge-warning badge-pill"><i
-                                                                            class="fas fa-exclamation-circle"></i>
+                                                                    <span class="text-warning"><i class="icofont-exclamation-circle"></i>
                                                                         <?=$v_m4->recruit_status?></span>
-                                                                    <span class="badge badge-danger badge-pill"><i
-                                                                            class="fas fa-edit"></i>
-                                                                        กลับไปแก้ไข</span>
+                                                                    <span class="badge badge-danger badge-pill"><i class="icofont-edit"></i>
+                                                                        <a href="<?=base_url('checkRegister?edit=0');?>"
+                                                                            class="text-white">กลับไปแก้ไข</a>
+                                                                    </span>
                                                                     <?php endif; ?>
                                                                 </td>
                                                             </tr>

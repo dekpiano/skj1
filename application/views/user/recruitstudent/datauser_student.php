@@ -257,7 +257,7 @@ label {
                                 title="<img class='img-fluid' src=&quot;<?=base_url('uploads/recruitstudent/Eximg.jpg')?>&quot;>">ตัวอย่างรูปที่ถูกต้อง</span>
                                 </label>
                         <div class="col-md-3">
-                            <input type="file" class="form-control" id="recruit_img" name="recruit_img" <?=@$required1;?>>
+                            <input type="file" class="form-control" id="recruit_img" name="recruit_img" >
                             <div class="invalid-feedback">
                                 อัพโหลดรูปภาพ
                             </div>

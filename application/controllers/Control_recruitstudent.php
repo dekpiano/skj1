@@ -209,7 +209,7 @@ setTimeout(function() {
 
 	public function data_user()
 	{
-		$this->session->sess_destroy();
+		
 		$data = $this->dataAll();
 
 		// if ($this->input->get('Succeed') == 1) {
