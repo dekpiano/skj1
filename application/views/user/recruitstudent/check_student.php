@@ -1,3 +1,4 @@
+<section class="br" >
 <div class="section layout_padding">
     <div class="container">
         <div class="row">
@@ -101,7 +102,7 @@
         </div>
         <div class="col-md-9 order-md-1">
             <div class="container m-auto">
-                <div class="row justify-content-center pt-5">
+                <div class=" justify-content-center pt-5">
 
                     <form class="card card-sm needs-validation" novalidate="" method="get"
                         action="<?=base_url('checkRegister/dataStudent?a=3&edit=').$this->input->get("edit");?>">
@@ -132,3 +133,5 @@
         </div>
     </div>
 </div>
+
+</section>

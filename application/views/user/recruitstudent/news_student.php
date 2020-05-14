@@ -1,3 +1,4 @@
+<section class="br" >
 <div class="section layout_padding">
     <div class="container">
         <div class="row">
@@ -16,7 +17,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container ">
     <div class="row">
         <div class="col-md-3  mb-4">
             <?php $this->load->view('user/recruitstudent/menu_student.php') ?>
@@ -39,7 +40,7 @@
         </div>
     </div>
 </div>
-
+</section>
 <style>
 .bs-callout {
     padding: 20px;

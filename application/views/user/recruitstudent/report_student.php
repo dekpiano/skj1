@@ -1,3 +1,4 @@
+<section class="br" >
 <div class="section layout_padding">
     <div class="container">
         <div class="row">
@@ -156,7 +157,7 @@
                                                                         <?=$v_m1->recruit_status?></span>
                                                                     <span class="badge badge-danger badge-pill"><i
                                                                             class="icofont-edit"></i>
-                                                                        <a href="<?=base_url('checkRegister?edit=0');?>"
+                                                                        <a href="<?=base_url('checkRegister?a=3&edit=0');?>"
                                                                             class="text-white">กลับไปแก้ไข</a>
                                                                     </span>
                                                                     <?php endif; ?>
@@ -290,7 +291,7 @@
                                                                         <?=$v_m4->recruit_status?></span>
                                                                     <span class="badge badge-danger badge-pill"><i
                                                                             class="icofont-edit"></i>
-                                                                        <a href="<?=base_url('checkRegister?edit=0');?>"
+                                                                        <a href="<?=base_url('checkRegister?a=3&edit=0');?>"
                                                                             class="text-white">กลับไปแก้ไข</a>
                                                                     </span>
                                                                     <?php endif; ?>
@@ -400,3 +401,4 @@
         </div>
     </div>
 </div>
+</section >

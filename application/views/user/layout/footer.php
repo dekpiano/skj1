@@ -1,3 +1,13 @@
+<style>
+.br{
+    height: 100vh;
+    background-image: url(http://desktop-asn26hl/skj/asset/user/img/footer_bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    bottom: 0;
+}
+</style>
+
 <?php if($this->uri->segment(1) != 'login' && $this->uri->segment(1) != 'RegStudent' && $this->uri->segment(1) != 'checkRegister' && $this->uri->segment(1) != 'Announce' && $this->uri->segment(1) != 'Admissions'): ?> 
 
 <!-- ======= Footer ======= -->
@@ -203,3 +213,5 @@ $('#container').imagesLoaded()
 
 </html>
 <?php $this->load->view('user/recruitstudent/alert_student.php') ?>
+
+

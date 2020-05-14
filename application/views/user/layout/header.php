@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html lang="en">
 
 <head>
@@ -66,7 +66,9 @@
 .dropdown:hover>.dropdown-menu {
     display: block;
 }
-
+html{
+  min-height: 100%;
+}
 .dropdown>.dropdown-toggle:active {
     /*Without this, clicking will make it sticky*/
     pointer-events: none;
