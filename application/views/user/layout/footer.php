@@ -1,86 +1,106 @@
 <style>
-.br{
-    height: 100vh;
-    background-image: url(http://desktop-asn26hl/skj/asset/user/img/footer_bg.png);
+.br {
+
+    background-image: url(<?=base_url();
+    ?>asset/user/img/footer_bg.png);
     background-repeat: no-repeat;
     background-position: bottom;
     bottom: 0;
 }
 </style>
 
-<?php if($this->uri->segment(1) != 'login' && $this->uri->segment(1) != 'RegStudent' && $this->uri->segment(1) != 'checkRegister' && $this->uri->segment(1) != 'Announce' && $this->uri->segment(1) != 'Admissions'): ?> 
+<?php if($this->uri->segment(1) != 'login' && $this->uri->segment(1) != 'RegStudent' && $this->uri->segment(1) != 'checkRegister' && $this->uri->segment(1) != 'Announce' && $this->uri->segment(1) != 'Admissions'): ?>
 
-<!-- ======= Footer ======= -->
-<footer id="footer" class="services section-bg">
-
-    <div class="footer-top">
+<footer class="new_footer_area bg_color">
+    <div class="new_footer_top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-md-6 footer-links">
-                    <h4><i class="icofont-company"></i> โรงเรียนในเครือข่ายสวนกุหลาบฯ</h4>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6" style="float: left;">
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="http://www.sk.ac.th/">สวนกุหลาบวิทยาลัย</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="http://www.skn.ac.th/">สวนกุหลาบวิทยาลัย นนทบุรี</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="http://www.skr.ac.th/">สวนกุหลาบวิทยาลัย รังสิต</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="http://www.sks.ac.th/">นวมินทราชินูทิศ สวนกุหลาบวิทยาลัย สมุทรปราการ</a>
-                                </li>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="http://www.skp.ac.th/">นวมินทราชินูทิศ สวนกุหลาบวิทยาลัย ปทุมธานี</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6 col-md-6" style="float: left;">
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="http://www.skpb.ac.th/">สวนกุหลาบวิทยาลัย เพชรบูรณ์</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="https://www.sksb.ac.th/">สวนกุหลาบวิทยาลัย สระบุรี</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="http://www.suanchon.ac.th/">สวนกุหลาบวิทยาลัย ชลบุรี</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="https://www.skj.ac.th/">สวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                        href="http://www.sk-thonburi.ac.th/">สวนกุหลาบวิทยาลัย ธนบุรี</a></li>
-                            </ul>
-                        </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s"
+                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18"><i class="icofont-school-bus"></i> โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</h3>
+                        <p><i class="icofont-google-map"></i> 160 ม.1 ต.นครสวรรค์ออก อ.เมืองนครสวรรค์ จ.นครสวรรค์ 60000 </p><p>                          
+                        <i class="icofont-ui-home"></i> สังกัด องค์การบริหารส่วนจังหวัดนครสววรค์ ในสังกัดกองการศึกษา ศาสนา และวัฒนธรรม กระทรวงมหาดไทย
+                        </p>
                     </div>
                 </div>
 
-                <div class="col-lg-5 col-md-6 footer-links">
-                    <div>
-                        <h4><i class="icofont-company"></i> หน่วยงานที่เกี่ยวข้อง</h4>
-                        <div class="col-12">
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a
-                                        href="http://www.nakhonsawanpao.go.th/">องค์การบริหารส่วนจังหวัดนครสวรรค์</a>
-                                </li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">กรมส่งเสริมการปกครองท้องถิ่น</a>
-                                </li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">กองการศึกษา ศาสนาและวัฒนธรรม
-                                        อบจ.นครสวรรค์</a></li>
-                            </ul>
+                <div class="col-lg-4 col-md-6">
+                    <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s"
+                        style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18"><i class="icofont-company"></i>
+                            โรงเรียนในเครือข่ายสวนกุหลาบฯ</h3>
+                        <ul class="list-unstyled f_list">
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="http://www.sk.ac.th/">สวนกุหลาบวิทยาลัย</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="http://www.skn.ac.th/">สวนกุหลาบวิทยาลัย นนทบุรี</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="http://www.skr.ac.th/">สวนกุหลาบวิทยาลัย รังสิต</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="http://www.sks.ac.th/">นวมินทราชินูทิศ สวนกุหลาบวิทยาลัย สมุทรปราการ</a>
+                            </li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="http://www.skp.ac.th/">นวมินทราชินูทิศ สวนกุหลาบวิทยาลัย ปทุมธานี</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="http://www.skpb.ac.th/">สวนกุหลาบวิทยาลัย เพชรบูรณ์</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="https://www.sksb.ac.th/">สวนกุหลาบวิทยาลัย สระบุรี</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="http://www.suanchon.ac.th/">สวนกุหลาบวิทยาลัย ชลบุรี</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="https://www.skj.ac.th/">สวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="http://www.sk-thonburi.ac.th/">สวนกุหลาบวิทยาลัย ธนบุรี</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="f_widget about-widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s"
+                        style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18"><i class="icofont-company"></i>
+                            หน่วยงานที่เกี่ยวข้อง</h3>
+                        <ul class="list-unstyled f_list">
+                            <li><i class="bx bx-chevron-right"></i> 
+                            <a target="_blank" href="http://www.nakhonsawanpao.go.th/">องค์การบริหารส่วนจังหวัดนครสวรรค์</a>
+                            </li>
+                            <li><i class="bx bx-chevron-right"></i> 
+                            <a target="_blank" href="#">กรมส่งเสริมการปกครองท้องถิ่น</a>
+                            </li>
+                            <li><i class="bx bx-chevron-right"></i> 
+                            <a target="_blank" href="#">กองการศึกษา ศาสนาและวัฒนธรรม อบจ.นครสวรรค์</a></li>
+                        </ul>
+                        <br>
+                        <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                        <div class="f_social_icon">
+                            <a href="#" ><i class="icofont-facebook"></i></a>
+                            <a href="#" ><i class="icofont-youtube-play"></i></a>
+                            <a href="#" ><i class="icofont-line-messenger"></i></a>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="footer_bg">
+            <div class="footer_bg_one"></div>
+            <div class="footer_bg_two"></div>
+        </div>
     </div>
-
-    <div class="container d-md-flex py-4">
-
-        <div class="mr-md-auto text-center text-md-left">
-            <div class="copyright">
-                &copy; Copyright <strong><span>โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</span></strong> All
-                Rights Reserved
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-7">
+                    <p class="mb-0 f_400">© โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์ 2020 All rights reserved.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-sm-5 text-right">
+                </div>
             </div>
         </div>
     </div>
-</footer><!-- End Footer -->
+</footer>
+
 <?php endif; ?>
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
@@ -134,23 +154,23 @@ $(document).ready(function() {
         var y = $('#recruit_birthdayY').val();
         $(this).prop("disabled", true);
         $(this).html(
-        '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> กำลังโหลด...'
-      );     
+            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> กำลังโหลด...'
+        );
         $.post("<?=base_url('Control_recruitstudent/check_print');?>", {
             recruit_birthdayD: d,
             recruit_birthdayM: m,
             recruit_birthdayY: y,
             id: stuid
         }, function(data) {
-          //alert(data);
-          if(data == 0){
-            alert('วันเกิดคุณไม่ถูกต้อง');
-            window.location.href ="<?=base_url('PrintStudent');?>"
-          }else{
-            window.location.href = data;
-          }
-         
-          
+            //alert(data);
+            if (data == 0) {
+                alert('วันเกิดคุณไม่ถูกต้อง');
+                window.location.href = "<?=base_url('PrintStudent');?>"
+            } else {
+                window.location.href = data;
+            }
+
+
         });
     });
 });
@@ -213,5 +233,3 @@ $('#container').imagesLoaded()
 
 </html>
 <?php $this->load->view('user/recruitstudent/alert_student.php') ?>
-
-

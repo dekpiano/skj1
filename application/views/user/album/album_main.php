@@ -1,14 +1,23 @@
 
-<section id="breadcrumbs" class="portfolio" style="background: #e9ebee;">
+<div class="section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full center">
+                    <div class="heading_main text_align_center">
+                        <h2 class="text-center">
+                            <span class="theme_color"><i class="fas fa-bullhorn"></i> รูปภาพกิจกรรม
+                            </span>ทั้งหมด
+                        </h2>
+                        <p class="large">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="container">
-        <!-- -fluid -->
-        <center>
-            <h1>รูปภาพกิจกรรมทั้งหมด</h1>
-            <p>โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
-        </center>
-
-
         <div class="card-columns">
             <?php foreach ($images as $key => $v_images) : ?>
             <div class="card">
@@ -25,8 +34,4 @@
         <?php endforeach; ?>
     </div>
 
-    </div>
-
-
-
-</section>
+    

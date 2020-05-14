@@ -1,4 +1,4 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -43,9 +43,11 @@
     <link href="<?=base_url()?>/asset/user/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    
+
     <!-- Template Main CSS File -->
     <link href="<?=base_url()?>/asset/user/css/style.css" rel="stylesheet">
+    <link href="<?=base_url()?>/asset/user/css/circles.css" rel="stylesheet">
+    <link href="<?=base_url()?>/asset/user/css/footerskj.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=base_url()?>asset/user/css/smartwizard/smart_wizard.min.css">
     <link rel="stylesheet" href="<?=base_url()?>asset/user/css/smartwizard/smart_wizard_theme_arrows.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -66,9 +68,11 @@
 .dropdown:hover>.dropdown-menu {
     display: block;
 }
-html{
-  min-height: 100%;
+
+html {
+    min-height: 100%;
 }
+
 .dropdown>.dropdown-toggle:active {
     /*Without this, clicking will make it sticky*/
     pointer-events: none;
@@ -101,9 +105,8 @@ header {
 
 <body style="background-color: #f8f9fa;">
 
-
-
     <div class="container d-none d-sm-block d-lg-block ">
+    
         <header class="blog-header py-4">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-7 pt-1">
@@ -119,7 +122,21 @@ header {
                 <div class="col-3 d-flex justify-content-end align-items-center">
 
                 </div>
-            </div>
+            </div>  
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>         
         </header>
     </div>
 
@@ -173,7 +190,7 @@ header {
                         </li>
                     </ul>
                     <ul class="navbar-nav">
-                        <li><a class="text-white btn" href="#contact"><i class="icofont-id-card"></i> ติดต่อเรา</a></li>
+                        <li><a class="text-white btn" href="<?=base_url('Contact');?>"><i class="icofont-id-card"></i> ติดต่อเรา</a></li>
                         <li><a href="<?=base_url('login')?>" class="text-white btn btn-outline-light my-2 my-sm-0"><i
                                     class="icofont-lock"></i> Login</a></li>
                     </ul>

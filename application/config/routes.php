@@ -111,6 +111,8 @@ $route['RegStudent/welcome/(:any)'] = 'control_recruitstudent/welcome_student/$1
 $route['checkRegister'] = 'control_recruitstudent/check_student';
 $route['RegStudent/(:any)'] = 'control_recruitstudent/reg_student/$1';
 $route['checkRegister/dataStudent'] = 'control_recruitstudent/data_user';
-
 $route['CloseStudent'] = 'control_recruitstudent/close_student';
 $route['Announce'] = 'control_recruitstudent/print_student';
+
+// ติดต่อ
+$route['Contact'] = 'control_aboutschool/contact';

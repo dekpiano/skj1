@@ -45,4 +45,15 @@ class Control_aboutschool extends CI_Controller {
 		 //echo '<pre>';print_r($s);
 	}
 
+
+	public function contact()
+	{
+		$data = $this->dataAll();
+		$data['title'] = "ติดต่อ";
+		$data['description'] = "ติดต่อสอบถามเกี่ยวกับโรงเรียน";
+		$this->load->view('user/layout/header.php',$data);
+		$this->load->view('user/contact/contact_main.php');
+		$this->load->view('user/layout/footer.php');
+	}
+
 }
