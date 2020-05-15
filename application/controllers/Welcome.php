@@ -18,7 +18,7 @@ class Welcome extends CI_Controller {
 		$data['description'] = self::$description;
 		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ
 		$data['news'] =	$this->db->order_by("news_date", "desc")->limit(4)->get('tb_news')->result(); //ประชาสัมพันธ์
-		$data['banner'] =	$this->db->get('tb_banner')->result(); //ประชาสัมพันธ์
+		$data['banner'] =	$this->db->order_by("banner_id", "desc")->get('tb_banner')->result(); //ประชาสัมพันธ์
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
 		$data['images'] =$this->db->order_by('img_date','DESC')->limit(9)->get('tb_images')->result(); //ประชาสัมพันธ์
 

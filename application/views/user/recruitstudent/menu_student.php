@@ -9,6 +9,12 @@
     <a href="<?=base_url('checkRegister?a=3');?>"
         class="list-group-item list-group-item-action <?=$active == 3 ? 'active' : ''?>"><i class="icofont-ui-edit"></i> ตรวจสอบและแก้ไขการสมัคร</a>
     <a href="<?=base_url('Announce?a=4');?>"
-        class="list-group-item list-group-item-action  <?=$active == 4 ? 'active' : ''?>"><i class="icofont-bullhorn"></i> ประกาศรายชื่อผู้มีสิทธิ์สอบ (รอ...)</a>
+        class="list-group-item list-group-item-action animated  heartBeat delay-1s <?=$active == 4 ? 'active' : ''?>"><i class="icofont-bullhorn"></i> ประกาศรายชื่อผู้สมัครสอบ </a>
+</div>
 
+<div class="list-group mt-5">
+    <a href="<?=base_url('Admissions?a=1');?>"
+        class="list-group-item list-group-item-action  disabled <?=$active == 5 ? 'active' : ''?> ">
+        <i class="icofont-bullhorn"></i> ประกาศรายชื่อผู้มีสิทธ์สอบและห้องสอบ
+    </a>  
 </div>

@@ -2,7 +2,7 @@
 .br {
 
     background-image: url(<?=base_url();
-    ?>asset/user/img/footer_bg.png);
+    ?>asset/user/img/footer_bg1.png);
     background-repeat: no-repeat;
     background-position: bottom;
     bottom: 0;
@@ -18,9 +18,13 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s"
                         style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                        <h3 class="f-title f_600 t_color f_size_18"><i class="icofont-school-bus"></i> โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</h3>
-                        <p><i class="icofont-google-map"></i> 160 ม.1 ต.นครสวรรค์ออก อ.เมืองนครสวรรค์ จ.นครสวรรค์ 60000 </p><p>                          
-                        <i class="icofont-ui-home"></i> สังกัด องค์การบริหารส่วนจังหวัดนครสววรค์ ในสังกัดกองการศึกษา ศาสนา และวัฒนธรรม กระทรวงมหาดไทย
+                        <h3 class="f-title f_600 t_color f_size_18"><i class="icofont-school-bus"></i>
+                            โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</h3>
+                        <p><i class="icofont-google-map"></i> 160 ม.1 ต.นครสวรรค์ออก อ.เมืองนครสวรรค์ จ.นครสวรรค์ 60000
+                        </p>
+                        <p>
+                            <i class="icofont-ui-home"></i> สังกัด องค์การบริหารส่วนจังหวัดนครสววรค์ ในสังกัดกองการศึกษา
+                            ศาสนา และวัฒนธรรม กระทรวงมหาดไทย
                         </p>
                     </div>
                 </div>
@@ -61,22 +65,23 @@
                         <h3 class="f-title f_600 t_color f_size_18"><i class="icofont-company"></i>
                             หน่วยงานที่เกี่ยวข้อง</h3>
                         <ul class="list-unstyled f_list">
-                            <li><i class="bx bx-chevron-right"></i> 
-                            <a target="_blank" href="http://www.nakhonsawanpao.go.th/">องค์การบริหารส่วนจังหวัดนครสวรรค์</a>
+                            <li><i class="bx bx-chevron-right"></i>
+                                <a target="_blank"
+                                    href="http://www.nakhonsawanpao.go.th/">องค์การบริหารส่วนจังหวัดนครสวรรค์</a>
                             </li>
-                            <li><i class="bx bx-chevron-right"></i> 
-                            <a target="_blank" href="#">กรมส่งเสริมการปกครองท้องถิ่น</a>
+                            <li><i class="bx bx-chevron-right"></i>
+                                <a target="_blank" href="#">กรมส่งเสริมการปกครองท้องถิ่น</a>
                             </li>
-                            <li><i class="bx bx-chevron-right"></i> 
-                            <a target="_blank" href="#">กองการศึกษา ศาสนาและวัฒนธรรม อบจ.นครสวรรค์</a></li>
+                            <li><i class="bx bx-chevron-right"></i>
+                                <a target="_blank" href="#">กองการศึกษา ศาสนาและวัฒนธรรม อบจ.นครสวรรค์</a></li>
                         </ul>
                         <br>
                         <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
                         <div class="f_social_icon">
-                            <a href="#" ><i class="icofont-facebook"></i></a>
-                            <a href="#" ><i class="icofont-youtube-play"></i></a>
-                            <a href="#" ><i class="icofont-line-messenger"></i></a>
-                            
+                            <a href="#"><i class="icofont-facebook"></i></a>
+                            <a href="#"><i class="icofont-youtube-play"></i></a>
+                            <a href="#"><i class="icofont-line-messenger"></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -120,9 +125,27 @@
 <!-- Template Main JS File -->
 <script src="<?=base_url()?>/asset/user/js/main.js?v=1001"></script>
 <script src="<?=base_url()?>/asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
-
+<script src="<?=base_url();?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?=base_url();?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<?=base_url();?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1001"></script>
 
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {},
+    Tawk_LoadStart = new Date();
+(function() {
+    var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/5ebe330f8ee2956d73a14f22/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
@@ -139,6 +162,7 @@
 </body>
 <script>
 $(document).ready(function() {
+
     $('[data-toggle="tooltip"]').tooltip();
     $(":input").inputmask();
 

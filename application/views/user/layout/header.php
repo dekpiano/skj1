@@ -42,7 +42,7 @@
     <link href="<?=base_url()?>/asset/user/vendor/animate.css/animate.min.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-
+    <link href="<?=base_url();?>asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="<?=base_url()?>/asset/user/css/style.css" rel="stylesheet">

@@ -26,7 +26,7 @@
             <h3><i class="icofont-megaphone"></i> ประชาสัมพันธ์</h3> 
             
             <div class="bs-callout bs-callout-warning bg-white">
-                <h4><i class="icofont-notepad"></i> ขณะนี้ทางเว็บไซต์กำลังตรวจสอบข้อมูล </h4>
+                <h4><i class="icofont-notepad"></i> ขณะนี้ทางเว็บไซต์เปิดให้ตรวจสอบและแก้ไขข้อมูล </h4>
                 กำลังตรวจสอบข้อมูลเพื่อ แก้ไข และ เปิดให้พิมพ์ใบสมัคร  ลงวันที่ 14 พ.ค.2563
             </div>
             <div class="bs-callout bs-callout-danger bg-white">

@@ -17,8 +17,7 @@ class Control_recruitstudent extends CI_Controller {
 	public function dataAll()
 	{
 		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-		$data['title'] = self::$title;
-		$data['description'] = self::$description;
+		
 		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
 		$data['about'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
@@ -31,6 +30,8 @@ class Control_recruitstudent extends CI_Controller {
 	{
 		//redirect('CloseStudent'); 
 		$data = $this->dataAll();
+		$data['title'] = self::$title;
+		$data['description'] = self::$description;
 		//$this->session->sess_destroy();
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/recruitstudent/news_student.php');
@@ -211,7 +212,8 @@ setTimeout(function() {
 	{	
 
 		$data = $this->dataAll();
-
+		$data['title'] = 'ตรวจสอบและแกไขการสมัคร';
+		$data['description'] = 'ตรวจสอบและแกไขการสมัคร';
 
 		 $this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/recruitstudent/check_student.php');
@@ -223,7 +225,8 @@ setTimeout(function() {
 	{
 		
 		$data = $this->dataAll();
-
+		$data['title'] = 'แก้ไขชื่อผู้สมัครสอบ';
+		$data['description'] = 'แก้ไขชื่อผู้สมัครสอบ';
 		// if ($this->input->get('Succeed') == 1) {
 		// 	$this->session->set_flashdata(array('msg'=> 'NO','messge' => 'แก้ไขข้อมูลสำเร็จ'));
 		// }
@@ -409,6 +412,8 @@ setTimeout(function() {
 	public function print_student()
 	{
 		$data = $this->dataAll();
+		$data['title'] = 'ประกาศรายชื่อผู้สมัครสอบ';
+		$data['description'] = 'ประกาศรายชื่อผู้สมัครสอบ';
 
 		$data['m1'] = $this->db->select('recruit_id,recruit_regLevel,recruit_status,recruit_tpyeRoom,recruit_prefix,recruit_firstName,recruit_lastName')
 		->where('recruit_regLevel','1')
