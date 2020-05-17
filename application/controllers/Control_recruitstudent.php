@@ -42,6 +42,8 @@ class Control_recruitstudent extends CI_Controller {
 	{
 		//redirect('CloseStudent'); 
 		$data = $this->dataAll();
+		$data['title'] = 'สมัครเรียน ม.1 และ ม.4 รอบ 2 ';
+		$data['description'] = 'สมัครเรียน ม.1 และ ม.4 รอบ 2';
 		//$this->session->sess_destroy();
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/recruitstudent/main_student.php');
@@ -53,7 +55,7 @@ class Control_recruitstudent extends CI_Controller {
 	public function welcome_student($id=''){
 
 		$data = $this->dataAll();
-
+		
 		//print_r($id);
 		if ($id == 'Succeed') {
 			$this->load->view('user/layout/header.php',$data);
@@ -80,6 +82,8 @@ setTimeout(function() {
 	{
 		//redirect('CloseStudent'); 
 		$data = $this->dataAll();
+		$data['title'] = 'สมัครเรียน ม.1 รอบ 2 ';
+		$data['description'] = 'สมัครเรียน ม.1 รอบ 2';
 
 		if ($id > 0) {
 			$this->load->view('user/layout/header.php',$data);
@@ -230,11 +234,20 @@ setTimeout(function() {
 		// if ($this->input->get('Succeed') == 1) {
 		// 	$this->session->set_flashdata(array('msg'=> 'NO','messge' => 'แก้ไขข้อมูลสำเร็จ'));
 		// }
-
-		if ($this->input->get('search_stu') != '') {
-			$data['chk_stu'] = $this->db->where('recruit_idCard',$this->input->get('search_stu'))->get('tb_recruitstudent')->result();
-			if (count($data['chk_stu']) <= 0 && $this->input->get('search_stu') != '') {
-				$this->session->set_flashdata(array('msg'=> 'NO','alert'=>'danger','messge' => 'ไม่มีข้อมูลในระบบ หรือ ยังไม่ได้ลงทะเบียนเรียน'));
+		
+		if($this->input->post('i_verify')!=@array_sum($_SESSION['num_to_check'])){
+			//print_r(array_sum($_SESSION['num_to_check'])); exit();	
+			$_SESSION['num_to_check'][0]=rand(1,9);
+		$_SESSION['num_to_check'][1]=rand(1,9);		
+		$data['err_verify'] = "คำถามยืนยันไม่ถูกต้อง";
+			$this->load->view('user/layout/header.php',$data);
+			$this->load->view('user/recruitstudent/check_student.php');
+			$this->load->view('user/layout/footer.php');
+		}else{
+		
+			$data['chk_stu'] = $this->db->where('recruit_idCard',$this->input->post('search_stu'))->get('tb_recruitstudent')->result();
+			if (count($data['chk_stu']) <= 0 ) {
+				//$this->session->set_flashdata(array('msg'=> 'NO','alert'=>'danger','messge' => 'ไม่มีข้อมูลในระบบ หรือ ยังไม่ได้ลงทะเบียนเรียน'));
 				$this->load->view('user/layout/header.php',$data);
 				$this->load->view('user/recruitstudent/check_student.php');
 				$this->load->view('user/layout/footer.php');
@@ -243,12 +256,10 @@ setTimeout(function() {
 						$this->load->view('user/layout/header.php',$data);
 						$this->load->view('user/recruitstudent/datauser_student.php');
 						$this->load->view('user/layout/footer.php');
-			}
-		}else{
-			$this->load->view('user/layout/header.php',$data);
-			$this->load->view('user/recruitstudent/check_student.php');
-			$this->load->view('user/layout/footer.php');
+			}		
+			
 		}
+	
 		
 		 
 	}

@@ -10,7 +10,6 @@ label {
             <div class="col-md-12">
                 <div class="full center">
                     <div class="heading_main text_align_center">
-                        <img style="width: 150px;" src="<?=base_url('asset/user/img/Logo-SKJ.png');?>">
                         <h2><span class="theme_color">รับสมัครนักเรียนใหม่ </span>ชั้นมัธยมศึกษาปีที่
                             <?php echo $this->uri->segment(2);?>
                         </h2>
@@ -24,7 +23,7 @@ label {
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3  mb-4">            
+        <div class="col-md-3 order-2  mb-4">            
             <?php $this->load->view('user/recruitstudent/menu_student.php') ?>
         </div>
         <div class="col-md-9 order-md-1">
@@ -168,7 +167,7 @@ label {
                                 ระบุเลขที่บ้าน
                             </div>
                         </div>
-                        <div class="col-md-1 mb-3">
+                        <div class="col-md-2 mb-3">
                             <label for="recruit_homeGroup">หมู่ที่ </label>
                             <input type="text" class="form-control" id="recruit_homeGroup" name="recruit_homeGroup"
                                 required>
@@ -176,14 +175,16 @@ label {
                                 ระบุหมู่ที่
                             </div>
                         </div>
-                        <div class="col-md-2 mb-3">
+                        <div class="col-md-4 mb-3">
                             <label for="recruit_homeRoad">ถนน</label>
                             <input type="text" class="form-control" id="recruit_homeRoad" name="recruit_homeRoad">
                             <div class="invalid-feedback">
                                 ระบุถนน
                             </div>
-                        </div>
-                        <div class="col-md-2 mb-3">
+                        </div>                       
+                    </div>
+                    <div class="row">
+                    <div class="col-md-3 mb-3">
                             <label for="recruit_homeSubdistrict">ตำบล/แขวง</label>
                             <input type="text" class="form-control" id="recruit_homeSubdistrict"
                                 name="recruit_homeSubdistrict" required>
@@ -191,7 +192,7 @@ label {
                                 ระบุตำบล/แขวง
                             </div>
                         </div>
-                        <div class="col-md-2 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label for="recruit_homedistrict">อำเภอ/เขต</label>
                             <input type="text" class="form-control" id="recruit_homedistrict"
                                 name="recruit_homedistrict" required>
@@ -199,7 +200,7 @@ label {
                                 ระบุอำเภอ/เขต
                             </div>
                         </div>
-                        <div class="col-md-2 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label for="recruit_homeProvince">จังหวัด</label>
                             <input type="text" class="form-control" id="recruit_homeProvince"
                                 name="recruit_homeProvince" required>
@@ -207,7 +208,7 @@ label {
                                 ระบุจังหวัด
                             </div>
                         </div>
-                        <div class="col-md-2 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label for="recruit_homePostcode">รหัสไปรษณีย์</label>
                             <input type="text" class="form-control" id="recruit_homePostcode"
                                 name="recruit_homePostcode" required>

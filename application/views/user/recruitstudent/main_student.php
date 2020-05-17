@@ -18,7 +18,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3  mb-4">           
+        <div class="col-md-3 order-2 mb-4">           
             <?php $this->load->view('user/recruitstudent/menu_student.php') ?>
         </div>
         <div class="col-md-9 order-md-1">
@@ -35,7 +35,7 @@
                     <div class="col-12 col-lg-7 p-0 img-digital grid-margin grid-margin-lg-0 aos-init aos-animate"
                         data-aos="fade-left">
                         <div class="animated fadeInRightBig">
-                            <a href="<?=base_url('RegStudent/1');?>" class="bb btn btn-lg btn-block btn-primary">
+                            <a href="<?=base_url('RegStudent/1?a=2');?>" class="bb btn btn-lg btn-block btn-primary">
                                 <i class="fas fa-user-plus"></i> สมัครเรียน ชั้นมัธยมศึกษาปีที่ 1
                             </a>
                         </div>
@@ -44,7 +44,7 @@
                 <div class="row align-items-center ">
                     <div class="col-12 col-lg-7 p-0 order-2 order-lg-1 ">
                         <div class=" animated fadeInLeftBig">
-                            <a href="<?=base_url('RegStudent/4');?>" class="bb btn btn-lg btn-block btn-primary">
+                            <a href="<?=base_url('RegStudent/4?a=2');?>" class="bb btn btn-lg btn-block btn-primary">
                                 <i class="fas fa-user-plus"></i> สมัครเรียน ชั้นมัธยมศึกษาปีที่ 4
                             </a>
                         </div>
@@ -60,14 +60,7 @@
                         <img src="<?=base_url('asset/img/registudent/check.PNG')?>" alt="" class="img-fluid">
 
                     </div>
-                    <div class="col-md-6 mt-4 align-items-center animated fadeInRightBig">
-                        <a href="<?=base_url('checkRegister');?>" class="bb btn btn-lg btn-block btn-warning"><i
-                                class="fas fa-user-check"></i> ตรวจสอบการสมัคร</a>
-                        <a target="_blank"
-                            href="<?=base_url('uploads/recruitstudent/คู่มือการสมัครเรียนออนไลน์.pdf');?>"
-                            class="bb btn btn-lg btn-block btn-secondary"><i class="fas fa-book-reader"></i>
-                            คู่มือการสมัคร</a>
-                    </div>
+                  
                 </div>
             </div>
 

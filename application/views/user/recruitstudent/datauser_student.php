@@ -33,7 +33,7 @@ label {
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12 col-lg-3 mb-4">
+        <div class="col-md-12 order-2 col-lg-3 mb-4">
             <?php $this->load->view('user/recruitstudent/menu_student.php') ?>
         </div>
         <div class="col-md-12 col-lg-9 order-md-1">
