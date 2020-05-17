@@ -14,6 +14,24 @@ class Control_recruitstudent extends CI_Controller {
 	public static $title = "รับสมัครนักเรียนปีการศึกษา 2563";
 	public static $description = "รับสมัครนักเรียนวันนี้ จนถึง 12 พฤษภาคม 2563";
 
+	public function recaptcha_google($captcha)
+	{
+		$recaptchaResponse = $captcha;
+		$userIp=$this->input->ip_address();
+     
+        $secret = "6LdZePgUAAAAANhhOGZi6JGWmQcETK7bkT7E0edR";
+   
+        $url="https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$recaptchaResponse."&remoteip=".$userIp;
+ 
+        $ch = curl_init(); 
+        curl_setopt($ch, CURLOPT_URL, $url); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        $output = curl_exec($ch); 
+        curl_close($ch);      
+         
+        return $status= json_decode($output, true);
+	}
+
 	public function dataAll()
 	{
 		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -67,14 +85,14 @@ class Control_recruitstudent extends CI_Controller {
 			$this->load->view('user/layout/header.php',$data);
 			$this->load->view('user/layout/footer.php'); 
 			;?>
-<script type="text/javascript">
-setTimeout(function() {
-    window.history.back();
-}, 5000);
-</script>
-<?php }else{
-			redirect('RegStudent');
-		}
+		<script type="text/javascript">
+		setTimeout(function() {
+			window.history.back();
+		}, 5000);
+		</script>
+		<?php }else{
+					redirect('RegStudent');
+				}
 	}
 
 
@@ -231,43 +249,62 @@ setTimeout(function() {
 		$data = $this->dataAll();
 		$data['title'] = 'แก้ไขชื่อผู้สมัครสอบ';
 		$data['description'] = 'แก้ไขชื่อผู้สมัครสอบ';
-		// if ($this->input->get('Succeed') == 1) {
-		// 	$this->session->set_flashdata(array('msg'=> 'NO','messge' => 'แก้ไขข้อมูลสำเร็จ'));
-		// }
 		
-		if($this->input->post('i_verify')!=@array_sum($_SESSION['num_to_check'])){
-			//print_r(array_sum($_SESSION['num_to_check'])); exit();	
-			$_SESSION['num_to_check'][0]=rand(1,9);
-		$_SESSION['num_to_check'][1]=rand(1,9);		
-		$data['err_verify'] = "คำถามยืนยันไม่ถูกต้อง";
-			$this->load->view('user/layout/header.php',$data);
-			$this->load->view('user/recruitstudent/check_student.php');
-			$this->load->view('user/layout/footer.php');
-		}else{
-		
+		$status = $this->recaptcha_google($this->input->post('captcha')); 
+        if ($status['success']) {
+			
 			$data['chk_stu'] = $this->db->where('recruit_idCard',$this->input->post('search_stu'))->get('tb_recruitstudent')->result();
-			if (count($data['chk_stu']) <= 0 ) {
-				//$this->session->set_flashdata(array('msg'=> 'NO','alert'=>'danger','messge' => 'ไม่มีข้อมูลในระบบ หรือ ยังไม่ได้ลงทะเบียนเรียน'));
-				$this->load->view('user/layout/header.php',$data);
-				$this->load->view('user/recruitstudent/check_student.php');
-				$this->load->view('user/layout/footer.php');
-				}else{
-				
+				if (count($data['chk_stu']) <= 0 ) {
+					$data['alert_verify'] = array('1','ไม่มีข้อมูลในระบบ หรือ ยังไม่ได้ลงทะเบียนเรียน','warning');
+					$this->load->view('user/layout/header.php',$data);
+					$this->load->view('user/recruitstudent/check_student.php');
+					$this->load->view('user/layout/footer.php');
+					}else{						
 						$this->load->view('user/layout/header.php',$data);
 						$this->load->view('user/recruitstudent/datauser_student.php');
 						$this->load->view('user/layout/footer.php');
-			}		
-			
-		}
-	
+					}	
+        }else{
+			$data['alert_verify'] = array('1','ยืนยันฉันไม่ใช่โปรแกรมอัตโนมัติ','warning');
+			$data['search_stu'] = $this->input->post('search_stu');
+			$this->load->view('user/layout/header.php',$data);
+			$this->load->view('user/recruitstudent/check_student.php');
+			$this->load->view('user/layout/footer.php');
+        }
 		
-		 
+		
+		// if($this->input->post('i_verify')!=@array_sum($_SESSION['num_to_check'])){
+		// 	//print_r(array_sum($_SESSION['num_to_check'])); exit();	
+		// 	$_SESSION['num_to_check'][0]=rand(1,9);
+		// 	$_SESSION['num_to_check'][1]=rand(1,9);
+			
+		// 	$data['search_stu'] = $this->input->post('search_stu');
+		// 	$this->load->view('user/layout/header.php',$data);
+		// 	$this->load->view('user/recruitstudent/check_student.php');
+		// 	$this->load->view('user/layout/footer.php');
+		// }else{
+		
+		// 	$data['chk_stu'] = $this->db->where('recruit_idCard',$this->input->post('search_stu'))->get('tb_recruitstudent')->result();
+		// 	if (count($data['chk_stu']) <= 0 ) {
+		// 		$data['alert_verify'] = array('1','ไม่มีข้อมูลในระบบ หรือ ยังไม่ได้ลงทะเบียนเรียน','warning');
+		// 		$this->load->view('user/layout/header.php',$data);
+		// 		$this->load->view('user/recruitstudent/check_student.php');
+		// 		$this->load->view('user/layout/footer.php');
+		// 		}else{
+		// 			$_SESSION['num_to_check'][0]=rand(1,9);
+		// 			$_SESSION['num_to_check'][1]=rand(1,9);
+		// 			$this->load->view('user/layout/header.php',$data);
+		// 			$this->load->view('user/recruitstudent/datauser_student.php');
+		// 			$this->load->view('user/layout/footer.php');
+		// 	}	
+		// } 
 	}
 
 
 	public function reg_update($id,$img)
 	{	
-		
+		$status = $this->recaptcha_google($this->input->post('captcha')); 
+        if ($status['success']) {
 		$data_R = $this->db->where('recruit_id',$id)->get('tb_recruitstudent')->result();
 		
 		$file = array($_FILES['recruit_img']['error'],
@@ -358,9 +395,19 @@ setTimeout(function() {
 				}
 				
 			}
-
+			redirect('checkRegister?a=3');	
+		}else{
+			$data = $this->dataAll();
+			$data['title'] = 'แก้ไขชื่อผู้สมัครสอบ';
+			$data['description'] = 'แก้ไขชื่อผู้สมัครสอบ';
+			$data['chk_stu'] = $this->db->where('recruit_idCard',$this->input->post('recruit_idCard'))->get('tb_recruitstudent')->result();
+			//$data['alert_verify'] = array('1','ยืนยันฉันไม่ใช่โปรแกรมอัตโนมัติ','warning');
+						$this->load->view('user/layout/header.php',$data);
+						$this->load->view('user/recruitstudent/datauser_student.php');
+						$this->load->view('user/layout/footer.php');
+		}
 			
-		redirect('checkRegister/dataStudent?a=3&search_stu='.$this->input->post('recruit_idCard').'&Succeed=1');
+		// redirect('checkRegister/dataStudent?a=3&search_stu='.$this->input->post('recruit_idCard').'&Succeed=1');
 			
 		
 	}
@@ -384,11 +431,8 @@ setTimeout(function() {
 				
 				// print_r($data);
 				@unlink("./uploads/recruitstudent/m".$this->input->post('recruit_regLevel').'/'.$foder.'/'.$img);
-
-								
-
 				if($this->model_recruitstudent->student_update($data_update,$id) == 1){
-				 		$this->session->set_flashdata(array('msg'=> 'NO','messge' => 'แก้ไขข้อมูลสำเร็จ รอตรวจสอบข้อมูล... 4 - 6 ชั่วโมง '));				 	
+				 		$this->session->set_flashdata(array('alert1' => 'success','msg'=> 'NO','messge' => 'แก้ไขข้อมูลสำเร็จ รอตรวจสอบข้อมูล... 4 - 6 ชั่วโมง '));				 	
 				 }
 			}
 			else
@@ -412,12 +456,9 @@ setTimeout(function() {
 	public function close_student()
 	{
 		$data = $this->dataAll();
-
-		
 			$this->load->view('user/layout/header.php',$data);
 			$this->load->view('user/recruitstudent/close_student.php');
 			$this->load->view('user/layout/footer.php');
-		
 	}
 
 	public function print_student()

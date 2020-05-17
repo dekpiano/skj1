@@ -113,7 +113,7 @@
                                 <div class="col">
                                     <input class="form-control form-control-lg form-control-borderless "
                                         name="search_stu" type="text" placeholder="ระบุ เลขประจำตัวประชาชน"
-                                        value="<?=@$this->input->get('search_stu') == '' ? '' : $this->input->get('search_stu')?>" required
+                                        value="<?=@$search_stu;?>" required
                                         data-inputmask="'mask': '9-9999-99999-99-9'">
                                     <div class="invalid-feedback">
                                         ระบุเลขประจำตัวประชาชน 13 หลัก
@@ -121,28 +121,17 @@
                                 </div>
 
                             </div>
-                    </div>
-                    <?php $_SESSION['num_to_check'][0]=rand(1,9); $_SESSION['num_to_check'][1]=rand(1,9);?>
+                    </div>                   
+                  
                     <center>
-                        <div class="input-group col-md-4 mt-3 ">
-                            <div class="input-group-prepend">
-                                <h2><span class="input-group-text"
-                                        id="inputGroupPrepend3"><?=$_SESSION['num_to_check'][0].' + '.$_SESSION['num_to_check'][1]?></span>
-                            </div>
-                            </h2>
-                            <input type="text" class="form-control" name="i_verify" id="i_verify" placeholder="ผลรวม"
-                            required>
-                            <br>                           
-                            <div class="invalid-feedback ">
-                                ระบุผลรวม
-                            </div>
-                        </div>
+                        
                         <p class="err_verify text-danger"><?=@$err_verify;?></p>
                        
                         <!--end of col-->
-
+                        <div id="html_element" data-callback="onHuman"></div>
+                        <INPUT type="hidden" id="captcha" name="captcha" value="">
                         <!--end of col-->
-                        <div class="col-auto">
+                        <div class="col-auto mt-3">
                             <button class="btn btn-lg btn-success" type="submit">ค้นหา</button>
                         </div>
                     </center>

@@ -131,6 +131,19 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1001"></script>
 
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
+    <script type="text/javascript">
+    function onHuman(response) {
+            document.getElementById('captcha').value = response;
+        }
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LdZePgUAAAAAA5sewT1jFoUrRv7E7TGBg6fN6Zs'
+        });
+      };
+    </script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API = Tawk_API || {},
