@@ -42,73 +42,67 @@
             </div>
             <div class="col-md-9 order-md-1">
 
-                <div class="bs-example">
+               
                     <div id="accordion" class="accordion">
-                        <div class="card mb-0 bg-primary">
-                            <div class="card-header">
+                        <div class="card mb-0 ">
+                            <div class="card-header bg-primary">
                                 <button class="text-white btn btn-link cool" data-toggle="collapse"
                                     data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <i class="fas fa-bullhorn"></i> ประกาศผลการสมัครสอบ <b>ชั้นมัธยมศึกษาปีที่ 1</b>
                                 </button>
                             </div>
-                            <div id="collapseOne" class="collapse " data-parent="#accordion">
+                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                 <div class="card-body">
                                     <section style="margin-top: 20px;">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p>
-                                                    <h2>
-                                                        <b><u>วันเสาร์ที่ 30 พฤษภาคม 2563</u></b>
-                                                        นักเรียนสอบเข้าศึกษาต่อระดับชั้นมัธยมศึกษาปีที่ 1 </h2>
-                                                </p>  
-                                                
-                                                <div class="text-center pt-5 h3">รายชื่อผู้สมัครสอบ</div>
+                                        <div class="">
+                                            <div class="">                                             
+                                                <div class="text-center pt-5 h3">รายชื่อผู้สมัครสอบ ม.1</div>
                                                 <div class="table-responsive">
-                                                <table class="table table-hover show_announce" >
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">เลขที่สมัคร</th>
-                                                            <th scope="col">ชื่อสกุล</th>
-                                                            <th scope="col">สถานะตรวจสอบการสมัคร</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php  foreach ($m1 as $key => $v_m1) : ?>
-                                                        <tr>
-                                                            <th scope="row">
-                                                                <?=sprintf('%04d',$v_m1->recruit_id);?></th>
-                                                            <td><?=$v_m1->recruit_prefix.$v_m1->recruit_firstName.' '.$v_m1->recruit_lastName;?>
-                                                            </td>
-                                                            <td class="h5">
-                                                                <?php if($v_m1->recruit_status == 'ผ่านการตรวจสอบ'): ?>
-                                                                <span class="text-success"><i
-                                                                        class="icofont-check-circled"></i>
-                                                                    <?=$v_m1->recruit_status?></span>
-                                                                <span class="badge badge-secondary badge-pill"><i
-                                                                        class="icofont-print"></i>
-                                                                    <a href="#" stuid="<?=$v_m1->recruit_id;?>"
-                                                                        target="_blank" data-toggle="modal"
-                                                                        data-target="#staticBackdrop"
-                                                                        class="text-white stu_id">พิมพ์ใบสมัครสอบ</a>
-                                                                    <!-- <?=base_url('control_recruitstudent/pdf/').$v_m1->recruit_id;?> -->
-                                                                </span>
-                                                                <?php else : ?>
-                                                                <span class="text-warning"><i
-                                                                        class="icofont-exclamation-circle"></i>
-                                                                    <?=$v_m1->recruit_status?></span>
-                                                                <span class="badge badge-danger badge-pill"><i
-                                                                        class="icofont-edit"></i>
-                                                                    <a href="<?=base_url('checkRegister?a=3&edit=0');?>"
-                                                                        class="text-white">กลับไปแก้ไข</a>
-                                                                </span>
-                                                                <?php endif; ?>
-                                                            </td>
-                                                        </tr>
+                                                    <table class="table table-hover show_announce">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">เลขที่สมัคร</th>
+                                                                <th style="padding-right:160px;" scope="col">ชื่อสกุล</th>
+                                                                <th scope="col">สถานะตรวจสอบการสมัคร</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?php  foreach ($m1 as $key => $v_m1) : ?>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <?=sprintf('%04d',$v_m1->recruit_id);?></th>
+                                                                <td><?=$v_m1->recruit_prefix.$v_m1->recruit_firstName.' '.$v_m1->recruit_lastName;?>
+                                                                </td>
+                                                                <td class="h5">
+                                                                    <?php if($v_m1->recruit_status == 'ผ่านการตรวจสอบ'): ?>
+                                                                    <span class="text-success"><i
+                                                                            class="icofont-check-circled"></i>
+                                                                        <?=$v_m1->recruit_status?></span>
+                                                                    <span class="badge badge-secondary badge-pill"><i
+                                                                            class="icofont-print"></i>
+                                                                        <a href="#" stuid="<?=$v_m1->recruit_id;?>"
+                                                                            target="_blank" data-toggle="modal"
+                                                                            data-target="#staticBackdrop"
+                                                                            class="text-white stu_id">พิมพ์ใบสมัครสอบ</a>
+                                                                        <!-- <?=base_url('control_recruitstudent/pdf/').$v_m1->recruit_id;?> -->
+                                                                    </span>
+                                                                    <?php else : ?>
+                                                                    <span class="text-warning"><i
+                                                                            class="icofont-exclamation-circle"></i>
+                                                                        <?=$v_m1->recruit_status?></span>
+                                                                    <span class="badge badge-danger badge-pill"><i
+                                                                            class="icofont-edit"></i>
+                                                                        <a href="<?=base_url('checkRegister?a=3&edit=0');?>"
+                                                                            class="text-white">กลับไปแก้ไข</a>
+                                                                    </span>
+                                                                    <?php endif; ?>
+                                                                </td>
+                                                            </tr>
 
-                                                        <?php endforeach; ?>
-                                                    </tbody>
-                                                </table>
-                                                                </div>
+                                                            <?php endforeach; ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
 
 
                                     </section>
@@ -116,77 +110,74 @@
                             </div>
                         </div>
 
-                        <div class="card mb-0 bg-primary">
-                            <div class="card-header">
+                        <div class="card mb-0 ">
+                            <div class="card-header bg-primary">
                                 <button class="text-white btn btn-link cool" data-toggle="collapse"
                                     data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                     <i class="fas fa-bullhorn"></i> ประกาศผลการสมัครสอบ <b>ชั้นมัธยมศึกษาปีที่ 4</b>
                                 </button>
                             </div>
-                            <div id="collapseTwo" class="collapse " data-parent="#accordion">
+                            <div id="collapseTwo" class="collapse show" data-parent="#accordion">
                                 <div class="card-body">
-                                <section style="margin-top: 20px;">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p>
-                                                    <h2>
-                                                        <b><u>วันเสาร์ที่ 30 พฤษภาคม 2563</u></b>
-                                                        นักเรียนสอบเข้าศึกษาต่อระดับชั้นมัธยมศึกษาปีที่ 4 </h2>
-                                                </p>  
-                                                
-                                                <div class="text-center pt-5 h3">รายชื่อผู้สมัครสอบ</div>
-                                                <div class="table-responsive">
-                                                <table class="table table-hover show_announce" >
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">เลขที่สมัคร</th>
-                                                            <th scope="col">ชื่อสกุล</th>
-                                                            <th scope="col">สถานะตรวจสอบการสมัคร</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php  foreach ($m4 as $key => $v_m4) : ?>
-                                                        <tr>
-                                                            <th scope="row">
-                                                                <?=sprintf('%04d',$v_m4->recruit_id);?></th>
-                                                            <td><?=$v_m4->recruit_prefix.$v_m4->recruit_firstName.' '.$v_m4->recruit_lastName;?>
-                                                            </td>
-                                                            <td class="h5">
-                                                                <?php if($v_m4->recruit_status == 'ผ่านการตรวจสอบ'): ?>
-                                                                <span class="text-success"><i
-                                                                        class="icofont-check-circled"></i>
-                                                                    <?=$v_m4->recruit_status?></span>
-                                                                <span class="badge badge-secondary badge-pill"><i
-                                                                        class="icofont-print"></i>
-                                                                    <a href="#" stuid="<?=$v_m4->recruit_id;?>"
-                                                                        target="_blank" data-toggle="modal"
-                                                                        data-target="#staticBackdrop"
-                                                                        class="text-white stu_id">พิมพ์ใบสมัครสอบ</a>
-                                                                    <!-- <?=base_url('control_recruitstudent/pdf/').$v_m4->recruit_id;?> -->
-                                                                </span>
-                                                                <?php else : ?>
-                                                                <span class="text-warning"><i
-                                                                        class="icofont-exclamation-circle"></i>
-                                                                    <?=$v_m4->recruit_status?></span>
-                                                                <span class="badge badge-danger badge-pill"><i
-                                                                        class="icofont-edit"></i>
-                                                                    <a href="<?=base_url('checkRegister?a=3&edit=0');?>"
-                                                                        class="text-white">กลับไปแก้ไข</a>
-                                                                </span>
-                                                                <?php endif; ?>
-                                                            </td>
-                                                        </tr>
+                                    <section style="margin-top: 20px;">
+                                        <div class="">
+                                            <div class="">                                              
 
-                                                        <?php endforeach; ?>
-                                                    </tbody>
-                                                </table>
-                                                                </div>
+                                                <div class="text-center pt-5 h3">รายชื่อผู้สมัครสอบ ม.4</div>
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover show_announce">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">เลขที่สมัคร</th>
+                                                                <th style="padding-right:160px;" scope="col">ชื่อสกุล</th>
+                                                                <th scope="col">สถานะตรวจสอบการสมัคร</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?php  foreach ($m4 as $key => $v_m4) : ?>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <?=sprintf('%04d',$v_m4->recruit_id);?></th>
+                                                                <td><?=$v_m4->recruit_prefix.$v_m4->recruit_firstName.' '.$v_m4->recruit_lastName;?>
+                                                                </td>
+                                                                <td class="h5">
+                                                                    <?php if($v_m4->recruit_status == 'ผ่านการตรวจสอบ'): ?>
+                                                                    <span class="text-success"><i
+                                                                            class="icofont-check-circled"></i>
+                                                                        <?=$v_m4->recruit_status?></span>
+                                                                    <span class="badge badge-secondary badge-pill"><i
+                                                                            class="icofont-print"></i>
+                                                                        <a href="#" stuid="<?=$v_m4->recruit_id;?>"
+                                                                            target="_blank" data-toggle="modal"
+                                                                            data-target="#staticBackdrop"
+                                                                            class="text-white stu_id">พิมพ์ใบสมัครสอบ</a>
+                                                                        <!-- <?=base_url('control_recruitstudent/pdf/').$v_m4->recruit_id;?> -->
+                                                                    </span>
+                                                                    <?php else : ?>
+                                                                    <span class="text-warning"><i
+                                                                            class="icofont-exclamation-circle"></i>
+                                                                        <?=$v_m4->recruit_status?></span>
+                                                                    <span class="badge badge-danger badge-pill"><i
+                                                                            class="icofont-edit"></i>
+                                                                        <a href="<?=base_url('checkRegister?a=3&edit=0');?>"
+                                                                            class="text-white">กลับไปแก้ไข</a>
+                                                                    </span>
+                                                                    <?php endif; ?>
+                                                                </td>
+                                                            </tr>
+
+                                                            <?php endforeach; ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
 
 
                                     </section>
                                 </div>
                             </div>
                         </div>
+
+
 
 
                     </div>
@@ -197,6 +188,7 @@
                         <hr>
                         <p class="mb-0">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
                     </div>
+
                 </div>
 
             </div>
@@ -210,7 +202,6 @@
 
 
 
-    </div>
     </div>
 
     </div>

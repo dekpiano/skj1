@@ -73,7 +73,8 @@ class Control_recruitstudent extends CI_Controller {
 	public function welcome_student($id=''){
 
 		$data = $this->dataAll();
-		
+		$data['title'] = 'ลงทะเบียนสำเร็จแล้ว';
+		$data['description'] = 'ลงทะเบียนสำเร็จแล้ว';
 		//print_r($id);
 		if ($id == 'Succeed') {
 			$this->load->view('user/layout/header.php',$data);
@@ -114,6 +115,9 @@ class Control_recruitstudent extends CI_Controller {
 
 	public function reg_insert()
 	{	
+		$status = $this->recaptcha_google($this->input->post('captcha')); 
+        if ($status['success']) {
+
 		//print_r($this->input->post('recruit_idCard'));
 		$data['chk_stu'] = $this->db->where('recruit_idCard',$this->input->post('recruit_idCard'))->get('tb_recruitstudent')->result();
 		if (count($data['chk_stu']) > 0) {
@@ -185,8 +189,6 @@ class Control_recruitstudent extends CI_Controller {
 				$rand_name = $this->input->post('recruit_idCard').rand();
 				$data_insert += array('recruit_copyAddress' => $rand_name.'.'.$imageFileType);
 					$this->reg_img($foder,$do_upload,$imageFileType,$rand_name,$data_insert);
-				
-				
 			}
 
 			//print_r($data_insert);
@@ -197,8 +199,11 @@ class Control_recruitstudent extends CI_Controller {
 				redirect('RegStudent/welcome/Succeed');
 				}
 
-		}
+			}
 		//exit();
+		}else{
+
+		}
 	}
 
 
@@ -236,7 +241,6 @@ class Control_recruitstudent extends CI_Controller {
 		$data = $this->dataAll();
 		$data['title'] = 'ตรวจสอบและแกไขการสมัคร';
 		$data['description'] = 'ตรวจสอบและแกไขการสมัคร';
-
 		 $this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/recruitstudent/check_student.php');
 		$this->load->view('user/layout/footer.php');

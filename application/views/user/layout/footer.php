@@ -130,7 +130,6 @@
 <script src="<?=base_url();?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1001"></script>
-
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
     </script>
@@ -174,8 +173,16 @@ var Tawk_API = Tawk_API || {},
 
 </body>
 <script>
-$(document).ready(function() {
 
+$(document).ready(function() {
+    setTimeout(function() {
+        $(".se-pre-con").fadeOut("slow");
+    }, 500);
+ 
+    $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
     $('[data-toggle="tooltip"]').tooltip();
     $(":input").inputmask();
 
@@ -211,7 +218,8 @@ $(document).ready(function() {
         });
     });
 });
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+
+
 (function() {
     'use strict';
 

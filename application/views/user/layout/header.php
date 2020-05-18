@@ -21,7 +21,7 @@
     <meta property="og:title" content="<?=$title?> | SKJ" />
     <meta property="og:description" content="<?=$description;?>" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="<?=@$news[0]->news_img == '' ? base_url('asset/user/img/banner_main.jpg') : base_url('uploads/news/').$news[0]->news_img;?>" />
     <link rel="image_src" href="images/content/content-37.png" />
 
 
@@ -83,7 +83,7 @@ header {
     float: left;
     position: sticky;
     top: 0;
-    z-index: 999999;
+    z-index: 5;
 }
 
 #breadcrumbs {
@@ -101,9 +101,29 @@ header {
 .img-hover-zoom--basic:hover img {
     transform: scale(1.5);
 }
+
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(<?=base_url()?>asset/user/img/loder.gif) center no-repeat #fff;
+}
+
 </style>
 
 <body style="background-color: #f8f9fa;">
+  <!-- LOADER -->
+  <div class="se-pre-con"></div>
+
+    <!-- end loader -->
 
     <div class="container d-none d-sm-block d-lg-block ">
     

@@ -45,6 +45,17 @@ $(document).ready(function() {
     });
 
     $('.show_announce').DataTable({
+      autoWidth: false,
+      "columnDefs": [
+        { 
+          "targets": 0,
+          "width": "50px"
+        },
+        { 
+          "targets": 1,
+          "padding-right": "160px"
+        }
+      ],
       "order": [
           [0, "asc"]
       ]

@@ -1,4 +1,5 @@
-<div class="section layout_padding">
+<section class="br min-vh-100">
+<div class=" section layout_padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -54,16 +55,11 @@
                     </div>
 
                 </div>
-                <hr>
-                <div class="row align-items-center">
-                    <div class="col-md-6 mt-4 animated fadeInLeftBig">
-                        <img src="<?=base_url('asset/img/registudent/check.PNG')?>" alt="" class="img-fluid">
-
-                    </div>
-                  
-                </div>
+        
+     
             </div>
 
         </div>
     </div>
 </div>
+</section>
