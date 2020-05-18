@@ -68,7 +68,7 @@
                             <label for="pers_prefix">ชื่อคำนำหน้า</label>
                             <select class="custom-select d-block w-100"  required name="pers_prefix" id="pers_prefix">
                               <option value="">เลือก...</option>
-                              <?php $data_prefix = array('นาย','นาง','นางสาว','ว่าที่ร้อยตรี','ว่าที่ร้อยตรีหญิง');
+                              <?php $data_prefix = array('นาย','นาง','นางสาว','ว่าที่ร้อยตรี','ว่าที่ร้อยตรีหญิง','Mr.','Mrs.','Miss.');
                               foreach ($data_prefix as $key => $v_prefix):?>
                               <?php if($action != 'insert_personnel') :?>
                               <option <?=$pers[0]->pers_prefix == $v_prefix ? 'selected' : '' ;?> value="<?=$v_prefix;?>"><?=$v_prefix;?></option>

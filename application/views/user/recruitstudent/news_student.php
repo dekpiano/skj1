@@ -30,10 +30,10 @@
                         <h3 class="text-center">จำนวนผู้สมัคร</h3>
                         <div class="row text-center">
                             <div class="col-md-6">
-                                <h1> ม.1 <span class="counter">102</span> คน</h1>
+                                <h1> ม.1 <span class="counter">103</span> คน</h1>
                             </div>
                             <div class="col-md-6">
-                                <h1> ม.4 <span class="counter">78</span> คน</h1>
+                                <h1> ม.4 <span class="counter">59</span> คน</h1>
                             </div>
                         </div>
                     </div>
@@ -41,9 +41,9 @@
                 <hr />
 
                 <h3><i class="icofont-megaphone"></i> ประชาสัมพันธ์</h3>
-                <a href="<?=base_url('Announce?a=4');?>">
+                <a href="https://skj.ac.th/news/newsDetail/news_009">
                     <div class="bs-callout bs-callout-warning bg-white">
-                        <h4><i class="icofont-notepad"></i> ประกาศรายชื่อผู้สมัครนักเรียนโควต้า นักกีฬา </h4>
+                        <h4><i class="icofont-notepad"></i> ประกาศรายชื่อผู้สมัครนักเรียน ม.1  ม.4 และโควต้า (รอบที่ 1) </h4>
                         ลงวันที่ 18 พ.ค.2563
                     </div>
                 </a>

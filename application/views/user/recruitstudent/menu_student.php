@@ -23,22 +23,24 @@
     </div>
 
     <div class="list-group mt-5  ">
-        <a href="<?=base_url('Admissions?a=1');?>"
+        <a href="https://skj.ac.th/news/newsDetail/news_009"
             class="list-group-item list-group-item-action   border-success text-success <?=$active == 5 ? 'active' : ''?> ">
             <i class="icofont-bullhorn"></i> ประกาศรายชื่อ <b>ผู้มีสิทธ์สอบและห้องสอบ</b>
-        </a>
-        <a href="<?=base_url('Admissions?a=1');?>"
-            class="list-group-item list-group-item-action  border-success text-success <?=$active == 5 ? 'active' : ''?> ">
-            <i class="icofont-bullhorn"></i> ประกาศรายชื่อ <b>นักเรียนโควตา นักกีฬา</b>
-        </a>
+        </a>      
     </div>
 </div>
 <!-- animated  heartBeat delay-1s -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom  d-md-none  d-xl-none d-lg-none">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm fixed-top  d-md-none  d-xl-none d-lg-none ">
+    <button class="btn-outline-success navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
         aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        เมนู
     </button>
+    <a class="navbar-brand text-center" href="#">
+        <img src="<?=base_url('asset/user/img/logo_fav.png')?>" width="30" height="30" class="d-inline-block align-top"
+            alt="" loading="lazy">
+            ระบบรับสมัครนักเรียน
+    </a>
+    
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -61,14 +63,17 @@
             </div>
 
             <div class="list-group mt-5  ">
-                <a href="<?=base_url('Admissions?a=1');?>"
+                <a href="https://skj.ac.th/news/newsDetail/news_009"
                     class="list-group-item list-group-item-action   border-success text-success <?=$active == 5 ? 'active' : ''?> ">
                     <i class="icofont-bullhorn"></i> ประกาศรายชื่อ <b>ผู้มีสิทธ์สอบและห้องสอบ</b>
-                </a>
-                <a href="<?=base_url('Admissions?a=1');?>"
-                    class="list-group-item list-group-item-action  border-success text-success <?=$active == 5 ? 'active' : ''?> ">
-                    <i class="icofont-bullhorn"></i> ประกาศรายชื่อ <b>นักเรียนโควตา นักกีฬา</b>
-                </a>
+                </a>               
+            </div>
+
+            <div class="list-group mt-5  ">
+                <a href="<?=base_url()?>"
+                    class="list-group-item list-group-item-action  text-center ">
+                    กลับไปเว็บไซต์หลัก
+                </a>               
             </div>
         </ul>
     </div>

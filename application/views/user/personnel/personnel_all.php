@@ -1,13 +1,24 @@
-<section id="breadcrumbs" class="breadcrumbs team">
+<div class="section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full center">
+                        <div class="heading_main text_align_center text-center">
+                            <!-- <img style="width: 150px;" src="<?=base_url('asset/user/img/Logo-SKJ.png');?>"> -->
+                            <h2 class="">
+                            บุคลากร <span class="theme_color"> <?=$this->uri->segment(2);?> </span>
+                            </h2>
+                            <p class="large">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<section class=" team">
     <!-- ======= Team Section ======= -->
       <div class="container">
-        
-        <div class="section-title">
-          <h2>บุคลากร <?=$this->uri->segment(2);?></h2>
-          <p>โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
-        </div>
-
-        <?php  $img_p = base_url('uploads/personnel/');
+              <?php  $img_p = base_url('uploads/personnel/');
               $img_e = base_url('asset/img/user-icon.svg');
         foreach ($pers as $key => $v_pers) :
               if($v_pers->posi_name == 'ผู้อำนวยการโรงเรียน'): ?>
