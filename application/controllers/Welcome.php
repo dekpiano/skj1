@@ -27,6 +27,9 @@ class Welcome extends CI_Controller {
 		$this->load->view('user/layout/footer.php');
 	}
 
-
+	public function not_404()
+	{
+		$this->load->view('errors/404.php');
+	}
 	
 }

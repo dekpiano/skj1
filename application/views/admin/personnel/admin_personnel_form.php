@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
-                                        <label for="pers_britday">วันเกิด</label>
+                                        <label for="pers_britday">วันเกิด เดือน ปี พ.ศ.</label>
                                         <?php $britday =  @$pers[0]->pers_britday; 
                              $dated = date("d-m-", strtotime($britday));
                              $datey = date("Y", strtotime($britday))+543;
@@ -135,7 +135,7 @@
                                             </div>
                                             <input autocomplete="off" type="text" class="form-control "
                                                 id="pers_britday" name="pers_britday" placeholder=""
-                                                value="<?=$action == 'insert_personnel' ? '' : $d;?>" required="">
+                                                value="<?=$action == 'insert_personnel' ? '' : $d;?>" required="" data-inputmask="'mask': '99-99-9999'">
                                             <div class="invalid-feedback">
                                                 กรุณาเลือกวันเกิด
                                             </div>
@@ -148,9 +148,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                                             </div>
-                                            <input type="text" class="form-control" id="pers_phone" name="pers_phone"
-                                                placeholder=""
-                                                value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_phone;?>">
+                                            <input type="text" class="form-control" id="pers_phone" name="pers_phone"   placeholder="" data-inputmask="'mask': '99-9999-9999'" value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_phone;?>">
                                         </div>
                                         <div class="invalid-feedback">
                                             กรุณากรอกเบอร์โทรศัพท์

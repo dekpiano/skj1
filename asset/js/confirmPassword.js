@@ -27,7 +27,7 @@ $(document).on('keyup','#confrim_password',function(){
 });
 
 $(document).on('click','#submit_password',function(){ 
-    $.post('../admin/Control_admin_personnel/change_pass', { password:$('#confrim_password').val() }, function(response) {
+    $.post('admin/Control_admin_personnel/change_pass', { password:$('#confrim_password').val() }, function(response) {
         console.log("Response: "+response);
         // Log the response to the console
         if(response == 1){

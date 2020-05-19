@@ -230,7 +230,8 @@ window.history.back();
 <?php
 			}
 		}else{
-					$data = array(	
+			
+						$data = array(	
 						'pers_prefix' => $this->input->post('pers_prefix'),
 						'pers_firstname' => $this->input->post('pers_firstname'),
 						'pers_lastname' => $this->input->post('pers_lastname'),
@@ -263,28 +264,27 @@ window.history.back();
 	}
 
 	public function chang_date_thai($value)
-	{
-		
-		$dated = date("-m-d", strtotime($value));
-        $datey = date("Y", strtotime($value))-543;
-      	return   $d =  $datey.$dated;
+	{		
+		$date  = explode(" ",$value);
+		list($d,$m,$y) = explode("-",$date[0]);			
+		$date1 = $d.$m.($y-543);
+		return $date1;	
 	}
 
 	public function chang_date_eng($value)
 	{
+		$date  = explode(" ",$value);
+		list($y,$m,$d) = explode("-",$date[0]);			
+		$date1 = $d.$m.($y+543);
+		return $date1;
 		
-		$dated = date("-m-d", strtotime($value));
-        $datey = date("Y", strtotime($value))+543;
-      	return   $d =  $datey.$dated;
 	}
 	
 	public function reset_password($id)
 	{	
 		$data = $this->db->where('pers_id',$id)->get('tb_personnel')->result();
-		$date_thai = date("dmY",strtotime($this->chang_date_eng($data[0]->pers_britday)));
-		//print_r();
-
-		//exit();
+		$date_thai = $this->chang_date_eng($data[0]->pers_britday);
+		//print_r($date_thai);exit();
 		$reset = array('pers_password' => md5(md5($date_thai)));
 		$this->Admin_model_personnel->personnel_resetpassword($reset,$id);
 		redirect('admin/control_admin_personnel/edit_personnel/'.$id);
