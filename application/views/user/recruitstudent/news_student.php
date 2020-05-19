@@ -30,10 +30,10 @@
                         <h3 class="text-center">จำนวนผู้สมัคร</h3>
                         <div class="row text-center">
                             <div class="col-md-6">
-                                <h1> ม.1 <span class="counter">103</span> คน</h1>
+                                <h1> ม.1 <span class="counter"><?=$m1;?></span> คน</h1>
                             </div>
                             <div class="col-md-6">
-                                <h1> ม.4 <span class="counter">59</span> คน</h1>
+                                <h1> ม.4 <span class="counter"><?=$m4;?></span> คน</h1>
                             </div>
                         </div>
                     </div>

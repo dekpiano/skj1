@@ -13,9 +13,6 @@
         </div>
     </div>
 
-
-
-
     <div class="container">
         <div class="row py-5 mt-4 align-items-center">
             <!-- For Demo Purpose -->
@@ -63,7 +60,7 @@
                             <button type="submit" class="btn btn-primary btn-block py-2">
                                 <span class="font-weight-bold"><i class="icofont-login"></i> Login</span>
                             </button>
-
+                            <?=$this->session->flashdata('msgerr');?>
                         </div>
                 </form>
             </div>

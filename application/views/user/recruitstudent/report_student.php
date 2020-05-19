@@ -48,15 +48,15 @@
                             <div class="card-header bg-primary">
                                 <button class="text-white btn btn-link cool" data-toggle="collapse"
                                     data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="fas fa-bullhorn"></i> ประกาศผลการสมัครสอบ <b>ชั้นมัธยมศึกษาปีที่ 1</b>
+                                    <i class="fas fa-bullhorn"></i> ประกาศผลการสมัครสอบ <b>ชั้นมัธยมศึกษาปีที่ 1  (รอบที่ 1)</b>
                                 </button>
                             </div>
                             <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                 <div class="card-body">
-                                    <section style="margin-top: 20px;">
+                                    <section >
                                         <div class="">
                                             <div class="">                                             
-                                                <div class="text-center pt-5 h3">รายชื่อผู้สมัครสอบ ม.1</div>
+                                                <div class="text-center h3">รายชื่อผู้สมัครสอบ ม.1 (รอบที่ 1)</div>
                                                 <div class="table-responsive">
                                                     <table class="table table-hover show_announce">
                                                         <thead>
@@ -114,16 +114,16 @@
                             <div class="card-header bg-primary">
                                 <button class="text-white btn btn-link cool" data-toggle="collapse"
                                     data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    <i class="fas fa-bullhorn"></i> ประกาศผลการสมัครสอบ <b>ชั้นมัธยมศึกษาปีที่ 4</b>
+                                    <i class="fas fa-bullhorn"></i> ประกาศผลการสมัครสอบ <b>ชั้นมัธยมศึกษาปีที่ 4 (รอบที่ 1)</b>
                                 </button>
                             </div>
                             <div id="collapseTwo" class="collapse show" data-parent="#accordion">
                                 <div class="card-body">
-                                    <section style="margin-top: 20px;">
+                                    <section style="">
                                         <div class="">
                                             <div class="">                                              
 
-                                                <div class="text-center pt-5 h3">รายชื่อผู้สมัครสอบ ม.4</div>
+                                                <div class="text-center h3">รายชื่อผู้สมัครสอบ ม.4 (รอบที่ 1)</div>
                                                 <div class="table-responsive">
                                                     <table class="table table-hover show_announce">
                                                         <thead>

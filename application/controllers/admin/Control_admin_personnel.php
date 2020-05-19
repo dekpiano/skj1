@@ -20,8 +20,20 @@ class Control_admin_personnel extends CI_Controller {
 	{	
 		$data['title'] = $this->title;
 		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
-		$this->db->select('*');
+		$this->db->select('tb_personnel.pers_id, 
+		tb_personnel.pers_prefix, 
+		tb_personnel.pers_firstname, 
+		tb_personnel.pers_lastname, 
+		tb_personnel.pers_position, 
+		tb_personnel.pers_learning, 
+		tb_position.posi_name, 
+		tb_personnel.pers_username, 
+		tb_personnel.pers_phone, 
+		tb_learning.lear_namethai,
+		tb_personnel.pers_img');
 		$this->db->from('tb_personnel');
+		$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
+		$this->db->join('tb_learning','tb_personnel.pers_learning = tb_learning.lear_id','LEFT');
 		$this->db->order_by('pers_id','DESC');
 		$data['pers'] =	$this->db->get()->result();
 
@@ -196,7 +208,9 @@ window.history.back();
 						'pers_groupleade' => $this->input->post('pers_groupleade'),
 						'pers_workother_id' => implode("|",$this->input->post('pers_workother_id')),
 						'pers_username' => $this->input->post('pers_username'),
-						'pers_img' => $data['upload_data']['file_name']
+						'pers_img' => $data['upload_data']['file_name'],
+						'pers_dataUpdate' => date('Y-m-d H:i:s'),
+						'pers_userEdit' => $this->session->userdata('login_id')
 					);
 					if($this->Admin_model_personnel->personnel_update($data) == 1){
 						$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'แก้ไขข้อมูลสำเร็จ'));
@@ -228,7 +242,9 @@ window.history.back();
 						'pers_learning' => $this->input->post('pers_learning'),
 						'pers_groupleade' => $this->input->post('pers_groupleade'),
 						'pers_workother_id' => implode("|",$this->input->post('pers_workother_id')),
-						'pers_username' => $this->input->post('pers_username')
+						'pers_username' => $this->input->post('pers_username'),
+						'pers_dataUpdate' => date('Y-m-d H:i:s'),
+						'pers_userEdit' => $this->session->userdata('login_id')
 					);
 					if($this->Admin_model_personnel->personnel_update($data) == 1){
 						$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'แก้ไขข้อมูลสำเร็จ'));
@@ -249,11 +265,37 @@ window.history.back();
 	public function chang_date_thai($value)
 	{
 		
-			$dated = date("-m-d", strtotime($value));
-         $datey = date("Y", strtotime($value))-543;
+		$dated = date("-m-d", strtotime($value));
+        $datey = date("Y", strtotime($value))-543;
+      	return   $d =  $datey.$dated;
+	}
+
+	public function chang_date_eng($value)
+	{
+		
+		$dated = date("-m-d", strtotime($value));
+        $datey = date("Y", strtotime($value))+543;
       	return   $d =  $datey.$dated;
 	}
 	
+	public function reset_password($id)
+	{	
+		$data = $this->db->where('pers_id',$id)->get('tb_personnel')->result();
+		$date_thai = date("dmY",strtotime($this->chang_date_eng($data[0]->pers_britday)));
+		//print_r();
+
+		//exit();
+		$reset = array('pers_password' => md5(md5($date_thai)));
+		$this->Admin_model_personnel->personnel_resetpassword($reset,$id);
+		redirect('admin/control_admin_personnel/edit_personnel/'.$id);
+	}
+
+	public function change_pass()
+	{
+		$reset = array('pers_password' => md5(md5($this->input->post('password'))));
+		echo $this->Admin_model_personnel->personnel_changepassword($reset);
+		
+	}
 
 }
 

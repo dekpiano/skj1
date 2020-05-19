@@ -46,11 +46,18 @@ class Control_recruitstudent extends CI_Controller {
 
 	public function index()
 	{
-		//redirect('CloseStudent'); 
+		
 		$data = $this->dataAll();
 		$data['title'] = self::$title;
 		$data['description'] = self::$description;
-		//$this->session->sess_destroy();
+		
+		$data['m1'] = $this->db->select('recruit_id,recruit_regLevel,recruit_status,recruit_tpyeRoom,recruit_prefix,recruit_firstName,recruit_lastName')
+		->where('recruit_regLevel','1')
+		->get('tb_recruitstudent')->num_rows();
+		$data['m4'] = $this->db->select('recruit_id,recruit_regLevel,recruit_status,recruit_tpyeRoom,recruit_prefix,recruit_firstName,recruit_lastName')
+		->where('recruit_regLevel','4')
+		->get('tb_recruitstudent')->num_rows();
+
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/recruitstudent/news_student.php');
 		$this->load->view('user/layout/footer.php');
@@ -206,14 +213,11 @@ class Control_recruitstudent extends CI_Controller {
 		}
 	}
 
-
-
-	
 	public function reg_img($foder,$do_upload,$imageFileType,$rand_name,$data_insert)
 	{
 		
 		 $config['upload_path']   = 'uploads/recruitstudent/m'.$this->input->post('recruit_regLevel').'/'.$foder.'/'; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
-         $config['allowed_types'] = 'gif|jpg|png'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
+         $config['allowed_types'] = '*'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
          $config['max_size']      = 0; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
          $config['max_width']     = 0; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
          $config['max_height']    = 0;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
@@ -275,33 +279,6 @@ class Control_recruitstudent extends CI_Controller {
 			$this->load->view('user/recruitstudent/check_student.php');
 			$this->load->view('user/layout/footer.php');
         }
-		
-		
-		// if($this->input->post('i_verify')!=@array_sum($_SESSION['num_to_check'])){
-		// 	//print_r(array_sum($_SESSION['num_to_check'])); exit();	
-		// 	$_SESSION['num_to_check'][0]=rand(1,9);
-		// 	$_SESSION['num_to_check'][1]=rand(1,9);
-			
-		// 	$data['search_stu'] = $this->input->post('search_stu');
-		// 	$this->load->view('user/layout/header.php',$data);
-		// 	$this->load->view('user/recruitstudent/check_student.php');
-		// 	$this->load->view('user/layout/footer.php');
-		// }else{
-		
-		// 	$data['chk_stu'] = $this->db->where('recruit_idCard',$this->input->post('search_stu'))->get('tb_recruitstudent')->result();
-		// 	if (count($data['chk_stu']) <= 0 ) {
-		// 		$data['alert_verify'] = array('1','ไม่มีข้อมูลในระบบ หรือ ยังไม่ได้ลงทะเบียนเรียน','warning');
-		// 		$this->load->view('user/layout/header.php',$data);
-		// 		$this->load->view('user/recruitstudent/check_student.php');
-		// 		$this->load->view('user/layout/footer.php');
-		// 		}else{
-		// 			$_SESSION['num_to_check'][0]=rand(1,9);
-		// 			$_SESSION['num_to_check'][1]=rand(1,9);
-		// 			$this->load->view('user/layout/header.php',$data);
-		// 			$this->load->view('user/recruitstudent/datauser_student.php');
-		// 			$this->load->view('user/layout/footer.php');
-		// 	}	
-		// } 
 	}
 
 
@@ -421,7 +398,7 @@ class Control_recruitstudent extends CI_Controller {
 	{
 		if($file_check == 0 ){
 		 $config['upload_path']   = 'uploads/recruitstudent/m'.$this->input->post('recruit_regLevel').'/'.$foder.'/'; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
-         $config['allowed_types'] = 'gif|jpg|png'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
+         $config['allowed_types'] = '*'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
          $config['max_size']      = 0; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
          $config['max_width']     = 0; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
          $config['max_height']    = 0;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
@@ -430,7 +407,6 @@ class Control_recruitstudent extends CI_Controller {
 			$this->upload->initialize($config);
 			if($this->upload->do_upload($do_upload))
 			{
-				
 				$image_data = $this->upload->data();
 				
 				// print_r($data);
@@ -473,11 +449,12 @@ class Control_recruitstudent extends CI_Controller {
 
 		$data['m1'] = $this->db->select('recruit_id,recruit_regLevel,recruit_status,recruit_tpyeRoom,recruit_prefix,recruit_firstName,recruit_lastName')
 		->where('recruit_regLevel','1')
+		->where('recruit_date <=','2020-05-12')
 		->get('tb_recruitstudent')->result();
 		$data['m4'] = $this->db->select('recruit_id,recruit_regLevel,recruit_status,recruit_tpyeRoom,recruit_prefix,recruit_firstName,recruit_lastName')
 		->where('recruit_regLevel','4')
+		->where('recruit_date <=','2020-05-12')
 		->get('tb_recruitstudent')->result();
-		
 			$this->load->view('user/layout/header.php',$data);
 			$this->load->view('user/recruitstudent/report_student.php');
 			$this->load->view('user/layout/footer.php');		

@@ -23,4 +23,14 @@ class Admin_model_personnel extends CI_Model
 		return 	$this->db->delete('tb_personnel');
 	}
 
+	public function personnel_resetpassword($data,$id)
+	{
+		return $this->db->update('tb_personnel',$data,"pers_id='".$id."'");
+	}
+
+	public function personnel_changepassword($data)
+	{
+		return $this->db->update('tb_personnel',$data,"pers_id='".$this->session->userdata('login_id')."'");
+	}
+
 }

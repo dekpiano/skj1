@@ -1,4 +1,4 @@
-<section  class="content-area" style="padding-top: 159px;">
+<section  class="content-area" style="">
 	
 	
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >

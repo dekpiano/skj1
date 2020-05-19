@@ -42,7 +42,7 @@ class Control_login extends CI_Controller {
 		if ($this->input->post('username') == 'admin') {
 
 			$username = $this->input->post('username');
-			$password = $this->input->post('password');
+			$password = md5(md5($this->input->post('password')));
 			
 			if($this->input->server('REQUEST_METHOD') == TRUE){
 				if($this->Model_login->record_count_admin($username, $password) == 1)
@@ -54,14 +54,18 @@ class Control_login extends CI_Controller {
 				}
 				else
 				{
-					$this->session->set_flashdata(array('msgerr'=> '<p class="login-box-msg" style="color:red;">ชื่อผู้ใช้หรือรหัสผ่านผิดพลาด!</p>'));
-					redirect('login', 'refresh');
+					$this->session->set_flashdata(array('msgerr'=> '<p class="login-box-msg text-center mt-3" style="color:red;" >ชื่อผู้ใช้ หรือ รหัส ไม่ถูกต้อง!</p>'));
+					$data = $this->dataAll();
+					$this->load->view('user/layout/header.php',$data);
+					$this->load->view('login/login_main.php');
+					$this->load->view('user/layout/footer.php');
 				}
 			}
 
 		}else{
 			$username = $this->input->post('username');
 			$password = md5(md5($this->input->post('password')));
+
 			if($this->input->server('REQUEST_METHOD') == TRUE){
 				if($this->Model_login->record_count($username, $password) == 1)
 				{
@@ -71,8 +75,11 @@ class Control_login extends CI_Controller {
 				}
 				else
 				{
-					$this->session->set_flashdata(array('msgerr'=> '<p class="login-box-msg" style="color:red;">ชื่อผู้ใช้หรือรหัสผ่านผิดพลาด!</p>'));
-					redirect('login', 'refresh');
+					$this->session->set_flashdata(array('msgerr'=> '<p class="login-box-msg text-center mt-3" style="color:red;" >ชื่อผู้ใช้ หรือ รหัส ไม่ถูกต้อง!</p>'));
+					$data = $this->dataAll();
+					$this->load->view('user/layout/header.php',$data);
+					$this->load->view('login/login_main.php');
+					$this->load->view('user/layout/footer.php');
 				}
 			}
 		}

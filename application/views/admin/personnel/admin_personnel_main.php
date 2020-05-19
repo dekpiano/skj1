@@ -32,8 +32,8 @@
                     <tr>
                       <td><img style="width: 100px;" src="<?=base_url()?>uploads/personnel/<?=$v_personnel->pers_img;?>" class="img-fluid" alt="Responsive image"></td>
                       <td><?=$v_personnel->pers_prefix.$v_personnel->pers_firstname.' '.$v_personnel->pers_lastname;?></td>
-                      <td><?=$v_personnel->pers_position;?></td>
-                      <td><?=$v_personnel->pers_learning;?></td>
+                      <td><?=$v_personnel->posi_name;?></td>
+                      <td><?=$v_personnel->lear_namethai;?></td>
                       <td><?=$v_personnel->pers_username;?></td>
                       <td><?=$v_personnel->pers_phone;?></td>
                       <td>
@@ -47,9 +47,6 @@
               </div>
             </div>
           </div>
-
-        
-
         </div>
         <!-- /.container-fluid -->
 
