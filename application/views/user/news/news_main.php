@@ -36,7 +36,7 @@
                     height: 184px;
                 }
              }
-             /* โทรศัพท์ */
+             /* โทรศัพท์ 55*/
              @media (max-width: 991.98px) {
                 img.img_news {
                     height: 275px;                    
