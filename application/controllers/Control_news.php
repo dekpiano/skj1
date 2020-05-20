@@ -40,10 +40,19 @@ class Control_news extends CI_Controller {
 
 
 	public function count_views($id='')
-	{
-		
+	{		
 		  $s = $this->model_news->update_count_view($id);
 		 //echo '<pre>';print_r($s);
+	}
+
+	public function news_all()
+	{
+		$data = $this->dataAll();
+		$data['news'] =	$this->db->order_by("news_date", "desc")->get('tb_news')->result(); 
+
+		$this->load->view('user/layout/header.php',$data);
+		$this->load->view('user/news/news_all.php');
+		$this->load->view('user/layout/footer.php');
 	}
 
 }

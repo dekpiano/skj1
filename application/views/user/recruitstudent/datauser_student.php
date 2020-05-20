@@ -13,7 +13,7 @@ label {
 </style>
 
 <section class="br min-vh-100">
-    <div class="section layout_padding">
+    <div class="section ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

@@ -130,19 +130,35 @@
 <script src="<?=base_url();?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1001"></script>
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
-    </script>
-    <script type="text/javascript">
-    function onHuman(response) {
-            document.getElementById('captcha').value = response;
-        }
-      var onloadCallback = function() {
-        grecaptcha.render('html_element', {
-          'sitekey' : '6LdZePgUAAAAAA5sewT1jFoUrRv7E7TGBg6fN6Zs'
-        });
-      };
-    </script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+</script>
+<script type="text/javascript">
+$('.counter').counterUp({
+    delay: 10,
+    time: 1000
+});
+$('[data-toggle="tooltip"]').tooltip();
+$(":input").inputmask();
+var nav = $('.navbar-expand-md');
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 125) {
+        nav.addClass("f-nav");
+    } else {
+        nav.removeClass("f-nav");
+    }
+});
+
+
+function onHuman(response) {
+    document.getElementById('captcha').value = response;
+}
+var onloadCallback = function() {
+    grecaptcha.render('html_element', {
+        'sitekey': '6LdZePgUAAAAAA5sewT1jFoUrRv7E7TGBg6fN6Zs'
+    });
+};
+</script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API = Tawk_API || {},
@@ -173,18 +189,10 @@ var Tawk_API = Tawk_API || {},
 
 </body>
 <script>
-
 $(document).ready(function() {
     setTimeout(function() {
         $(".se-pre-con").fadeOut("slow");
     }, 500);
- 
-    $('.counter').counterUp({
-                delay: 10,
-                time: 1000
-            });
-    $('[data-toggle="tooltip"]').tooltip();
-    $(":input").inputmask();
 
     $(document).on('click', '.stu_id', function() {
         var stuid = $(this).attr('stuid');
@@ -259,21 +267,24 @@ $("#recruit_img").change(function() {
     readURL(this);
 });
 
+// breakpoint and up  
+$(window).resize(function() {
+    if ($(window).width() >= 980) {
 
-$('#container').imagesLoaded()
-    .always(function(instance) {
-        console.log('all images loaded');
-    })
-    .done(function(instance) {
-        console.log('all images successfully loaded');
-    })
-    .fail(function() {
-        console.log('all images loaded, at least one is broken');
-    })
-    .progress(function(instance, image) {
-        var result = image.isLoaded ? 'loaded' : 'broken';
-        console.log('image is ' + result + ' for ' + image.img.src);
-    });
+        // when you hover a toggle show its dropdown menu
+        $(".navbar .dropdown-toggle").hover(function() {
+            $(this).parent().toggleClass("show");
+            $(this).parent().find(".dropdown-menu").toggleClass("show");
+        });
+
+        // hide the menu when the mouse leaves the dropdown
+        $(".navbar .dropdown-menu").mouseleave(function() {
+            $(this).removeClass("show");
+        });
+
+        // do something here
+    }
+});
 </script>
 
 </html>

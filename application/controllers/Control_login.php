@@ -28,12 +28,28 @@ class Control_login extends CI_Controller {
 
 	public function Login_main()
 	{
-		$this->session->sess_destroy();
-		$data = $this->dataAll();
+		if(!empty(get_cookie('username')) && !empty(get_cookie('password')) ){
+			$username = get_cookie('username');
+			$password = get_cookie('password');
+			if($this->Model_login->record_count($username, $password) == 1)
+				{
+					$result = $this->Model_login->fetch_user_login($username, $password);
+					$this->session->set_userdata(array('login_id' => $result->pers_id,'fullname'=> $result->pers_prefix.$result->pers_firstname.' '.$result->pers_lastname,'status'=> 'user','permission_menu' => $result->pers_workother_id ,'user_img' => $result->pers_img));
+
+					set_cookie('username',$username,'3600'); 
+					set_cookie('password',$password,'3600');
+					 redirect('admin');
+				}
+		}else{
+			$data = $this->dataAll();
 
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('login/login_main.php');
 		$this->load->view('user/layout/footer.php');
+		}
+		
+
+		
 	}
 
 	public function validlogin()
@@ -70,7 +86,10 @@ class Control_login extends CI_Controller {
 				if($this->Model_login->record_count($username, $password) == 1)
 				{
 					$result = $this->Model_login->fetch_user_login($username, $password);
-					$this->session->set_userdata(array('login_id' => $result->pers_id,'fullname'=> $result->pers_prefix.$result->pers_firstname.' '.$result->pers_lastname,'status'=> 'user','permission_menu' => $result->pers_workother_id));
+					$this->session->set_userdata(array('login_id' => $result->pers_id,'fullname'=> $result->pers_prefix.$result->pers_firstname.' '.$result->pers_lastname,'status'=> 'user','permission_menu' => $result->pers_workother_id ,'user_img' => $result->pers_img));
+
+					set_cookie('username',$username,'3600'); 
+					set_cookie('password',$password,'3600');
 					 redirect('admin');
 				}
 				else
@@ -90,6 +109,8 @@ class Control_login extends CI_Controller {
 
 	public function logout()
 	{
+		delete_cookie('username'); 
+		delete_cookie('password'); 
 		$this->session->sess_destroy();
 		redirect('login', 'refresh');
 	}

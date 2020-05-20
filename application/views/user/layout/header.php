@@ -40,7 +40,7 @@
     <link href="<?=base_url()?>/asset/user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/vendor/icofont/icofont.min.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>/asset/user/vendor/animate.css/animate.min.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="<?=base_url();?>asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -79,12 +79,12 @@ html {
     pointer-events: none;
 }
 
-header {
-    width: 100%;
-    float: left;
-    position: sticky;
+.f-nav{  /* To fix main menu container */
+    z-index: 99;
+    position: fixed;
+    left: 0;
     top: 0;
-    z-index: 5;
+    width: 100%;
 }
 
 #breadcrumbs {
@@ -126,6 +126,100 @@ if it's not present, don't show loader */
     z-index: 9999;
     background: url(<?=base_url()?>asset/user/img/loder.gif) center no-repeat #fff;
 }
+
+/* adds some margin below the link sets  */
+.navbar .dropdown-menu div[class*="col"] {
+    margin-bottom: 1rem;
+}
+
+.navbar .dropdown-menu {
+    border: none;
+    background: #EEE;
+}
+
+/* breakpoint and up - mega dropdown styles */
+@media screen and (min-width: 992px) {
+
+    /* remove the padding from the navbar so the dropdown hover state is not broken */
+    .navbar {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
+    .navbar .nav-item {
+        padding: .5rem .5rem;
+        margin: 0 .25rem;
+    }
+
+    /* makes the dropdown full width  */
+    .navbar .dropdown {
+        position: static;
+    }
+
+    .navbar .dropdown-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        /*  height of nav-item  */
+        top: 45px;
+
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s linear;
+
+    }
+    /* shows the dropdown menu on hover */
+    .navbar .dropdown:hover .dropdown-menu,
+    .navbar .dropdown .dropdown-menu:hover {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.3s linear;
+    }
+
+    .navbar .dropdown-menu {
+        border: 1px solid rgba(0, 0, 0, .15);
+        background-color: #fff;
+    }
+
+}
+
+.bg_headertitel{
+    background-image: url(http://desktop-asn26hl/skj/asset/user/img/bg_titleheader.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    bottom: 0;
+}
+
+.b-0 {
+    bottom: 0;
+}
+.bg-shadow {
+    background: rgba(76, 76, 76, 0);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179, 171, 171, 0)), color-stop(49%, rgba(48, 48, 48, 0.37)), color-stop(100%, rgba(19, 19, 19, 0.8)));
+    background: linear-gradient(to bottom, rgba(179, 171, 171, 0) 0%, rgba(48, 48, 48, 0.71) 49%, rgba(19, 19, 19, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+}
+.top-indicator {
+    right: 0;
+    top: 1rem;
+    bottom: inherit;
+    left: inherit;
+    margin-right: 1rem;
+}
+.overflow {
+    position: relative;
+    overflow: hidden;
+}
+.zoom img {
+    transition: all 0.2s linear;
+}
+.zoom:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
 </style>
 
 <body style="background-color: #f8f9fa;">
@@ -134,6 +228,7 @@ if it's not present, don't show loader */
 
     <!-- end loader -->
     <div class="d-sm-block ">
+
         <div class="container d-none d-sm-block d-lg-block ">
 
             <header class="blog-header py-4">
@@ -170,30 +265,38 @@ if it's not present, don't show loader */
         </div>
 
         <header>
+
+
             <nav class="navbar navbar-expand-md navbar-dark"
-                style="background: linear-gradient(-90deg, #ff00007a, deeppink);">
+                style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;">
                 <div class="container">
                     <a style="width: 79%;" class="navbar-brand d-block d-sm-none" href="<?=base_url()?>">
                         <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
                     </a>
-
-
                     <button class="navbar-toggler justify-content-end align-items-center" type="button"
                         data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon" style="width: 18px;"></span>
                     </button>
+
+
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
+
                             <li class="nav-item dropdown">
-                                <a class="text-white nav-link dropdown-toggle" href="http://example.com" id="dropdown01"
+                                <a class="text-white nav-link dropdown-toggle" href="#" id="dropdown01"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                                         class="icofont-university"></i> เกี่ยวกับโรงเรียน</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                    <?php foreach ($Allabout as $key => $v_about) : ?>
-                                    <a class="dropdown-item" href="<?=base_url('AboutSchool/').$v_about->about_id;?>"><i
-                                            class="icofont-dotted-right"></i> <?=$v_about->about_menu;?></a>
-                                    <?php endforeach; ?>
+                                    <div class="row ">
+                                        <?php foreach ($Allabout as $key => $v_about) : ?>
+                                        <div class="col-md-4 ">
+                                            <a class="dropdown-item"
+                                                href="<?=base_url('AboutSchool/').$v_about->about_id;?>"><i
+                                                    class="icofont-dotted-right"></i> <?=$v_about->about_menu;?></a>
+                                        </div>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -201,28 +304,50 @@ if it's not present, don't show loader */
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                                         class="icofont-teacher"></i> บุคลากร</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                    <a class="dropdown-item" href="<?=base_url('Personnel/คณะผู้บริหาร')?>"><i
-                                            class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
-                                    <?php foreach ($lear as $key => $v_lear) : ?>
-                                    <a class="dropdown-item" href="<?=base_url('Personnel/').$v_lear->lear_namethai?>"><i
-                                            class="icofont-dotted-right"></i>
-                                        กลุ่มสาระการเรียนรู้<?=$v_lear->lear_namethai?></a>
-                                    <?php endforeach; ?>
-                                    <a class="dropdown-item" href="#about"><i class="icofont-dotted-right"></i>
-                                        ฝ่ายสนับสนุนการสอน</a>
+                                    <div class="row">
+                                        <div class="col-md-4 ">
+                                            <a class="dropdown-item" href="<?=base_url('Personnel/คณะผู้บริหาร')?>"><i
+                                                    class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
+                                        </div>
+                                        <?php foreach ($lear as $key => $v_lear) : ?>
+                                        <div class="col-md-4 ">
+                                            <a class="dropdown-item"
+                                                href="<?=base_url('Personnel/').$v_lear->lear_namethai?>"><i
+                                                    class="icofont-dotted-right"></i>
+                                                กลุ่มสาระการเรียนรู้<?=$v_lear->lear_namethai?>
+                                            </a>
+                                        </div>
+                                        <?php endforeach; ?>
+                                        <div class="col-md-4 ">
+                                            <a class="dropdown-item" href="#about"><i class="icofont-dotted-right"></i>
+                                                ฝ่ายสนับสนุนการสอน</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </li>
-                            <li class="nav-item animate__animated  animate__rubberBand animate__delay-3s ">
+                            <li class="nav-item ">
+                                <a class="text-white nav-link" href="<?=base_url('news/all');?>">
+                                    <i class="icofont-newspaper"></i> ข่าวสาร สกจ</a>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
                                 <a class="text-white nav-link" href="<?=base_url('Admissions?a=1');?>"><i
-                                        class="icofont-download "></i> รับสมัครนักเรียน</a>
+                                        class="icofont-flame-torch"></i> กิจกรรม</a>
+                                </a>
+                            </li>
+                            <li class="nav-item animated heartBeat" >
+                                <a class="text-white nav-link" href="<?=base_url('Admissions?a=1');?>">
+                                    <i class="icofont-mega-phone"></i> รับสมัครนักเรียน</a>
                                 </a>
                             </li>
                         </ul>
                         <ul class="navbar-nav">
-                            <li><a class="text-white btn" href="<?=base_url('Contact');?>"><i class="icofont-id-card"></i>
+                            <li><a class="text-white btn" href="<?=base_url('Contact');?>"><i
+                                        class="icofont-id-card"></i>
                                     ติดต่อเรา</a></li>
-                            <li><a href="<?=base_url('login')?>" class="text-white btn btn-outline-light my-2 my-sm-0"><i
-                                        class="icofont-lock"></i> Login</a></li>
+                            <li><a href="<?=base_url('login')?>"
+                                    class="text-white btn btn-outline-light my-2 my-sm-0"><i class="icofont-lock"></i>
+                                    Login</a></li>
                         </ul>
 
                     </div>
