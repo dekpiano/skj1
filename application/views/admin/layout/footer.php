@@ -85,64 +85,6 @@ $(document).ready(function() {
     $(".sidebar").sortable();
     $(".sidebar").disableSelection();
 
-    $("#pers_britday").datepicker({
-        dateFormat: "dd-mm-yy",
-        changeMonth: true,
-        changeYear: true,
-        currentText: "วันนี้", // Display text for current month link
-        monthNames: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
-            "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
-        ], // Names of months for drop-down and formatting
-        monthNamesShort: ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.",
-            "ต.ค.", "พ.ย.", "ธ.ค."
-        ], // For formatting
-        dayNames: ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์",
-            "เสาร์"
-        ], // For formatting
-        dayNamesShort: ["อา.", "จ.", "อ.", "พ.", "พฤ.", "ศ.", "ส."], // For formatting
-        dayNamesMin: ["อ", "จ", "อ", "พ", "พ", "ศ", "ส"],
-        yearRange: "1500:2100",
-        yearTh: true,
-        beforeShow: function() {
-            if ($(this).val() != "") {
-                var arrayDate = $(this).val().split("-");
-                arrayDate[2] = parseInt(arrayDate[2]) - 543;
-                $(this).val(arrayDate[0] + "-" + arrayDate[1] + "-" + arrayDate[2]);
-            }
-            setTimeout(function() {
-                $.each($(".ui-datepicker-year option"), function(j, k) {
-                    var textYear = parseInt($(".ui-datepicker-year option").eq(j)
-                        .val()) + 543;
-                    $(".ui-datepicker-year option").eq(j).text(textYear);
-                });
-            }, 50);
-        },
-        onChangeMonthYear: function() {
-            setTimeout(function() {
-                $.each($(".ui-datepicker-year option"), function(j, k) {
-                    var textYear = parseInt($(".ui-datepicker-year option").eq(j)
-                        .val()) + 543;
-                    $(".ui-datepicker-year option").eq(j).text(textYear);
-                });
-            }, 50);
-        },
-        onClose: function() {
-            if ($(this).val() != "" && $(this).val() == dateBefore) {
-                var arrayDate = dateBefore.split("-");
-                arrayDate[2] = parseInt(arrayDate[2]) + 543;
-                $(this).val(arrayDate[0] + "-" + arrayDate[1] + "-" + arrayDate[2]);
-            }
-        },
-        onSelect: function(dateText, inst) {
-            dateBefore = $(this).val();
-            var arrayDate = dateText.split("-");
-            arrayDate[2] = parseInt(arrayDate[2]) + 543;
-            $(this).val(arrayDate[0] + "-" + arrayDate[1] + "-" + arrayDate[2]);
-        }
-
-    });
-
-
     tinymce.init({
         selector: 'textarea',
         height: 500,

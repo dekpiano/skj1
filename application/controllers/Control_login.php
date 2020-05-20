@@ -86,10 +86,14 @@ class Control_login extends CI_Controller {
 				if($this->Model_login->record_count($username, $password) == 1)
 				{
 					$result = $this->Model_login->fetch_user_login($username, $password);
+<<<<<<< HEAD
 					$this->session->set_userdata(array('login_id' => $result->pers_id,'fullname'=> $result->pers_prefix.$result->pers_firstname.' '.$result->pers_lastname,'status'=> 'user','permission_menu' => $result->pers_workother_id ,'user_img' => $result->pers_img));
 
 					set_cookie('username',$username,'3600'); 
 					set_cookie('password',$password,'3600');
+=======
+					$this->session->set_userdata(array('login_id' => $result->pers_id,'fullname'=> $result->pers_prefix.$result->pers_firstname.' '.$result->pers_lastname,'status'=> 'user','permission_menu' => $result->pers_workother_id,'user_img' => $result->pers_img));
+>>>>>>> 81a5b20207a304d61f7d3680e16776ef815573cc
 					 redirect('admin');
 				}
 				else
