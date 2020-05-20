@@ -139,8 +139,8 @@ $('.counter').counterUp({
 });
 $('[data-toggle="tooltip"]').tooltip();
 $(":input").inputmask();
-var nav = $('.navbar-expand-md');
 
+var nav = $('.scroll_bar');
 $(window).scroll(function () {
     if ($(this).scrollTop() > 125) {
         nav.addClass("f-nav");

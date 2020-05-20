@@ -71,12 +71,8 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span
                                     class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $this->session->userdata('fullname');?></span>
-<<<<<<< HEAD
                                 <img class="img-profile rounded-circle"
                                     src="<?=base_url('uploads/personnel/'.$this->session->userdata('user_img'))?>">
-=======
-                                <img class="img-profile rounded-circle" src="<?=($this->session->userdata('user_img') == '' ? 'https://source.unsplash.com/QAB-WJcbgJk/60x60' : base_url('uploads/personnel/'.$this->session->userdata('user_img'))); ?>">
->>>>>>> 81a5b20207a304d61f7d3680e16776ef815573cc
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

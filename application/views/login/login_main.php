@@ -1,17 +1,5 @@
 <section class="br min-vh-100">
-    <div class="section layout_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="full center">
-                        <div class="heading_main text_align_center text-center">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <div class="container">
         <div class="row py-5 mt-4 align-items-center">

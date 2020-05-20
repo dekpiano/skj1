@@ -1,24 +1,15 @@
 
-<div class="section layout_padding">
+<section class="jumbotron text-center bg_headertitel">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="full center">
-                    <div class="heading_main text_align_center">
-                        <h2 class="text-center">
-                            <span class="theme_color"><i class="fas fa-bullhorn"></i> รูปภาพกิจกรรม
-                            </span>ทั้งหมด
-                        </h2>
-                        <p class="large">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <h1>รูปภาพกิจกรรม</h1>
+      <p class="lead text-muted mb-5">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
+      
     </div>
-</div>
+  </section>
+ 
 
     <div class="container">
-        <div class="card-columns">
+        <div class="card-columns animated fadeInUp">
             <?php foreach ($images as $key => $v_images) : ?>
             <div class="card">
                 <a target="_blank" title="<?=$v_images->img_title;?>" href="<?=$v_images->img_link;?>">

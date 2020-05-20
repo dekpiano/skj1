@@ -21,7 +21,7 @@
         </a>
         <a href="<?=base_url('Announce?a=4');?>"
             class="list-group-item list-group-item-action  <?=$active == 4 ? 'active' : ''?>">
-            <i class="icofont-bullhorn"></i> ประกาศรายชื่อผู้สมัครสอบ (รอบ 1)
+            <i class="icofont-bullhorn"></i> ประกาศรายชื่อผู้สมัครสอบ <br> <i class="icofont-print"></i> พิมพ์ใบสมัครสอบ (รอบ 1)
         </a>
         <a href="#"
             class="list-group-item list-group-item-action disabled   <?=$active == 5 ? 'active' : ''?>">
@@ -67,7 +67,7 @@
                     ตรวจสอบและแก้ไขการสมัคร</a>
                 <a href="<?=base_url('Announce?a=4');?>"
                     class="list-group-item list-group-item-action  <?=$active == 4 ? 'active' : ''?>"><i
-                        class="icofont-bullhorn"></i> ประกาศรายชื่อผู้สมัครสอบ (รอบ 1) </a>
+                        class="icofont-bullhorn"></i> ประกาศรายชื่อผู้สมัครสอบ <br> <i class="icofont-print"></i> พิมพ์ใบสมัครสอบ (รอบ 1) </a>
             </div>
 
             <div class="list-group mt-5  ">
