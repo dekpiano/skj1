@@ -85,6 +85,14 @@ html {
     background-color: #ff1a92;
 }
 
+header#headr_regis {
+    width: 100%;
+    float: left;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+} 
+
 .f-nav {
     /* To fix main menu container */
     z-index: 99;
@@ -173,6 +181,17 @@ if it's not present, don't show loader */
 .zoom:hover img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+.br {
+
+background-image: url(<?=base_url();
+?>asset/user/img/footer_bg1.png);
+background-repeat: no-repeat;
+background-position: bottom;
+bottom: 0;
+/* position: sticky;
+padding-top: 150px; */
 }
 </style>
 

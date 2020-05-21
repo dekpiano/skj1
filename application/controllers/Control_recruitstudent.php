@@ -93,12 +93,12 @@ class Control_recruitstudent extends CI_Controller {
 			$this->load->view('user/layout/header.php',$data);
 			$this->load->view('user/layout/footer.php'); 
 			;?>
-		<script type="text/javascript">
-		setTimeout(function() {
-			window.history.back();
-		}, 5000);
-		</script>
-		<?php }else{
+<script type="text/javascript">
+setTimeout(function() {
+    window.history.back();
+}, 5000);
+</script>
+<?php }else{
 					redirect('RegStudent');
 				}
 	}
@@ -203,6 +203,10 @@ class Control_recruitstudent extends CI_Controller {
 				if($this->model_recruitstudent->student_insert($data_insert) == 1){
 						
 						//redirect('RegStudent/checkRegister?search_stu='.$this->input->post('recruit_idCard'), 'refresh');
+						define('LINE_API',"https://notify-api.line.me/api/notify"); 
+						$token = "E9GFruPeXW6Mogn156Pllr1D8wWiY69BHfpKzLHBxcj"; 
+						$str = "มีนักเรียนสมัครเรียนใหม่\n".'ตรวจสอบ : '.base_url('admin/recruitstudent');	
+						$res = $this->notify_message($str,$token);
 				redirect('RegStudent/welcome/Succeed');
 				}
 
@@ -376,6 +380,10 @@ class Control_recruitstudent extends CI_Controller {
 				}
 				
 			}
+			define('LINE_API',"https://notify-api.line.me/api/notify"); 
+				$token = "E9GFruPeXW6Mogn156Pllr1D8wWiY69BHfpKzLHBxcj"; 
+				$str = "มีนักเรียนแก้ไขข้อมูล\n".'ตรวจสอบ : '.base_url('admin/recruitstudent');		
+				$res = $this->notify_message($str,$token);
 			redirect('checkRegister?a=3');	
 		}else{
 			$data = $this->dataAll();
@@ -431,6 +439,24 @@ class Control_recruitstudent extends CI_Controller {
 			}
 		}
 	}
+
+	function notify_message($message,$token){
+		$queryData = array('message' => $message);
+		$queryData = http_build_query($queryData,'','&');
+		$headerOptions = array( 
+				'http'=>array(
+					'method'=>'POST',
+					'header'=> "Content-Type: application/x-www-form-urlencoded\r\n"
+							."Authorization: Bearer ".$token."\r\n"
+							."Content-Length: ".strlen($queryData)."\r\n",
+					'content' => $queryData
+				),
+		);
+		$context = stream_context_create($headerOptions);
+		$result = file_get_contents(LINE_API,FALSE,$context);
+		$res = json_decode($result);
+		return $res;
+		}
 
 
 	public function close_student()

@@ -116,4 +116,4 @@ $route['CloseStudent'] = 'control_recruitstudent/close_student';
 $route['Announce'] = 'control_recruitstudent/print_student';
 
 // ติดต่อ
-$route['Contact'] = 'control_aboutschool/contact';
+$route['Contact'] = 'control_contact/contact_main';

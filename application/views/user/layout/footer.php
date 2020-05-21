@@ -1,13 +1,3 @@
-<style>
-.br {
-
-    background-image: url(<?=base_url();
-    ?>asset/user/img/footer_bg1.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    bottom: 0;
-}
-</style>
 
 <?php if($this->uri->segment(1) != 'login' && $this->uri->segment(1) != 'RegStudent' && $this->uri->segment(1) != 'checkRegister' && $this->uri->segment(1) != 'Announce' && $this->uri->segment(1) != 'Admissions'): ?>
 
