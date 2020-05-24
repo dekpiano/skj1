@@ -1,12 +1,12 @@
 <!-- Banner --> 
 <?php $this->load->view('user/banner/banner_main.php') ?>
 <!--End Banner-->
-<center>
+<!-- <center>
 <div class="mt-5 mb-3">
 <a href="<?=base_url('Admissions?a=1');?>" class="btn btn-secondary btn-lg text-white "><i class="icofont-megaphone-alt"></i> รับสมัครนักเรียน รอบ 2 บัดนี้ - 25 พ.ค. 63 นี้</a>
 </div>
 
-</center>
+</center> -->
 <!-- ประชาสัมพันธ์ -->
 <?php $this->load->view('user/news/news_main.php'); ?>
 
