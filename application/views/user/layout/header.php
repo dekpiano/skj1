@@ -309,7 +309,7 @@ padding-top: 150px; */
                                 </a>
                             </li>
                             <li class="nav-item animated heartBeat">
-                                <a class="text-white nav-link" href="<?=base_url('Admissions?a=1');?>">
+                                <a class="text-white nav-link" href="http://admission.skj.ac.th/">
                                     <i class="icofont-mega-phone"></i> รับสมัครนักเรียน</a>
                                 </a>
                             </li>

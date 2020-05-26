@@ -86,17 +86,18 @@
                                 <!--breaking news-->
                                 <div class="carousel-inner" style="font-size: 20px;">
                                     <!--post-->
+                                    
                                     <div class="carousel-item active">
-                                        <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/"><span
+                                        <a href="http://admission.skj.ac.th/"><span
                                                 class="position-relative mx-2 badge badge-primary rounded-0">ประชาสัมพันธ์</span></a>
                                         <a class=""
-                                            href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">รับสมัครนักเรียนใหม่ บัดนี้ จนถึง 25 พฤษภาคม 2563</a>
+                                            href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">ประกาศรายชื่อผู้มีสิทธิ์สอบคัดเลือกเข้าศึกษาชั้นมัธยมศึกษาปีที่ 1 และ 4 ทั้ง 2 รอบ </a>
                                     </div>
-                                    <div class="carousel-item">
+                                    <div class="carousel-item ">
                                         <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/"><span
                                                 class="position-relative mx-2 badge badge-primary rounded-0">ประชาสัมพันธ์</span></a>
                                         <a class=""
-                                            href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">ประกาศรายชื่อผู้มีสิทธิ์สอบคัดเลือกเข้าศึกษาชั้นมัธยมศึกษาปีที่ 1 และ 4</a>
+                                            href="http://admission.skj.ac.th/">สำหรับนักเรียนที่สมัคร ผู้ใดยังไม่สามารถพิมพ์สมัครได้ ให้ตรวจสอบได้ ในขณะนี้</a>
                                     </div>
                                    
                                     

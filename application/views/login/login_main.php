@@ -1,4 +1,4 @@
-<section class="br min-vh-100">
+<section class="">
     <div class="container">
         <div class="row align-items-center">
             <!-- For Demo Purpose -->

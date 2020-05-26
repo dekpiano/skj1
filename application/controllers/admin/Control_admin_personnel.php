@@ -297,6 +297,25 @@ window.history.back();
 		
 	}
 
+
+	function profile_personnel(){
+		$data['title'] = $this->title;
+		$data['menu'] =	$this->db->get('tb_adminmenu')->result();		
+		$this->db->select('*');
+		$this->db->from('tb_personnel');
+		$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
+		$this->db->join('tb_learning','tb_personnel.pers_learning = tb_learning.lear_id','LEFT');
+		$this->db->where('pers_id',$this->session->userdata('login_id'));
+		$data['pers'] =	$this->db->get()->result();
+
+		$this->load->view('admin/layout/header.php',$data);
+		$this->load->view('admin/layout/navber.php');
+
+		$this->load->view('admin/personnel/admin_personnel_profile.php');
+
+		$this->load->view('admin/layout/footer.php');
+	}
+
 }
 
 ?>

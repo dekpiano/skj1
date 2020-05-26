@@ -75,7 +75,7 @@
 
       <script src="https://cdn.tiny.cloud/1/y6b2omlkddg6mbwjuwhrf96ufg0wjfhrf5xw1xes3o6oahi4/tinymce/5/tinymce.min.js"
           referrerpolicy="origin"></script>
-      <?php $this->load->view('admin/recruitstudent/chart/report_bar.php'); ?>
+      
       </body>
 
       <script type="text/javascript">

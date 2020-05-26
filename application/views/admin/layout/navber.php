@@ -77,11 +77,10 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                <a class="dropdown-item" href="<?=base_url('admin/personnel/profile');?>">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    เปลี่ยนรหัสผ่าน
+                                    ข้อมูลส่วนตัว
                                 </a>
-
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -95,44 +94,5 @@
                 </nav>
                 <!-- End of Topbar -->
 
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">เปลี่ยนรหัสผ่าน</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="รหัสผ่าน" minlength=8>
-
-                                    </div>
-                                    <div class="form-group">
-
-                                        <input type="password" class="form-control" id="confrim_password" name="confrim_password"
-                                            placeholder="ยืนยันรหัสผ่าน" minlength=8>
-                                    </div>
-                                    <div class="progress progress-striped active">
-                                        <div id="jak_pstrength" class="progress-bar" role="progressbar"
-                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                        </div>
-                                    </div>
-          <div class="mt-3 text-danger alert_comfirm"></div>  
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="button" id="submit_password" class="btn btn-primary">เปลี่ยน</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 
