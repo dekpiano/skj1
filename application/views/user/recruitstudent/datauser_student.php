@@ -394,10 +394,11 @@ label {
 
                                     <center>
                                         <div id="html_element" data-callback="onHuman"></div>
-                                        <INPUT type="text" id="captcha" name="captcha" value="" required style="display:none">
+                                        <INPUT type="text" id="captcha" name="captcha" value="" required
+                                            style="display:none">
                                         <div class="invalid-feedback">
-                                        ยืนยันฉันไม่ใช่โปรแกรมอัตโนมัติ
-                                            </div>
+                                            ยืนยันฉันไม่ใช่โปรแกรมอัตโนมัติ
+                                        </div>
                                     </center>
                                     <button class="mt-3 btn btn-primary btn-lg btn-block"
                                         type="submit">ยืนยันการแก้ไขสมัครเรียน</button>
@@ -408,4 +409,6 @@ label {
                 </div>
 
             </div>
+        </div>
+    </div>
 </section>

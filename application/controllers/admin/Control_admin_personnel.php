@@ -316,6 +316,24 @@ window.history.back();
 		$this->load->view('admin/layout/footer.php');
 	}
 
+	function updateSocial_personnel(){
+
+		$pers_facebook = ($this->input->post('pers_facebook') == '' ? '' : $this->input->post('pers_facebook') );
+		$pers_instagram = ($this->input->post('pers_instagram') == '' ? '' : $this->input->post('pers_instagram') );
+		$pers_youtube = ($this->input->post('pers_youtube') == '' ? '' : $this->input->post('pers_youtube') );
+		$pers_line = ($this->input->post('pers_line') == '' ? '' : $this->input->post('pers_line') );
+		$pers_twitter = ($this->input->post('pers_twitter') == '' ? '' : $this->input->post('pers_twitter') );
+
+		$data = array('pers_facebook' =>  $pers_facebook,
+						'pers_instagram' => $pers_instagram,
+						'pers_youtube' => $pers_youtube,
+						'pers_line' => $pers_line ,
+						'pers_twitter' => $pers_twitter);
+		$this->Admin_model_personnel->personnel_UpdateSocial($data);
+		$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'อัปเดพข้อมูลสำเร็จ'));
+		redirect('admin/personnel/profile');
+	}
+
 }
 
 ?>

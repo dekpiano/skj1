@@ -1,4 +1,4 @@
-<div class="container p-0">
+<div class="container-fluid ">
 
     <h1 class="h3 mb-3">ข้อมูลส่วนตัว</h1>
 
@@ -11,11 +11,17 @@
                 </div>
                 <div class="list-group list-group-flush" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="list-group-item list-group-item-action active" id="v-pills-home-tab" data-toggle="pill"
-                        href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">บัญชี</a>
+                        href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                        บัญชี
+                    </a>
                     <a class="list-group-item list-group-item-action" id="v-pills-profile-tab" data-toggle="pill"
-                        href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                        aria-selected="false">รหัสผ่าน</a>
-                   
+                        href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                        รหัสผ่าน
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="social-tab" data-toggle="pill" href="#social"
+                        role="tab" aria-controls="social" aria-selected="false">
+                        ติดต่อ Social
+                    </a>
                 </div>
             </div>
 
@@ -139,32 +145,72 @@
                         <div class="card-body">
                             <h5 class="card-title">Password</h5>
 
-                            <form>                                
-                                    <div class="form-group">
+                            <form>
+                                <div class="form-group">
 
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="รหัสผ่าน" minlength=8>
+                                    <input type="password" class="form-control" id="password" name="password"
+                                        placeholder="รหัสผ่าน" minlength=8>
 
-                                    </div>
-                                    <div class="form-group">
+                                </div>
+                                <div class="form-group">
 
-                                        <input type="password" class="form-control" id="confrim_password" name="confrim_password"
-                                            placeholder="ยืนยันรหัสผ่าน" minlength=8>
+                                    <input type="password" class="form-control" id="confrim_password"
+                                        name="confrim_password" placeholder="ยืนยันรหัสผ่าน" minlength=8>
+                                </div>
+                                <div class="progress progress-striped active">
+                                    <div id="jak_pstrength" class="progress-bar" role="progressbar" aria-valuenow="0"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                                     </div>
-                                    <div class="progress progress-striped active">
-                                        <div id="jak_pstrength" class="progress-bar" role="progressbar"
-                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                        </div>
-                                    </div>
-          <div class="mt-3 text-danger alert_comfirm"></div>  
-                                
+                                </div>
+                                <div class="mt-3 text-danger alert_comfirm"></div>
+
                                 <button type="submit" class="btn btn-primary">Save changes</button>
                             </form>
 
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                    444
+                <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="<?=base_url('admin/control_admin_personnel/updateSocial_personnel')?>" method="post">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="fab fa-facebook"></i>&nbsp; https://www.facebook.com/
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="เพิ่มชื่อโปรไฟล์" aria-label="Username" aria-describedby="basic-addon1" id="pers_facebook" name="pers_facebook" value="<?=$pers[0]->pers_facebook?>">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fab fa-instagram"></i> &nbsp; https://www.instagram.com/</span>
+                                    </div>
+                                    <input type="text" class="form-control"  placeholder="เพิ่มชื่อโปรไฟล์" aria-label="Username" aria-describedby="basic-addon1" id="pers_instagram" name="pers_instagram" value="<?=$pers[0]->pers_instagram?>">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fab fa-youtube"></i>&nbsp;https://www.youtube.com/channel/</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="เพื่อรหัสช่อง เช่น UCUaRNnj5N5EfKc3-R7BnWbA" aria-label="Username" aria-describedby="basic-addon1" id="pers_youtube" name="pers_youtube" value="<?=$pers[0]->pers_youtube?>">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fab fa-line"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="ไอดีไลน์ หรือ เบอร์โทร หรือลิ้งไลน์" aria-label="Username"aria-describedby="basic-addon1" id="pers_line" name="pers_line" value="<?=$pers[0]->pers_line?>">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fab fa-twitter"></i>
+                                            &nbsp;https://www.twitter.com/</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="เพิ่มชื่อโปรไฟล์" aria-label="Username" aria-describedby="basic-addon1" id="pers_twitter" name="pers_twitter" value="<?=$pers[0]->pers_twitter?>">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                     .777.

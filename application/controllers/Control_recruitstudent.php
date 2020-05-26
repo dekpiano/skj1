@@ -8,7 +8,7 @@ class Control_recruitstudent extends CI_Controller {
 		$this->load->library('timeago');
 		$this->load->model('model_recruitstudent');
 		
-		//exit();
+		redirect('http://admission.skj.ac.th/');
 	}
 
 	public static $title = "รับสมัครนักเรียนปีการศึกษา 2563";

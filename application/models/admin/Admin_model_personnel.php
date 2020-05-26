@@ -33,4 +33,9 @@ class Admin_model_personnel extends CI_Model
 		return $this->db->update('tb_personnel',$data,"pers_id='".$this->session->userdata('login_id')."'");
 	}
 
+	public function personnel_UpdateSocial($data)
+	{
+		return $this->db->update('tb_personnel',$data,"pers_id='".$this->session->userdata('login_id')."'");
+	}
+
 }
