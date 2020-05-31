@@ -10,8 +10,12 @@
 <!-- ประชาสัมพันธ์ -->
 <?php $this->load->view('user/news/news_main.php'); ?>
 
-<!-- Content -->
+
+<!-- director_main -->
 <?php $this->load->view('user/director/director_main.php'); ?>
+
+<!-- journal -->
+<?php $this->load->view('user/journal/journal_main.php'); ?>
 
 <!-- SKJ Gellery -->
 <?php $this->load->view('user/gellery/gellery_main.php'); ?>

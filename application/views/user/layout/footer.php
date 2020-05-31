@@ -1,4 +1,3 @@
-
 <?php if($this->uri->segment(1) != 'login' && $this->uri->segment(1) != 'RegStudent' && $this->uri->segment(1) != 'checkRegister' && $this->uri->segment(1) != 'Announce' && $this->uri->segment(1) != 'Admissions'): ?>
 
 <footer class="new_footer_area bg_color">
@@ -113,6 +112,8 @@
 <script src="<?=base_url()?>asset/js/jquery.inputmask.min.js"></script>
 <script src="<?=base_url()?>asset/js/imagesloaded.pkgd.min.js"></script>
 <!-- Template Main JS File -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="<?=base_url()?>asset/js/slick.js"></script>
 <script src="<?=base_url()?>/asset/user/js/main.js?v=1001"></script>
 <script src="<?=base_url()?>/asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
 <script src="<?=base_url();?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
@@ -131,13 +132,14 @@ $('[data-toggle="tooltip"]').tooltip();
 $(":input").inputmask();
 
 var nav = $('.scroll_bar');
-$(window).scroll(function () {
+$(window).scroll(function() {
     if ($(this).scrollTop() > 125) {
         nav.addClass("f-nav");
     } else {
         nav.removeClass("f-nav");
     }
 });
+
 
 
 function onHuman(response) {

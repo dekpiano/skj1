@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
 		$data['banner'] =	$this->db->order_by("banner_id", "desc")->get('tb_banner')->result(); //ประชาสัมพันธ์
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
 		$data['images'] =$this->db->order_by('img_date','DESC')->limit(9)->get('tb_images')->result(); //ประชาสัมพันธ์
+		$data['journal'] =$this->db->order_by('jour_createdate','DESC')->limit(10)->get('tb_journal')->result(); //วารสาร
 
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/main/index.php');

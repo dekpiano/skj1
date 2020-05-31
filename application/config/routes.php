@@ -64,6 +64,9 @@ $route['admin/news/add'] = 'admin/control_admin_news/add';
 $route['admin/banner'] = 'admin/control_admin_banner';
 $route['admin/banner/add'] = 'admin/control_admin_banner/add';
 
+$route['admin/journal'] = 'admin/control_admin_journal';
+$route['admin/journal/add'] = 'admin/control_admin_journal/add';
+
 $route['admin/personnel'] = 'admin/control_admin_personnel';
 $route['admin/personnel/add'] = 'admin/control_admin_personnel/add';
 $route['admin/personnel/profile'] = 'admin/control_admin_personnel/profile_personnel';

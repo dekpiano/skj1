@@ -75,12 +75,12 @@
 
       <script src="https://cdn.tiny.cloud/1/y6b2omlkddg6mbwjuwhrf96ufg0wjfhrf5xw1xes3o6oahi4/tinymce/5/tinymce.min.js"
           referrerpolicy="origin"></script>
-      
+
       </body>
 
       <script type="text/javascript">
 $(document).ready(function() {
-  
+
     $(":input").inputmask();
     $(".sidebar").sortable();
     $(".sidebar").disableSelection();
@@ -152,8 +152,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
 }
-
-$("#banner_img").change(function() {
+$("#jour_img").change(function() {
     readURL(this);
 });
       </script>
