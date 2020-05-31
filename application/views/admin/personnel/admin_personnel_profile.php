@@ -73,7 +73,7 @@
                             <h5 class="card-title mb-0">Private info</h5>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form id="Privateinfo">
                                 <div class="form-row">
                                     <div class="form-group col-md-2">
                                         <label for="pers_prefix">ชื่อคำนำหน้า</label>
@@ -82,12 +82,8 @@
                                             <option value="">เลือก...</option>
                                             <?php $data_prefix = array('นาย','นาง','นางสาว','ว่าที่ร้อยตรี','ว่าที่ร้อยตรีหญิง','Mr.','Mrs.','Miss.');
                               foreach ($data_prefix as $key => $v_prefix):?>
-                                            <?php if($action != 'insert_personnel') :?>
                                             <option <?=$pers[0]->pers_prefix == $v_prefix ? 'selected' : '' ;?>
                                                 value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
-                                            <?php else: ?>
-                                            <option value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
-                                            <?php endif; ?>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -135,7 +131,7 @@
                                 </div>
 
                         </div>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" id="update_Privateinfo" class="btn btn-primary">Save changes</button>
                         </form>
 
                     </div>
@@ -145,7 +141,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Password</h5>
 
-                            <form>
+                            <form method="post">
                                 <div class="form-group">
 
                                     <input type="password" class="form-control" id="password" name="password"
@@ -164,7 +160,7 @@
                                 </div>
                                 <div class="mt-3 text-danger alert_comfirm"></div>
 
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="button" id="submit_password" class="btn btn-primary">Save changes</button>
                             </form>
 
                         </div>
@@ -173,39 +169,55 @@
                 <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
                     <div class="card">
                         <div class="card-body">
-                            <form action="<?=base_url('admin/control_admin_personnel/updateSocial_personnel')?>" method="post">
+                            <form action="<?=base_url('admin/control_admin_personnel/updateSocial_personnel')?>"
+                                method="post">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">
                                             <i class="fab fa-facebook"></i>&nbsp; https://www.facebook.com/
                                         </span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="เพิ่มชื่อโปรไฟล์" aria-label="Username" aria-describedby="basic-addon1" id="pers_facebook" name="pers_facebook" value="<?=$pers[0]->pers_facebook?>">
+                                    <input type="text" class="form-control" placeholder="เพิ่มชื่อโปรไฟล์"
+                                        aria-label="Username" aria-describedby="basic-addon1" id="pers_facebook"
+                                        name="pers_facebook" value="<?=$pers[0]->pers_facebook?>">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i class="fab fa-instagram"></i> &nbsp; https://www.instagram.com/</span>
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="fab fa-instagram"></i> &nbsp; https://www.instagram.com/</span>
                                     </div>
-                                    <input type="text" class="form-control"  placeholder="เพิ่มชื่อโปรไฟล์" aria-label="Username" aria-describedby="basic-addon1" id="pers_instagram" name="pers_instagram" value="<?=$pers[0]->pers_instagram?>">
+                                    <input type="text" class="form-control" placeholder="เพิ่มชื่อโปรไฟล์"
+                                        aria-label="Username" aria-describedby="basic-addon1" id="pers_instagram"
+                                        name="pers_instagram" value="<?=$pers[0]->pers_instagram?>">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i class="fab fa-youtube"></i>&nbsp;https://www.youtube.com/channel/</span>
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="fab fa-youtube"></i>&nbsp;https://www.youtube.com/channel/</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="เพื่อรหัสช่อง เช่น UCUaRNnj5N5EfKc3-R7BnWbA" aria-label="Username" aria-describedby="basic-addon1" id="pers_youtube" name="pers_youtube" value="<?=$pers[0]->pers_youtube?>">
+                                    <input type="text" class="form-control"
+                                        placeholder="เพื่อรหัสช่อง เช่น UCUaRNnj5N5EfKc3-R7BnWbA" aria-label="Username"
+                                        aria-describedby="basic-addon1" id="pers_youtube" name="pers_youtube"
+                                        value="<?=$pers[0]->pers_youtube?>">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i class="fab fa-line"></i></span>
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="fab fa-line"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="ไอดีไลน์ หรือ เบอร์โทร หรือลิ้งไลน์" aria-label="Username"aria-describedby="basic-addon1" id="pers_line" name="pers_line" value="<?=$pers[0]->pers_line?>">
+                                    <input type="text" class="form-control"
+                                        placeholder="ไอดีไลน์ หรือ เบอร์โทร หรือลิ้งไลน์" aria-label="Username"
+                                        aria-describedby="basic-addon1" id="pers_line" name="pers_line"
+                                        value="<?=$pers[0]->pers_line?>">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="fab fa-twitter"></i>
                                             &nbsp;https://www.twitter.com/</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="เพิ่มชื่อโปรไฟล์" aria-label="Username" aria-describedby="basic-addon1" id="pers_twitter" name="pers_twitter" value="<?=$pers[0]->pers_twitter?>">
+                                    <input type="text" class="form-control" placeholder="เพิ่มชื่อโปรไฟล์"
+                                        aria-label="Username" aria-describedby="basic-addon1" id="pers_twitter"
+                                        name="pers_twitter" value="<?=$pers[0]->pers_twitter?>">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Save changes</button>
                             </form>
