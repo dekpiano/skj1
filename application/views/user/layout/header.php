@@ -79,7 +79,8 @@ html {
     pointer-events: none;
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
+.dropdown-item:focus,
+.dropdown-item:hover {
     color: #ffffff;
     text-decoration: none;
     background-color: #ff1a92;
@@ -91,7 +92,7 @@ header#headr_regis {
     position: sticky;
     top: 0;
     z-index: 5;
-} 
+}
 
 .f-nav {
     /* To fix main menu container */
@@ -185,13 +186,30 @@ if it's not present, don't show loader */
 
 .br {
 
-background-image: url(<?=base_url();
-?>asset/user/img/footer_bg1.png);
-background-repeat: no-repeat;
-background-position: bottom;
-bottom: 0;
-/* position: sticky;
+    background-image: url(<?=base_url();
+    ?>asset/user/img/footer_bg1.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    bottom: 0;
+    /* position: sticky;
 padding-top: 150px; */
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>a:after {
+   
+    float: right;
+    border: none;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 </style>
 
@@ -263,41 +281,51 @@ padding-top: 150px; */
                                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                                     <div class="row ">
                                         <?php foreach ($Allabout as $key => $v_about) : ?>
-                                       
-                                            <a class="dropdown-item"
-                                                href="<?=base_url('AboutSchool/').$v_about->about_id;?>"><i
-                                                    class="icofont-dotted-right"></i> <?=$v_about->about_menu;?></a>
-                                      
+
+                                        <a class="dropdown-item"
+                                            href="<?=base_url('AboutSchool/').$v_about->about_id;?>"><i
+                                                class="icofont-dotted-right"></i> <?=$v_about->about_menu;?></a>
+
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
                             </li>
+                            <!-- Level one dropdown -->
                             <li class="nav-item dropdown">
-                                <a class="text-white nav-link dropdown-toggle" href="http://example.com" id="dropdown01"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" class="nav-link text-white dropdown-toggle"><i
                                         class="icofont-teacher"></i> บุคลากร</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                    <div class="row">
-                                     
-                                            <a class="dropdown-item" href="<?=base_url('Personnel/คณะผู้บริหาร')?>"><i
-                                                    class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
-                                       
+                                <ul aria-labelledby="dropdownMenu1" class="dropdown-menu border-0 shadow">
+                                    
+                                <a class="dropdown-item" href="<?=base_url('Personnel/คณะผู้บริหาร')?>"><i
+                                                class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
+
                                         <?php foreach ($lear as $key => $v_lear) : ?>
-                                       
-                                            <a class="dropdown-item"
-                                                href="<?=base_url('Personnel/').$v_lear->lear_namethai?>"><i
-                                                    class="icofont-dotted-right"></i>
-                                                กลุ่มสาระการเรียนรู้<?=$v_lear->lear_namethai?>
-                                            </a>
-                                     
+
+                                        <a class="dropdown-item"
+                                            href="<?=base_url('Personnel/').$v_lear->lear_namethai?>">
+                                            <i class="icofont-dotted-right"></i>
+                                            กลุ่มสาระการเรียนรู้<?=$v_lear->lear_namethai?>
+                                        </a>
+
                                         <?php endforeach; ?>
-                                   
-                                            <a class="dropdown-item" href="#about"><i class="icofont-dotted-right"></i>
-                                                ฝ่ายสนับสนุนการสอน</a>
-                                      
-                                    </div>
-                                </div>
+
+                                    <li class="dropdown-divider"></li>
+
+                                    <!-- Level two dropdown-->
+                                    <li class="dropdown-submenu">
+                                        <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false"
+                                            class="dropdown-item dropdown-toggle"><i class="icofont-dotted-right"></i> ฝ่ายสนับสนุนการสอน</a>
+                                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">                                            
+                                            <li><a href="<?=base_url('Personnel/พนักงานจ้างเหมา')?>" class="dropdown-item">พนักงานจ้างเหมา</a></li>
+                                            <li><a href="<?=base_url('Personnel/พนักงานจ้างเหมาตามภารกิจ')?>" class="dropdown-item">พนักงานจ้างเหมาตามภารกิจ</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- End Level two -->
+                                </ul>
                             </li>
+                            <!-- End Level one -->
                             <li class="nav-item ">
                                 <a class="text-white nav-link" href="<?=base_url('news/all');?>">
                                     <i class="icofont-newspaper"></i> ข่าวสาร สกจ</a>

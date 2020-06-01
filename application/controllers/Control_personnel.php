@@ -60,7 +60,8 @@ class Control_personnel extends CI_Controller {
 										tb_personnel.pers_img');
 						$this->db->from('tb_personnel');
 						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
-		$data['pers'] = $this->db->get()->result(); //เกี่ย่วกับโรงเรียน
+		$data['pers'] = $this->db->get()->result(); 
+
 		$this->db->select('	tb_personnel.pers_id, 
 							tb_personnel.pers_prefix, 
 							tb_personnel.pers_firstname, 
@@ -79,7 +80,8 @@ class Control_personnel extends CI_Controller {
 						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
 						$this->db->join('tb_learning','tb_personnel.pers_learning = tb_learning.lear_id');
 						$this->db->where('lear_namethai',$name);
-		$data['pers_type'] = $this->db->get()->result(); //เกี่ย่วกับโรงเรียน
+						$this->db->or_where('posi_name',$name);
+		$data['pers_type'] = $this->db->get()->result(); 
 
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/personnel/personnel_all.php');

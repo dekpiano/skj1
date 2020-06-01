@@ -141,7 +141,6 @@ $(window).scroll(function() {
 });
 
 
-
 function onHuman(response) {
     document.getElementById('captcha').value = response;
 }
@@ -277,6 +276,7 @@ $(window).resize(function() {
         // do something here
     }
 });
+
 </script>
 
 </html>

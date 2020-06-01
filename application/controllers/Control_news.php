@@ -9,15 +9,12 @@ class Control_news extends CI_Controller {
 		$this->load->model('model_news');
 		
 	}
-
-	public static $title = "รับสมัครนักเรียนปีการศึกษา 2563";
-	public static $description = "รับสมัครนักเรียนวันนี้ จนถึง 12 พฤษภาคม 2563";
+	
 
 	public function dataAll()
 	{
 		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-		$data['title'] = self::$title;
-		$data['description'] = self::$description;
+		
 		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
 		$data['about'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
@@ -30,7 +27,8 @@ class Control_news extends CI_Controller {
 	{
 		$data = $this->dataAll();
 		$data['news'] =	$this->db->where('news_id',$id)->get('tb_news')->result(); //ประชาสัมพันธ์
-		
+		$data['title'] = $data['news'][0]->news_topic;
+		$data['description'] = 'ข่าวประชาสัมพันธ์โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์';
 		$this->count_views($id);
 
 		$this->load->view('user/layout/header.php',$data);
@@ -48,6 +46,8 @@ class Control_news extends CI_Controller {
 	public function news_all()
 	{
 		$data = $this->dataAll();
+		$data['title'] = 'ข่าวประชาสัมพันธ์ทั้งหมด';
+		$data['description'] = 'ข่าวประชาสัมพันธ์ทั้งหมด';
 		$data['news'] =	$this->db->order_by("news_date", "desc")->get('tb_news')->result(); 
 
 		$this->load->view('user/layout/header.php',$data);
