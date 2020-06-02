@@ -19,3 +19,6 @@
 
 <!-- SKJ Gellery -->
 <?php $this->load->view('user/gellery/gellery_main.php'); ?>
+
+
+<?php $this->load->view('user/popupSpecial/popupSpecial.php'); ?>

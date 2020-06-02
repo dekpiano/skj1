@@ -140,6 +140,10 @@ $(window).scroll(function() {
     }
 });
 
+$('#popupSpecial').modal({
+  show: true
+})
+
 
 function onHuman(response) {
     document.getElementById('captcha').value = response;

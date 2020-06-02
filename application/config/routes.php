@@ -99,6 +99,9 @@ $route['admin/images/add'] = 'admin/control_admin_images/add';
 $route['news/newsDetail/(:any)'] = 'control_news/news_detail/$1';
 $route['news/all'] = 'control_news/news_all';
 
+// วารสาร
+$route['journal'] = 'control_journal/journal_all';
+
 // เกี่ยวกับโรงเรียน
 $route['AboutSchool/(:any)'] = 'control_aboutschool/aboutschool_detail/$1';
 

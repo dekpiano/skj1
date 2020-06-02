@@ -4,43 +4,7 @@
 $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
     $users=json_decode($cowid19);
 ?>
-        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-4" style="background-image: url(https://image.freepik.com/free-vector/conceptual-coronavirus-illustration-3d-virus-form-abstract-background-pathogen-visualization_1217-1663.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-">
-            <div class="row">
-                <div class="col-md-6 px-2">
-                    <h1 class="display-4 text-white">รายงานสถานการณ์ โควิด-19</h1>
-                    <p class="lead my-3">อัพเดทข้อมูลล่าสุด <?=$users->UpdateDate;?> </p>
-                    <p class="lead mb-0"><a href="https://covid19.ddc.moph.go.th/th" class="text-white font-weight-bold">Continue reading...</a></p>
-                </div>
-                <div class="col-md-6 px-2">
-                    <div class="list-group">
-                        <a href="#"
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                            ติดเชื้อสะสม <small>[เพิ่มขึ้น <?=$users->NewConfirmed;?>]</small>
-                            <span class="badge badge-primary badge-pill"><?=number_format($users->Confirmed);?></span>
-                        </a>
-                        <a href="#"
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                            หายแล้ว <small>[เพิ่มขึ้น <?=$users->NewRecovered;?>]</small>
-                            <span class="badge badge-primary badge-pill"><?=number_format($users->Recovered);?></span>
-                        </a>
-                        <a href="#"
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                            รักษาอยู่ใน รพ.
-                            <span class="badge badge-primary badge-pill"><?=number_format($users->Hospitalized);?></span>
-                        </a>
-                        <a href="#"
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                            เสียชีวิต
-                            <span class="badge badge-primary badge-pill"><?=number_format($users->Deaths);?></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="col-12">
             <!--- หัวข้อ --->
 
@@ -294,6 +258,39 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
 
             <center><a href="<?=base_url('news/all')?>"
                     class=" btn btn-outline-secondary my-2 my-sm-0">ข่าวสารทั้งหมด</a></center>
+        </div>
+        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-4" style="background-image: url(https://image.freepik.com/free-vector/conceptual-coronavirus-illustration-3d-virus-form-abstract-background-pathogen-visualization_1217-1663.jpg);    background-position: center;    background-repeat: no-repeat;    background-size: cover;">
+            <div class="row">
+                <div class="col-md-6 px-2">
+                    <h1 class="display-4 text-white">รายงานสถานการณ์ โควิด-19</h1>
+                    <p class="lead my-3">อัพเดทข้อมูลล่าสุด <?=$users->UpdateDate;?> </p>
+                    <p class="lead mb-0"><a href="https://covid19.ddc.moph.go.th/th" class="text-white font-weight-bold">Continue reading...</a></p>
+                </div>
+                <div class="col-md-6 px-2">
+                    <div class="list-group">
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
+                            ติดเชื้อสะสม <small>[เพิ่มขึ้น <?=$users->NewConfirmed;?>]</small>
+                            <span class="badge badge-primary badge-pill"><?=number_format($users->Confirmed);?></span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
+                            หายแล้ว <small>[เพิ่มขึ้น <?=$users->NewRecovered;?>]</small>
+                            <span class="badge badge-primary badge-pill"><?=number_format($users->Recovered);?></span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
+                            รักษาอยู่ใน รพ.
+                            <span class="badge badge-primary badge-pill"><?=number_format($users->Hospitalized);?></span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
+                            เสียชีวิต
+                            <span class="badge badge-primary badge-pill"><?=number_format($users->Deaths);?></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div> 
     </div>
 
