@@ -14,6 +14,9 @@
 <!-- director_main -->
 <?php $this->load->view('user/director/director_main.php'); ?>
 
+<!-- director_main -->
+<?php $this->load->view('user/services/services_main.php'); ?>
+
 <!-- journal -->
 <?php $this->load->view('user/journal/journal_main.php'); ?>
 

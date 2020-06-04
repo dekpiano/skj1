@@ -111,6 +111,7 @@
 
 <script src="<?=base_url()?>asset/js/jquery.inputmask.min.js"></script>
 <script src="<?=base_url()?>asset/js/imagesloaded.pkgd.min.js"></script>
+<script src="<?=base_url()?>asset/user/js/aos.js"></script>
 <!-- Template Main JS File -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="<?=base_url()?>asset/js/slick.js"></script>
@@ -124,6 +125,7 @@
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
 </script>
 <script type="text/javascript">
+ AOS.init();
 $('.counter').counterUp({
     delay: 10,
     time: 1000

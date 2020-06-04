@@ -24,12 +24,40 @@
               if($v_pers->posi_name == 'ผู้อำนวยการโรงเรียน'): ?>
         <center>
             <div class="col-lg-4 col-md-6 align-items-stretch">
-                <div class="member" style="background: transparent;box-shadow:0px 0px 0px 0px;padding:0px;  ">
-                    <img src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" alt=""
-                        style="border-radius:0">
-                    <h4><?=$v_pers->pers_prefix.$v_pers->pers_firstname.' '.$v_pers->pers_lastname;?></h4>
-                    <span><?=$v_pers->posi_name;?></span>
+
+                <div class="member">
+                    <div class="member-img">
+                        <img src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid"
+                            alt="">
+                        <div class="social">
+                            <?php if($v_pers->pers_facebook != ''):?>
+                            <a target="_blank" href="https://www.facebook.com/<?=$v_pers->pers_facebook?>"
+                                class="mr-1"><i class="icofont-facebook"></i></a>
+                            <?php endif; ?>
+                            <?php if ($v_pers->pers_instagram != ''):?>
+                            <a target="_blank" href="https://www.instagram.com/<?=$v_pers->pers_instagram?>"
+                                class="mr-1"><i class="icofont-instagram"></i></a>
+                            <?php endif; ?>
+                            <?php if ($v_pers->pers_youtube != ''):?>
+                            <a target="_blank" href="https://www.youtube.com/channel/<?=$v_pers->pers_youtube?>"
+                                class="mr-1"><i class="icofont-youtube-play"></i> </a>
+                            <?php endif; ?>
+                            <?php if ($v_pers->pers_line != ''):?>
+                            <a target="_blank" href="<?=$v_pers->pers_line?>" class="mr-1"><i
+                                    class="icofont-line-messenger"></i> </a>
+                            <?php endif; ?>
+                            <?php if ($v_pers->pers_twitter != ''):?>
+                            <a target="_blank" href="https://www.twitter.com/<?=$v_pers->pers_twitter?>" class="mr-1"><i
+                                    class="icofont-twitter"></i> </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4><?=$v_pers->pers_prefix.$v_pers->pers_firstname.' '.$v_pers->pers_lastname;?></h4>
+                        <span><?=$v_pers->posi_name;?></span>
+                    </div>
                 </div>
+
             </div>
         </center>
         <?php  endif; endforeach;?>
@@ -38,11 +66,37 @@
          if($v_pers->posi_name == 'รองผู้อำนวยการโรงเรียน'): ?>
         <center>
             <div class="col-lg-4 col-md-6 align-items-stretch">
-                <div class="member" style="background: transparent;box-shadow:0px 0px 0px 0px;padding:0px;  ">
-                    <img src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" alt=""
-                        style="border-radius:0">
-                    <h4><?=$v_pers->pers_prefix.$v_pers->pers_firstname.' '.$v_pers->pers_lastname;?></h4>
-                    <span><?=$v_pers->posi_name;?></span>
+                <div class="member">
+                    <div class="member-img">
+                        <img src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid"
+                            alt="">
+                        <div class="social">
+                            <?php if($v_pers->pers_facebook != ''):?>
+                            <a target="_blank" href="https://www.facebook.com/<?=$v_pers->pers_facebook?>"
+                                class="mr-1"><i class="icofont-facebook"></i></a>
+                            <?php endif; ?>
+                            <?php if ($v_pers->pers_instagram != ''):?>
+                            <a target="_blank" href="https://www.instagram.com/<?=$v_pers->pers_instagram?>"
+                                class="mr-1"><i class="icofont-instagram"></i></a>
+                            <?php endif; ?>
+                            <?php if ($v_pers->pers_youtube != ''):?>
+                            <a target="_blank" href="https://www.youtube.com/channel/<?=$v_pers->pers_youtube?>"
+                                class="mr-1"><i class="icofont-youtube-play"></i> </a>
+                            <?php endif; ?>
+                            <?php if ($v_pers->pers_line != ''):?>
+                            <a target="_blank" href="<?=$v_pers->pers_line?>" class="mr-1"><i
+                                    class="icofont-line-messenger"></i> </a>
+                            <?php endif; ?>
+                            <?php if ($v_pers->pers_twitter != ''):?>
+                            <a target="_blank" href="https://www.twitter.com/<?=$v_pers->pers_twitter?>" class="mr-1"><i
+                                    class="icofont-twitter"></i> </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4><?=$v_pers->pers_prefix.$v_pers->pers_firstname.' '.$v_pers->pers_lastname;?></h4>
+                        <span><?=$v_pers->posi_name;?></span>
+                    </div>
                 </div>
             </div>
         </center>
@@ -50,43 +104,46 @@
 
 
         <div class="row">
-
             <?php  foreach ($pers_type as $key => $v_pers_type): ?>
             <?php if($v_pers_type->posi_name != 'รองผู้อำนวยการโรงเรียน' && $v_pers_type->posi_name != 'ผู้อำนวยการโรงเรียน'): ?>
-            <div class="col-lg-3 col-md-4  align-items-stretch">
-                <div class="member" style="background: transparent;box-shadow:0px 0px 0px 0px;padding:0px;  ">
-                    <img src="<?=$img_p.$v_pers_type->pers_img;?>" alt="" style="border-radius:0">
-                    <h4><?=$v_pers_type->pers_prefix.$v_pers_type->pers_firstname.' '.$v_pers_type->pers_lastname;?>
-                    </h4>
-                    <span><?=$v_pers_type->posi_name;?></span>
-                    <div class="social-buttons mt-1">
-                        <?php if($v_pers_type->pers_facebook != ''):?>
-                        <a target="_blank" href="https://www.facebook.com/<?=$v_pers_type->pers_facebook?>"
-                            class="mr-1"><i class="icofont-facebook"></i></a>
-                        <?php endif; ?>
-                        <?php if ($v_pers_type->pers_instagram != ''):?>
-                        <a target="_blank" href="https://www.instagram.com/<?=$v_pers_type->pers_instagram?>"
-                            class="mr-1"><i class="icofont-instagram"></i></a>
-                        <?php endif; ?>
-                        <?php if ($v_pers_type->pers_youtube != ''):?>
-                        <a target="_blank" href="https://www.youtube.com/channel/<?=$v_pers_type->pers_youtube?>"
-                            class="mr-1"><i class="icofont-youtube-play"></i> </a>
-                        <?php endif; ?>
-                        <?php if ($v_pers_type->pers_line != ''):?>
-                        <a target="_blank" href="<?=$v_pers_type->pers_line?>" class="mr-1"><i
-                                class="icofont-line-messenger"></i> </a>
-                        <?php endif; ?>
-                        <?php if ($v_pers_type->pers_twitter != ''):?>
-                        <a target="_blank" href="https://www.twitter.com/<?=$v_pers_type->pers_twitter?>"
-                            class="mr-1"><i class="icofont-twitter"></i> </a>
-                        <?php endif; ?>
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="<?=$img_p.$v_pers_type->pers_img;?>" class="img-fluid" alt="">
+                        <div class="social">
+                            <?php if($v_pers_type->pers_facebook != ''):?>
+                            <a target="_blank" href="https://www.facebook.com/<?=$v_pers_type->pers_facebook?>"
+                                class="mr-1"><i class="icofont-facebook"></i></a>
+                            <?php endif; ?>
+                            <?php if ($v_pers_type->pers_instagram != ''):?>
+                            <a target="_blank" href="https://www.instagram.com/<?=$v_pers_type->pers_instagram?>"
+                                class="mr-1"><i class="icofont-instagram"></i></a>
+                            <?php endif; ?>
+                            <?php if ($v_pers_type->pers_youtube != ''):?>
+                            <a target="_blank" href="https://www.youtube.com/channel/<?=$v_pers_type->pers_youtube?>"
+                                class="mr-1"><i class="icofont-youtube-play"></i> </a>
+                            <?php endif; ?>
+                            <?php if ($v_pers_type->pers_line != ''):?>
+                            <a target="_blank" href="<?=$v_pers_type->pers_line?>" class="mr-1"><i
+                                    class="icofont-line-messenger"></i> </a>
+                            <?php endif; ?>
+                            <?php if ($v_pers_type->pers_twitter != ''):?>
+                            <a target="_blank" href="https://www.twitter.com/<?=$v_pers_type->pers_twitter?>"
+                                class="mr-1"><i class="icofont-twitter"></i> </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4><?=$v_pers_type->pers_prefix.$v_pers_type->pers_firstname.' '.$v_pers_type->pers_lastname;?>
+                        </h4>
+                        <span><?=$v_pers_type->posi_name;?></span>
                     </div>
                 </div>
-
-
             </div>
             <?php endif; ?>
             <?php endforeach; ?>
+
+
 
 
 

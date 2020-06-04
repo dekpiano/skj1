@@ -1,5 +1,5 @@
-<section id="portfolio" class="">
-    <div class="container ">
+<section id="portfolio" class="section" >
+    <div class="container " data-aos="fade-up" >
    
             <!--- หัวข้อ --->
             <div class="section ">

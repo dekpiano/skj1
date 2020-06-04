@@ -49,6 +49,7 @@
     <link href="<?=base_url()?>/asset/user/css/style.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/css/circles.css" rel="stylesheet">
     <link href="<?=base_url()?>/asset/user/css/footerskj.css" rel="stylesheet">
+    <link href="<?=base_url()?>/asset/user/css/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=base_url()?>asset/user/css/smartwizard/smart_wizard.min.css">
     <link rel="stylesheet" href="<?=base_url()?>asset/user/css/smartwizard/smart_wizard_theme_arrows.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -213,7 +214,7 @@ padding-top: 150px; */
 }
 </style>
 
-<body style="background-color: #f8f9fa;">
+<body >
     <!-- LOADER -->
     <div class="se-pre-con"></div>
 

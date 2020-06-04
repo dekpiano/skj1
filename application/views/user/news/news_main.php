@@ -1,4 +1,4 @@
-<section id="" class="services section-bg">
+<section id="" class="services section" >
     <div class="container pad-3">
     <?php 
 $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
@@ -127,7 +127,7 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
             </div> -->
 
             <!--Start code-->
-            <div class="row">
+            <div class="row " data-aos="zoom-in">
                 <div class="col-12">
                     <!--SECTION START-->
                     <section class="row">
@@ -259,7 +259,7 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
             <center><a href="<?=base_url('news/all')?>"
                     class=" btn btn-outline-secondary my-2 my-sm-0">ข่าวสารทั้งหมด</a></center>
         </div>
-        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-4" style="background-image: url(https://image.freepik.com/free-vector/conceptual-coronavirus-illustration-3d-virus-form-abstract-background-pathogen-visualization_1217-1663.jpg);    background-position: center;    background-repeat: no-repeat;    background-size: cover;">
+        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-4" style="background-image: url(https://image.freepik.com/free-vector/conceptual-coronavirus-illustration-3d-virus-form-abstract-background-pathogen-visualization_1217-1663.jpg);    background-position: center;    background-repeat: no-repeat;    background-size: cover;" data-aos="fade-down">
             <div class="row">
                 <div class="col-md-6 px-2">
                     <h1 class="display-4 text-white">รายงานสถานการณ์ โควิด-19</h1>

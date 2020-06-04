@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
 
-<section id="portfolio " class="section-bg">
+<section id="portfolio " class="section-bg section" data-aos="fade-down">
     <div class="container ">
 
         <style>
