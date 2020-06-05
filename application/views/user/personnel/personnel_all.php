@@ -23,7 +23,7 @@
         foreach ($pers as $key => $v_pers) :
               if($v_pers->posi_name == 'ผู้อำนวยการโรงเรียน'): ?>
         <center>
-            <div class="col-lg-4 col-md-6 align-items-stretch">
+            <div class="col-lg-4 col-md-6 align-items-stretch aos-animate"  data-aos="zoom-in" data-aos-delay="100">
 
                 <div class="member">
                     <div class="member-img">
@@ -65,7 +65,7 @@
         <?php foreach ($pers as $key => $v_pers) :
          if($v_pers->posi_name == 'รองผู้อำนวยการโรงเรียน'): ?>
         <center>
-            <div class="col-lg-4 col-md-6 align-items-stretch">
+            <div class="col-lg-4 col-md-6 align-items-stretch aos-init aos-animate"  data-aos="zoom-in" data-aos-delay="100">
                 <div class="member">
                     <div class="member-img">
                         <img src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid"
@@ -106,7 +106,7 @@
         <div class="row">
             <?php  foreach ($pers_type as $key => $v_pers_type): ?>
             <?php if($v_pers_type->posi_name != 'รองผู้อำนวยการโรงเรียน' && $v_pers_type->posi_name != 'ผู้อำนวยการโรงเรียน'): ?>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate"  data-aos="zoom-in" data-aos-delay="<?=$key;?>00">
                 <div class="member">
                     <div class="member-img">
                         <img src="<?=$img_p.$v_pers_type->pers_img;?>" class="img-fluid" alt="">

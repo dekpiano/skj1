@@ -15,9 +15,9 @@
        
       <?php foreach ($news as $key => $v_news) : ?>
 
-<div class="col-md-6 col-sm-6  col-lg-4 mb-3 animated fadeInUp ">
+<div class="col-md-6 col-sm-6  col-lg-4 mb-3  aos-animate"  data-aos="zoom-in" data-aos-delay="<?=$key?>00">
     <a href="<?=base_url('news/newsDetail/').$v_news->news_id;?>">
-        <div class="card mb-4 box-shadow h-100 overflow zoom">
+        <div class="card mb-4 box-shadow h-100 overflow zoom ">
             <?php if ($v_news->news_img == '') : ?>
             <img class="card-img-top"
                 alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"

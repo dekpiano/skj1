@@ -33,7 +33,7 @@
               <h4><a href="">ด้านการงานอาชีพ</a></h4>
             </div>
           </div>
-          <div class="col-xl-2 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-2 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="500">
             <div class="icon-box" style="padding:0px;">
               <div class="icon"><i class="icofont-result-sport"></i></div>
               <h4><a href="">ด้านกีฬา</a></h4>
