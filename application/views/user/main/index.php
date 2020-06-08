@@ -23,5 +23,8 @@
 <!-- SKJ Gellery -->
 <?php $this->load->view('user/gellery/gellery_main.php'); ?>
 
+<!-- SKJ หน่วยงาน -->
+<?php $this->load->view('user/institution/institution_main.php'); ?>
+
 
 <?php $this->load->view('user/popupSpecial/popupSpecial.php'); ?>

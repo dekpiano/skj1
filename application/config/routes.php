@@ -95,6 +95,10 @@ $route['admin/recruitstudent/add'] = 'admin/control_admin_recruitstudent/add';
 $route['admin/images'] = 'admin/control_admin_images';
 $route['admin/images/add'] = 'admin/control_admin_images/add';
 
+$route['admin/institutionO'] = 'admin/control_admin_institutionO';
+$route['admin/institutionO/add'] = 'admin/control_admin_institutionO/add';
+
+
 // ข่าวสารทั้งหมด
 $route['news/newsDetail/(:any)'] = 'control_news/news_detail/$1';
 $route['news/all'] = 'control_news/news_all';
