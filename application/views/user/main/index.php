@@ -27,4 +27,3 @@
 <?php $this->load->view('user/institution/institution_main.php'); ?>
 
 
-<?php $this->load->view('user/popupSpecial/popupSpecial.php'); ?>

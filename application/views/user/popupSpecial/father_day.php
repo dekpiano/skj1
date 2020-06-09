@@ -6,8 +6,9 @@
     <title>วันเฉลิมพระชนมพรรษา สมเด็จพระเจ้าอยู่หัวมหาวชิราลงกรณบดินทรเทพยวรางกูร 28 กรกฎาคม </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap');
@@ -32,7 +33,7 @@ button {
     position: relative;
     display: block;
     margin-top: 10px;
-    width: 350px;
+
     z-index: 1;
     border: 2px solid rgb(146, 119, 74);
     color: rgb(146, 119, 74);
@@ -106,18 +107,62 @@ h2 {
 
 
 h1,
-h2 {
-
-    color: #D5AD6D;
+h2,
+h3 {
+    color: #ffbe47;
     /*if no support for background-clip*/
 
     background: -webkit-linear-gradient(transparent, transparent),
         -webkit-linear-gradient(top, rgba(213, 173, 109, 1) 0%, rgba(213, 173, 109, 1) 26%, rgba(226, 186, 120, 1) 35%, rgba(163, 126, 67, 1) 45%, rgba(145, 112, 59, 1) 61%, rgba(213, 173, 109, 1) 100%);
     background: -o-linear-gradient(transparent, transparent);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0px;
+    text-shadow: #000 3px 1px 2px;
 }
+/* tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    img {
+        width: 460px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    .golden-btn{
+        font-size: 14px;
+    }
+}
+@media (max-width: 575.98px) {
+    img {
+        width: 360px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    h3 {
+        font-size: 14px;
+    }
+    .golden-btn{
+        font-size: 10px;
+    }
+ }
+ @media (min-width: 1366px) { 
+    img {
+        width: 540px;
+    }
+  }
+  @media (min-width: 1400px) { 
+    img {
+        width: 800px;
+    }
+  }
 </style>
 
 <body>
@@ -129,18 +174,19 @@ h2 {
 
     <div id="main">
         <div style="align-self: center;text-align: center;">
-            <img class="img-fluid" src="<?=base_url('uploads/video/logo-father.png')?>" alt="" >
+            <img class="img-fluid" src="<?=base_url('uploads/video/logo-father.png')?>" alt="">
             <div style="text-align: center;">
                 <h2> สมเด็จพระเจ้าอยู่หัวมหาวชิราลงกรณ บดินทรเทพยวรางกูร รัชกาลที่ ๑๐ <br>
-</h2><br>
+                </h2><br>
 
                 <h1>ทรงพระเจริญ</h1><br>
 
-                   <H2> ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา นักเรียนและผู้ปกครอง <br> โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</H2>
-                
+                <H3> ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา
+                    นักเรียนและผู้ปกครอง <br> โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</H3>
+
             </div>
             <div style="text-align-last: center;">
-                <button onclick="sigewebsite()" class="golden-btn" style="font-size:1.2em;">เข้าสู่เว็บไซต์</button>
+                <button onclick="sigewebsite()" class="golden-btn">เข้าสู่เว็บไซต์</button>
             </div>
 
         </div>
@@ -149,11 +195,17 @@ h2 {
     </div>
     <!-- <button onclick="sigewebsite()" class="golden-btn" style="font-size:1.6em;">เข้าสู่เว็บไซต์</button> -->
 </body>
- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+</script>
 <script>
 function sigewebsite() {
     window.location.href = "<?=base_url('welcome')?>";
