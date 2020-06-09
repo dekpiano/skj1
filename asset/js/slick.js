@@ -41,6 +41,7 @@ $('.items').slick({
 
 $('.items-institution').slick({
     dots: true,
+    arrows: false,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 4000,
@@ -49,6 +50,7 @@ $('.items-institution').slick({
     pauseOnDotsHover: false,
     slidesToShow: 7,
     slidesToScroll: 1,
+
     responsive: [
 
         {

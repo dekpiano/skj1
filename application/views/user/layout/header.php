@@ -201,7 +201,7 @@ padding-top: 150px; */
 }
 
 .dropdown-submenu>a:after {
-   
+
     float: right;
     border: none;
 }
@@ -214,7 +214,7 @@ padding-top: 150px; */
 }
 </style>
 
-<body >
+<body>
     <!-- LOADER -->
     <div class="se-pre-con"></div>
 
@@ -227,7 +227,7 @@ padding-top: 150px; */
                 <div class="row flex-nowrap justify-content-between align-items-center">
                     <div class="col-7 pt-1">
                         <div class="logo mr-auto">
-                            <a class="e" href="<?=base_url()?>">
+                            <a class="e" href="<?=base_url('welcome');?>">
                                 <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav1.png" alt="">
                             </a>
                         </div>
@@ -257,12 +257,11 @@ padding-top: 150px; */
         </div>
 
         <header>
-
-
+       
             <nav class="navbar navbar-expand-xl navbar-dark scroll_bar"
                 style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;">
                 <div class="container">
-                    <a style="width: 79%;" class="navbar-brand d-block d-sm-none d-md-none" href="<?=base_url()?>">
+                    <a style="width: 79%;" class="navbar-brand d-block d-sm-none d-md-none" href="<?=base_url('welcome');?>">
                         <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
                     </a>
                     <button class="navbar-toggler justify-content-end align-items-center" type="button"
@@ -271,14 +270,18 @@ padding-top: 150px; */
                         <span class="navbar-toggler-icon" style="width: 18px;"></span>
                     </button>
 
-
+                    
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
-
+                            <li class="nav-item ">
+                                <a class="text-white nav-link" href="<?=base_url('welcome');?>">
+                                <i class="icofont-home icofont-2x"></i>
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="text-white nav-link dropdown-toggle" href="#" id="dropdown01"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                        class="icofont-university"></i> เกี่ยวกับโรงเรียน</a>
+                                        class="icofont-university"></i> เกี่ยวกับ สกจ</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                                     <div class="row ">
                                         <?php foreach ($Allabout as $key => $v_about) : ?>
@@ -297,19 +300,18 @@ padding-top: 150px; */
                                     aria-expanded="false" class="nav-link text-white dropdown-toggle"><i
                                         class="icofont-teacher"></i> บุคลากร</a>
                                 <ul aria-labelledby="dropdownMenu1" class="dropdown-menu border-0 shadow">
-                                    
-                                <a class="dropdown-item" href="<?=base_url('Personnel/คณะผู้บริหาร')?>"><i
-                                                class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
 
-                                        <?php foreach ($lear as $key => $v_lear) : ?>
+                                    <a class="dropdown-item" href="<?=base_url('Personnel/คณะผู้บริหาร')?>"><i
+                                            class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
 
-                                        <a class="dropdown-item"
-                                            href="<?=base_url('Personnel/').$v_lear->lear_namethai?>">
-                                            <i class="icofont-dotted-right"></i>
-                                            กลุ่มสาระการเรียนรู้<?=$v_lear->lear_namethai?>
-                                        </a>
+                                    <?php foreach ($lear as $key => $v_lear) : ?>
 
-                                        <?php endforeach; ?>
+                                    <a class="dropdown-item" href="<?=base_url('Personnel/').$v_lear->lear_namethai?>">
+                                        <i class="icofont-dotted-right"></i>
+                                        กลุ่มสาระการเรียนรู้<?=$v_lear->lear_namethai?>
+                                    </a>
+
+                                    <?php endforeach; ?>
 
                                     <li class="dropdown-divider"></li>
 
@@ -317,10 +319,13 @@ padding-top: 150px; */
                                     <li class="dropdown-submenu">
                                         <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false"
-                                            class="dropdown-item dropdown-toggle"><i class="icofont-dotted-right"></i> ฝ่ายสนับสนุนการสอน</a>
-                                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">                                            
-                                            <li><a href="<?=base_url('Personnel/พนักงานจ้างเหมา')?>" class="dropdown-item">พนักงานจ้างเหมา</a></li>
-                                            <li><a href="<?=base_url('Personnel/พนักงานจ้างเหมาตามภารกิจ')?>" class="dropdown-item">พนักงานจ้างเหมาตามภารกิจ</a></li>
+                                            class="dropdown-item dropdown-toggle"><i class="icofont-dotted-right"></i>
+                                            ฝ่ายสนับสนุนการสอน</a>
+                                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
+                                            <li><a href="<?=base_url('Personnel/พนักงานจ้างเหมา')?>"
+                                                    class="dropdown-item">พนักงานจ้างเหมา</a></li>
+                                            <li><a href="<?=base_url('Personnel/พนักงานจ้างเหมาตามภารกิจ')?>"
+                                                    class="dropdown-item">พนักงานจ้างเหมาตามภารกิจ</a></li>
                                         </ul>
                                     </li>
                                     <!-- End Level two -->

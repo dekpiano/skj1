@@ -6,7 +6,7 @@ class Welcome extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->library('timeago');	
-
+		
 	}
 	public static $title = "โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์";
 	public static $description = "เป็นผู้นำ รักเพื่อน นับถือพี่ เคารพครู กตัญญูพ่อแม่ ดูแลน้อง สนองคุณแผ่นดิน โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์";
@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 		$data['news'] =	$this->db->order_by("news_date", "desc")->limit(4)->get('tb_news')->result(); //ประชาสัมพันธ์
 		$data['banner'] =	$this->db->order_by("banner_id", "desc")->get('tb_banner')->result(); //ประชาสัมพันธ์
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
-		$data['images'] =$this->db->order_by('img_date','DESC')->limit(9)->get('tb_images')->result(); //ประชาสัมพันธ์
+		$data['images'] =$this->db->order_by('img_date','DESC')->limit(6)->get('tb_images')->result(); //ประชาสัมพันธ์
 		$data['journal'] =$this->db->order_by('jour_createdate','DESC')->limit(10)->get('tb_journal')->result(); //วารสาร
 		$data['institution'] =$this->db->where('instiO_category','ภายนอก')->limit(10)->get('tb_institutiono')->result(); //หน่วยงาน
 
@@ -32,6 +32,10 @@ class Welcome extends CI_Controller {
 	public function not_404()
 	{
 		$this->load->view('errors/404.php');
+	}
+
+	function father_day(){
+		$this->load->view('user/popupSpecial/father_day.php');
 	}
 	
 }
