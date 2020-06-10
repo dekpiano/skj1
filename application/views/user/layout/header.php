@@ -259,7 +259,7 @@ padding-top: 150px; */
         <header>
        
             <nav class="navbar navbar-expand-xl navbar-dark scroll_bar"
-                style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;">
+                style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;background-color:rgba(232, 38, 158, 1);">
                 <div class="container">
                     <a style="width: 79%;" class="navbar-brand d-block d-sm-none d-md-none" href="<?=base_url('welcome');?>">
                         <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
