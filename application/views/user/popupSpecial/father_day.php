@@ -163,11 +163,17 @@ h3 {
         width: 800px;
     }
   }
+
+  .video-con{
+        min-width: 100%;
+    min-height: 100vh;
+    height: auto;
+    }
 </style>
 
 <body>
     <div class="con-video">
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-con">
             <source src="<?=base_url('uploads/video/video-bg-gold.mp4')?>" type="video/mp4">
         </video>
     </div>

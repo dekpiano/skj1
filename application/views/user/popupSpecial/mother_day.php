@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>เนื่องในโอกาสวันเฉลิมพระชนมพรรษา  สมเด็จพระนางเจ้า ฯ พระบรมราชินี  ๓ มิถุนายน ๒๕๖๓</title>
+    <title>เนื่องในโอกาสวันเฉลิมพระชนมพรรษา สมเด็จพระนางเจ้า ฯ พระบรมราชินี ๓ มิถุนายน ๒๕๖๓</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -140,19 +140,34 @@ h3 {
     .golden-btn {
         font-size: 14px;
     }
+
+    p.logo-r::before {
+        content: "";
+        display: block;
+        width: 264px;
+        height: 85px;
+        background-image: url(uploads/video/logo-thai.png);
+        position: absolute;
+        background-position: center right;
+        position: absolute;
+        top: 106px;
+        right: 23px;
+        z-index: -99;
+    }
+
 }
 
 @media (max-width: 575.98px) {
     img {
-        width: 170px;
+        width: 199px;
     }
 
     h1 {
-        font-size: 30px;
+        font-size: 45px;
     }
 
     h2 {
-        font-size: 16px;
+        font-size: 22px;
     }
 
     h3 {
@@ -161,6 +176,20 @@ h3 {
 
     .golden-btn {
         font-size: 10px;
+    }
+
+    p.logo-r::before {
+        content: "";
+        display: block;
+        width: 317px;
+        height: 85px;
+        background-image: url(uploads/video/logo-thai.png);
+        position: absolute;
+        background-position: center right;
+        position: absolute;
+        top: 125px;
+        right: 29px;
+        z-index: -99;
     }
 }
 
@@ -174,39 +203,62 @@ h3 {
     img {
         width: 450px;
     }
+
+    p.logo-r::before {
+        content: "";
+        display: block;
+        width: 330px;
+        height: 85px;
+        background-image: url(uploads/video/logo-thai.png);
+        position: absolute;
+        background-position: center right;
+        position: absolute;
+        top: 152px;
+        right: 95px;
+        z-index: -99;
+    }
+
+}
+
+.video-con {
+    min-width: 100%;
+    min-height: 100vh;
+    height: auto;
 }
 </style>
 
 <body>
     <div class="con-video">
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-con">
             <source src="<?=base_url('uploads/video/video-bg-violet.mp4')?>" type="video/mp4">
         </video>
     </div>
     <div id="main" class="container ">
-    <div class="row">
-        <div class="col-md-6 order-1 text-center align-self-center">
-            <div class=""   >
-                <h2> เนื่องในโอกาสวันเฉลิมพระชนมพรรษา <br>
-                สมเด็จพระนางเจ้า ฯ พระบรมราชินี<br>
-                ๓ มิถุนายน ๒๕๖๓
-                </h2><br>
-                <h1>ทรงพระเจริญ</h1><br>
+        <div class="row">
+            <div class="col-md-6 order-1 text-center align-self-center">
+                <div class="">
+                    <h2> เนื่องในโอกาสวันเฉลิมพระชนมพรรษา <br>
+                        สมเด็จพระนางเจ้า ฯ พระบรมราชินี<br>
+                        ๓ มิถุนายน ๒๕๖๓
+                    </h2><br>
 
-                <H3> ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา
-                    นักเรียนและผู้ปกครอง <br> โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</H3>
+                    <p class="logo-r">
+                        <h1>ทรงพระเจริญ</h1>
+                    </p>
+                    <H3 class="mt-5"> ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา
+                        นักเรียนและผู้ปกครอง <br> โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</H3>
+                </div>
+                <div style="">
+                    <button onclick="sigewebsite()" class="golden-btn">เข้าสู่เว็บไซต์</button>
+                </div>
             </div>
-            <div style="">
-            <button onclick="sigewebsite()" class="golden-btn">เข้าสู่เว็บไซต์</button>
+            <div class="col-md-6 order-md-1 text-center align-self-center">
+                <img class="img-fluid" src="<?=base_url('uploads/video/logo-mother.png')?>" alt="">
+            </div>
+
         </div>
-        </div>
-        <div class="col-md-6 order-md-1 text-center align-self-center">
-            <img class="img-fluid" src="<?=base_url('uploads/video/logo-mother.png')?>" alt="">
-        </div>
-        
     </div>
-    </div>
-    
+
 
 </body>
 <!-- Optional JavaScript -->

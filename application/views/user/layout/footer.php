@@ -108,53 +108,26 @@
 <script src="<?=base_url()?>/asset/user/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="<?=base_url()?>/asset/user/vendor/venobox/venobox.min.js"></script>
 <script src="<?=base_url()?>/asset/user/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="<?=base_url()?>/asset/user/vendor/jquery.countdown.min.js"></script>
 
 <script src="<?=base_url()?>asset/js/jquery.inputmask.min.js"></script>
 <script src="<?=base_url()?>asset/js/imagesloaded.pkgd.min.js"></script>
 <script src="<?=base_url()?>asset/user/js/aos.js"></script>
+
 <!-- Template Main JS File -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="<?=base_url()?>asset/js/slick.js?v=1001"></script>
-<script src="<?=base_url()?>/asset/user/js/main.js?v=1001"></script>
+<script src="<?=base_url()?>/asset/user/js/main.js?v=1000"></script>
 <script src="<?=base_url()?>/asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
 <script src="<?=base_url();?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="<?=base_url();?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="<?=base_url();?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1001"></script>
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
-</script>
+
+<script src="<?=base_url()?>asset/user/js/countdownopenschool.js"></script>
 <script type="text/javascript">
- AOS.init();
-$('.counter').counterUp({
-    delay: 10,
-    time: 1000
-});
-$('[data-toggle="tooltip"]').tooltip();
-$(":input").inputmask();
 
-var nav = $('.scroll_bar');
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 125) {
-        nav.addClass("f-nav");
-    } else {
-        nav.removeClass("f-nav");
-    }
-});
-
-$('#popupSpecial').modal({
-  show: true
-})
-
-
-function onHuman(response) {
-    document.getElementById('captcha').value = response;
-}
-var onloadCallback = function() {
-    grecaptcha.render('html_element', {
-        'sitekey': '6LdZePgUAAAAAA5sewT1jFoUrRv7E7TGBg6fN6Zs'
-    });
-};
 </script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -225,65 +198,8 @@ $(document).ready(function() {
 });
 
 
-(function() {
-    'use strict';
-
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    swal("แจ้งเตือน", "กรุณากรอกข้อมูลให้ครบ!", "warning")
-                }
-                form.classList.add('was-validated');
-
-            }, false);
-        });
-    }, false);
-})();
-</script>
-<script type="text/javascript">
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-            $('#blah').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(input.files[0]); // convert to base64 string
-    }
-}
-
-$("#recruit_img").change(function() {
-    readURL(this);
-});
-
-// breakpoint and up  
-$(window).resize(function() {
-    if ($(window).width() >= 980) {
-
-        // when you hover a toggle show its dropdown menu
-        $(".navbar .dropdown-toggle").hover(function() {
-            $(this).parent().toggleClass("show");
-            $(this).parent().find(".dropdown-menu").toggleClass("show");
-        });
-
-        // hide the menu when the mouse leaves the dropdown
-        $(".navbar .dropdown-menu").mouseleave(function() {
-            $(this).removeClass("show");
-        });
-
-        // do something here
-    }
-});
 
 </script>
+
 
 </html>
-<?php $this->load->view('user/recruitstudent/alert_student.php') ?>

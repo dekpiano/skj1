@@ -1,177 +1,177 @@
 /**
-* Template Name: Lumia - v2.0.0
-* Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+ * Template Name: Lumia - v2.0.0
+ * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
 !(function($) {
-  "use strict";
+    "use strict";
 
-  // Smooth scroll for the navigation menu and links with .scrollto classes
-  $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      e.preventDefault();
-      var target = $(this.hash);
-      if (target.length) {
+    // Smooth scroll for the navigation menu and links with .scrollto classes
+    $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            e.preventDefault();
+            var target = $(this.hash);
+            if (target.length) {
 
-        var scrollto = target.offset().top;
-        var scrolled = 20;
+                var scrollto = target.offset().top;
+                var scrolled = 20;
 
-        if ($('#header').length) {
-          scrollto -= $('#header').outerHeight()
+                if ($('#header').length) {
+                    scrollto -= $('#header').outerHeight()
 
-          if (!$('#header').hasClass('header-scrolled')) {
-            scrollto += scrolled;
-          }
+                    if (!$('#header').hasClass('header-scrolled')) {
+                        scrollto += scrolled;
+                    }
+                }
+
+                if ($(this).attr("href") == '#header') {
+                    scrollto = 0;
+                }
+
+                $('html, body').animate({
+                    scrollTop: scrollto
+                }, 1500, 'easeInOutExpo');
+
+                if ($(this).parents('.nav-menu, .mobile-nav').length) {
+                    $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+                    $(this).closest('li').addClass('active');
+                }
+
+                if ($('body').hasClass('mobile-nav-active')) {
+                    $('body').removeClass('mobile-nav-active');
+                    $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+                    $('.mobile-nav-overly').fadeOut();
+                }
+                return false;
+            }
         }
+    });
 
-        if ($(this).attr("href") == '#header') {
-          scrollto = 0;
+    // Mobile Navigation
+    if ($('.nav-menu').length) {
+        var $mobile_nav = $('.nav-menu').clone().prop({
+            class: 'mobile-nav d-lg-none'
+        });
+        $('body').append($mobile_nav);
+        $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+        $('body').append('<div class="mobile-nav-overly"></div>');
+
+        $(document).on('click', '.mobile-nav-toggle', function(e) {
+            $('body').toggleClass('mobile-nav-active');
+            $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+            $('.mobile-nav-overly').toggle();
+        });
+
+        $(document).on('click', '.mobile-nav .drop-down > a', function(e) {
+            e.preventDefault();
+            $(this).next().slideToggle(300);
+            $(this).parent().toggleClass('active');
+        });
+
+        $(document).click(function(e) {
+            var container = $(".mobile-nav, .mobile-nav-toggle");
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                if ($('body').hasClass('mobile-nav-active')) {
+                    $('body').removeClass('mobile-nav-active');
+                    $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+                    $('.mobile-nav-overly').fadeOut();
+                }
+            }
+        });
+    } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
+        $(".mobile-nav, .mobile-nav-toggle").hide();
+    }
+
+    if ($(window).scrollTop() > 100) {
+        $('#header').addClass('header-scrolled');
+    }
+
+    // Real view height for mobile devices
+    if (window.matchMedia("(max-width: 767px)").matches) {
+        $('#hero').css({
+            height: $(window).height()
+        });
+    }
+
+    // Back to top button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
         }
+    });
 
+    $('.back-to-top').click(function() {
         $('html, body').animate({
-          scrollTop: scrollto
+            scrollTop: 0
         }, 1500, 'easeInOutExpo');
-
-        if ($(this).parents('.nav-menu, .mobile-nav').length) {
-          $('.nav-menu .active, .mobile-nav .active').removeClass('active');
-          $(this).closest('li').addClass('active');
-        }
-
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-          $('.mobile-nav-overly').fadeOut();
-        }
         return false;
-      }
-    }
-  });
-
-  // Mobile Navigation
-  if ($('.nav-menu').length) {
-    var $mobile_nav = $('.nav-menu').clone().prop({
-      class: 'mobile-nav d-lg-none'
-    });
-    $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
-    $('body').append('<div class="mobile-nav-overly"></div>');
-
-    $(document).on('click', '.mobile-nav-toggle', function(e) {
-      $('body').toggleClass('mobile-nav-active');
-      $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-      $('.mobile-nav-overly').toggle();
     });
 
-    $(document).on('click', '.mobile-nav .drop-down > a', function(e) {
-      e.preventDefault();
-      $(this).next().slideToggle(300);
-      $(this).parent().toggleClass('active');
+    // Skills section
+    $('.skills-content').waypoint(function() {
+        $('.progress .progress-bar').each(function() {
+            $(this).css("width", $(this).attr("aria-valuenow") + '%');
+        });
+    }, {
+        offset: '80%'
     });
 
-    $(document).click(function(e) {
-      var container = $(".mobile-nav, .mobile-nav-toggle");
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-          $('.mobile-nav-overly').fadeOut();
+    // jQuery counterUp
+    $('[data-toggle="counter-up"]').counterUp({
+        delay: 10,
+        time: 1000
+    });
+
+    // Porfolio isotope and filter
+    $(window).on('load', function() {
+        var portfolioIsotope = $('.portfolio-container').isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+        });
+
+        $('#portfolio-flters li').on('click', function() {
+            $("#portfolio-flters li").removeClass('filter-active');
+            $(this).addClass('filter-active');
+
+            portfolioIsotope.isotope({
+                filter: $(this).data('filter')
+            });
+        });
+
+        // Initiate venobox (lightbox feature used in portofilo)
+        $(document).ready(function() {
+            $('.venobox').venobox();
+        });
+    });
+
+    // Testimonials carousel (uses the Owl Carousel library)
+    $(".testimonials-carousel").owlCarousel({
+        autoplay: true,
+        dots: true,
+        loop: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            900: {
+                items: 3
+            }
         }
-      }
-    });
-  } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
-    $(".mobile-nav, .mobile-nav-toggle").hide();
-  }
-
-  if ($(window).scrollTop() > 100) {
-    $('#header').addClass('header-scrolled');
-  }
-
-  // Real view height for mobile devices
-  if (window.matchMedia("(max-width: 767px)").matches) {
-    $('#hero').css({
-      height: $(window).height()
-    });
-  }
-
-  // Back to top button
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-    }
-  });
-
-  $('.back-to-top').click(function() {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1500, 'easeInOutExpo');
-    return false;
-  });
-
-  // Skills section
-  $('.skills-content').waypoint(function() {
-    $('.progress .progress-bar').each(function() {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, {
-    offset: '80%'
-  });
-
-  // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
-
-  // Porfolio isotope and filter
-  $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
     });
 
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-    });
-
-    // Initiate venobox (lightbox feature used in portofilo)
-    $(document).ready(function() {
-      $('.venobox').venobox();
-    });
-  });
-
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: {
-      0: {
+    // Portfolio details carousel
+    $(".portfolio-details-carousel").owlCarousel({
+        autoplay: true,
+        dots: true,
+        loop: true,
         items: 1
-      },
-      768: {
-        items: 2
-      },
-      900: {
-        items: 3
-      }
-    }
-  });
-
-  // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
+    });
 
 })(jQuery);
 
@@ -197,154 +197,233 @@
 
 $(function() {
 
-  // author badge :)
-  // var author = '<div style="position: fixed;bottom: 0;right: 20px;background-color: #fff;box-shadow: 0 4px 8px rgba(0,0,0,.05);border-radius: 3px 3px 0 0;font-size: 12px;padding: 5px 10px;">By <a href="https://twitter.com/mhdnauvalazhar">@mhdnauvalazhar</a> &nbsp;&bull;&nbsp; <a href="https://www.buymeacoffee.com/mhdnauvalazhar">Buy me a Coffee</a></div>';
-  // $("body").append(author);
+    // author badge :)
+    // var author = '<div style="position: fixed;bottom: 0;right: 20px;background-color: #fff;box-shadow: 0 4px 8px rgba(0,0,0,.05);border-radius: 3px 3px 0 0;font-size: 12px;padding: 5px 10px;">By <a href="https://twitter.com/mhdnauvalazhar">@mhdnauvalazhar</a> &nbsp;&bull;&nbsp; <a href="https://www.buymeacoffee.com/mhdnauvalazhar">Buy me a Coffee</a></div>';
+    // $("body").append(author);
 
-  $("input[type='password'][data-eye]").each(function(i) {
-    var $this = $(this),
-      id = 'eye-password-' + i,
-      el = $('#' + id);
+    $("input[type='password'][data-eye]").each(function(i) {
+        var $this = $(this),
+            id = 'eye-password-' + i,
+            el = $('#' + id);
 
-    $this.wrap($("<div/>", {
-      style: 'position:relative',
-      id: id
-    }));
+        $this.wrap($("<div/>", {
+            style: 'position:relative',
+            id: id
+        }));
 
-    $this.css({
-      paddingRight: 60
-    });
-    $this.after($("<div/>", {
-      html: 'Show',
-      class: 'btn btn-primary btn-sm',
-      id: 'passeye-toggle-'+i,
-    }).css({
-        position: 'absolute',
-        right: 10,
-        top: ($this.outerHeight() / 2) - 12,
-        padding: '2px 7px',
-        fontSize: 12,
-        cursor: 'pointer',
-    }));
+        $this.css({
+            paddingRight: 60
+        });
+        $this.after($("<div/>", {
+            html: 'Show',
+            class: 'btn btn-primary btn-sm',
+            id: 'passeye-toggle-' + i,
+        }).css({
+            position: 'absolute',
+            right: 10,
+            top: ($this.outerHeight() / 2) - 12,
+            padding: '2px 7px',
+            fontSize: 12,
+            cursor: 'pointer',
+        }));
 
-    $this.after($("<input/>", {
-      type: 'hidden',
-      id: 'passeye-' + i
-    }));
+        $this.after($("<input/>", {
+            type: 'hidden',
+            id: 'passeye-' + i
+        }));
 
-    var invalid_feedback = $this.parent().parent().find('.invalid-feedback');
+        var invalid_feedback = $this.parent().parent().find('.invalid-feedback');
 
-    if(invalid_feedback.length) {
-      $this.after(invalid_feedback.clone());
-    }
-
-    $this.on("keyup paste", function() {
-      $("#passeye-"+i).val($(this).val());
-    });
-    $("#passeye-toggle-"+i).on("click", function() {
-      if($this.hasClass("show")) {
-        $this.attr('type', 'password');
-        $this.removeClass("show");
-        $(this).removeClass("btn-outline-primary");
-      }else{
-        $this.attr('type', 'text');
-        $this.val($("#passeye-"+i).val());        
-        $this.addClass("show");
-        $(this).addClass("btn-outline-primary");
-      }
-    });
-  });
-
-  $(".my-login-validation").submit(function() {
-    var form = $(this);
-        if (form[0].checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
+        if (invalid_feedback.length) {
+            $this.after(invalid_feedback.clone());
         }
-    form.addClass('was-validated');
-  });
+
+        $this.on("keyup paste", function() {
+            $("#passeye-" + i).val($(this).val());
+        });
+        $("#passeye-toggle-" + i).on("click", function() {
+            if ($this.hasClass("show")) {
+                $this.attr('type', 'password');
+                $this.removeClass("show");
+                $(this).removeClass("btn-outline-primary");
+            } else {
+                $this.attr('type', 'text');
+                $this.val($("#passeye-" + i).val());
+                $this.addClass("show");
+                $(this).addClass("btn-outline-primary");
+            }
+        });
+    });
+
+    $(".my-login-validation").submit(function() {
+        var form = $(this);
+        if (form[0].checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.addClass('was-validated');
+    });
 });
 
 
 
 // ///////////////////////////
-$(document).ready(function() { 
-  // Step show event
-  $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
-    // alert("You are on step "+stepDirection+" now");
-     if(stepPosition === 'first'){
-         $("#prev-btn").addClass('disabled');
-     }else if(stepPosition === 'final'){
-         $("#next-btn").addClass('disabled');
-     }else{
-         $("#prev-btn").removeClass('disabled');
-         $("#next-btn").removeClass('disabled');
-     }
-  });
+$(document).ready(function() {
+    // Step show event
+    $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+        // alert("You are on step "+stepDirection+" now");
+        if (stepPosition === 'first') {
+            $("#prev-btn").addClass('disabled');
+        } else if (stepPosition === 'final') {
+            $("#next-btn").addClass('disabled');
+        } else {
+            $("#prev-btn").removeClass('disabled');
+            $("#next-btn").removeClass('disabled');
+        }
+    });
 
-  // Toolbar extra buttons
-  var btnFinish = $('<button></button>').text('Finish')
-                                   .addClass('btn btn-info')
-                                   .on('click', function(){ alert('Finish Clicked'); });
-  var btnCancel = $('<button></button>').text('Cancel')
-                                   .addClass('btn btn-danger')
-                                   .on('click', function(){ $('#smartwizard').smartWizard("reset"); });
-
-
-  // Smart Wizard
-  $('#smartwizard').smartWizard({
-          selected: 0,
-          theme: 'arrows',
-          transitionEffect:'fade',
-          showStepURLhash: true,
-          toolbarSettings: {
-                            showNextButton: false, // show/hide a Next button
-                            showPreviousButton: false, // show/hide a Previous button
-                          }
-  });
+    // Toolbar extra buttons
+    var btnFinish = $('<button></button>').text('Finish')
+        .addClass('btn btn-info')
+        .on('click', function() { alert('Finish Clicked'); });
+    var btnCancel = $('<button></button>').text('Cancel')
+        .addClass('btn btn-danger')
+        .on('click', function() { $('#smartwizard').smartWizard("reset"); });
 
 
-  // External Button Events
-  $("#reset-btn").on("click", function() {
-      // Reset wizard
-      $('#smartwizard').smartWizard("reset");
-      return true;
-  });
+    // Smart Wizard
+    $('#smartwizard').smartWizard({
+        selected: 0,
+        theme: 'arrows',
+        transitionEffect: 'fade',
+        showStepURLhash: true,
+        toolbarSettings: {
+            showNextButton: false, // show/hide a Next button
+            showPreviousButton: false, // show/hide a Previous button
+        }
+    });
 
-  $("#prev-btn").on("click", function() {
-      // Navigate previous
-      $('#smartwizard').smartWizard("prev");
-      return true;
-  });
 
-  $("#next-btn").on("click", function() {
-      // Navigate next
-      $('#smartwizard').smartWizard("next");
-      return true;
-  });
+    // External Button Events
+    $("#reset-btn").on("click", function() {
+        // Reset wizard
+        $('#smartwizard').smartWizard("reset");
+        return true;
+    });
 
-});  
+    $("#prev-btn").on("click", function() {
+        // Navigate previous
+        $('#smartwizard').smartWizard("prev");
+        return true;
+    });
 
- 
+    $("#next-btn").on("click", function() {
+        // Navigate next
+        $('#smartwizard').smartWizard("next");
+        return true;
+    });
+
+});
+
+
 
 (function() {
-  'use strict';
+    'use strict';
 
-  window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
 
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  swal("แจ้งเตือน", "กรุณากรอกข้อมูลให้ครบ!", "warning")
-              }
-              form.classList.add('was-validated');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    swal("แจ้งเตือน", "กรุณากรอกข้อมูลให้ครบ!", "warning")
+                }
+                form.classList.add('was-validated');
 
-          }, false);
-      });
-  }, false);
+            }, false);
+        });
+    }, false);
+})();
+
+
+AOS.init();
+$('.counter').counterUp({
+    delay: 10,
+    time: 1000
+});
+$('[data-toggle="tooltip"]').tooltip();
+$(":input").inputmask();
+
+var nav = $('.scroll_bar');
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 125) {
+        nav.addClass("f-nav");
+    } else {
+        nav.removeClass("f-nav");
+    }
+});
+
+$('#popupSpecial').modal({
+    show: true
+});
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            $('#blah').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+}
+
+$("#recruit_img").change(function() {
+    readURL(this);
+});
+
+// breakpoint and up  
+$(window).resize(function() {
+    if ($(window).width() >= 980) {
+
+        // when you hover a toggle show its dropdown menu
+        $(".navbar .dropdown-toggle").hover(function() {
+            $(this).parent().toggleClass("show");
+            $(this).parent().find(".dropdown-menu").toggleClass("show");
+        });
+
+        // hide the menu when the mouse leaves the dropdown
+        $(".navbar .dropdown-menu").mouseleave(function() {
+            $(this).removeClass("show");
+        });
+
+        // do something here
+    }
+});
+
+(function() {
+    'use strict';
+
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    swal("แจ้งเตือน", "กรุณากรอกข้อมูลให้ครบ!", "warning")
+                }
+                form.classList.add('was-validated');
+
+            }, false);
+        });
+    }, false);
 })();
