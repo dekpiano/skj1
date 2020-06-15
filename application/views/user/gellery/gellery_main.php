@@ -26,7 +26,7 @@
                     <div class="card aos-animate"  data-aos="zoom-in" data-aos-delay="<?=$key?>00">
                         <a target="_blank" title="<?=$v_images->img_title;?>" href="<?=$v_images->img_link;?>">
                             <div class="img-hover-zoom img-hover-zoom--basic">
-                                <img class="card-img-top" src="<?=$v_images->img_mainpic;?>"
+                                <img class="card-img-top" src="<?=base_url('uploads/images/').$v_images->img_mainpic;?>"
                                     alt="<?=$v_images->img_title;?>" style="width:100%">
                             </div>
                             <div class="card-body text-center">

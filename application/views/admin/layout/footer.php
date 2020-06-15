@@ -152,7 +152,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
 }
-$("#jour_img ,#instiO_img").change(function() {
+$("#jour_img ,#instiO_img, #img_mainpic").change(function() {
     readURL(this);
 });
       </script>

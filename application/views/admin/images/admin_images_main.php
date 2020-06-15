@@ -30,7 +30,7 @@
                       <td><?=$v_img->img_title;?></td>
                       <td>
                         <a  href="<?=base_url('admin/control_admin_images/edit_images/').$v_img->img_id;?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> แก้ไข</a>
-                        <a  href="<?=base_url('admin/control_admin_images/delete_images/').$v_img->img_id;?>" class="btn btn-danger btn-sm" onClick="return confirm('ต้องการลบข้อมูลหรือไม่?')"><i class="fas fa-trash-alt"></i> ลบ</a>
+                        <a  href="<?=base_url('admin/control_admin_images/delete_images/').$v_img->img_id.'/'.$v_img->img_mainpic;?>" class="btn btn-danger btn-sm" onClick="return confirm('ต้องการลบข้อมูลหรือไม่?')"><i class="fas fa-trash-alt"></i> ลบ</a>
                       </td>
                     </tr>
                   <?php endforeach; ?>                   
