@@ -212,6 +212,8 @@ padding-top: 150px; */
     margin-top: 0px;
     margin-left: 0px;
 }
+
+
 </style>
 
 <body>
@@ -223,7 +225,7 @@ padding-top: 150px; */
 
         <div class="container d-none d-sm-block d-lg-block ">
 
-            <header class="blog-header py-4">
+            <header  class="blog-header nav-down py-4" >
                 <div class="row flex-nowrap justify-content-between align-items-center">
                     <div class="col-7 pt-1">
                         <div class="logo mr-auto">
@@ -256,12 +258,12 @@ padding-top: 150px; */
             </header>
         </div>
 
-        <header>
-       
-            <nav class="navbar navbar-expand-xl navbar-dark scroll_bar"
+        <header class="nav-down">
+       <!-- scroll_bar -->
+            <nav class="navbar navbar-expand-lg navbar-dark scroll_bar"
                 style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;background-color:rgba(232, 38, 158, 1);">
                 <div class="container">
-                    <a style="width: 79%;" class="navbar-brand d-block d-sm-none d-md-none" href="<?=base_url('welcome');?>">
+                    <a style="width: 79%;" class="navbar-brand d-block d-sm-none d-lg-none" href="<?=base_url('welcome');?>">
                         <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
                     </a>
                     <button class="navbar-toggler justify-content-end align-items-center" type="button"
@@ -269,6 +271,12 @@ padding-top: 150px; */
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon" style="width: 18px;"></span>
                     </button>
+                   
+                    <a  style="width: 50%;" class="navbar-md invisible navbar-brand justify-content-center d-none d-md-block d-lg-none" href="<?=base_url('welcome');?>">
+                        <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
+                    </a>
+                    
+                    
 
                     
                     <div class="collapse navbar-collapse" id="navbarCollapse">

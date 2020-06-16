@@ -362,8 +362,12 @@ var nav = $('.scroll_bar');
 $(window).scroll(function() {
     if ($(this).scrollTop() > 125) {
         nav.addClass("f-nav");
+        $('.navbar-md').addClass('visible');
+        $('.navbar-md').removeClass('invisible');
     } else {
         nav.removeClass("f-nav");
+        $('.navbar-md').addClass('invisible');
+        $('.navbar-md').removeClass('visible');
     }
 });
 
