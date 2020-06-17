@@ -6,10 +6,6 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
 ?>
 
         <div class="col-12">
-            <!--- หัวข้อ --->
-
-
-
             <style>
             /* Tablet */
             @media (min-width: 768px) {
@@ -74,17 +70,14 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
                 width: 2rem;
                 position: absolute;
             }
-
-     
-
             </style>
             <!--Container-->
 
             <!-- Countdown 1-->
             <div class="rounded bg-gradient-1 text-white shadow text-center mb-5">
-                    <p class=" font-weight-bold text-uppercase h2">เปิดภาคเรียนที่ 1 ปีการศึกษา 2563 </p>
-                    <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
-                </div>
+                <p class=" font-weight-bold text-uppercase h2">เปิดภาคเรียนที่ 1 ปีการศึกษา 2563 </p>
+                <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
+            </div>
 
             <div class="col-12 py-4 ">
                 <div class="row">
@@ -279,39 +272,42 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
 
 </section>
 
-<section id="" class="  ">
-    <div class="jumbotron  text-white rounded bg-dark "
-        style="background-image: url(https://image.freepik.com/free-vector/conceptual-coronavirus-illustration-3d-virus-form-abstract-background-pathogen-visualization_1217-1663.jpg);    background-position: center;    background-repeat: no-repeat;    background-size: cover;margin-bottom: 0rem;"
-        data-aos="fade-down">
-        <div class="row">
-            <div class="col-md-6 px-2">
-                <h1 class="display-4 text-white">รายงานสถานการณ์ โควิด-19</h1>
-                <p class="lead my-3">อัพเดทข้อมูลล่าสุด <?=$users->UpdateDate;?> </p>
-                <p class="lead mb-0"><a href="https://covid19.ddc.moph.go.th/th"
-                        class="text-white font-weight-bold">Continue reading...</a></p>
-            </div>
-            <div class="col-md-6 px-2">
-                <div class="list-group">
-                    <a href="#"
-                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                        ติดเชื้อสะสม <small>[เพิ่มขึ้น <?=$users->NewConfirmed;?>]</small>
-                        <span class="badge badge-primary badge-pill"><?=number_format($users->Confirmed);?></span>
-                    </a>
-                    <a href="#"
-                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                        หายแล้ว <small>[เพิ่มขึ้น <?=$users->NewRecovered;?>]</small>
-                        <span class="badge badge-primary badge-pill"><?=number_format($users->Recovered);?></span>
-                    </a>
-                    <a href="#"
-                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                        รักษาอยู่ใน รพ.
-                        <span class="badge badge-primary badge-pill"><?=number_format($users->Hospitalized);?></span>
-                    </a>
-                    <a href="#"
-                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                        เสียชีวิต
-                        <span class="badge badge-primary badge-pill"><?=number_format($users->Deaths);?></span>
-                    </a>
+<section id="" class="section bg-dark">
+    <div class="  text-white   " data-aos="fade-down">
+        <div class="container pad-3">
+            <div class="row">
+                <div class="col-md-6 px-2 align-self-center">
+                    <img src="<?=base_url('asset/user/img/covid.png');?>" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-2 align-self-center">
+                    <h1 class="display-5 text-white">รายงานสถานการณ์ โควิด-19</h1>
+                    <div class="list-group">
+
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
+                            ติดเชื้อสะสม <small>[เพิ่มขึ้น <?=$users->NewConfirmed;?>]</small>
+                            <span class="badge badge-primary badge-pill"><?=number_format($users->Confirmed);?></span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
+                            หายแล้ว <small>[เพิ่มขึ้น <?=$users->NewRecovered;?>]</small>
+                            <span class="badge badge-primary badge-pill"><?=number_format($users->Recovered);?></span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
+                            รักษาอยู่ใน รพ.
+                            <span
+                                class="badge badge-primary badge-pill"><?=number_format($users->Hospitalized);?></span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
+                            เสียชีวิต
+                            <span class="badge badge-primary badge-pill"><?=number_format($users->Deaths);?></span>
+                        </a>
+
+                    </div>
+
+                    <div class="text-center display-6">อัพเดทข้อมูลล่าสุด <?=$users->UpdateDate;?></div>
                 </div>
             </div>
         </div>
