@@ -98,6 +98,9 @@ $route['admin/images/add'] = 'admin/control_admin_images/add';
 $route['admin/institutionO'] = 'admin/control_admin_institutionO';
 $route['admin/institutionO/add'] = 'admin/control_admin_institutionO/add';
 
+$route['admin/document'] = 'admin/control_admin_document';
+$route['admin/document/add'] = 'admin/control_admin_document/add';
+
 
 // ข่าวสารทั้งหมด
 $route['news/newsDetail/(:any)'] = 'control_news/news_detail/$1';

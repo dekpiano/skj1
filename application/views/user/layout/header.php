@@ -377,3 +377,4 @@ padding-top: 150px; */
         animation-iteration-count: infinite;
     }
     </style>
+

@@ -268,9 +268,13 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
                     class=" btn btn-outline-secondary my-2 my-sm-0">ข่าวสารทั้งหมด</a></center>
         </div>
 
+
+
     </div>
 
 </section>
+
+<?php $this->load->view('user/documents/documents_main.php'); ?>
 
 <section id="" class="section bg-dark">
     <div class="  text-white   " data-aos="fade-down">
