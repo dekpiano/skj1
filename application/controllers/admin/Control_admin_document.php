@@ -121,7 +121,7 @@ window.history.back();
 		$this->db->from('tb_document');
 		$this->db->where('doc_id',$id);
 		$data['doc'] =	$this->db->get()->result();
-		$data['action'] = 'update_document/'.$data['doc'][0]->doc_file;
+		$data['action'] = 'update_document/'.$data['doc'][0]->doc_department.'/'.$data['doc'][0]->doc_category.'/'.$data['doc'][0]->doc_file;
 
 		$this->load->view('admin/layout/header.php',$data);
 		$this->load->view('admin/layout/navber.php');
@@ -131,34 +131,35 @@ window.history.back();
 		$this->load->view('admin/layout/footer.php');
 	}
 
-	public function update_document($file)
+	public function update_document($department,$category,$file)
 	{
-		//print_r($_FILES['doc_file']['error']);exit();
-		if($_FILES['doc_file']['error'] == 0){
-			$target_dir="uploads/document/".$this->input->post('doc_department')."/".$this->input->post('doc_category')."/";
+		$addrass_old = 'uploads/document/'.$department.'/'.$category.'/'.$file;
+		$target_dir="uploads/document/".$this->input->post('doc_department')."/".$this->input->post('doc_category')."/";
 			if(!file_exists($target_dir)){
-				mkdir($target_dir,0777);
+				mkdir('./'.$target_dir,0777, true);
 			}
-			//print_r($_FILES);exit();
+		if($_FILES['doc_file']['error'] == 0){			
+			
 			$config['upload_path']   = $target_dir; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
 			 $config['allowed_types'] = 'txt|xls|xlsx|doc|docx|pdf'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
 			 $config['max_size']      = 0; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
 			 $config['max_width']     = 0; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
-			 $config['max_height']    = 0;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
-			 $config['encrypt_name']  = true; //กำหนดเป็น true ให้ระบบ เปลียนชื่อ ไฟล์  อัตโนมัติ  ป้องกันกรณีชื่อไฟล์ซ้ำกัน
+			 $config['max_height']    = 0;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)ป้องกันกรณีชื่อไฟล์ซ้ำกัน
 			$this->load->library('upload', $config);
 			$this->upload->initialize($config);
 			if($this->upload->do_upload('doc_file'))
 			{
 				$data = array('upload_data' => $this->upload->data());
 
-				@unlink("./".$target_dir.$file);
+				@unlink("./".$addrass_old);
 				$data = array(	
-					'doc_title' => $this->input->post('doc_title'),
-					'doc_link' => $this->input->post('doc_link'),
-					'doc_file' => $data['upload_data']['file_name'],
-					'doc_date' => $this->input->post('doc_date'),
-					'doc_userid' => $this->session->userdata('login_id')
+					'doc_name' => $this->input->post('doc_name'),
+						'doc_createdate' => $this->input->post('doc_createdate'),
+						'doc_file' => $data['upload_data']['file_name'],
+						'doc_category' => $this->input->post('doc_category'),
+						'doc_permissive' => $this->input->post('doc_permissive'),
+						'doc_department' => $this->input->post('doc_department'),
+						'doc_userid' => $this->session->userdata('login_id')
 				);
 				if($this->Admin_model_document->document_update($data) == 1){
 					$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'แก้ไขข้อมูลสำเร็จ'));
@@ -170,21 +171,27 @@ window.history.back();
 				
 				$error = array('error' => $this->upload->display_errors());
 					//print_r($error['error']);exit();
-					$this->session->set_flashdata(array('msg_uploadfile'=> 'on','messge' => 'ขนาดไฟล์ใหญ่เกินไป'));
+					$this->session->set_flashdata(array('msg_uploadfile'=> 'on','messge' => 'ไฟล์สกุลไม่ตรงตามที่กำหนด'));
 					?>
-<script>
-window.history.back();
-</script>
-<?php		
+					<script>
+					window.history.back();
+					</script>
+					<?php		
 				
 			}
 		}else{
+			
+			copy($addrass_old,$target_dir.$file);
+			@unlink("./".$addrass_old);
 			$data = array(	
-				'doc_title' => $this->input->post('doc_title'),
-				'doc_link' => $this->input->post('doc_link'),
-				'doc_date' => $this->input->post('doc_date'),
-				'doc_userid' => $this->session->userdata('login_id')
+						'doc_name' => $this->input->post('doc_name'),
+						'doc_createdate' => $this->input->post('doc_createdate'),
+						'doc_category' => $this->input->post('doc_category'),
+						'doc_permissive' => $this->input->post('doc_permissive'),
+						'doc_department' => $this->input->post('doc_department'),
+						'doc_userid' => $this->session->userdata('login_id')
 			);
+
 			if($this->Admin_model_document->document_update($data) == 1){
 				$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'แก้ไขข้อมูลสำเร็จ'));
 				redirect('admin/document', 'refresh');

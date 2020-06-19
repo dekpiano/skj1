@@ -119,15 +119,7 @@ $route['Album'] = 'control_images/show_all_album';
 $route['Personnel'] = 'control_personnel/show_per_all';
 $route['Personnel/(:any)'] = 'control_personnel/show_per_type/$1';
 
-// [[รับสมัครนักเรียน]]
-$route['Admissions'] = 'control_recruitstudent';
-$route['Admissions/RegStudent'] = 'control_recruitstudent/select_regis';
-$route['RegStudent/welcome/(:any)'] = 'control_recruitstudent/welcome_student/$1';
-$route['checkRegister'] = 'control_recruitstudent/check_student';
-$route['RegStudent/(:any)'] = 'control_recruitstudent/reg_student/$1';
-$route['checkRegister/dataStudent'] = 'control_recruitstudent/data_user';
-$route['CloseStudent'] = 'control_recruitstudent/close_student';
-$route['Announce'] = 'control_recruitstudent/print_student';
-
+//document
+$route['document'] = 'control_document/document_all';
 // ติดต่อ
 $route['Contact'] = 'control_contact/contact_main';

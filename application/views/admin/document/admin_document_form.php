@@ -84,7 +84,7 @@
 
                         <div class="form-group row">
                             <label for="doc_createdate" class="col-sm-2 col-form-label">วันที่สร้าง<?=$title;?></label>
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <input type="date" class="form-control" id="doc_createdate" name="doc_createdate"
                                     value="<?=$action == 'insert_document' ? date('Y-m-d') : $doc[0]->doc_createdate;?>" required>
                             </div>
@@ -94,6 +94,27 @@
                             <div class="col-sm-10">
                                 <input type="file" name="doc_file" id="doc_file" />
                                 <small id="emailHelp" class="form-text text-muted"></small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="doc_file" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+
+                                <?php if($action != 'insert_document'): $d_file = @$doc[0]->doc_file; $t=  explode(".",$d_file);  
+                                $check_o = @$t[1];
+                                    if($check_o == 'xls' || $check_o == 'xlsx'):
+                                ?>
+                                    <img src="https://img.icons8.com/color/48/000000/ms-excel.png"/>  <?=$d_file;?>
+                                    <?php elseif($check_o == 'doc' || $check_o == 'docx'): ?>
+                                        <img src="https://img.icons8.com/color/48/000000/ms-word.png"/> <?=$d_file;?>
+                                    <?php elseif($check_o == 'pdf'): ?>
+                                        <img src="https://img.icons8.com/color/48/000000/pdf.png"/> <?=$d_file;?>
+                                    <?php elseif($check_o == 'ppt' || $check_o == 'pttx'): ?>
+                                        <img src="https://img.icons8.com/color/48/000000/ms-powerpoint.png"/> <?=$d_file;?>
+                                    <?php elseif($check_o == 'txt'): ?>  
+                                        <img src="https://img.icons8.com/color/48/000000/txt.png"/> <?=$d_file;?>
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             </div>
                         </div>
 

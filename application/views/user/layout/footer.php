@@ -123,7 +123,7 @@
 <script src="<?=base_url();?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="<?=base_url();?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1001"></script>
+<script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1000"></script>
 <script src="<?=base_url()?>asset/user/js/countdownopenschool.js"></script>
 
 <!--Start of Tawk.to Script-->

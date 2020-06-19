@@ -1,6 +1,6 @@
 <!-- Manager -->
 
-<section class="d-none d-lg-block section section-bg ">
+<section id="Manager" class="d-none d-lg-block section section-bg pb-0">
 	<div class="container pad-3 " >
 		<div class="row">
 			<!-- รูปผู้อำนวยการ -->
@@ -31,5 +31,20 @@
 		</div>
 		
 	</div>
+	<div id="bg-img" style="background-image: url(asset/user/img/header-pink-t.png);
+    opacity: 1;">
+	</div>
+	<!-- <img src="<?=base_url('asset/user/img/header-pink-t.png')?>" alt="" class="img-fluid" style="    transform: rotate(180deg);"> -->
 </section>
-<!-- Manager -->	
+
+<style>
+#bg-img {
+	width: 100%;
+    height: 90px;
+    top: -607px;
+    background-size: cover;
+    background-position: bottom center;
+    transform: rotate(180deg);
+    z-index: 99;
+	}
+	</style>
