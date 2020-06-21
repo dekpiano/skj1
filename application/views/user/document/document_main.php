@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row mb-4 mt-4">
             <div class="col-md">
-                <a href="<?=base_url('document');?>" target="_blank" rel="noopener noreferrer">
+                <a href="<?=base_url('document');?>" >
                     <div class="d-flex border">
                         <div class="bg-primary text-light p-4">
                             <div class="d-flex align-items-center h-100">
