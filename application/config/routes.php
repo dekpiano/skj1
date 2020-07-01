@@ -121,5 +121,6 @@ $route['Personnel/(:any)'] = 'control_personnel/show_per_type/$1';
 
 //document
 $route['document'] = 'control_document/document_all';
+$route['document/ListStudent'] = 'control_document/document_liststudent';
 // ติดต่อ
 $route['Contact'] = 'control_contact/contact_main';

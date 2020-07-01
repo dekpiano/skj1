@@ -73,11 +73,7 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
             </style>
             <!--Container-->
 
-            <!-- Countdown 1-->
-            <div class="rounded bg-gradient-1 text-white shadow text-center mb-5">
-                <p class=" font-weight-bold text-uppercase h2">เปิดภาคเรียนที่ 1 ปีการศึกษา 2563 </p>
-                <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
-            </div>
+           
 
             <div class="col-12 py-4 ">
                 <div class="row">
@@ -92,7 +88,23 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
                             <div id="carouselbreaking" class="carousel slide" data-ride="carousel">
 
                                 <div class="carousel-inner" style="font-size: 20px;">
-                                    <div class="carousel-item active">
+                                <div class="carousel-item active">
+                                        <a href="http://admission.skj.ac.th/">
+                                            <span
+                                                class="position-relative mx-2 badge badge-primary rounded-0">ประชาสัมพันธ์</span></a>
+                                        <a class=""
+                                            href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">ชั้น ม.1 ม.2 และ ม.3 เปิดเรียนวันพุธที่ 1 กรกฎาคม 2563
+                                        </a>
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <a href="http://admission.skj.ac.th/">
+                                            <span
+                                                class="position-relative mx-2 badge badge-primary rounded-0">ประชาสัมพันธ์</span></a>
+                                        <a class=""
+                                            href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">ชั้น ม.4 ม.5 และ ม.6 เปิดเรียนวันพฤหัสบดีที่ 2 กรกฎาคม 2563
+                                        </a>
+                                    </div>
+                                    <div class="carousel-item ">
                                         <a href="http://admission.skj.ac.th/">
                                             <span
                                                 class="position-relative mx-2 badge badge-primary rounded-0">ประชาสัมพันธ์</span></a>

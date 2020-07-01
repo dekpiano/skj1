@@ -70,6 +70,7 @@
 }
 
 #myCarousel h4,
+#myCarousel h5,
 #myCarousel p,
 #myCarousel a,
 #myCarousel .carousel-item .mask img {
@@ -319,12 +320,11 @@
                         <div class="row align-items-center">
                             <div class="col-md-7 col-12 order-md-1 order-2">
                                 <h4>เปิดเรียน </h4>
-                                <p>เปิดภาคเรียนที่ 1 วันที่ 1 กรกฎาคม 2563 ถึง 13 พฤศจิกายน 2563 <Br>
-                                    ปิดเทอม 14-30 พฤศจิกายน 2563 รวม 17 วัน</p>
-                                <p>เปิดภาคเรียนที่ 2 วันที่ 1 ธันวาคม 2563 ถึง 9 เมษายน 2564 <Br>
-                                    ปิดเทอม 1 เมษายน - 16 พฤษภาคม 2564 รวม 37 วัน</p>
+                                <h5 class="text-white">ชั้น <u>ม.1 ม.2 และ ม.3</u>  เปิดเรียนวันพุธที่ 1 กรกฎาคม 2563</h5>
+                                <h5 class="text-white">ชั้น <u>ม.4 ม.5 และ ม.6</u>  เปิดเรียนวันพฤหัสบดีที่ 2 กรกฎาคม 2563</h5>
+                                <p>หมายเหตุ : เรียนวันเว้นวัน</p>
                                 <br> <a
-                                    href="http://accesstrade.in.th/%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%A3%E0%B8%A7%E0%B8%87%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B8%98%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B9%81%E0%B8%88%E0%B9%89%E0%B8%87%E0%B9%80/">ดูเพิ่มเติม</a>
+                                    href="https://skj.ac.th/news/newsDetail/news_015">ดูเพิ่มเติม</a>
                             </div>
                             <div class="col-md-5 col-12 order-md-2 order-1"><img
                                     src="<?=base_url('uploads/banner/logo-welcomeback.png')?>"
@@ -355,28 +355,3 @@
     </div>
 
 </section>
-
-<!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
-			<ol class="carousel-indicators">
-				<?php foreach ($banner as $key => $v_banner) :?>
-				<li data-target="#carouselExampleIndicators" data-slide-to="<?=$key;?>" class=""></li>			
-				<?php endforeach; ?>
-			</ol>
-			<div class="carousel-inner">
-				<?php foreach ($banner as $key => $v_banner) :?>
-				<div class="carousel-item <?=$key==0 ? 'active' : ''?>">
-					<a href="<?=$v_banner->banner_linkweb;?>">
-					<img src="<?=base_url()?>uploads/banner/<?=$v_banner->banner_img;?>" class="d-block w-100" >
-					</a>
-				</div>
-				<?php endforeach; ?>
-			</div>
-			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div> -->

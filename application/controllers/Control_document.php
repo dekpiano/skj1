@@ -39,6 +39,18 @@ class Control_document extends CI_Controller {
 		$this->load->view('user/layout/footer.php');
 	}
 
+	public function document_liststudent()
+	{
+		
+		$data = $this->dataAll();
+		$data['title'] = 'รายชื่อนักเรียน ปี 63';
+		$data['description'] = "รายชื่อนักเรียนตามกลุ่ม Covid-19 และรายชื่อนักเรียนตามกลุ่มปกติ";
+		$this->load->view('user/layout/header.php',$data);
+		$this->load->view('user/document/document_liststudent.php');
+		$this->load->view('user/layout/footer.php');
+	}
+	
+
 
 
 	
