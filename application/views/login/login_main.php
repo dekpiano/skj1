@@ -1,5 +1,43 @@
-<section class="mt-5">
-    <div class="container">
+<style>
+#page {
+  /*this is just positional stuff*/
+  margin:0;
+  padding:0;
+  position: absolute;
+  top: 0;
+  left:0;
+  bottom: 0;
+  width: 100%;  
+  /*use multiple background-images first is highest z-order*/
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/239518/birds1.svg"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/239518/birds2.svg"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/239518/clouds.svg"), linear-gradient(to bottom,  rgba(255,255,255,0), 40%,rgba(255,255,255,1) 60%), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/239518/BG2.svg");
+  background-size: 20%, 20%, 100%, 100%, 50px;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat-x,repeat;
+  background-position: 5% 40%, 95% 60%, center bottom;
+  z-index:-99;
+}
+
+@media (min-width: 1200px){
+    .login_area{
+        margin-top: 230px;
+    }    
+}
+@media (min-width: 768px){
+    .login_area{
+        margin-top: 200px;
+    }
+}
+@media (max-width: 575.98px) {
+    .login_area{
+        margin-top: 100px;
+    }
+}
+
+
+   
+
+</style>
+<section class="" id="page">
+    <div class="container login_area" >
         <div class="row align-items-center">
             <!-- For Demo Purpose -->
             <div class="col-md-7 col-lg-6 mb-5 mb-md-0">
@@ -52,5 +90,6 @@
 
         </div>
     </div>
+    
     </div>
 </section>

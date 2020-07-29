@@ -267,7 +267,15 @@ window.history.back();
 	{		
 		$date  = explode(" ",$value);
 		list($d,$m,$y) = explode("-",$date[0]);			
-		$date1 = $d.$m.($y-543);
+		$date1 = ($y-543).'-'.$m.'-'.$d;
+		return $date1;	
+	}
+
+	public function chang_date_thai_pass($value)
+	{		
+		$date  = explode(" ",$value);
+		list($d,$m,$y) = explode("-",$date[0]);			
+		$date1 = $d.$m.($y);
 		return $date1;	
 	}
 
@@ -276,15 +284,9 @@ window.history.back();
 		$date  = explode(" ",$value);
 		list($y,$m,$d) = explode("-",$date[0]);			
 		$date1 = $d.$m.($y+543);
-		return $date1;		
+		return $date1;
+		
 	}
-
-	public function chang_date_eng2($value)
-	{		
-		$y = date('Y',strtotime($value))-543;			
-		return $y.'-'.date('m-d',strtotime($value));	
-	}
-	
 	
 	public function reset_password($id)
 	{	
@@ -340,17 +342,6 @@ window.history.back();
 		redirect('admin/personnel/profile');
 	}
 
-	function profile_update_Privateinfo_personnel(){
-		$data  = array('pers_prefix' => $this->input->post('pers_prefix'),
-							'pers_firstname' => $this->input->post('pers_firstname'),
-							'pers_lastname' => $this->input->post('pers_lastname'),
-							'pers_britday' =>  $this->chang_date_eng2($this->input->post('pers_britday')),
-							'pers_username' => $this->input->post('pers_username'),
-							'pers_phone' => $this->input->post('pers_phone'),
-							'pers_address' => $this->input->post('pers_address') );
-		//print_r($data); exit();
-		echo $this->Admin_model_personnel->personnel_profile_Privateinfo($data);
-	}
 }
 
 ?>

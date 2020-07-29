@@ -10,7 +10,6 @@
                             </div>
                         </div>
                         <div class="flex-grow-1 bg-white p-4">
-                            <p class="text-uppercase text-secondary mb-0">ดาวน์โหลด</p>
                             <h4 class="font-weight-bold mb-0">เอกสาร</h4>
                         </div>
                     </div>
@@ -25,7 +24,6 @@
                             </div>
                         </div>
                         <div class="flex-grow-1 bg-white p-4">
-                            <p class="text-uppercase text-secondary mb-0">ดาวน์โหลด</p>
                             <h4 class="font-weight-bold mb-0">ตราโรงเรียน</h4>
                         </div>
                     </div>
@@ -40,8 +38,17 @@
                             </div>
                         </div>
                         <div class="flex-grow-1 bg-white p-4">
-                            <p class="text-uppercase text-secondary mb-0">ดาวน์โหลด</p>
-                            <h4 class="font-weight-bold mb-0">รายชื่อนักเรียน ปี 63</h4>
+                           
+                            <h4 class="font-weight-bold mb-0">รายชื่อนักเรียน</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md">            
+                <a href="https://dlit.ac.th/site/" target="_blank" >
+                    <div class="d-flex border">                        
+                        <div class="flex-grow-1  p-4" style="background: #e58c16;">
+                            <img src="https://dlit.ac.th/site/_img/web/logow.png" class="img-fluid">
                         </div>
                     </div>
                 </a>

@@ -4,11 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>วันเฉลิมพระชนมพรรษา สมเด็จพระเจ้าอยู่หัวมหาวชิราลงกรณบดินทรเทพยวรางกูร 28 กรกฎาคม </title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา นักเรียนและผู้ปกครอง  โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์">
+    <meta name="author" content="ทีมงานครูคอม,Dekpiano">
+
+    <meta property="og:url" content="https://skj.ac.th/">
+    <meta property="og:title"
+        content="วันเฉลิมพระชนมพรรษา สมเด็จพระเจ้าอยู่หัวมหาวชิราลงกรณบดินทรเทพยวรางกูร 28 กรกฎาคม">
+    <meta property="og:description"
+        content="ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา นักเรียนและผู้ปกครอง  โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://skj.ac.th/uploads/video/logo-father.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap');
@@ -118,81 +134,139 @@ h3 {
     -webkit-background-clip: text;
     text-shadow: #000 3px 1px 2px;
 }
+
 /* tablets */
 @media (min-width: 768px) and (max-width: 991.98px) {
     img {
-        width: 460px;
+        width: 400px;
     }
+
     h1 {
         font-size: 36px;
     }
+
     h2 {
         font-size: 20px;
     }
+
     h3 {
         font-size: 18px;
     }
-    .golden-btn{
+
+    .golden-btn {
         font-size: 14px;
     }
 }
+
 @media (max-width: 575.98px) {
     img {
-        width: 360px;
+        width: 300px;
     }
+
     h1 {
         font-size: 30px;
     }
+
     h2 {
         font-size: 16px;
     }
+
     h3 {
         font-size: 14px;
     }
-    .golden-btn{
+
+    .golden-btn {
         font-size: 10px;
     }
- }
- @media (min-width: 1366px) { 
+
+    .btn-father {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1366px) {
     img {
         width: 540px;
     }
-  }
-  @media (min-width: 1400px) { 
-    img {
-        width: 800px;
-    }
-  }
+}
 
-  .video-con{
-        min-width: 100%;
+@media (min-width: 1400px) {
+    img {
+        width: 700px;
+    }
+
+    .btn-father {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1200px) {
+    img {
+        width: 450px;
+    }
+
+    .btn-father {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+}
+
+.video-con {
+    min-width: 100%;
     min-height: 100vh;
     height: auto;
-    }
+}
 </style>
 
 <body>
     <div class="con-video">
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-con">
-            <source src="<?=base_url('uploads/video/video-bg-gold.mp4')?>" type="video/mp4">
+            <source src="<?= base_url('uploads/video/video-bg-gold.mp4') ?>" type="video/mp4">
         </video>
     </div>
 
     <div id="main">
         <div style="align-self: center;text-align: center;">
-            <img class="img-fluid" src="<?=base_url('uploads/video/logo-father.png')?>" alt="">
+            <img class="img-fluid " data-aos="zoom-in-down" data-aos-delay="50" data-aos-offset="200" data-aos-duration="500" src="<?= base_url(
+                'uploads/video/logo-father.png'
+            ) ?>" alt="">
             <div style="text-align: center;">
-                <h2> สมเด็จพระเจ้าอยู่หัวมหาวชิราลงกรณ บดินทรเทพยวรางกูร รัชกาลที่ ๑๐ <br>
+                <h2 data-aos="zoom-in" data-aos-delay="500">
+                    สมเด็จพระเจ้าอยู่หัวมหาวชิราลงกรณ
+                    บดินทรเทพยวรางกูร
+                    รัชกาลที่ ๑๐ <br>
                 </h2><br>
 
-                <h1>ทรงพระเจริญ</h1><br>
+                <h1 data-aos="zoom-in-up" data-aos-delay="1000"  data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">ทรงพระเจริญ</h1><br>
 
-                <H3> ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา
+                <H3 data-aos="zoom-in" data-aos-delay="500"> ด้วยเกล้าด้วยกระหม่อม ขอเดชะ
+                    ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา
                     นักเรียนและผู้ปกครอง <br> โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</H3>
 
             </div>
+            <div style="text-align-last: center;" class="mt-3">
+                <button onclick="forking()" target="_blank"
+                    class="btn btn-outline-warning btn-father " data-aos="fade-right" data-aos-delay="1500">ลงนาม
+                    (ข้าราชการและเจ้าหน้าที่ของรัฐ)</button>
+                <button onclick="people()" target="_blank"
+                    class="btn btn-outline-warning btn-father" data-aos="fade-left" data-aos-delay="1500">ลงนาม
+                    (ประชาชนทั่วไป)</button>
+            </div>
             <div style="text-align-last: center;">
-                <button onclick="sigewebsite()" class="golden-btn">เข้าสู่เว็บไซต์</button>
+                <button onclick="sigewebsite()"
+                    class="golden-btn "  data-aos="flip-up" data-aos-delay="2000">เข้าสู่เว็บไซต์</button>
             </div>
 
         </div>
@@ -214,8 +288,21 @@ h3 {
 </script>
 <script>
 function sigewebsite() {
-    window.location.href = "<?=base_url('welcome')?>";
+    window.location.href = "<?= base_url('welcome') ?>";
+}
+
+function forking() {
+    window.location.href = "https://web.ocsc.go.th/forking/node/add/pledge-2563-gov";
+}
+
+function people() {
+    window.location.href = "https://web.ocsc.go.th/forking/node/add/pledge-2563-people";
 }
 </script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </html>

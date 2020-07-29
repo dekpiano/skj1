@@ -1,6 +1,6 @@
 <main role="main">
 
-  <section class="jumbotron text-center bg_headertitel mb-0">
+  <section class="jumbotron text-center bg_headertitel">
     <div class="container">
       <h1>ข่าวประชาสัมพันธ์</h1>
       <p class="lead text-muted mb-5">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
@@ -8,7 +8,7 @@
     </div>
   </section>
 
-  <div class="album py-5 " style="background: #202c62;">
+  <div class="album py-5 bg-light">
     <div class="container">
 
       <div class="row">

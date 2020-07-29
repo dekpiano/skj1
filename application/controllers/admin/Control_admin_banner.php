@@ -166,6 +166,10 @@ class Control_admin_banner extends CI_Controller {
 					redirect('admin/banner', 'refresh');
 				}
 			}
+
+
+	
+		
 	}
 
 	public function delete_banner($data,$img)
