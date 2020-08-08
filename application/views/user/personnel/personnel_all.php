@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="full center">
                     <div class="heading_main text_align_center text-center">
-                        <!-- <img style="width: 150px;" src="<?=base_url('asset/user/img/Logo-SKJ.png');?>"> -->
+                        <!-- <img loading="lazy" style="width: 150px;" src="<?=base_url('asset/user/img/Logo-SKJ.png');?>"> -->
                         <h2 class="">
                             บุคลากร <span class="theme_color"> <?=$this->uri->segment(2);?> </span>
                         </h2>
@@ -27,7 +27,7 @@
 
                 <div class="member">
                     <div class="member-img">
-                        <img src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid"
+                        <img loading="lazy" src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid"
                             alt="">
                         <div class="social">
                             <?php if($v_pers->pers_facebook != ''):?>
@@ -68,7 +68,7 @@
             <div class="col-lg-4 col-md-6 align-items-stretch aos-init aos-animate"  data-aos="zoom-in" data-aos-delay="100">
                 <div class="member">
                     <div class="member-img">
-                        <img src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid"
+                        <img loading="lazy" src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid"
                             alt="">
                         <div class="social">
                             <?php if($v_pers->pers_facebook != ''):?>
@@ -109,7 +109,7 @@
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate"  data-aos="zoom-in" data-aos-delay="<?=$key;?>00">
                 <div class="member">
                     <div class="member-img">
-                        <img src="<?=$img_p.$v_pers_type->pers_img;?>" class="img-fluid" alt="">
+                        <img loading="lazy" src="<?=$img_p.$v_pers_type->pers_img;?>" class="img-fluid" alt="">
                         <div class="social">
                             <?php if($v_pers_type->pers_facebook != ''):?>
                             <a target="_blank" href="https://www.facebook.com/<?=$v_pers_type->pers_facebook?>"

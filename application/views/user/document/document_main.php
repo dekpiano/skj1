@@ -48,7 +48,7 @@
                 <a href="https://dlit.ac.th/site/" target="_blank" >
                     <div class="d-flex border">                        
                         <div class="flex-grow-1  p-4" style="background: #e58c16;">
-                            <img src="https://dlit.ac.th/site/_img/web/logow.png" class="img-fluid">
+                            <img loading="lazy" src="https://dlit.ac.th/site/_img/web/logow.png" class="img-fluid">
                         </div>
                     </div>
                 </a>

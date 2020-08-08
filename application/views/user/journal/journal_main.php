@@ -41,7 +41,7 @@
 
         <div class="items ">
             <?php foreach ($journal as $key => $v_journal) : ?>
-            <a class="venobox" href="<?=base_url('uploads/journal/'.$v_journal->jour_img)?>" ><img src="<?=base_url('uploads/journal/'.$v_journal->jour_img)?>"></a>
+            <a class="venobox" href="<?=base_url('uploads/journal/'.$v_journal->jour_img)?>" ><img loading="lazy" src="<?=base_url('uploads/journal/'.$v_journal->jour_img)?>"></a>
             <?php endforeach; ?>
         </div>
         <center><a href="<?=base_url('journal');?>" class=" btn btn-outline-secondary my-2 my-sm-0">วารสารทั้งหมด</a>

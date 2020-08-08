@@ -20,7 +20,7 @@ img {
         <div class="portfolio-details-container">
 
             <div class="owl-carousel portfolio-details-carousel">
-                <img src="<?=base_url('uploads/news/').$news[0]->news_img;?>" class="img-fluid" alt="">
+                <img loading="lazy" src="<?=base_url('uploads/news/').$news[0]->news_img;?>" class="img-fluid" alt="">
             </div>
         </div>
 

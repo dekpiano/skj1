@@ -22,7 +22,7 @@
               <h5 class="mt-0 font-weight-bold mb-2">แบบที่ <?=$i;?></h5>
               <p class="font-italic text-muted mb-0 small">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
              
-            </div><img src="<?=base_url('uploads/logo/LogoSKJ_'.$i.'.png');?>" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+            </div><img loading="lazy" src="<?=base_url('uploads/logo/LogoSKJ_'.$i.'.png');?>" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
           </div>
           <!-- End -->
         </li>

@@ -64,8 +64,10 @@
 
     gtag('config', 'UA-165844207-1');
     </script>
+    
 </head>
-
+<div id="fb-root"></div>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 <style type="text/css">
 .dropdown:hover>.dropdown-menu {
     display: block;
@@ -186,14 +188,11 @@ if it's not present, don't show loader */
 }
 
 .br {
-
     background-image: url(<?=base_url();
     ?>asset/user/img/footer_bg1.png);
     background-repeat: no-repeat;
     background-position: bottom;
     bottom: 0;
-    /* position: sticky;
-padding-top: 150px; */
 }
 
 .dropdown-submenu {
@@ -230,7 +229,7 @@ padding-top: 150px; */
                     <div class="col-7 pt-1">
                         <div class="logo mr-auto">
                             <a class="e" href="<?=base_url('welcome');?>">
-                                <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav1.png" alt="">
+                                <img loading="lazy" class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav1.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -264,7 +263,7 @@ padding-top: 150px; */
                 style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;background-color:rgba(232, 38, 158, 1);">
                 <div class="container">
                     <a style="width: 79%;" class="navbar-brand d-block d-sm-none d-lg-none" href="<?=base_url('welcome');?>">
-                        <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
+                        <img loading="lazy" class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
                     </a>
                     <button class="navbar-toggler justify-content-end align-items-center" type="button"
                         data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -273,7 +272,7 @@ padding-top: 150px; */
                     </button>
                    
                     <a  style="width: 50%;" class="navbar-md invisible navbar-brand justify-content-center d-none d-md-block d-lg-none" href="<?=base_url('welcome');?>">
-                        <img class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
+                        <img loading="lazy" class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
                     </a>
                     
                     
@@ -350,11 +349,11 @@ padding-top: 150px; */
                                         class="icofont-flame-torch"></i> กิจกรรม</a>
                                 </a>
                             </li>
-                            <li class="nav-item animated heartBeat">
+                            <!-- <li class="nav-item animated heartBeat">
                                 <a class="text-white nav-link" href="http://admission.skj.ac.th/">
                                     <i class="icofont-mega-phone"></i> รับสมัครนักเรียน</a>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                         <ul class="navbar-nav">
                             <li><a class="text-white btn" href="<?=base_url('Contact');?>"><i

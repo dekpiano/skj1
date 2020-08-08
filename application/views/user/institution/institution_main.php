@@ -33,7 +33,7 @@
         <div class="items-institution">
             <?php foreach ($institution as $key => $v_institution) : ?>
             <a target="_blank" href="<?=$v_institution->instiO_link?>">
-                <img src="<?=base_url('uploads/institutionO/'.$v_institution->instiO_img)?>"></a>
+                <img loading="lazy" src="<?=base_url('uploads/institutionO/'.$v_institution->instiO_img)?>"></a>
             <?php endforeach; ?>
         </div>
 

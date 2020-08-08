@@ -9,7 +9,7 @@
 }
 
 #myCarousel h4 {
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 15px;
     color: #FFF;
     line-height: 100%;
@@ -298,7 +298,7 @@
 }
 
 #myCarousel::after {
-	content: "";
+    content: "";
     position: absolute;
     top: 372px;
     left: 0;
@@ -308,7 +308,6 @@
     background-size: 150%;
     transform: rotate(180deg);
 }
-
 </style>
 
 <section class="content-area d-none d-md-block">
@@ -318,16 +317,15 @@
                 <div class="mask d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center">
-                            <div class="col-md-7 col-12 order-md-1 order-2">
-                                <h4>เปิดเรียน </h4>
-                                <h5 class="text-white">ชั้น <u>ม.1 ม.2 และ ม.3</u>  เปิดเรียนวันพุธที่ 1 กรกฎาคม 2563</h5>
-                                <h5 class="text-white">ชั้น <u>ม.4 ม.5 และ ม.6</u>  เปิดเรียนวันพฤหัสบดีที่ 2 กรกฎาคม 2563</h5>
-                                <p>หมายเหตุ : เรียนวันเว้นวัน</p>
-                                <br> <a
-                                    href="https://skj.ac.th/news/newsDetail/news_015">ดูเพิ่มเติม</a>
+                            <div class="col-md-7 col-12 order-md-1 order-2 text-center">
+                                <h4>คำขวัญวันแม่แห่งชาติพระราชทาน ประจำปี 2563 </h4>
+                                <h5 class="text-white text-center">
+                                    “รักเอยรักลูก <Br>แม่จึงปลูกคุณธรรมให้รักษา <Br>
+                                    รดความรักพรวนความดีมีเมตตา <Br>ลูกเติบใหญ่แทนคุณค่าของแผ่นดิน”
+                                </h5>
                             </div>
                             <div class="col-md-5 col-12 order-md-2 order-1"><img
-                                    src="<?=base_url('uploads/banner/logo-welcomeback.png')?>"
+                                    src="https://4.bp.blogspot.com/-VBFQJXoaqSo/V3TBGqo56dI/AAAAAAAAAAc/dGGClmDggWcvnhhEmh_309xr-I5wjekAgCLcB/s1600/m2558-01.png"
                                     class="mx-auto bounce" alt="slide"></div>
                         </div>
                     </div>
@@ -339,11 +337,12 @@
                         <div class="row align-items-center">
                             <div class="col-md-7 col-12 order-md-1 order-2 text-center">
                                 <h4>ยินดีต้อนรับ ส.ก.จ.</h4>
+                                <h5>เป็นผู้นำ รักเพื่อน นับถือพี่ เคารพครู กตัญญูพ่อแม่ ดูแลน้อง</h5>
                                 <p>โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวสรค์</p>
                             </div>
-                            <div class="col-md-5 col-12 order-md-2 order-1"><img
-                                    src="<?=base_url('asset/user/img/Logo-SKJ2.png')?>" class="mx-auto bounce"
-                                    alt="slide"></div>
+                            <div class="col-md-5 col-12 order-md-2 order-1"><img loading="lazy" src="<?= base_url(
+                                'asset/user/img/Logo-SKJ2.png'
+                            ) ?>" class="mx-auto bounce" alt="slide"></div>
                         </div>
                     </div>
                 </div>
@@ -358,15 +357,15 @@
 
 <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
 			<ol class="carousel-indicators">
-				<?php foreach ($banner as $key => $v_banner) :?>
-				<li data-target="#carouselExampleIndicators" data-slide-to="<?=$key;?>" class=""></li>			
+				<?php foreach ($banner as $key => $v_banner): ?>
+				<li data-target="#carouselExampleIndicators" data-slide-to="<?= $key ?>" class=""></li>			
 				<?php endforeach; ?>
 			</ol>
 			<div class="carousel-inner">
-				<?php foreach ($banner as $key => $v_banner) :?>
-				<div class="carousel-item <?=$key==0 ? 'active' : ''?>">
-					<a href="<?=$v_banner->banner_linkweb;?>">
-					<img src="<?=base_url()?>uploads/banner/<?=$v_banner->banner_img;?>" class="d-block w-100" >
+				<?php foreach ($banner as $key => $v_banner): ?>
+				<div class="carousel-item <?= $key == 0 ? 'active' : '' ?>">
+					<a href="<?= $v_banner->banner_linkweb ?>">
+					<img loading="lazy" src="<?= base_url() ?>uploads/banner/<?= $v_banner->banner_img ?>" class="d-block w-100" >
 					</a>
 				</div>
 				<?php endforeach; ?>

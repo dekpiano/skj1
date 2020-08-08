@@ -54,7 +54,7 @@
 
                         </div>
                     </div>
-                    <img class="card-img-right flex-auto d-none d-md-block" style="width: 200px; height: 250px;"
+                    <img loading="lazy" class="card-img-right flex-auto d-none d-md-block" style="width: 200px; height: 250px;"
                         src="<?=base_url('uploads/personnel/'.$Executive[0]->pers_img);?>" data-holder-rendered="true">
                 </div>
             </div>
@@ -73,7 +73,7 @@
 
                         </div>
                     </div>
-                    <img class="card-img-right flex-auto d-none d-md-block" style="width: 200px; height: 250px;"
+                    <img loading="lazy" class="card-img-right flex-auto d-none d-md-block" style="width: 200px; height: 250px;"
                         src="<?=base_url('uploads/personnel/'.$Executive[1]->pers_img);?>" data-holder-rendered="true">
                 </div>
             </div>

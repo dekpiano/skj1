@@ -6,7 +6,7 @@
 			<!-- รูปผู้อำนวยการ -->
 			<div class="col-lg-4 col-md-12 " data-aos="fade-right">
 				<div class="row">
-					<img src="<?=base_url()?>asset/user/img/mn_1.png" style="padding-bottom: 20px; width: 100%;">
+					<img loading="lazy" src="<?=base_url()?>asset/user/img/mn_1.png" style="padding-bottom: 20px; width: 100%;">
 					<h3 style="color: deeppink;" class="fm_name">นายอภิรักษ์  อุ่นใจ</h3><br>
 					<h5 style="padding-top: 10px;" class="fm_text">ผู้อำนวยการสถานศึกษา</h5><br>
 					<h6 class="fm_text">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</h6>
@@ -34,7 +34,7 @@
 	<div id="bg-img" style="background-image: url(asset/user/img/header-pink-t.png);
     opacity: 1;">
 	</div>
-	<!-- <img src="<?=base_url('asset/user/img/header-pink-t.png')?>" alt="" class="img-fluid" style="    transform: rotate(180deg);"> -->
+	<!-- <img loading="lazy" src="<?=base_url('asset/user/img/header-pink-t.png')?>" alt="" class="img-fluid" style="    transform: rotate(180deg);"> -->
 </section>
 
 <style>

@@ -28,7 +28,7 @@
                 <div class="col-md-6 col-sm-6  col-lg-4 mb-3 animated fadeInUp " >
                     <a href="<?=base_url('uploads/journal/').$v_journal->jour_img;?>" class="venobox">
                         <div class="card mb-4 box-shadow">                            
-                            <img class="card-img-top" src="<?=base_url('uploads/journal/').$v_journal->jour_img;?>" >
+                            <img loading="lazy" class="card-img-top" src="<?=base_url('uploads/journal/').$v_journal->jour_img;?>" >
                           
                             
                         </div>

@@ -63,59 +63,77 @@ class Control_admin_news extends CI_Controller {
 
 	public function insert_news()
 	{
-		if($_FILES['banner_img']['error'] == 0){
-			 $config['upload_path']   = 'uploads/news/'; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
-	         $config['allowed_types'] = '*'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
-	         $config['max_size']      = 0; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
-	         $config['max_width']     = 1024; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
-	         $config['max_height']    = 720;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
-	         $config['encrypt_name']  = true; //กำหนดเป็น true ให้ระบบ เปลียนชื่อ ไฟล์  อัตโนมัติ  ป้องกันกรณีชื่อไฟล์ซ้ำกัน
-			$this->load->library('upload', $config);
-			$this->upload->initialize($config);
-				if($this->upload->do_upload('banner_img'))
-				{
-					$data = array('upload_data' => $this->upload->data());
-
-					$date_time = $this->input->post('news_date').' '.date('H:i:s');	
-						$data = array(	'news_id' => $this->input->post('news_id'),
-										'news_topic' => $this->input->post('news_topic'),
-										'news_content' => $this->input->post('news_content'),
-										'news_date' => $date_time,
-										'news_category' => $this->input->post('news_category'),
-										'personnel_id' => $this->session->userdata('login_id'),
-										'news_img' => $data['upload_data']['file_name']
-									);
-						if($this->Admin_model_news->news_insert($data) == 1){
-							$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'บันทึกข้อมูลสำเร็จ'));
-							redirect('admin/news', 'refresh');
-						}
-				}
-				else
-				{
-					$error = array('error' => $this->upload->display_errors());
-					//print_r($error['error']);
-					$this->session->set_flashdata(array('msg_uploadfile'=> 'on','messge' => 'ขนาดไฟล์ใหญ่เกินไป'));
-					?>
-					<script>					
-						  window.history.back();					
-						</script>
-					<?php					
-				}
-
-		}else{
-				$date_time = $this->input->post('news_date').' '.date('H:i:s');	
-					$data = array(	'news_id' => $this->input->post('news_id'),
-									'news_topic' => $this->input->post('news_topic'),
-									'news_content' => $this->input->post('news_content'),
-									'news_date' => $date_time,
-									'news_category' => $this->input->post('news_category'),
-									'personnel_id' => $this->session->userdata('login_id')
-								);
-					if($this->Admin_model_news->news_insert($data) == 1){
-						$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'บันทึกข้อมูลสำเร็จ'));
-						redirect('admin/news', 'refresh');
-					}
+		if($this->input->post('sub_facebook') == 'btn_facebook'){
+			$date_time = $this->input->post('news_date').' '.date('H:i:s');	
+			$data = array(	'news_id' => $this->input->post('news_id'),
+							'news_topic' => $this->input->post('news_topic'),
+							'news_facebook' => $this->input->post('news_facebook'),
+							'news_date' => $date_time,
+							'news_category' => $this->input->post('news_category'),
+							'personnel_id' => $this->session->userdata('login_id')
+						);
+			if($this->Admin_model_news->news_insert($data) == 1){
+				$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'บันทึกข้อมูลสำเร็จ'));
+				redirect('admin/news', 'refresh');
 			}
+		}else{
+
+			if($_FILES['banner_img']['error'] == 0){
+				$config['upload_path']   = 'uploads/news/'; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
+				$config['allowed_types'] = '*'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
+				$config['max_size']      = 0; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+				$config['max_width']     = 1024; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+				$config['max_height']    = 720;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+				$config['encrypt_name']  = true; //กำหนดเป็น true ให้ระบบ เปลียนชื่อ ไฟล์  อัตโนมัติ  ป้องกันกรณีชื่อไฟล์ซ้ำกัน
+			   $this->load->library('upload', $config);
+			   $this->upload->initialize($config);
+				   if($this->upload->do_upload('banner_img'))
+				   {
+					   $data = array('upload_data' => $this->upload->data());
+   
+					   $date_time = $this->input->post('news_date').' '.date('H:i:s');	
+						   $data = array(	'news_id' => $this->input->post('news_id'),
+										   'news_topic' => $this->input->post('news_topic'),
+										   'news_content' => $this->input->post('news_content'),
+										   'news_date' => $date_time,
+										   'news_category' => $this->input->post('news_category'),
+										   'personnel_id' => $this->session->userdata('login_id'),
+										   'news_img' => $data['upload_data']['file_name']
+									   );
+						   if($this->Admin_model_news->news_insert($data) == 1){
+							   $this->session->set_flashdata(array('msg'=> 'ok','messge' => 'บันทึกข้อมูลสำเร็จ'));
+							   redirect('admin/news', 'refresh');
+						   }
+				   }
+				   else
+				   {
+					   $error = array('error' => $this->upload->display_errors());
+					   //print_r($error['error']);
+					   $this->session->set_flashdata(array('msg_uploadfile'=> 'on','messge' => 'ขนาดไฟล์ใหญ่เกินไป'));
+					   ?>
+<script>
+window.history.back();
+</script>
+<?php					
+				   }
+   
+		   }else{
+				   $date_time = $this->input->post('news_date').' '.date('H:i:s');	
+					   $data = array(	'news_id' => $this->input->post('news_id'),
+									   'news_topic' => $this->input->post('news_topic'),
+									   'news_content' => $this->input->post('news_content'),
+									   'news_date' => $date_time,
+									   'news_category' => $this->input->post('news_category'),
+									   'personnel_id' => $this->session->userdata('login_id')
+								   );
+					   if($this->Admin_model_news->news_insert($data) == 1){
+						   $this->session->set_flashdata(array('msg'=> 'ok','messge' => 'บันทึกข้อมูลสำเร็จ'));
+						   redirect('admin/news', 'refresh');
+					   }
+			   }
+			   
+		}
+		
 		
 	}
 
@@ -144,7 +162,20 @@ class Control_admin_news extends CI_Controller {
 
 	public function update_news($img)
 	{
-		//print_r($_FILES['banner_img']['error']);
+		if($this->input->post('sub_facebook') == 'btn_facebook'){
+			$data = array(	
+				'news_topic' => $this->input->post('news_topic'),
+				'news_facebook' => $this->input->post('news_facebook'),
+				'news_category' => $this->input->post('news_category'),
+				'personnel_id' => $this->session->userdata('login_id')
+			);
+			if($this->Admin_model_news->news_update($data) == 1){
+				$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'แก้ไขข้อมูลสำเร็จ'));
+				redirect('admin/news', 'refresh');
+			}
+		}else{
+
+		
 		if($_FILES['banner_img']['error'] == 0){
 		$config['upload_path']   = 'uploads/news/'; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
          $config['allowed_types'] = '*'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
@@ -179,10 +210,10 @@ class Control_admin_news extends CI_Controller {
 					print_r($error['error']);
 					$this->session->set_flashdata(array('msg_uploadfile'=> 'on','messge' => 'ขนาดไฟล์ใหญ่เกินไป'));
 					?>
-					<script>					
-						  window.history.back();					
-						</script>
-					<?php
+<script>
+window.history.back();
+</script>
+<?php
 				
 			}
 		}else{
@@ -199,8 +230,8 @@ class Control_admin_news extends CI_Controller {
 		}
 
 
-		
 	}
+}
 
 	public function delete_news($data,$img)
 	{
