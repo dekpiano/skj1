@@ -33,45 +33,47 @@
                   <div class="modal-body">ต้องการออกจากระบบหรือไม่ !</div>
                   <div class="modal-footer">
                       <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                      <a class="btn btn-primary" href="<?=base_url('control_login/logout');?>">Logout</a>
+                      <a class="btn btn-primary" href="<?= base_url(
+                          'control_login/logout'
+                      ) ?>">Logout</a>
                   </div>
               </div>
           </div>
       </div>
 
       <!-- Bootstrap core JavaScript-->
-      <script src="<?=base_url();?>asset/vendor/jquery/jquery.min.js"></script>
-      <script src="<?=base_url();?>asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/jquery/jquery.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
       <!-- Core plugin JavaScript-->
-      <script src="<?=base_url();?>asset/vendor/jquery-easing/jquery.easing.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/jquery-easing/jquery.easing.min.js"></script>
 
       <!-- Custom scripts for all pages-->
-      <script src="<?=base_url();?>asset/js/sb-admin-2.min.js"></script>
+      <script src="<?= base_url() ?>asset/js/sb-admin-2.min.js"></script>
 
-      <script src="<?=base_url();?>asset/js/jquery-ui.js?v=1000"></script>
-
-      <!-- Page level plugins -->
-      <script src="<?=base_url();?>asset/vendor/chart.js/Chart.min.js"></script>
-
-      <!-- Page level custom scripts -->
-      <script src="<?=base_url();?>asset/js/demo/chart-area-demo.js"></script>
-      <script src="<?=base_url();?>asset/js/demo/chart-pie-demo.js"></script>
+      <script src="<?= base_url() ?>asset/js/jquery-ui.js?v=1000"></script>
 
       <!-- Page level plugins -->
-      <script src="<?=base_url();?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
-      <script src="<?=base_url();?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-      <script src="<?=base_url();?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
-      <script src="<?=base_url();?>asset/vendor/datatables/jszip.min.js"></script>
-      <script src="<?=base_url();?>asset/vendor/datatables/pdfmake.min.js"></script>
-      <script src="<?=base_url();?>asset/vendor/datatables/vfs_fonts.js"></script>
-      <script src="<?=base_url();?>asset/vendor/datatables/buttons.html5.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/chart.js/Chart.min.js"></script>
+
       <!-- Page level custom scripts -->
-      <script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1001"></script>
-      <script src="<?=base_url()?>asset/js/jquery.inputmask.min.js"></script>
-      <script src="<?=base_url();?>asset/vendor/sweetalert.min.js"></script>
-      <script src="<?=base_url()?>asset/js/passtrength.js"></script>
-      <script src="<?=base_url()?>asset/js/personnel_profile.js?v=1002"></script>
+      <script src="<?= base_url() ?>asset/js/demo/chart-area-demo.js"></script>
+      <script src="<?= base_url() ?>asset/js/demo/chart-pie-demo.js"></script>
+
+      <!-- Page level plugins -->
+      <script src="<?= base_url() ?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/datatables/jszip.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/datatables/pdfmake.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/datatables/vfs_fonts.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/datatables/buttons.html5.min.js"></script>
+      <!-- Page level custom scripts -->
+      <script src="<?= base_url() ?>asset/js/demo/datatables-demo.js?v=1001"></script>
+      <script src="<?= base_url() ?>asset/js/jquery.inputmask.min.js"></script>
+      <script src="<?= base_url() ?>asset/vendor/sweetalert.min.js"></script>
+      <script src="<?= base_url() ?>asset/js/passtrength.js"></script>
+      <script src="<?= base_url() ?>asset/js/personnel_profile.js?v=1002"></script>
 
       <script src="https://cdn.tiny.cloud/1/y6b2omlkddg6mbwjuwhrf96ufg0wjfhrf5xw1xes3o6oahi4/tinymce/5/tinymce.min.js"
           referrerpolicy="origin"></script>
@@ -88,13 +90,15 @@ $(document).ready(function() {
     tinymce.init({
         selector: 'textarea',
         height: 500,
+        tinydrive_token_provider: 'https://jwt.io/#debugger-io?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
+        tinydrive_upload_path: "/uploads/banner",
         plugins: [
-            'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+            'advlist autolink tinydrive code imagetools link image lists charmap print preview hr anchor pagebreak spellchecker',
             'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
             'table emoticons template paste help'
         ],
         toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
-            'bullist numlist outdent indent | link image | print preview media fullpage | ' +
+            'bullist numlist outdent indent | insertfile link image | print preview media fullpage | ' +
             'forecolor backcolor emoticons | help',
         menu: {
             favs: {
@@ -158,14 +162,14 @@ $("#jour_img ,#instiO_img, #img_mainpic").change(function() {
       </script>
 
 
-      <?php if($this->session->flashdata('msg') == 'ok'): ?>
+      <?php if ($this->session->flashdata('msg') == 'ok'): ?>
       <script type="text/javascript">
-swal("สำเร็จ!", "<?=$this->session->flashdata('messge')?>", "success");
+swal("สำเร็จ!", "<?= $this->session->flashdata('messge') ?>", "success");
       </script>
       <?php endif; ?>
-      <?php if($this->session->flashdata('msg_uploadfile') == 'on'): ?>
+      <?php if ($this->session->flashdata('msg_uploadfile') == 'on'): ?>
       <script type="text/javascript">
-swal("ผิดพลาด!", "<?=$this->session->flashdata('messge')?>", "error");
+swal("ผิดพลาด!", "<?= $this->session->flashdata('messge') ?>", "error");
       </script>
       <?php endif; ?>
 

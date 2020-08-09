@@ -1,9 +1,11 @@
 <section id="" class=" section section-bg">
     <div class="container pad-3">
-        <?php 
-$cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
-    $users=json_decode($cowid19);
-?>
+        <?php
+        $cowid19 = @file_get_contents(
+            'https://covid19.th-stat.com/api/open/today'
+        );
+        $users = json_decode($cowid19);
+        ?>
 
         <div class="col-12">
             <style>
@@ -73,10 +75,10 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
             </style>
             <!--Container-->
 
-           
+
             <!-- ข่าวด่วน -->
-            <!-- <?php $this->load->view('user/news/news_breaking.php') ?> -->
-            
+            <!-- <?php $this->load->view('user/news/news_breaking.php'); ?> -->
+
 
             <!--Start code-->
             <div class="row " data-aos="zoom-in">
@@ -88,30 +90,41 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
                             <div id="featured" class="carousel slide carousel" data-ride="carousel">
                                 <!--dots navigate-->
                                 <ol class="carousel-indicators top-indicator">
-                                    <?php foreach ($news as $key => $v_news) : ?>
-                                    <li data-target="#featured" data-slide-to="<?=$key?>"
-                                        <?=($key == 0 ? 'class="active"'  : '' );?>></li>
+                                    <?php foreach ($news as $key => $v_news): ?>
+                                    <li data-target="#featured" data-slide-to="<?= $key ?>" <?= $key ==
+0
+    ? 'class="active"'
+    : '' ?>></li>
                                     <?php endforeach; ?>
                                 </ol>
 
                                 <!--carousel inner-->
                                 <div class="carousel-inner">
                                     <!--Item slider-->
-                                    <?php foreach ($news as $key => $v_news) : ?>
-                                    <div class="carousel-item <?=$key == 0 ? 'active' : '' ?>">
+                                    <?php foreach ($news as $key => $v_news): ?>
+                                    <div class="carousel-item <?= $key == 0
+                                        ? 'active'
+                                        : '' ?>">
                                         <div class="card border-0 rounded-0 text-light overflow zoom">
                                             <div class="position-relative hvrbox">
                                                 <!--thumbnail img-->
                                                 <div class="ratio_left-cover-1 image-wrapper">
-                                                    <a href="<?=base_url('news/newsDetail/').$v_news->news_id;?>">
-                                                        <?php if ($v_news->news_img == '') : ?>
+                                                    <a href="<?= base_url(
+                                                        'news/newsDetail/'
+                                                    ) . $v_news->news_id ?>">
+                                                        <?php if (
+                                                            $v_news->news_img ==
+                                                            ''
+                                                        ): ?>
                                                         <img loading="lazy" class="card-img-top img_news"
-                                                            alt="<?=$v_news->news_topic?>"
-                                                            src="<?=base_url('asset/user/img/banner_main.jpg')?>">
+                                                            alt="<?= $v_news->news_topic ?>" src="<?= base_url(
+    'asset/user/img/banner_main.jpg'
+) ?>">
                                                         <?php else: ?>
-                                                        <img loading="lazy" class="w-100 img_news"
-                                                            src="<?=base_url('uploads/news/').$v_news->news_img;?>"
-                                                            alt="<?=$v_news->news_topic?>">
+                                                        <img loading="lazy" class="w-100 img_news" src="<?= base_url(
+                                                            'uploads/news/'
+                                                        ) .
+                                                            $v_news->news_img ?>" alt="<?= $v_news->news_topic ?>">
                                                         <?php endif; ?>
 
                                                     </a>
@@ -119,16 +132,19 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
 
                                                 <!--title-->
                                                 <div class="hvrbox-layer_top">
-                                                    <a href="<?=base_url('news/newsDetail/').$v_news->news_id;?>">
+                                                    <a href="<?= base_url(
+                                                        'news/newsDetail/'
+                                                    ) . $v_news->news_id ?>">
                                                         <h2 class="hvrbox-text post-title text-white my-1">
-                                                            <?=$v_news->news_topic?></h2>
+                                                            <?= $v_news->news_topic ?></h2>
                                                     </a>
                                                     <!-- meta title -->
                                                     <div class="news-meta">
                                                         <span class="news-author"><i class="icofont-eye-alt">
-                                                                <?=$v_news->news_view;?></i></span>
-                                                        <span
-                                                            class="news-date"><?php echo $time_elapsed = $this->timeago->timeAgo_T($v_news->news_date); ?></span>
+                                                                <?= $v_news->news_view ?></i></span>
+                                                        <span class="news-date"><?php echo $time_elapsed = $this->timeago->timeAgo_T(
+                                                            $v_news->news_date
+                                                        ); ?></span>
                                                     </div>
                                                 </div>
 
@@ -157,7 +173,7 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
                         <div class="col-12 col-md-6 pt-1  mb-3 mb-lg-4">
                             <div class="row ">
                                 <!--news box-->
-                                <?php foreach ($news as $key => $v_news) : ?>
+                                <?php foreach ($news as $key => $v_news): ?>
 
 
                                 <div class="col-6 col-md-6 p-1 hvrbox">
@@ -165,15 +181,23 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
                                         <div class="position-relative ">
                                             <!--thumbnail img-->
                                             <div class="ratio_right-cover-2 image-wrapper">
-                                                <a href="<?=base_url('news/newsDetail/').$v_news->news_id;?>">
-                                                    <?php if ($v_news->news_img == '') : ?>
-                                                    <img loading="lazy" class="card-img-top img_news_small hvrbox-layer_bottom"
-                                                        alt="<?=$v_news->news_topic?>"
-                                                        src="<?=base_url('asset/user/img/banner_main.jpg')?>">
+                                                <a href="<?= base_url(
+                                                    'news/newsDetail/'
+                                                ) . $v_news->news_id ?>">
+                                                    <?php if (
+                                                        $v_news->news_img == ''
+                                                    ): ?>
+                                                    <img loading="lazy"
+                                                        class="card-img-top img_news_small hvrbox-layer_bottom"
+                                                        alt="<?= $v_news->news_topic ?>" src="<?= base_url(
+    'asset/user/img/banner_main.jpg'
+) ?>">
                                                     <?php else: ?>
                                                     <img loading="lazy" class="w-100 img_news_small hvrbox-layer_bottom"
-                                                        src="<?=base_url('uploads/news/').$v_news->news_img;?>"
-                                                        alt="<?=$v_news->news_topic?>">
+                                                        src="<?= base_url(
+                                                            'uploads/news/'
+                                                        ) .
+                                                            $v_news->news_img ?>" alt="<?= $v_news->news_topic ?>">
                                                     <?php endif; ?>
 
                                                 </a>
@@ -182,14 +206,18 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
                                             <!-- category -->
 
                                             <div class="hvrbox-layer_top">
-                                                <a class="p-1 badge badge-primary rounded-0"
-                                                    href="<?=base_url('news/newsDetail/').$v_news->news_id;?>"><?=$v_news->news_category?>
+                                                <a class="p-1 badge badge-primary rounded-0" href="<?= base_url(
+                                                    'news/newsDetail/'
+                                                ) .
+                                                    $v_news->news_id ?>"><?= $v_news->news_category ?>
                                                 </a>
 
                                                 <!--title-->
-                                                <a href="<?=base_url('news/newsDetail/').$v_news->news_id;?>">
+                                                <a href="<?= base_url(
+                                                    'news/newsDetail/'
+                                                ) . $v_news->news_id ?>">
                                                     <h5 class="hvrbox-text text-white my-1">
-                                                        <?=$v_news->news_topic?></h5>
+                                                        <?= $v_news->news_topic ?></h5>
                                                 </a>
                                             </div>
 
@@ -206,7 +234,7 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
                 </div>
             </div>
             <!--end code-->
-            <center><a href="<?=base_url('news/all')?>"
+            <center><a href="<?= base_url('news/all') ?>"
                     class=" btn btn-outline-secondary my-2 my-sm-0">ข่าวสารทั้งหมด</a></center>
         </div>
 
@@ -215,15 +243,16 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
     </div>
 
 </section>
-
-<?php $this->load->view('user/document/document_main.php'); ?>
+<?php $this->load->view('user/services/services_skj.php'); ?>
 
 <section id="" class="section bg-dark">
     <div class="  text-white   " data-aos="fade-down">
         <div class="container pad-3">
             <div class="row">
                 <div class="col-md-6 px-2 align-self-center">
-                    <img loading="lazy" src="<?=base_url('asset/user/img/covid.png');?>" alt="" class="img-fluid">
+                    <img loading="lazy" src="<?= base_url(
+                        'asset/user/img/covid.png'
+                    ) ?>" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-6 px-2 align-self-center">
                     <h1 class="display-5 text-white">รายงานสถานการณ์ โควิด-19</h1>
@@ -231,29 +260,36 @@ $cowid19 =file_get_contents('https://covid19.th-stat.com/api/open/today');
 
                         <a href="#"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                            ติดเชื้อสะสม <small>[เพิ่มขึ้น <?=$users->NewConfirmed;?>]</small>
-                            <span class="badge badge-primary badge-pill"><?=number_format($users->Confirmed);?></span>
+                            ติดเชื้อสะสม <small>[เพิ่มขึ้น <?= $users->NewConfirmed ?>]</small>
+                            <span class="badge badge-primary badge-pill"><?= number_format(
+                                $users->Confirmed
+                            ) ?></span>
                         </a>
                         <a href="#"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
-                            หายแล้ว <small>[เพิ่มขึ้น <?=$users->NewRecovered;?>]</small>
-                            <span class="badge badge-primary badge-pill"><?=number_format($users->Recovered);?></span>
+                            หายแล้ว <small>[เพิ่มขึ้น <?= $users->NewRecovered ?>]</small>
+                            <span class="badge badge-primary badge-pill"><?= number_format(
+                                $users->Recovered
+                            ) ?></span>
                         </a>
                         <a href="#"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
                             รักษาอยู่ใน รพ.
-                            <span
-                                class="badge badge-primary badge-pill"><?=number_format($users->Hospitalized);?></span>
+                            <span class="badge badge-primary badge-pill"><?= number_format(
+                                $users->Hospitalized
+                            ) ?></span>
                         </a>
                         <a href="#"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center h3">
                             เสียชีวิต
-                            <span class="badge badge-primary badge-pill"><?=number_format($users->Deaths);?></span>
+                            <span class="badge badge-primary badge-pill"><?= number_format(
+                                $users->Deaths
+                            ) ?></span>
                         </a>
 
                     </div>
 
-                    <div class="text-center display-6">อัพเดทข้อมูลล่าสุด <?=$users->UpdateDate;?></div>
+                    <div class="text-center display-6">อัพเดทข้อมูลล่าสุด <?= $users->UpdateDate ?></div>
                 </div>
             </div>
         </div>
