@@ -97,7 +97,7 @@
                  </a>
              </div>
 
-             <div class="col-lg-4 col-md-6 col-sm-6">
+             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
                  <a href="<?= base_url('document/ListStudent') ?>">
                      <div class="serviceBox">
                          <div class="service-icon">
@@ -110,8 +110,8 @@
                      </div>
                  </a>
              </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <a href="#" target="_blank">
+             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
+                 <a href="<?=base_url('schedule') ?>" >
                      <div class="serviceBox">
                          <div class="service-icon">
                              <i class="icofont-calendar"></i>
@@ -123,8 +123,8 @@
                      </div>
                  </a>
              </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <a href="<?= base_url('logoSKJ') ?>" target="_blank">
+             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
+                 <a href="<?=base_url('logoSKJ') ?>" target="_blank">
                      <div class="serviceBox">
                          <div class="service-icon">
                              <i class="icofont-medal "></i>
@@ -132,6 +132,19 @@
                          <h3 class="title">ตราโรงเรียน</h3>
                          <p class="description">
                              Logo มีด้วยกัน 6 แบบ
+                         </p>
+                     </div>
+                 </a>
+             </div>
+             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
+                 <a href="<?=base_url('logoSKJ') ?>" target="_blank">
+                     <div class="serviceBox">
+                         <div class="service-icon">
+                         <i class="icofont-facebook"></i>
+                         </div>
+                         <h3 class="title">กลุ่มสาระการเรียนรู้</h3>
+                         <p class="description">
+                             ประชาสัมพันธ์กลุ่มสาระการ ฯ
                          </p>
                      </div>
                  </a>

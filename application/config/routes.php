@@ -101,6 +101,12 @@ $route['admin/institutionO/add'] = 'admin/control_admin_institutionO/add';
 $route['admin/document'] = 'admin/control_admin_document';
 $route['admin/document/add'] = 'admin/control_admin_document/add';
 
+// งานวิชาการ
+$route['admin/class-schedule'] = 'admin/academic/class_schedule/control_admin_class_schedule';
+$route['admin/class-schedule/add'] = 'admin/academic/class_schedule/control_admin_class_schedule/add';
+
+// ตารางสอน - เรียน
+$route['schedule'] = 'control_academic/schedule';
 
 // ข่าวสารทั้งหมด
 $route['news/newsDetail/(:any)'] = 'control_news/news_detail/$1';
