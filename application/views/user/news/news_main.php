@@ -1,3 +1,28 @@
+<style>
+@media (max-width: 575.98px) {
+    .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1366px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+</style>
 <section id="" class=" section section-bg">
     <div class="container pad-3">
         <?php
@@ -82,155 +107,61 @@
 
             <!--Start code-->
             <div class="row " data-aos="zoom-in">
-                <div class="col-12">
-                    <!--SECTION START-->
-                    <section class="row">
-                        <!--Start slider news-->
-                        <div class="col-12 col-md-6 pb-0 pb-md-3 pt-2 pr-md-1">
-                            <div id="featured" class="carousel slide carousel" data-ride="carousel">
-                                <!--dots navigate-->
-                                <ol class="carousel-indicators top-indicator">
-                                    <?php foreach ($news as $key => $v_news): ?>
-                                    <li data-target="#featured" data-slide-to="<?= $key ?>" <?= $key ==
-0
-    ? 'class="active"'
-    : '' ?>></li>
-                                    <?php endforeach; ?>
-                                </ol>
 
-                                <!--carousel inner-->
-                                <div class="carousel-inner">
-                                    <!--Item slider-->
-                                    <?php foreach ($news as $key => $v_news): ?>
-                                    <div class="carousel-item <?= $key == 0
-                                        ? 'active'
-                                        : '' ?>">
-                                        <div class="card border-0 rounded-0 text-light overflow zoom">
-                                            <div class="position-relative hvrbox">
-                                                <!--thumbnail img-->
-                                                <div class="ratio_left-cover-1 image-wrapper">
-                                                    <a href="<?= base_url(
-                                                        'news/newsDetail/'
-                                                    ) . $v_news->news_id ?>">
-                                                        <?php if (
-                                                            $v_news->news_img ==
-                                                            ''
-                                                        ): ?>
-                                                        <img loading="lazy" class="card-img-top img_news"
-                                                            alt="<?= $v_news->news_topic ?>" src="<?= base_url(
-    'asset/user/img/banner_main.jpg'
-) ?>">
-                                                        <?php else: ?>
-                                                        <img loading="lazy" class="w-100 img_news" src="<?= base_url(
-                                                            'uploads/news/'
-                                                        ) .
-                                                            $v_news->news_img ?>" alt="<?= $v_news->news_topic ?>">
-                                                        <?php endif; ?>
+                <div class="album bg-light">
+                    <div class="section-title">
+                        <h2>SKJ ประชาสัมพันธ์</h2>
+                    </div>
+                    <div class="container">
+                        <div class="card-columns">
+                            <?php foreach ($news as $key => $v_news): ?>
+                            <?php if ($v_news->news_facebook !== ''): ?>
 
-                                                    </a>
+                            <div class="mb-2">
+                                <div loading="lazy" class="fb-post" data-href="<?= $v_news->news_facebook ?>"
+                                    data-width="100%" data-show-text="true"></div>
+                            </div>
+
+                            <?php else: ?>
+
+                            <div class=" ">
+                                <a href="<?= base_url('news/newsDetail/') .
+                                    $v_news->news_id ?>">
+                                    <div class="card box-shadow h-100 overflow zoom ">
+                                        <?php if ($v_news->news_img == ''): ?>
+                                        <img loading="lazy" class="card-img-top" alt="Thumbnail [100%x225]"
+                                            style="height: 225px; width: 100%; display: block;" src="<?= base_url(
+                                                'asset/user/img/banner_main.jpg'
+                                            ) ?>">
+                                        <?php else: ?>
+                                        <img loading="lazy" class="card-img-top" src="<?= base_url(
+                                            'uploads/news/'
+                                        ) .
+                                            $v_news->news_img ?>" width="100%" height="225px">
+                                        <?php endif; ?>
+                                        <div class="card-body">
+                                            <h4><?= $v_news->news_topic ?></h4>
+                                            <!--  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary"> <i
+                                                            class="icofont-eye-alt">
+                                                            <?= $v_news->news_view ?></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-secondary"><?= $v_news->news_category ?></button>
                                                 </div>
-
-                                                <!--title-->
-                                                <div class="hvrbox-layer_top">
-                                                    <a href="<?= base_url(
-                                                        'news/newsDetail/'
-                                                    ) . $v_news->news_id ?>">
-                                                        <h2 class="hvrbox-text post-title text-white my-1">
-                                                            <?= $v_news->news_topic ?></h2>
-                                                    </a>
-                                                    <!-- meta title -->
-                                                    <div class="news-meta">
-                                                        <span class="news-author"><i class="icofont-eye-alt">
-                                                                <?= $v_news->news_view ?></i></span>
-                                                        <span class="news-date"><?php echo $time_elapsed = $this->timeago->timeAgo_T(
-                                                            $v_news->news_date
-                                                        ); ?></span>
-                                                    </div>
-                                                </div>
-
+                                                <small class="text-muted"><?php echo $time_elapsed = $this->timeago->timeAgo_T(
+                                                    $v_news->news_date
+                                                ); ?></small>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php endforeach; ?>
-                                    <!--end item slider-->
-                                </div>
-                                <!--end carousel inner-->
+                                </a>
                             </div>
-
-                            <!--navigation-->
-                            <a class="carousel-control-prev" href="#featured" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#featured" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
-                        <!--End slider news-->
-
-                        <!--Start box news-->
-                        <div class="col-12 col-md-6 pt-1  mb-3 mb-lg-4">
-                            <div class="row ">
-                                <!--news box-->
-                                <?php foreach ($news as $key => $v_news): ?>
-
-
-                                <div class="col-6 col-md-6 p-1 hvrbox">
-                                    <div class="card border-0 rounded-0 text-white overflow zoom ">
-                                        <div class="position-relative ">
-                                            <!--thumbnail img-->
-                                            <div class="ratio_right-cover-2 image-wrapper">
-                                                <a href="<?= base_url(
-                                                    'news/newsDetail/'
-                                                ) . $v_news->news_id ?>">
-                                                    <?php if (
-                                                        $v_news->news_img == ''
-                                                    ): ?>
-                                                    <img loading="lazy"
-                                                        class="card-img-top img_news_small hvrbox-layer_bottom"
-                                                        alt="<?= $v_news->news_topic ?>" src="<?= base_url(
-    'asset/user/img/banner_main.jpg'
-) ?>">
-                                                    <?php else: ?>
-                                                    <img loading="lazy" class="w-100 img_news_small hvrbox-layer_bottom"
-                                                        src="<?= base_url(
-                                                            'uploads/news/'
-                                                        ) .
-                                                            $v_news->news_img ?>" alt="<?= $v_news->news_topic ?>">
-                                                    <?php endif; ?>
-
-                                                </a>
-                                            </div>
-
-                                            <!-- category -->
-
-                                            <div class="hvrbox-layer_top">
-                                                <a class="p-1 badge badge-primary rounded-0" href="<?= base_url(
-                                                    'news/newsDetail/'
-                                                ) .
-                                                    $v_news->news_id ?>"><?= $v_news->news_category ?>
-                                                </a>
-
-                                                <!--title-->
-                                                <a href="<?= base_url(
-                                                    'news/newsDetail/'
-                                                ) . $v_news->news_id ?>">
-                                                    <h5 class="hvrbox-text text-white my-1">
-                                                        <?= $v_news->news_topic ?></h5>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php endforeach; ?>
-                                <!--end news box-->
-                            </div>
-                        </div>
-                        <!--End box news-->
-                    </section>
-                    <!--END SECTION-->
+                    </div>
                 </div>
             </div>
             <!--end code-->

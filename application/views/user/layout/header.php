@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title><?=$title?> | SKJ</title>
-    <meta name="description" content="<?=$description;?>" />
+    <title><?= $title ?> | SKJ</title>
+    <meta name="description" content="<?= $description ?>" />
     <meta
         content="โรงเรียนสวนกุหลาบวิทยาลัย,โรงเรียน,สวนกุหลาบ,จิรประวัติ,นครสวรรค์,สวนกุหลาบจิรประวัติ,โรงเรียนสวนกุหลาบ"
         name="keywords">
@@ -17,18 +17,19 @@
 
 
 
-    <meta property="og:url" content="<?=$full_url;?>" />
-    <meta property="og:title" content="<?=$title?> | SKJ" />
-    <meta property="og:description" content="<?=$description;?>" />
+    <meta property="og:url" content="<?= $full_url ?>" />
+    <meta property="og:title" content="<?= $title ?> | SKJ" />
+    <meta property="og:description" content="<?= $description ?>" />
     <meta property="og:type" content="website" />
-    <meta property="og:image"
-        content="<?=@$news[0]->news_img == '' ? base_url('asset/user/img/banner_main.jpg') : base_url('uploads/news/').$news[0]->news_img;?>" />
+    <meta property="og:image" content="<?= @$news[0]->news_img == ''
+        ? base_url('asset/user/img/banner_main.jpg')
+        : base_url('uploads/news/') . $news[0]->news_img ?>" />
     <link rel="image_src" href="images/content/content-37.png" />
 
 
     <!-- Favicons -->
-    <link href="<?=base_url()?>/asset/user/img/logo_fav.png" rel="icon">
-    <link href="<?=base_url()?>/asset/user/img/logo_fav.jpg" rel="apple-touch-icon">
+    <link href="<?= base_url() ?>/asset/user/img/logo_fav.png" rel="icon">
+    <link href="<?= base_url() ?>/asset/user/img/logo_fav.jpg" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -37,21 +38,21 @@
     <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="<?=base_url()?>/asset/user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?=base_url()?>/asset/user/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="<?=base_url()?>/asset/user/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="<?=base_url()?>/asset/user/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="<?=base_url()?>/asset/user/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="<?=base_url()?>/asset/user/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="<?=base_url();?>asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="<?=base_url()?>/asset/user/css/style.css" rel="stylesheet">
-    <link href="<?=base_url()?>/asset/user/css/circles.css" rel="stylesheet">
-    <link href="<?=base_url()?>/asset/user/css/footerskj.css" rel="stylesheet">
-    <link href="<?=base_url()?>/asset/user/css/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?=base_url()?>asset/user/css/smartwizard/smart_wizard.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>asset/user/css/smartwizard/smart_wizard_theme_arrows.min.css">
+    <link href="<?= base_url() ?>/asset/user/css/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/css/circles.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/css/footerskj.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/css/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url() ?>asset/user/css/smartwizard/smart_wizard.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>asset/user/css/smartwizard/smart_wizard_theme_arrows.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165844207-1"></script>
     <script>
@@ -64,7 +65,7 @@
 
     gtag('config', 'UA-165844207-1');
     </script>
-    
+
 </head>
 <div id="fb-root"></div>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
@@ -143,12 +144,12 @@ if it's not present, don't show loader */
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background: url(<?=base_url()?>asset/user/img/loder.gif) center no-repeat #fff;
+    background: url(<?= base_url() ?>asset/user/img/loder.gif) center no-repeat #fff;
 }
 
 
 .bg_headertitel {
-    background-image: url(<?=base_url('asset/user/img/bg_titleheader.png')?>);
+    background-image: url(<?= base_url('asset/user/img/bg_titleheader.png') ?>);
     background-repeat: no-repeat;
     background-position: bottom;
     bottom: 0;
@@ -188,8 +189,7 @@ if it's not present, don't show loader */
 }
 
 .br {
-    background-image: url(<?=base_url();
-    ?>asset/user/img/footer_bg1.png);
+    background-image: url(<?= base_url() ?>asset/user/img/footer_bg1.png);
     background-repeat: no-repeat;
     background-position: bottom;
     bottom: 0;
@@ -211,8 +211,6 @@ if it's not present, don't show loader */
     margin-top: 0px;
     margin-left: 0px;
 }
-
-
 </style>
 
 <body>
@@ -224,12 +222,13 @@ if it's not present, don't show loader */
 
         <div class="container d-none d-sm-block d-lg-block ">
 
-            <header  class="blog-header nav-down py-4" >
+            <header class="blog-header nav-down py-4">
                 <div class="row flex-nowrap justify-content-between align-items-center">
                     <div class="col-7 pt-1">
                         <div class="logo mr-auto">
-                            <a class="e" href="<?=base_url('welcome');?>">
-                                <img loading="lazy" class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav1.png" alt="">
+                            <a class="e" href="<?= base_url('welcome') ?>">
+                                <img loading="lazy" class="img-fluid"
+                                    src="<?= base_url() ?>asset/user/img/logo_nav1.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -258,44 +257,56 @@ if it's not present, don't show loader */
         </div>
 
         <header class="nav-down">
-       <!-- scroll_bar -->
+            <!-- scroll_bar -->
             <nav class="navbar navbar-expand-lg navbar-dark scroll_bar"
                 style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;background-color:rgba(232, 38, 158, 1);">
                 <div class="container">
-                    <a style="width: 79%;" class="navbar-brand d-block d-sm-none d-lg-none" href="<?=base_url('welcome');?>">
-                        <img loading="lazy" class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
+                    <a style="width: 79%;" class="navbar-brand d-block d-sm-none d-lg-none" href="<?= base_url(
+                        'welcome'
+                    ) ?>">
+                        <img loading="lazy" class="img-fluid" src="<?= base_url() ?>asset/user/img/logo_nav2.png"
+                            alt="">
                     </a>
                     <button class="navbar-toggler justify-content-end align-items-center" type="button"
                         data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon" style="width: 18px;"></span>
                     </button>
-                   
-                    <a  style="width: 50%;" class="navbar-md invisible navbar-brand justify-content-center d-none d-md-block d-lg-none" href="<?=base_url('welcome');?>">
-                        <img loading="lazy" class="img-fluid" src="<?=base_url()?>asset/user/img/logo_nav2.png" alt="">
-                    </a>
-                    
-                    
 
-                    
+                    <a style="width: 50%;"
+                        class="navbar-md invisible navbar-brand justify-content-center d-none d-md-block d-lg-none"
+                        href="<?= base_url('welcome') ?>">
+                        <img loading="lazy" class="img-fluid" src="<?= base_url() ?>asset/user/img/logo_nav2.png"
+                            alt="">
+                    </a>
+
+
+
+
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item ">
-                                <a class="text-white nav-link" href="<?=base_url('welcome');?>">
-                                <i class="icofont-home icofont-2x"></i>
+                                <a class="text-white nav-link" href="<?= base_url(
+                                    'welcome'
+                                ) ?>">
+                                    <i class="icofont-home icofont-2x"></i>
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="text-white nav-link dropdown-toggle" href="#" id="dropdown01"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                        class="icofont-university"></i> เกี่ยวกับ สกจ</a>
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> เกี่ยวกับ สกจ</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                                     <div class="row ">
-                                        <?php foreach ($Allabout as $key => $v_about) : ?>
+                                        <?php foreach (
+                                            $Allabout
+                                            as $key => $v_about
+                                        ): ?>
 
-                                        <a class="dropdown-item"
-                                            href="<?=base_url('AboutSchool/').$v_about->about_id;?>"><i
-                                                class="icofont-dotted-right"></i> <?=$v_about->about_menu;?></a>
+                                        <a class="dropdown-item" href="<?= base_url(
+                                            'AboutSchool/'
+                                        ) .
+                                            $v_about->about_id ?>"><i class="icofont-dotted-right"></i>
+                                            <?= $v_about->about_menu ?></a>
 
                                         <?php endforeach; ?>
                                     </div>
@@ -304,18 +315,20 @@ if it's not present, don't show loader */
                             <!-- Level one dropdown -->
                             <li class="nav-item dropdown">
                                 <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" class="nav-link text-white dropdown-toggle"><i
-                                        class="icofont-teacher"></i> บุคลากร</a>
+                                    aria-expanded="false" class="nav-link text-white dropdown-toggle"> บุคลากร</a>
                                 <ul aria-labelledby="dropdownMenu1" class="dropdown-menu border-0 shadow">
 
-                                    <a class="dropdown-item" href="<?=base_url('Personnel/คณะผู้บริหาร')?>"><i
-                                            class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
+                                    <a class="dropdown-item" href="<?= base_url(
+                                        'Personnel/คณะผู้บริหาร'
+                                    ) ?>"> คณะผู้บริหาร</a>
 
-                                    <?php foreach ($lear as $key => $v_lear) : ?>
+                                    <?php foreach ($lear as $key => $v_lear): ?>
 
-                                    <a class="dropdown-item" href="<?=base_url('Personnel/').$v_lear->lear_namethai?>">
+                                    <a class="dropdown-item" href="<?= base_url(
+                                        'Personnel/'
+                                    ) . $v_lear->lear_namethai ?>">
                                         <i class="icofont-dotted-right"></i>
-                                        กลุ่มสาระการเรียนรู้<?=$v_lear->lear_namethai?>
+                                        กลุ่มสาระการเรียนรู้<?= $v_lear->lear_namethai ?>
                                     </a>
 
                                     <?php endforeach; ?>
@@ -329,10 +342,12 @@ if it's not present, don't show loader */
                                             class="dropdown-item dropdown-toggle"><i class="icofont-dotted-right"></i>
                                             ฝ่ายสนับสนุนการสอน</a>
                                         <ul aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
-                                            <li><a href="<?=base_url('Personnel/พนักงานจ้างเหมา')?>"
-                                                    class="dropdown-item">พนักงานจ้างเหมา</a></li>
-                                            <li><a href="<?=base_url('Personnel/พนักงานจ้างเหมาตามภารกิจ')?>"
-                                                    class="dropdown-item">พนักงานจ้างเหมาตามภารกิจ</a></li>
+                                            <li><a href="<?= base_url(
+                                                'Personnel/พนักงานจ้างเหมา'
+                                            ) ?>" class="dropdown-item">พนักงานจ้างเหมา</a></li>
+                                            <li><a href="<?= base_url(
+                                                'Personnel/พนักงานจ้างเหมาตามภารกิจ'
+                                            ) ?>" class="dropdown-item">พนักงานจ้างเหมาตามภารกิจ</a></li>
                                         </ul>
                                     </li>
                                     <!-- End Level two -->
@@ -340,14 +355,36 @@ if it's not present, don't show loader */
                             </li>
                             <!-- End Level one -->
                             <li class="nav-item ">
-                                <a class="text-white nav-link" href="<?=base_url('news/all');?>">
-                                    <i class="icofont-newspaper"></i> ข่าวสาร สกจ</a>
+                                <a class="text-white nav-link" href="<?= base_url(
+                                    'news/all'
+                                ) ?>">
+                                    ข่าวสาร สกจ</a>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="text-white nav-link" href="<?=base_url('Album');?>"><i
-                                        class="icofont-flame-torch"></i> กิจกรรม</a>
+                                <a class="text-white nav-link" href="<?= base_url(
+                                    'Album'
+                                ) ?>">กิจกรรม</a>
                                 </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="text-white nav-link dropdown-toggle" href="#" id="dropdown01"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> กลุ่มบริหาร</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <div class="row ">
+                                        <a class="dropdown-item" href="<?= base_url(
+                                            'academic'
+                                        ) ?>"><i class="icofont-dotted-right"></i>
+                                            บริหารวิชาการ
+                                        </a>
+                                        <a class="dropdown-item" href="#"><i class="icofont-dotted-right"></i>
+                                            บริหารกิจการนักเรียน
+                                        </a>
+                                        <a class="dropdown-item" href="#"><i class="icofont-dotted-right"></i>
+                                            บริหารทั่วไป
+                                        </a>
+                                    </div>
+                                </div>
                             </li>
                             <!-- <li class="nav-item animated heartBeat">
                                 <a class="text-white nav-link" href="http://admission.skj.ac.th/">
@@ -356,10 +393,11 @@ if it's not present, don't show loader */
                             </li> -->
                         </ul>
                         <ul class="navbar-nav">
-                            <li><a class="text-white btn" href="<?=base_url('Contact');?>"><i
-                                        class="icofont-id-card"></i>
+                            <li><a class="text-white btn" href="<?= base_url(
+                                'Contact'
+                            ) ?>"><i class="icofont-id-card"></i>
                                     ติดต่อเรา</a></li>
-                            <li><a href="<?=base_url('login')?>"
+                            <li><a href="<?= base_url('login') ?>"
                                     class="text-white btn btn-outline-light my-2 my-sm-0"><i class="icofont-lock"></i>
                                     Login</a></li>
                         </ul>

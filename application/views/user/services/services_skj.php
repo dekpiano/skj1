@@ -9,7 +9,7 @@
 
 .serviceBox {
     padding: 30px 30px 30px 90px;
-    background: #f8f8f8;
+    /* background: #f8f8f8; */
     color: #333;
     overflow: hidden;
     position: relative;
@@ -72,7 +72,7 @@
 
 @media only screen and (max-width: 990px) {
     .serviceBox {
-        margin-bottom: 15px;
+        /* margin-bottom: 15px; */
     }
 }
  </style>
@@ -83,7 +83,47 @@
          </div>
 
          <div class="row">
-             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
+             <div class="col-lg-4 col-md-6 col-sm-6 ">
+                 <a href="<?= base_url('academic') ?>">
+                     <div class="serviceBox">
+                         <div class="service-icon">
+                             <i class="icofont-brainstorming"></i>
+                         </div>
+                         <h3 class="title">บริหารวิชาการ</h3>
+                         <p class="description">
+                             หลักสูตร งานวัดผล ทะเบียนนักเรียน แนะแนวการศึกษา
+                         </p>
+                     </div>
+                 </a>
+             </div>
+
+             <div class="col-lg-4 col-md-6 col-sm-6 ">
+                 <a href="#">
+                     <div class="serviceBox">
+                         <div class="service-icon">
+                             <i class="icofont-group-students"></i>
+                         </div>
+                         <h3 class="title">บริหารกิจการนักเรียน</h3>
+                         <p class="description">
+                             ดำเนินการกิจกรรมต่าง ๆ ที่ไม่เกี่ยวข้องกับการเรียนในห้องเรียน
+                         </p>
+                     </div>
+                 </a>
+             </div>
+             <div class="col-lg-4 col-md-6 col-sm-6 ">
+                 <a href="#">
+                     <div class="serviceBox">
+                         <div class="service-icon">
+                             <i class="icofont-presentation"></i>
+                         </div>
+                         <h3 class="title">บริหารทั่วไป</h3>
+                         <p class="description">
+                             บริหารงานอื่นๆ บรรลุผลตามมาตรฐานคุณภาพและเป้าหมายที่กำหนด
+                         </p>
+                     </div>
+                 </a>
+             </div>
+             <div class="col-lg-4 col-md-6 col-sm-6 ">
                  <a href="<?= base_url('document') ?>">
                      <div class="serviceBox">
                          <div class="service-icon">
@@ -96,35 +136,8 @@
                      </div>
                  </a>
              </div>
-
-             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-                 <a href="<?= base_url('document/ListStudent') ?>">
-                     <div class="serviceBox">
-                         <div class="service-icon">
-                             <i class="icofont-group-students"></i>
-                         </div>
-                         <h3 class="title">รายชื่อนักเรียน 63</h3>
-                         <p class="description">
-                             รายชื่อนักเรียนนักเรียนทั้งหมด
-                         </p>
-                     </div>
-                 </a>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-                 <a href="<?=base_url('schedule') ?>" >
-                     <div class="serviceBox">
-                         <div class="service-icon">
-                             <i class="icofont-calendar"></i>
-                         </div>
-                         <h3 class="title">ตารางเรียน - สอน</h3>
-                         <p class="description">
-                             ตารางเรียนและตารางสอนประจำเทอม
-                         </p>
-                     </div>
-                 </a>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-                 <a href="<?=base_url('logoSKJ') ?>" target="_blank">
+             <div class="col-lg-4 col-md-6 col-sm-6 ">
+                 <a href="<?= base_url('logoSKJ') ?>">
                      <div class="serviceBox">
                          <div class="service-icon">
                              <i class="icofont-medal "></i>
@@ -136,11 +149,11 @@
                      </div>
                  </a>
              </div>
-             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-                 <a href="<?=base_url('logoSKJ') ?>" target="_blank">
+             <div class="col-lg-4 col-md-6 col-sm-6 ">
+                 <a href="#">
                      <div class="serviceBox">
                          <div class="service-icon">
-                         <i class="icofont-facebook"></i>
+                             <i class="icofont-facebook"></i>
                          </div>
                          <h3 class="title">กลุ่มสาระการเรียนรู้</h3>
                          <p class="description">

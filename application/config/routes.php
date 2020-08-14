@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome/mother_day12';
 $route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = false;
 
 $route['login'] = 'control_login/login_main';
 
@@ -69,7 +69,8 @@ $route['admin/journal/add'] = 'admin/control_admin_journal/add';
 
 $route['admin/personnel'] = 'admin/control_admin_personnel';
 $route['admin/personnel/add'] = 'admin/control_admin_personnel/add';
-$route['admin/personnel/profile'] = 'admin/control_admin_personnel/profile_personnel';
+$route['admin/personnel/profile'] =
+    'admin/control_admin_personnel/profile_personnel';
 
 $route['admin/position'] = 'admin/control_admin_position';
 $route['admin/position/add'] = 'admin/control_admin_position/add';
@@ -102,9 +103,13 @@ $route['admin/document'] = 'admin/control_admin_document';
 $route['admin/document/add'] = 'admin/control_admin_document/add';
 
 // งานวิชาการ
-$route['admin/class-schedule'] = 'admin/academic/class_schedule/control_admin_class_schedule';
-$route['admin/class-schedule/add'] = 'admin/academic/class_schedule/control_admin_class_schedule/add';
+$route['admin/class-schedule'] =
+    'admin/academic/class_schedule/control_admin_class_schedule';
+$route['admin/class-schedule/add'] =
+    'admin/academic/class_schedule/control_admin_class_schedule/add';
 
+// บริหารวิชาการ
+$route['academic'] = 'control_academic';
 // ตารางสอน - เรียน
 $route['schedule'] = 'control_academic/schedule';
 

@@ -36,8 +36,6 @@
 
     <div class="album bg-light">
         <div class="container">
-
-
             <div class="card-columns">
                 <?php foreach ($news as $key => $v_news): ?>
                 <?php if ($v_news->news_facebook !== ''): ?>
@@ -83,11 +81,8 @@
                     </a>
                 </div>
                 <?php endif; ?>
-
                 <?php endforeach; ?>
-
             </div>
-
         </div>
     </div>
 
