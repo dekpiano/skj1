@@ -48,7 +48,7 @@ class Control_news extends CI_Controller {
 		$data = $this->dataAll();
 		$data['title'] = 'ข่าวประชาสัมพันธ์ทั้งหมด';
 		$data['description'] = 'ข่าวประชาสัมพันธ์ทั้งหมด';
-		$data['news'] =	$this->db->order_by("news_date", "desc")->get('tb_news')->result(); 
+		$data['news'] =	$this->db->order_by("ABS(news_date)", "desc")->get('tb_news')->result(); 
 
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/news/news_all.php');

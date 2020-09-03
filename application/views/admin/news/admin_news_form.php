@@ -150,65 +150,64 @@
             </div>
             <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                        <form action="<?=base_url('admin/control_admin_news/').$action;?>" method="post"
-                            enctype="multipart/form-data">
-                            <div class="form-group row">
-                                <label for="news_id" class="col-sm-2 col-form-label">รหัส<?=$title;?></label>
-                                <div class="col-sm-10">
-                                    <input type="text" readonly class="form-control" id="news_id" name="news_id"
-                                        value="<?=$action == 'insert_news' ? $news : $news[0]->news_id;?>" required>
-                                </div>
+                    <form action="<?=base_url('admin/control_admin_news/').$action;?>" method="post"
+                        enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <label for="news_id" class="col-sm-2 col-form-label">รหัส<?=$title;?></label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control" id="news_id" name="news_id"
+                                    value="<?=$action == 'insert_news' ? $news : $news[0]->news_id;?>" required>
                             </div>
-                            <div class="form-group row">
-                                <label for="news_topic" class="col-sm-2 col-form-label">หัวเรื่อง</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="news_topic" name="news_topic"
-                                        value="<?=$action == 'insert_news' ? '' : $news[0]->news_topic;?>" required>
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="news_topic" class="col-sm-2 col-form-label">หัวเรื่อง</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="news_topic" name="news_topic"
+                                    value="<?=$action == 'insert_news' ? '' : $news[0]->news_topic;?>" required>
                             </div>
-                            <div class="form-group row">
-                                <label for="news_facebook" class="col-sm-2 col-form-label">ลิ้ง Facebook</label>
-                                <div class="col-sm-10">
+                        </div>
+                        <div class="form-group row">
+                            <label for="news_facebook" class="col-sm-2 col-form-label">ลิ้ง Facebook</label>
+                            <div class="col-sm-10">
                                 <input type="text" class="form-control" id="news_facebook" name="news_facebook"
-                                        value="<?=$action == 'insert_news' ? '' : $news[0]->news_facebook;?>" required>
-                                </div>
+                                    value="<?=$action == 'insert_news' ? '' : $news[0]->news_facebook;?>" required>
                             </div>
-                            <div class="form-group row">
-                                <label for="news_date" class="col-sm-2 col-form-label">วันที่ประกาศ</label>
-                                <div class="col-sm-2">
-                                    <input type="date" class="form-control" id="news_date" name="news_date"
-                                        value="<?=$action == 'insert_news' ? date('Y-m-d') : date("Y-m-d", strtotime($news[0]->news_date));?>">
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="news_date" class="col-sm-2 col-form-label">วันที่ประกาศ</label>
+                            <div class="col-sm-2">
+                                <input type="date" class="form-control" id="news_date" name="news_date"
+                                    value="<?=$action == 'insert_news' ? date('Y-m-d') : date("Y-m-d", strtotime($news[0]->news_date));?>">
                             </div>
-                            <div class="form-group row">
-                                <label for="news_category" class="col-sm-2 col-form-label">ประเภทประกาศ</label>
-                                <div class="col-sm-2">
-                                    <select class="form-control" name="news_category" id="news_category">
-                                        <option value="ประชาสัมพันธ์">ประชาสัมพันธ์</option>
-                                        <option value="กิจกรรม">กิจกรรม</option>
-                                    </select>
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="news_category" class="col-sm-2 col-form-label">ประเภทประกาศ</label>
+                            <div class="col-sm-2">
+                                <select class="form-control" name="news_category" id="news_category">
+                                    <option value="ประชาสัมพันธ์">ประชาสัมพันธ์</option>
+                                    <option value="กิจกรรม">กิจกรรม</option>
+                                </select>
                             </div>
+                        </div>
 
-                            <div class="form-group row">
-                                <label for="banner_namethai" class="col-sm-2 col-form-label"></label>
-                                <div class="col-sm-10">
-                                    <button type="submit" name="sub_facebook" class="btn btn-lg btn-<?=$color?>  btn-block" value="btn_facebook"><?=$icon?>
-                                        <?php echo end($breadcrumbs);?></button>
-                                </div>
+                        <div class="form-group row">
+                            <label for="banner_namethai" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <button type="submit" name="sub_facebook" class="btn btn-lg btn-<?=$color?>  btn-block"
+                                    value="btn_facebook"><?=$icon?>
+                                    <?php echo end($breadcrumbs);?></button>
                             </div>
+                        </div>
 
 
-                        </form>
-                    </div>
-                </div>
-
-
+                    </form>
                 </div>
             </div>
         </div>
-
     </div>
+</div>
+
+</div>
 
 
 </div>

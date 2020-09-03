@@ -76,6 +76,10 @@
 
 html {
     min-height: 100%;
+   
+}
+body{
+    background-color: #fbfbfd;
 }
 
 .dropdown>.dropdown-toggle:active {

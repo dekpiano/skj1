@@ -15,7 +15,7 @@
         </div>
     </div>
 </div>
-<section class=" team">
+<section class=" team" style="background: #fff0;">
     <!-- ======= Team Section ======= -->
     <div class="container">
         <?php  $img_p = base_url('uploads/personnel/');

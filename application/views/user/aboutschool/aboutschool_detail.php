@@ -2,7 +2,7 @@
 
     <div class="container ">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="card border-5 shadow mb-4">
                     <div class="card-body">
                         <h5 class="m-0"><?=$about[0]->about_menu;?></h5>
@@ -11,8 +11,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
 
+            <!-- <div class="col-lg-4">
                 <div class="card border-2 shadow mb-4">
                     <div class="card-body">
                         <h5 class="mb-0">เกี่ยวกับโรงเรียน</h5>
@@ -25,9 +25,8 @@
                         </div>
                         <hr class="my-0 mb-2">
                         <?php endforeach; ?>
-
                     </div>
-                </div>
+                </div> -->
 
 
             </div>

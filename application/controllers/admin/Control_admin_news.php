@@ -81,9 +81,9 @@ class Control_admin_news extends CI_Controller {
 			if($_FILES['banner_img']['error'] == 0){
 				$config['upload_path']   = 'uploads/news/'; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
 				$config['allowed_types'] = '*'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
-				$config['max_size']      = 0; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
-				$config['max_width']     = 1024; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
-				$config['max_height']    = 720;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+				$config['max_size']      = 2048; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+				$config['max_width']     = 0; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+				$config['max_height']    = 0;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
 				$config['encrypt_name']  = true; //กำหนดเป็น true ให้ระบบ เปลียนชื่อ ไฟล์  อัตโนมัติ  ป้องกันกรณีชื่อไฟล์ซ้ำกัน
 			   $this->load->library('upload', $config);
 			   $this->upload->initialize($config);
@@ -179,9 +179,9 @@ window.history.back();
 		if($_FILES['banner_img']['error'] == 0){
 		$config['upload_path']   = 'uploads/news/'; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
          $config['allowed_types'] = '*'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
-         $config['max_size']      = 0; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
-         $config['max_width']     = 1024; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
-         $config['max_height']    = 720;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+         $config['max_size']      = 2048; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+         $config['max_width']     = 0; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+         $config['max_height']    = 0;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
          $config['encrypt_name']  = true; //กำหนดเป็น true ให้ระบบ เปลียนชื่อ ไฟล์  อัตโนมัติ  ป้องกันกรณีชื่อไฟล์ซ้ำกัน
 			$this->load->library('upload', $config);
 			$this->upload->initialize($config);
@@ -196,6 +196,7 @@ window.history.back();
 										'news_topic' => $this->input->post('news_topic'),
 										'news_content' => $this->input->post('news_content'),
 										'news_category' => $this->input->post('news_category'),
+										'news_date' => $date_time,
 										'personnel_id' => $this->session->userdata('login_id'),
 										'news_img' => $data['upload_data']['file_name']
 									);
@@ -217,9 +218,11 @@ window.history.back();
 				
 			}
 		}else{
+			$date_time = $this->input->post('news_date').' '.date('H:i:s');	
 					$data = array(	
 						'news_topic' => $this->input->post('news_topic'),
 						'news_content' => $this->input->post('news_content'),
+						'news_date' => $date_time,
 						'news_category' => $this->input->post('news_category'),
 						'personnel_id' => $this->session->userdata('login_id')
 					);
