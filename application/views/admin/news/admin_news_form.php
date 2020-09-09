@@ -60,7 +60,7 @@
             </div>
 
 
-            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="">
                     <div class="card-body">
                         <form action="<?=base_url('admin/control_admin_news/').$action;?>" method="post"
@@ -82,20 +82,21 @@
                             <div class="form-group row">
                                 <label for="news_content" class="col-sm-2 col-form-label">เนื้อหา</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" name="news_content"
-                                        id="news_content"> <?=$action == 'insert_news' ? '' : $news[0]->news_content;?></textarea>
+                                <!-- <div id="example" ></div> -->
+                                    <textarea class="form-control selector" name="news_content"
+                                        id="news_content" cols="500"> <?=$action == 'insert_news' ? '' : $news[0]->news_content;?></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="news_date" class="col-sm-2 col-form-label">วันที่ประกาศ</label>
-                                <div class="col-sm-2">
+                                <label for="news_date" class="col-md-4 col-lg-2 col-form-label">วันที่ประกาศ</label>
+                                <div class="col-sm-6 col-md-8 col-lg-4">
                                     <input type="date" class="form-control" id="news_date" name="news_date"
                                         value="<?=$action == 'insert_news' ? date('Y-m-d') : date("Y-m-d", strtotime($news[0]->news_date));?>">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="news_category" class="col-sm-2 col-form-label">ประเภทประกาศ</label>
-                                <div class="col-sm-2">
+                                <label for="news_category" class="col-md-4 col-lg-2 col-form-label">ประเภทประกาศ</label>
+                                <div class="col-sm-6 col-md-8 col-lg-4">
                                     <select class="form-control" name="news_category" id="news_category">
                                         <option value="ประชาสัมพันธ์">ประชาสัมพันธ์</option>
                                         <option value="กิจกรรม">กิจกรรม</option>
@@ -104,21 +105,20 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="banner_img" class="col-sm-2 col-form-label">รูปหน้าปก</label>
-                                <div class="col-sm-10">
-                                    <div class="upload-btn-wrapper">
-                                        <button class="btn1">เลือกไฟล์</button>
-                                        <input type="file" name="banner_img" id="banner_img" />
+                                <label for="banner_img" class="col-md-4 col-lg-2 col-form-label">รูปหน้าปก</label>
+                                <div class="col-sm-6 col-md-8 col-lg-4">
+                                    
+                                        <input type="file" name="banner_img" id="banner_img" class="banner_img" />
                                         <small id="emailHelp" class="form-text text-muted">
                                             (กรณีไม่มีรูปภาพไม่ต้องใส่)</small>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="banner_namethai" class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
 
-                                    <img id="blah" class="img-fluid"
+                                    <img id="blah" class="img-fluid blah"
                                         src="<?php echo  @$news[0]->news_img == '' ? '#' : base_url().'uploads/news/'.$news[0]->news_img; ?>"
                                         alt="" />
                                     <hr>

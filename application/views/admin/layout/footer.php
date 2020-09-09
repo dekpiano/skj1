@@ -75,74 +75,25 @@
       <script src="<?= base_url() ?>asset/js/passtrength.js"></script>
       <script src="<?= base_url() ?>asset/js/personnel_profile.js?v=1002"></script>
 
-      <script src="https://cdn.tiny.cloud/1/y6b2omlkddg6mbwjuwhrf96ufg0wjfhrf5xw1xes3o6oahi4/tinymce/5/tinymce.min.js"
-          referrerpolicy="origin"></script>
+      <!-- <script src="https://cdn.tiny.cloud/1/y6b2omlkddg6mbwjuwhrf96ufg0wjfhrf5xw1xes3o6oahi4/tinymce/5/tinymce.min.js"
+          referrerpolicy="origin"></script> -->
+
+      <script type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>
+      <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.2.1/js/plugins/image.min.js"></script>
 
       </body>
-
+    <?php $this->load->view('admin/layout/textarea_editor.php'); ?>
       <script type="text/javascript">
 $(document).ready(function() {
 
     $(":input").inputmask();
     $(".sidebar").sortable();
     $(".sidebar").disableSelection();
-
-    tinymce.init({
-        selector: 'textarea',
-        height: 500,
-        tinydrive_token_provider: 'https://jwt.io/#debugger-io?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
-        tinydrive_upload_path: "/uploads/banner",
-        plugins: [
-            'advlist autolink tinydrive code imagetools link image lists charmap print preview hr anchor pagebreak spellchecker',
-            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-            'table emoticons template paste help'
-        ],
-        toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
-            'bullist numlist outdent indent | insertfile link image | print preview media fullpage | ' +
-            'forecolor backcolor emoticons | help',
-        menu: {
-            favs: {
-                title: 'My Favorites',
-                items: 'code visualaid | searchreplace | spellchecker | emoticons'
-            }
-        },
-        menubar: 'favs file edit view insert format tools table help',
-        content_css: 'css/content.css',
-
-        // enable title field in the Image dialog
-        image_title: true,
-        // enable automatic uploads of images represented by blob or data URIs
-        automatic_uploads: true,
-        // add custom filepicker only to Image dialog
-        file_picker_types: 'image',
-        file_picker_callback: function(cb, value, meta) {
-            var input = document.createElement('input');
-            input.setAttribute('type', 'file');
-            input.setAttribute('accept', 'image/*');
-
-            input.onchange = function() {
-                var file = this.files[0];
-                var reader = new FileReader();
-
-                reader.onload = function() {
-                    var id = 'blobid' + (new Date()).getTime();
-                    var blobCache = tinymce.activeEditor.editorUpload.blobCache;
-                    var base64 = reader.result.split(',')[1];
-                    var blobInfo = blobCache.create(id, file, base64);
-                    blobCache.add(blobInfo);
-
-                    // call the callback and populate the Title field with the file name
-                    cb(blobInfo.blobUri(), {
-                        title: file.name
-                    });
-                };
-                reader.readAsDataURL(file);
-            };
-
-            input.click();
-        }
-    });
+   
 });
+
       </script>
       <script type="text/javascript">
 function readURL(input) {
@@ -156,7 +107,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
 }
-$("#jour_img ,#instiO_img, #img_mainpic").change(function() {
+$("#jour_img ,#instiO_img, .img_mainpic,.banner_img").change(function() {
     readURL(this);
 });
       </script>

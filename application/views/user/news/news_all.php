@@ -36,18 +36,19 @@
 
     <div class="album bg-light">
         <div class="container">
-            <div class="card-columns">
-                <?php foreach ($news as $key => $v_news): ?>
-                <?php if ($v_news->news_facebook !== ''): ?>
+        <div class="row ">
+            <?php foreach ($news as $key => $v_news): ?>
+            <?php if ($v_news->news_facebook !== ''): ?>
 
-                <div class="mb-2">
-                    <div loading="lazy" class="fb-post" data-href="<?= $v_news->news_facebook ?>" data-width="100%"
-                        data-show-text="true"></div>
-                </div>
+            <div class="mb-2">
+                <div loading="lazy" class="fb-post" data-href="<?= $v_news->news_facebook ?>" data-width="100%"
+                    data-show-text="true"></div>
+            </div>
 
-                <?php else: ?>
+            <?php else: ?>
 
-                <div class=" ">
+           
+                <div class="col-md-6 mb-2 col-lg-4">
                     <a href="<?= base_url('news/newsDetail/') .
                         $v_news->news_id ?>">
                         <div class="card box-shadow h-100 overflow zoom ">
@@ -63,7 +64,7 @@
                                 $v_news->news_img ?>" width="100%" height="225px">
                             <?php endif; ?>
                             <div class="card-body">
-                                <h4><?= $v_news->news_topic ?></h4>
+                                <h5 class="text-overflow"><?= $v_news->news_topic ?></h5>
                                 <!--  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">

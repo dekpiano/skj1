@@ -175,7 +175,7 @@
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <label for="pers_position">ตำแหน่งงานหลักในโรงเรียน</label>
-                                        <select class="custom-select d-block w-100" id="pers_position"
+                                        <select class="custom-select d-block w-100" required id="pers_position"
                                             name="pers_position">
                                             <option value="">เลือก...</option>
                                             <?php foreach ($posi as $key => $v_posi):?>
@@ -275,7 +275,7 @@
                                 </div>
                                 <!-- ทำอาทิตย์หน้า -->
                                 <hr class="mb-4">
-                                <h5 class="mb-3">ตำแหน่งในระบบ</h5>
+                                <h5 class="mb-3">งานในระบบ</h5>
                                 <?php foreach ($work as $key => $v_work):    
 
                               $w = @explode("|",$pers[0]->pers_workother_id);
@@ -309,7 +309,7 @@
                                 <div class="input-group">
                                     <div class="upload-btn-wrapper">
                                         <button class="btn1">เลือกไฟล์</button>
-                                        <input type="file" name="banner_img" id="banner_img"
+                                        <input type="file" name="banner_img" id="banner_img" class="banner_img"
                                             <?=$action != 'insert_personnel' ? '' : ' ';?> />
                                         <small id="emailHelp" class="form-text text-muted">ขนาดรูปที่อัฟโหลด 600 X 600
                                             px</small>
@@ -319,11 +319,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php if($action != 'insert_personnel'): ?>
-                            <img id="blah" class="img-fluid"
+                           
+                            <img id="blah" class="img-fluid blah"
                                 src="<?php echo  @$pers[0]->pers_img == '' ? '#' : base_url().'uploads/personnel/'.$pers[0]->pers_img; ?>"
                                 alt="" />
-                            <?php endif; ?>
+                           
                             <hr class="mb-4">
 
                             <button class="btn btn-<?=$color?> btn-lg btn-block" type="submit"><?=$icon?>

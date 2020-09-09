@@ -20,8 +20,16 @@ class Control_admin_news extends CI_Controller {
 	{	
 		$data['title'] = $this->title;
 		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
-		$this->db->select('*');
+		$this->db->select('tb_personnel.pers_prefix, 
+							tb_personnel.pers_firstname, 
+							tb_personnel.pers_lastname, 
+							tb_news.*');
 		$this->db->from('tb_news');
+		$this->db->join('tb_personnel','tb_news.personnel_id = tb_personnel.pers_id','LEFT');
+		if($this->session->userdata('login_id') != 1){
+			$this->db->where('tb_news.personnel_id',$this->session->userdata('login_id'));
+		}
+		
 		$this->db->order_by('news_id','DESC');
 		$data['news'] =	$this->db->get()->result();
 
@@ -245,6 +253,54 @@ window.history.back();
 		}
 	}
 
+	public function news_uploads()
+	{
+		   // Allowed extentions.
+		   $allowedExts = array("gif", "jpeg", "jpg", "png");
+
+		   // Get filename.
+		   $temp = explode(".", $_FILES["image_param"]["name"]);
+	   
+		   // Get extension.
+		   $extension = end($temp);
+	   
+		   // An image check is being done in the editor but it is best to
+		   // check that again on the server side.
+		   // Do not use $_FILES["file"]["type"] as it can be easily forged.
+		   $finfo = finfo_open(FILEINFO_MIME_TYPE);
+		   $mime = finfo_file($finfo, $_FILES["image_param"]["tmp_name"]);
+	   
+		   if ((($mime == "image/gif")
+		   || ($mime == "image/jpeg")
+		   || ($mime == "image/JPEG")
+		   || ($mime == "image/pjpeg")
+		   || ($mime == "image/x-png")
+		   || ($mime == "image/png"))
+		   && in_array($extension, $allowedExts)) {
+			   // Generate new random name.
+			   $name = sha1(microtime()) . "." . $extension;
+	   
+			   // Save file in the uploads folder.
+			   move_uploaded_file($_FILES["image_param"]["tmp_name"], getcwd() . "/uploads/news/detail/" . $name);
+	   
+			   // Generate response.
+			   $response = new StdClass;
+			   $response->link = base_url()."uploads/news/detail/" . $name;
+			   echo stripslashes(json_encode($response));
+		   }
+	}
+
+	public function news_uploads_delete()
+	{
+		   // Get src.
+			$src = explode(base_url(),$_POST["src"]);
+			@unlink($src[1]);
+
+			echo $src[1];
+			
+	}
+
+	
 	
 	
 

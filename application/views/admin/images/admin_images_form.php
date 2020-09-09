@@ -86,7 +86,7 @@
                         <div class="col-sm-10">
                             <div class="upload-btn-wrapper">
                               <button class="btn1">เลือกไฟล์</button>
-                              <input type="file" name="img_mainpic" id="img_mainpic" />
+                              <input type="file" name="img_mainpic" id="img_mainpic" class="img_mainpic" />
                               <small id="emailHelp" class="form-text text-muted">ไม่เกิน 1 Mb</small>
                             </div>
                         </div> 
@@ -95,7 +95,7 @@
                         <label for="banner_namethai" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
 
-                           <img id="blah" class="img-fluid" src="<?php echo  @$img[0]->img_mainpic == '' ? '#' : base_url().'uploads/images/'.$img[0]->img_mainpic; ?>" alt="" />
+                           <img id="blah" class="img-fluid blah" src="<?php echo  @$img[0]->img_mainpic == '' ? '#' : base_url().'uploads/images/'.$img[0]->img_mainpic; ?>" alt="" />
                         </div> 
                       </div>
                      

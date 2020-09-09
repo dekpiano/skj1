@@ -22,6 +22,7 @@
                         <tr>
                             <th>ชื่อเรื่อง</th>
                             <th>วันที่ลง</th>
+                            <th>โดย</th>
                             <th>คำสั่ง</th>
                         </tr>
                     </thead>
@@ -29,6 +30,7 @@
                     <tr>
                         <td><?=$v_news->news_topic;?></td>
                         <td><?=$v_news->news_date;?></td>
+                        <td><?=$v_news->pers_prefix.$v_news->pers_firstname.' '.$v_news->pers_lastname;?></td>
                         <td>
                             <a href="<?=base_url('admin/control_admin_news/edit_news/').$v_news->news_id;?>"
                                 class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> แก้ไข</a>

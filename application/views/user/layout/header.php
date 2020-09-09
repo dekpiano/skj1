@@ -215,6 +215,12 @@ if it's not present, don't show loader */
     margin-top: 0px;
     margin-left: 0px;
 }
+
+.text-overflow{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 </style>
 
 <body>
