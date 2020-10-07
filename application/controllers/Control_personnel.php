@@ -25,6 +25,7 @@ class Control_personnel extends CI_Controller {
 											tb_personnel.pers_lastname, 
 											tb_position.posi_name, 
 											tb_personnel.pers_position, 
+											tb_personnel.pers_academic,
 											tb_personnel.pers_img');
 						$this->db->from('tb_personnel');
 						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
@@ -35,6 +36,7 @@ class Control_personnel extends CI_Controller {
 											tb_personnel.pers_lastname, 
 											tb_position.posi_name, 
 											tb_personnel.pers_position, 
+											tb_personnel.pers_academic,
 											tb_personnel.pers_img');
 						$this->db->from('tb_personnel');
 						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
@@ -62,6 +64,7 @@ class Control_personnel extends CI_Controller {
 										tb_personnel.pers_twitter,
 										tb_position.posi_name, 
 										tb_personnel.pers_position, 
+										tb_personnel.pers_academic,
 										tb_personnel.pers_img');
 						$this->db->from('tb_personnel');
 						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
@@ -79,13 +82,16 @@ class Control_personnel extends CI_Controller {
 							tb_position.posi_name, 
 							tb_personnel.pers_position, 
 							tb_personnel.pers_img, 
-							tb_personnel.pers_learning, 
+							tb_personnel.pers_groupleade,
+							tb_personnel.pers_learning,
+							tb_personnel.pers_academic,
 							tb_learning.lear_namethai');
 						$this->db->from('tb_personnel');
 						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
 						$this->db->join('tb_learning','tb_personnel.pers_learning = tb_learning.lear_id');
 						$this->db->where('lear_namethai',$name);
 						$this->db->or_where('posi_name',$name);
+						$this->db->order_by('pers_groupleade');
 		$data['pers_type'] = $this->db->get()->result(); 
 
 		$this->load->view('user/layout/header.php',$data);

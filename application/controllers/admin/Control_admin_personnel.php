@@ -30,6 +30,7 @@ class Control_admin_personnel extends CI_Controller {
 		tb_personnel.pers_username, 
 		tb_personnel.pers_phone, 
 		tb_learning.lear_namethai,
+		tb_personnel.pers_academic,
 		tb_personnel.pers_img');
 		$this->db->from('tb_personnel');
 		$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
@@ -103,6 +104,7 @@ class Control_admin_personnel extends CI_Controller {
 						'pers_position' => $this->input->post('pers_position'),
 						'pers_learning' => $this->input->post('pers_learning'),
 						'pers_groupleade' => $this->input->post('pers_groupleade'),
+						'pers_academic' => $this->input->post('pers_academic'),
 						'pers_workother_id' => implode("|",$this->input->post('pers_workother_id')),
 						'pers_username' => $this->input->post('pers_username'),
 						'pers_password' => md5(md5(str_replace('-','', $this->input->post('pers_britday')))),
@@ -138,6 +140,7 @@ window.history.back();
 						'pers_position' => $this->input->post('pers_position'),
 						'pers_learning' => $this->input->post('pers_learning'),
 						'pers_groupleade' => $this->input->post('pers_groupleade'),
+						'pers_academic' => $this->input->post('pers_academic'),
 						'pers_workother_id' => implode("|",$this->input->post('pers_workother_id')),
 						'pers_username' => $this->input->post('pers_username'),
 						'pers_password' => md5(md5(str_replace('-','', $this->input->post('pers_britday')))),
@@ -208,6 +211,7 @@ window.history.back();
 						'pers_groupleade' => $this->input->post('pers_groupleade'),
 						'pers_workother_id' => implode("|",$this->input->post('pers_workother_id')),
 						'pers_username' => $this->input->post('pers_username'),
+						'pers_academic' => $this->input->post('pers_academic'),
 						'pers_img' => $data['upload_data']['file_name'],
 						'pers_dataUpdate' => date('Y-m-d H:i:s'),
 						'pers_userEdit' => $this->session->userdata('login_id')
@@ -244,6 +248,7 @@ window.history.back();
 						'pers_groupleade' => $this->input->post('pers_groupleade'),
 						'pers_workother_id' => implode("|",$this->input->post('pers_workother_id')),
 						'pers_username' => $this->input->post('pers_username'),
+						'pers_academic' => $this->input->post('pers_academic'),
 						'pers_dataUpdate' => date('Y-m-d H:i:s'),
 						'pers_userEdit' => $this->session->userdata('login_id')
 					);

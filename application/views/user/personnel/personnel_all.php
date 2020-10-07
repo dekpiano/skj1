@@ -23,12 +23,12 @@
         foreach ($pers as $key => $v_pers) :
               if($v_pers->posi_name == 'ผู้อำนวยการโรงเรียน'): ?>
         <center>
-            <div class="col-lg-4 col-md-6 align-items-stretch aos-animate"  data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-lg-4 col-md-6 align-items-stretch aos-animate" data-aos="zoom-in" data-aos-delay="100">
 
                 <div class="member">
                     <div class="member-img">
-                        <img loading="lazy" src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid"
-                            alt="">
+                        <img loading="lazy" src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>"
+                            class="img-fluid" alt="">
                         <div class="social">
                             <?php if($v_pers->pers_facebook != ''):?>
                             <a target="_blank" href="https://www.facebook.com/<?=$v_pers->pers_facebook?>"
@@ -62,51 +62,55 @@
         </center>
         <?php  endif; endforeach;?>
 
+        <div class="row justify-content-md-center">
         <?php foreach ($pers as $key => $v_pers) :
          if($v_pers->posi_name == 'รองผู้อำนวยการโรงเรียน'): ?>
-        <center>
-            <div class="col-lg-4 col-md-6 align-items-stretch aos-init aos-animate"  data-aos="zoom-in" data-aos-delay="100">
-                <div class="member">
-                    <div class="member-img">
-                        <img loading="lazy" src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid"
-                            alt="">
-                        <div class="social">
-                            <?php if($v_pers->pers_facebook != ''):?>
-                            <a target="_blank" href="https://www.facebook.com/<?=$v_pers->pers_facebook?>"
-                                class="mr-1"><i class="icofont-facebook"></i></a>
-                            <?php endif; ?>
-                            <?php if ($v_pers->pers_instagram != ''):?>
-                            <a target="_blank" href="https://www.instagram.com/<?=$v_pers->pers_instagram?>"
-                                class="mr-1"><i class="icofont-instagram"></i></a>
-                            <?php endif; ?>
-                            <?php if ($v_pers->pers_youtube != ''):?>
-                            <a target="_blank" href="https://www.youtube.com/channel/<?=$v_pers->pers_youtube?>"
-                                class="mr-1"><i class="icofont-youtube-play"></i> </a>
-                            <?php endif; ?>
-                            <?php if ($v_pers->pers_line != ''):?>
-                            <a target="_blank" href="<?=$v_pers->pers_line?>" class="mr-1"><i
-                                    class="icofont-line-messenger"></i> </a>
-                            <?php endif; ?>
-                            <?php if ($v_pers->pers_twitter != ''):?>
-                            <a target="_blank" href="https://www.twitter.com/<?=$v_pers->pers_twitter?>" class="mr-1"><i
-                                    class="icofont-twitter"></i> </a>
-                            <?php endif; ?>
+       
+           
+                <div class="col-lg-4 col-md-6 align-items-stretch aos-init aos-animate" data-aos="zoom-in"
+                    data-aos-delay="100">
+                    <div class="member">
+                        <div class="member-img">
+                            <img loading="lazy" src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>"
+                                class="img-fluid" alt="">
+                            <div class="social">
+                                <?php if($v_pers->pers_facebook != ''):?>
+                                <a target="_blank" href="https://www.facebook.com/<?=$v_pers->pers_facebook?>"
+                                    class="mr-1"><i class="icofont-facebook"></i></a>
+                                <?php endif; ?>
+                                <?php if ($v_pers->pers_instagram != ''):?>
+                                <a target="_blank" href="https://www.instagram.com/<?=$v_pers->pers_instagram?>"
+                                    class="mr-1"><i class="icofont-instagram"></i></a>
+                                <?php endif; ?>
+                                <?php if ($v_pers->pers_youtube != ''):?>
+                                <a target="_blank" href="https://www.youtube.com/channel/<?=$v_pers->pers_youtube?>"
+                                    class="mr-1"><i class="icofont-youtube-play"></i> </a>
+                                <?php endif; ?>
+                                <?php if ($v_pers->pers_line != ''):?>
+                                <a target="_blank" href="<?=$v_pers->pers_line?>" class="mr-1"><i
+                                        class="icofont-line-messenger"></i> </a>
+                                <?php endif; ?>
+                                <?php if ($v_pers->pers_twitter != ''):?>
+                                <a target="_blank" href="https://www.twitter.com/<?=$v_pers->pers_twitter?>"
+                                    class="mr-1"><i class="icofont-twitter"></i> </a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4><?=$v_pers->pers_prefix.$v_pers->pers_firstname.' '.$v_pers->pers_lastname;?></h4>
+                            <span><?=$v_pers->posi_name;?></span>
                         </div>
                     </div>
-                    <div class="member-info">
-                        <h4><?=$v_pers->pers_prefix.$v_pers->pers_firstname.' '.$v_pers->pers_lastname;?></h4>
-                        <span><?=$v_pers->posi_name;?></span>
-                    </div>
                 </div>
-            </div>
-        </center>
+            
         <?php endif; endforeach?>
+        </div>
 
-
-        <div class="row">
+        <div class="row ">
             <?php  foreach ($pers_type as $key => $v_pers_type): ?>
             <?php if($v_pers_type->posi_name != 'รองผู้อำนวยการโรงเรียน' && $v_pers_type->posi_name != 'ผู้อำนวยการโรงเรียน'): ?>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate"  data-aos="zoom-in" data-aos-delay="<?=$key;?>00">
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in"
+                data-aos-delay="<?=$key;?>00">
                 <div class="member">
                     <div class="member-img">
                         <img loading="lazy" src="<?=$img_p.$v_pers_type->pers_img;?>" class="img-fluid" alt="">
@@ -136,7 +140,17 @@
                     <div class="member-info">
                         <h4><?=$v_pers_type->pers_prefix.$v_pers_type->pers_firstname.' '.$v_pers_type->pers_lastname;?>
                         </h4>
-                        <span><?=$v_pers_type->posi_name;?></span>
+                        <span><?php 
+                            if($v_pers_type->pers_groupleade == '1'){
+                                echo "หัวหน้ากลุ่มสาระ";
+                            }elseif($v_pers_type->pers_groupleade == '2'){
+                                echo "รองหัวหน้ากลุ่มสาระ";
+                            }
+                        ?></span>
+                        <span>
+                            <?php 
+                         echo $v_pers_type->posi_name.$v_pers_type->pers_academic;
+                        ?></span>
                     </div>
                 </div>
             </div>

@@ -313,23 +313,23 @@
 <section class="content-area d-none d-md-block">
     <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item ">
+            <div class="carousel-item active">
                 <div class="mask d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-7 col-12 order-md-1 order-2 text-center">
-                                <h4>ขอเชิญร่วม "<u>สัปดาห์วิทยาศาสตร์</u>"</h4>
+                                <h4>ขอเชิญร่วม "<u>สัปดาห์คณิตศาสตร์</u>"</h4>
                                 <h5 class="text-white text-center">
-                                   17 - 18 สิงหาคม 2563<Br>ณ โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวสรค์
+                                  ณ โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวสรค์
                                 </h5>
-                                <p><a href="https://skj.ac.th/news/newsDetail/news_018">สมัครร่วมกิจกรรม</a> </p>
+                                <!-- <p><a href="https://skj.ac.th/news/newsDetail/news_018">สมัครร่วมกิจกรรม</a> </p> -->
                             </div>
                             <div class="col-md-5 col-12 order-md-2 order-1"><img loading="lazy" src="<?= base_url('uploads/banner/vit.png') ?>" class="mx-auto bounce" alt="slide"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item active">
+            <div class="carousel-item ">
                 <div class="mask d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center">

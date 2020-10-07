@@ -87,10 +87,29 @@
     <?php $this->load->view('admin/layout/textarea_editor.php'); ?>
       <script type="text/javascript">
 $(document).ready(function() {
-
     $(":input").inputmask();
-    $(".sidebar").sortable();
-    $(".sidebar").disableSelection();
+
+    $(".sort_facegroup").sortable({
+        delay: 150,
+        stop: function() {
+            var selectedData = new Array();
+            $('.sort_facegroup>tr').each(function() {
+                selectedData.push($(this).attr("rank"));
+            });            
+            updateOrder(selectedData);
+        }
+    });
+    function updateOrder(data) {
+        $.ajax({
+            url:"<?=base_url('admin/control_admin_facegroup/ranking');?>",
+            type:'post',
+            data:{position:data},
+            success:function(data){
+                console.log(data);
+            }
+        })
+    }
+    $(".sort_facegroup").disableSelection();
    
 });
 

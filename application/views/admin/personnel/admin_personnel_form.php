@@ -212,6 +212,20 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
+                                        <label for="pers_department">วิทยฐานะ</label>
+                                        <select class="custom-select d-block w-100" id="pers_academic"
+                                            name="pers_academic">
+                                            <?php $academic = array('ชำนาญการ','ชำนาญการพิเศษ','เชี่ยวชาญ','เชี่ยวชาญพิเศษ' ); ?>
+                                            <option value="">เลือก...</option>
+                                            <?php foreach ($academic as $key => $v_academic):?>
+                                                <option <?=$v_academic == $pers[0]->pers_academic ? 'selected' : ''?> value="<?=$v_academic;?>"><?=$v_academic;?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            กรุณาเลือกฝ่ายงาน
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
                                         <label for="pers_learning">กลุ่มสาระ</label>
                                         <select class="custom-select d-block w-100" id="pers_learning"
                                             name="pers_learning">
@@ -234,13 +248,16 @@
                                         <select class="custom-select d-block w-100" id="pers_groupleade"
                                             name="pers_groupleade">
                                             <?php if($action != 'insert_personnel'): ?>
-                                            <option <?=$pers[0]->pers_groupleade == 'N' ? 'selected' : '' ?> value="N">
+                                            <option <?=$pers[0]->pers_groupleade == '3' ? 'selected' : '' ?> value="3">
                                                 กรณีไม่ใช่ไม่ต้องเลือกใด ๆ ... </option>
-                                            <option <?=$pers[0]->pers_groupleade == 'Y' ? 'selected' : '' ?> value="Y">
+                                            <option <?=$pers[0]->pers_groupleade == '1' ? 'selected' : '' ?> value="1">
                                                 หัวหน้ากลุ่มสาระ</option>
+                                                <option <?=$pers[0]->pers_groupleade == '2' ? 'selected' : '' ?> value="2">
+                                                รองหัวหน้ากลุ่มสาระ</option>
                                             <?php else: ?>
-                                            <option value="N">กรณีไม่ใช่ไม่ต้องเลือกใด ๆ ... </option>
-                                            <option value="Y">หัวหน้ากลุ่มสาระ</option>
+                                            <option value="3">กรณีไม่ใช่ไม่ต้องเลือกใด ๆ ... </option>
+                                            <option value="1">หัวหน้ากลุ่มสาระ</option>
+                                            <option value="2">รองหัวหน้ากลุ่มสาระ</option>
                                             <?php endif; ?>
                                         </select>
                                         <div class="invalid-feedback">

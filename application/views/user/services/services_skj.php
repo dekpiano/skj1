@@ -150,14 +150,14 @@
                  </a>
              </div>
              <div class="col-lg-4 col-md-6 col-sm-6 ">
-                 <a href="#">
+                 <a href="<?= base_url('FecebookGroup') ?>">
                      <div class="serviceBox">
                          <div class="service-icon">
                              <i class="icofont-facebook"></i>
                          </div>
-                         <h3 class="title">กลุ่มสาระการเรียนรู้</h3>
+                         <h3 class="title">Fecebook กลุ่ม</h3>
                          <p class="description">
-                             ประชาสัมพันธ์กลุ่มสาระการ ฯ
+                             ประชาสัมพันธ์กลุ่ม ๆ ภายในโรงเรียน
                          </p>
                      </div>
                  </a>

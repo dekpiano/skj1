@@ -47,9 +47,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | controller and method URI segments.
 |
 | Examples:	my-controller/index	-> my_controller/index
-|		my-controller/my-method	-> my_controller/my_method welcome/not_404
+|		my-controller/my-method	-> my_controller/my_method welcome/not_404/mother_day12
 */
-$route['default_controller'] = 'welcome/mother_day12';
+$route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
 
@@ -102,6 +102,9 @@ $route['admin/institutionO/add'] = 'admin/control_admin_institutionO/add';
 $route['admin/document'] = 'admin/control_admin_document';
 $route['admin/document/add'] = 'admin/control_admin_document/add';
 
+$route['admin/facegroup'] = 'admin/control_admin_facegroup';
+$route['admin/facegroup/add'] = 'admin/control_admin_facegroup/add';
+
 // งานวิชาการ
 $route['admin/class-schedule'] =
     'admin/academic/class_schedule/control_admin_class_schedule';
@@ -125,6 +128,9 @@ $route['AboutSchool/(:any)'] = 'control_aboutschool/aboutschool_detail/$1';
 
 // รูปกิจกรรม
 $route['Album'] = 'control_images/show_all_album';
+
+// Fecebook กลุ่ม
+$route['FecebookGroup'] = 'control_facebookgroup';
 
 // [[บุคลากร]]
 $route['Personnel'] = 'control_personnel/show_per_all';

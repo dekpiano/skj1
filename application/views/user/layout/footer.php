@@ -62,7 +62,8 @@
                                 <a target="_blank" href="#">กรมส่งเสริมการปกครองท้องถิ่น</a>
                             </li>
                             <li><i class="bx bx-chevron-right"></i>
-                                <a target="_blank" href="#">กองการศึกษา ศาสนาและวัฒนธรรม อบจ.นครสวรรค์</a></li>
+                                <a target="_blank" href="#">กองการศึกษา ศาสนาและวัฒนธรรม อบจ.นครสวรรค์</a>
+                            </li>
                         </ul>
                         <br>
                         <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
@@ -199,30 +200,39 @@ $(document).ready(function() {
 </script>
 
 <script>
-    if ('loading' in HTMLImageElement.prototype) {
-      const images = document.querySelectorAll("img.lazyload");
-      images.forEach(img => {
+if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll("img.lazyload");
+    images.forEach(img => {
         img.src = img.dataset.src;
-      });
-    } else {
-      // Dynamically import the LazySizes library
-      let script = document.createElement("script");
-      script.async = true;
-      script.src =
+    });
+} else {
+    // Dynamically import the LazySizes library
+    let script = document.createElement("script");
+    script.async = true;
+    script.src =
         "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
-      document.body.appendChild(script);
-    }
+    document.body.appendChild(script);
+}
 
-    $('ul.tabs li').click(function () {
-        var tab_id = $(this).attr('href');
+$('ul.tabs li').click(function() {
+    var tab_id = $(this).attr('href');
 
-        $('ul.tabs li').removeClass('current');
-        $('.tab-content').removeClass('current');
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
 
-        $(this).addClass('current');
-        $("#" + tab_id).addClass('current');
-    })
-  </script>
+    $(this).addClass('current');
+    $("#" + tab_id).addClass('current');
+})
+</script>
 
+<script>
+$(document).on('click', '.count_face', function() {
+    var d = $(this).attr('val');
+    $.get('<?=base_url('control_facebookgroup/count_face/');?>'+d, function(response) {
+        // Log the response to the console
+        console.log("Response: " + response);
+    });
+});
+</script>
 
 </html>

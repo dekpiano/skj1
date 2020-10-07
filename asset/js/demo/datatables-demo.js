@@ -71,6 +71,7 @@ $(document).ready(function() {
 
     $('.tb_from').DataTable();
 
+    $('#dataTable_facebook').DataTable();
 
 
 });
