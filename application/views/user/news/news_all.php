@@ -58,10 +58,10 @@
                                     'asset/user/img/banner_main.jpg'
                                 ) ?>">
                             <?php else: ?>
-                            <img loading="lazy" class="card-img-top" src="<?= base_url(
+                            <img style="object-fit: cover;" loading="lazy" class="card-img-top" src="<?= base_url(
                                 'uploads/news/'
                             ) .
-                                $v_news->news_img ?>" width="100%" height="225px">
+                                $v_news->news_img ?>" style="object-fit: cover;" height="225px" height="225px">
                             <?php endif; ?>
                             <div class="card-body">
                                 <h5 class="text-overflow"><?= $v_news->news_topic ?></h5>

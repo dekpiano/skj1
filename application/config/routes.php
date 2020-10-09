@@ -105,6 +105,9 @@ $route['admin/document/add'] = 'admin/control_admin_document/add';
 $route['admin/facegroup'] = 'admin/control_admin_facegroup';
 $route['admin/facegroup/add'] = 'admin/control_admin_facegroup/add';
 
+$route['admin/vedio'] = 'admin/control_admin_vedio';
+$route['admin/vedio/add'] = 'admin/control_admin_vedio/add';
+
 // งานวิชาการ
 $route['admin/class-schedule'] =
     'admin/academic/class_schedule/control_admin_class_schedule';

@@ -32,7 +32,6 @@
         $users = json_decode($cowid19);
         ?>
 
-        <div class="col-12">
             <style>
             /* Tablet */
             @media (min-width: 768px) {
@@ -108,11 +107,11 @@
             <!--Start code-->
             <div class=" " data-aos="zoom-in">
 
-                <div class="album bg-light">
+                <div class="album ">
                     <div class="section-title">
                         <h2>SKJ ประชาสัมพันธ์</h2>
                     </div>
-                    <div class="container">
+                    <div class="container " data-aos="fade-down">
                         <div class="row">                           
                                 <?php foreach ($news as $key => $v_news): ?>
                                 <?php if ($v_news->news_facebook !== ''): ?>
@@ -137,7 +136,7 @@
                                             <img loading="lazy" class="card-img-top" src="<?= base_url(
                                             'uploads/news/'
                                         ) .
-                                            $v_news->news_img ?>" width="100%" height="225px">
+                                            $v_news->news_img ?>" style="object-fit: cover;" height="225px">
                                             <?php endif; ?>
                                             <div class="card-body">
                                                 <h5 class="text-overflow"><?= $v_news->news_topic ?></h5>
@@ -168,12 +167,12 @@
             <!--end code-->
             <center><a href="<?= base_url('news/all') ?>"
                     class=" btn btn-outline-secondary mt-3 my-2 ">ข่าวสารทั้งหมด</a></center>
-        </div>
+       
 
 
 
     </div>
-
+    <?php $this->load->view('user/youtube/youtube_main.php'); ?>
 </section>
 <?php $this->load->view('user/services/services_skj.php'); ?>
 

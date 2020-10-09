@@ -266,6 +266,7 @@ if it's not present, don't show loader */
             </header>
         </div>
 
+
         <header class="nav-down">
             <!-- scroll_bar -->
             <nav class="navbar navbar-expand-lg navbar-dark scroll_bar"
@@ -289,9 +290,6 @@ if it's not present, don't show loader */
                         <img loading="lazy" class="img-fluid" src="<?= base_url() ?>asset/user/img/logo_nav2.png"
                             alt="">
                     </a>
-
-
-
 
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
@@ -322,6 +320,7 @@ if it's not present, don't show loader */
                                     </div>
                                 </div>
                             </li>
+                
                             <!-- Level one dropdown -->
                             <li class="nav-item dropdown">
                                 <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"

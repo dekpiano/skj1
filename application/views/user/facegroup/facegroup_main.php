@@ -20,7 +20,7 @@
         <div class="list-group">
             <?php foreach ($face as $key => $v_face) :?>
             <a target="_blank" href="<?=$v_face->facegroup_link;?>" class="count_face" val="<?=$v_face->facegroup_id;?>">
-                <div class="media border p-3">
+                <div class="media border p-3 shadow-sm p-3 mb-2 bg-white rounded">
                     <i class="icofont-facebook icofont-4x mr-3 mt-3 rounded-circle" ></i>
                     <div class="media-body">
                         <h4><?=$v_face->facegroup_name;?> </h4>

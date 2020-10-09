@@ -76,7 +76,7 @@
     }
 }
  </style>
- <div class="demo">
+ <div class="demo" data-aos="fade-up">
      <div class="container">
          <div class="section-title">
              <h2>SKJ บริการ</h2>
