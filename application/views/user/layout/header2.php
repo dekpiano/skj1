@@ -223,18 +223,16 @@ if it's not present, don't show loader */
     white-space: nowrap;
 }
 
-@media (min-width: 768px) {
-    .navbar-brand.abs {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        text-align: center;
-        z-index: 99;
-    }
+.slideUp {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+    transition: transform .5s ease-out;
 }
 
-.bg-top {
-    margin-top: 50px;
+.slideDown {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    transition: transform .5s ease-out;
 }
 </style>
 
@@ -243,21 +241,71 @@ if it's not present, don't show loader */
     <div class="se-pre-con"></div>
 
     <!-- end loader -->
-    <div class="d-sm-block bg-top">
+    <div class="d-sm-block ">
+
+        <div class="container d-none d-sm-block d-lg-block ">
+
+            <header class="blog-header nav-down py-4" id="header_new">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-7 pt-1">
+                        <div class="logo mr-auto">
+                            <a class="e" href="<?= base_url('welcome') ?>">
+                                <img loading="lazy" class="img-fluid"
+                                    src="<?= base_url() ?>asset/user/img/logo_nav1.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-2 text-center">
+
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+
+                    </div>
+                </div>
+                <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </header>
+        </div>
 
 
-        <!-- example 1 - using absolute position for center -->
-        <nav class="navbar navbar-expand-md navbar-dark "
-            style="background: deeppink;    border-bottom: 5px solid #249ffd;">
-            <div class="container">
-                <a class="navbar-brand abs" href="#"><img src="https://skj.ac.th/uploads/logo/LogoSKJ_4.png"
-                        style="height: 156px;"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse" id="collapsingNavbar">
+        <header class="nav-down">
+            <!-- scroll_bar -->
+            <nav class="navbar navbar-expand-lg navbar-dark scroll_bar"
+                style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;background-color:rgba(232, 38, 158, 1);">
+                <div class="container">
+                    <a style="width: 79%;" class="navbar-brand d-block d-sm-none d-lg-none" href="<?= base_url(
+                        'welcome'
+                    ) ?>">
+                        <img loading="lazy" class="img-fluid" src="<?= base_url() ?>asset/user/img/logo_nav2.png"
+                            alt="">
+                    </a>
+                    <button class="navbar-toggler justify-content-end align-items-center" type="button"
+                        data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon" style="width: 18px;"></span>
+                    </button>
 
-                    <ul class="navbar-nav mr-auto">
+                    <a style="width: 50%;"
+                        class="navbar-md invisible navbar-brand justify-content-center d-none d-md-block d-lg-none"
+                        href="<?= base_url('welcome') ?>">
+                        <img loading="lazy" class="img-fluid" src="<?= base_url() ?>asset/user/img/logo_nav2.png"
+                            alt="">
+                    </a>
+
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
                             <li class="nav-item ">
                                 <a class="text-white nav-link" href="<?= base_url(
                                     'welcome'
@@ -285,7 +333,7 @@ if it's not present, don't show loader */
                                     </div>
                                 </div>
                             </li>
-                
+
                             <!-- Level one dropdown -->
                             <li class="nav-item dropdown">
                                 <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -366,16 +414,20 @@ if it's not present, don't show loader */
                                 </a>
                             </li> -->
                         </ul>
+                        <ul class="navbar-nav">
+                            <li><a class="text-white btn" href="<?= base_url(
+                                'Contact'
+                            ) ?>"><i class="icofont-id-card"></i>
+                                    ติดต่อเรา</a></li>
+                            <li><a href="<?= base_url('login') ?>"
+                                    class="text-white btn btn-outline-light my-2 my-sm-0"><i class="icofont-lock"></i>
+                                    Login</a></li>
+                        </ul>
 
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">About</a>
-                        </li>
-                    </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-
+            </nav>
+        </header>
     </div>
     <style type="text/css">
     .heartBeat {

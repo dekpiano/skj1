@@ -9,7 +9,7 @@
 }
 
 #myCarousel h4 {
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 15px;
     color: #FFF;
     line-height: 100%;
@@ -18,7 +18,7 @@
 }
 
 #myCarousel h5 {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 15px;
     color: #FFF;
     line-height: 100%;
@@ -32,10 +32,10 @@
 }
 
 #myCarousel .carousel-item a {
-    background: #ff1490;
+    /* background: #ff1490; */
     font-size: 14px;
     color: #FFF;
-    padding: 13px 32px;
+    /* padding: 13px 32px; */
     display: inline-block
 }
 
@@ -308,6 +308,19 @@
     background-size: 150%;
     transform: rotate(180deg);
 }
+
+@media (min-width: 576px) {
+    .content-area {
+        margin-top: -2rem !important;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .content-area {
+        margin-top: 3rem !important;
+    }
+}
 </style>
 
 <section class="content-area d-none d-md-block">
@@ -318,13 +331,17 @@
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-7 col-12 order-md-1 order-2 text-center">
-                                <h4>ขอเชิญร่วม "<u>สัปดาห์คณิตศาสตร์</u>"</h4>
+                                <h4>น้อมรำลึก เนื่องในวันคล้ายวันสวรรคต </h4>
                                 <h5 class="text-white text-center">
-                                  ณ โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวสรค์
+                                    พระบาทสมเด็จพระบรมชนกาธิเบศร <br> มหาภูมิพลอดุลยเดชมหาราช บรมนาถบพิตร <br>13 ตุลาคม
+                                    2563
                                 </h5>
-                                <!-- <p><a href="https://skj.ac.th/news/newsDetail/news_018">สมัครร่วมกิจกรรม</a> </p> -->
+                                <p><a class="btn btn-outline-danger"
+                                        href="https://skj.ac.th/news/newsDetail/news_024">รายละเอียด</a> </p>
                             </div>
-                            <div class="col-md-5 col-12 order-md-2 order-1"><img loading="lazy" src="<?= base_url('uploads/banner/vit.png') ?>" class="mx-auto bounce" alt="slide"></div>
+                            <div class="col-md-5 col-12 order-md-2 order-1"><img loading="lazy" src="<?= base_url(
+                                'uploads/banner/r9.png'
+                            ) ?>" class="mx-auto bounce" alt="slide"></div>
                         </div>
                     </div>
                 </div>

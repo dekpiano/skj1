@@ -1,4 +1,10 @@
-<?php if($this->uri->segment(1) != 'login' && $this->uri->segment(1) != 'RegStudent' && $this->uri->segment(1) != 'checkRegister' && $this->uri->segment(1) != 'Announce' && $this->uri->segment(1) != 'Admissions'): ?>
+<?php if (
+    $this->uri->segment(1) != 'login' &&
+    $this->uri->segment(1) != 'RegStudent' &&
+    $this->uri->segment(1) != 'checkRegister' &&
+    $this->uri->segment(1) != 'Announce' &&
+    $this->uri->segment(1) != 'Admissions'
+): ?>
 
 <footer class="new_footer_area bg_color">
     <div class="new_footer_top">
@@ -100,33 +106,34 @@
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="<?=base_url()?>/asset/user/vendor/jquery/jquery.min.js"></script>
-<script src="<?=base_url()?>/asset/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="<?=base_url()?>/asset/user/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="<?=base_url()?>/asset/user/vendor/php-email-form/validate.js"></script>
-<script src="<?=base_url()?>/asset/user/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="<?=base_url()?>/asset/user/vendor/counterup/counterup.min.js"></script>
-<script src="<?=base_url()?>/asset/user/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="<?=base_url()?>/asset/user/vendor/venobox/venobox.min.js"></script>
-<script src="<?=base_url()?>/asset/user/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="<?=base_url()?>/asset/user/vendor/jquery.countdown.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/js/header.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/php-email-form/validate.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/counterup/counterup.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/venobox/venobox.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="<?= base_url() ?>/asset/user/vendor/jquery.countdown.min.js"></script>
 
-<script src="<?=base_url()?>asset/js/jquery.inputmask.min.js"></script>
-<script src="<?=base_url()?>asset/js/imagesloaded.pkgd.min.js"></script>
-<script src="<?=base_url()?>asset/user/js/aos.js"></script>
+<script src="<?= base_url() ?>asset/js/jquery.inputmask.min.js"></script>
+<script src="<?= base_url() ?>asset/js/imagesloaded.pkgd.min.js"></script>
+<script src="<?= base_url() ?>asset/user/js/aos.js"></script>
 
 <!-- Template Main JS File -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="<?=base_url()?>asset/js/slick.js?v=1001"></script>
-<script src="<?=base_url()?>/asset/user/js/main.js?v=1000"></script>
-<script src="<?=base_url()?>/asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
-<script src="<?=base_url();?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="<?=base_url();?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-<script src="<?=base_url();?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
+<script src="<?= base_url() ?>asset/js/slick.js?v=1001"></script>
+<script src="<?= base_url() ?>/asset/user/js/main.js?v=1000"></script>
+<script src="<?= base_url() ?>/asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
+<script src="<?= base_url() ?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url() ?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="<?=base_url();?>asset/js/demo/datatables-demo.js?v=1001"></script>
+<script src="<?= base_url() ?>asset/js/demo/datatables-demo.js?v=1001"></script>
 
-<script src="<?=base_url()?>asset/user/js/countdownopenschool.js"></script>
+<script src="<?= base_url() ?>asset/user/js/countdownopenschool.js"></script>
 <script type="text/javascript">
 
 </script>
@@ -179,7 +186,7 @@ $(document).ready(function() {
         $(this).html(
             '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> กำลังโหลด...'
         );
-        $.post("<?=base_url('Control_recruitstudent/check_print');?>", {
+        $.post("<?= base_url('Control_recruitstudent/check_print') ?>", {
             recruit_birthdayD: d,
             recruit_birthdayM: m,
             recruit_birthdayY: y,
@@ -188,7 +195,7 @@ $(document).ready(function() {
             //alert(data);
             if (data == 0) {
                 alert('วันเกิดคุณไม่ถูกต้อง');
-                window.location.href = "<?=base_url('PrintStudent');?>"
+                window.location.href = "<?= base_url('PrintStudent') ?>"
             } else {
                 window.location.href = data;
             }
@@ -228,7 +235,9 @@ $('ul.tabs li').click(function() {
 <script>
 $(document).on('click', '.count_face', function() {
     var d = $(this).attr('val');
-    $.get('<?=base_url('control_facebookgroup/count_face/');?>'+d, function(response) {
+    $.get('<?= base_url(
+        'control_facebookgroup/count_face/'
+    ) ?>' + d, function(response) {
         // Log the response to the console
         console.log("Response: " + response);
     });
