@@ -32,9 +32,7 @@
     <link href="<?= base_url() ?>/asset/user/img/logo_fav.jpg" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
@@ -93,6 +91,30 @@ body {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(<?= base_url() ?>asset/user/img/loder.gif) center no-repeat #fff;
 }
 
 
@@ -171,12 +193,14 @@ a.img,
     padding: 0;
     color: #fff;
     font-size: 24px;
-    text-decoration: none
+    text-decoration: none;   
+    font-family: Pattaya;
 }
 
 .nav-brand:hover,
 .nav-brand:focus {
-    color: #fff
+    color: #249ffd;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .navigation-portrait .nav-brand {
@@ -670,7 +694,7 @@ a.img,
 
 .nav-dropdown>li:hover>a,
 .nav-dropdown>li.focus>a {
-    color: #27ae60
+    color: deeppink;
 }
 
 .nav-dropdown.nav-dropdown-left {
@@ -1006,7 +1030,7 @@ a.img,
 }
 
 .megamenu-list>li>a:hover {
-    background-color: #27ae60;
+    background-color: #fc1481;
     color: #fff
 }
 
@@ -1045,7 +1069,7 @@ a.img,
 
 .nav-dropdown>li>a:hover,
 .nav-dropdown>li>a:focus {
-    color: #27ae60
+    color: #f7146b
 }
 
 .main_header_area.sticky {
@@ -1118,9 +1142,31 @@ a.img,
     transition: transform .5s ease-out;
 }
 
+.overflow {
+    position: relative;
+    overflow: hidden;
+}
+
+.zoom img {
+    transition: all 0.2s linear;
+}
+
+.zoom:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
 @media (min-width: 300px) {
     a.nav-brand>img {
         width: 30px;
+    }
+
+    .bg_headertitel {
+        background-image: url(<?= base_url('asset/user/img/bg_titleheader.png') ?>);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        bottom: 0;
+        margin-top: 10px;
     }
 }
 
@@ -1128,6 +1174,27 @@ a.img,
 @media (min-width: 992px) {
     a.nav-brand>img {
         width: 50px;
+    }
+
+    .bg_headertitel {
+        background-image: url(<?= base_url('asset/user/img/bg_titleheader.png') ?>);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        bottom: 0;
+        margin-top: 75px;
+    }
+}
+
+@media (min-width: 576px) {
+    .content-about {
+        margin-top: 4rem !important;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .content-about {
+        margin-top: 8rem !important;
     }
 }
 </style>
@@ -1147,13 +1214,13 @@ a.img,
                     <nav id="navigation1" class="navigation">
                         <!-- Logo Area Start -->
                         <div class="nav-header">
-                            <a class="nav-brand" href="#">
+                            <a class="nav-brand" href="<?= base_url('welcome') ?>">
                                 <img loading="lazy" class="img-fluid" src="https://skj.ac.th/uploads/logo/LogoSKJ_5.png"
                                     alt=""> สวนกุหลาบ (จิรประวัติ) นครสวรรค์</a>
                             <div class="nav-toggle"></div>
                         </div>
                         <!-- Search panel Start -->
-                        <div class="nav-search">
+                        <!-- <div class="nav-search">
                             <div class="nav-search-button">
                                 <i class="nav-search-icon"></i>
                             </div>
@@ -1163,248 +1230,97 @@ a.img,
                                     <input name='max-results' type='hidden' value='6'>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                         <!-- Main Menus Wrapper -->
                         <div class="nav-menus-wrapper">
                             <ul class="nav-menu align-to-right">
-                                <li><a href="#">Home</a>
-                                    <div class="megamenu-panel">
-                                        <div class="megamenu-lists">
-                                            <ul class="megamenu-list list-col-4">
-                                                <li><a href="#">Business 1</a></li>
-                                                <li><a href="#">Business 2</a></li>
-                                                <li><a href="#">Business 3</a></li>
-                                                <li><a href="#">Blogger 1</a></li>
-                                                <li><a href="#">Blogger 2</a></li>
-                                                <li><a href="#">Creative Light</a></li>
-                                                <li><a href="#">Creative Dark</a></li>
-                                                <li><a href="#">Personal Portfolio</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-4">
-                                                <li><a href="#">Vimeo Video</a></li>
-                                                <li><a href="#">YouTube Video</a></li>
-                                                <li><a href="#">HTML5 Local Video</a></li>
-                                                <li><a href="#">Agency</a></li>
-                                                <li><a href="#">App Showcase</a></li>
-                                                <li><a href="#">Creative</a></li>
-                                                <li><a href="#">Business</a></li>
-                                                <li><a href="#">Education</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-4">
-                                                <li><a href="#">Fitness &amp; Gym</a></li>
-                                                <li><a href="#">Gardening</a></li>
-                                                <li><a href="#">Hosting</a></li>
-                                                <li><a href="#">HTML5 Video</a></li>
-                                                <li><a href="#">Medical</a></li>
-                                                <li><a href="#">Minimal Portfolio</a></li>
-                                                <li><a href="#">Photography</a></li>
-                                                <li><a href="#">Product Showcase</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-4">
-                                                <li><a href="#">Restaurant</a></li>
-                                                <li><a href="#">Resume &amp; CV</a></li>
-                                                <li><a href="#">Service Landing</a></li>
-                                                <li><a href="#">Slideshows</a></li>
-                                                <li><a href="#">Spa &amp; Beauty</a></li>
-                                                <li><a href="#">Startup</a></li>
-                                                <li><a href="#">Vimeo Video</a></li>
-                                                <li><a href="#">YouTube Video</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li><a href="#">Level 1</a>
-                                    <ul class="nav-dropdown">
-                                        <li><a href="#">Header</a>
-                                            <ul class="nav-dropdown">
-                                                <li><a href="#">Simple</a></li>
-                                                <li><a href="#">Two Menus</a></li>
-                                                <li><a href="#">Centered</a></li>
-                                                <li><a href="#">Search Panel</a></li>
-                                                <li><a href="#">Button &amp; Text</a></li>
-                                                <li><a href="#">Dropdown</a></li>
-                                                <li><a href="#">Horizontal Dropdown</a></li>
-                                                <li><a href="#">Megamenu List</a></li>
-                                                <li><a href="#">Megamenu Tabs</a></li>
-                                                <li><a href="#">Social Links</a></li>
-                                                <li><a href="#">Always Hidden</a></li>
-                                                <li><a href="#">Icons</a></li>
-                                                <li><a href="#">Striped Skin</a></li>
-                                                <li><a href="#">Rounded Skin</a></li>
-                                                <li><a href="#">Box Skin</a></li>
-                                            </ul>
+                           
+                                <li><a href="#">เกี่ยวกับ สกจ</a>
+                                    <ul class="nav-dropdown ">                                       
+                                        <?php foreach (
+                                            $Allabout
+                                            as $key => $v_about
+                                        ): ?>
+                                        <li>
+                                            <a href="<?= base_url(
+                                            'AboutSchool/'
+                                        ) .
+                                            $v_about->about_id ?>"><i class="icofont-dotted-right"></i>
+                                                <?= $v_about->about_menu ?></a>
                                         </li>
-                                        <li><a href="#">Level 2</a>
-                                            <ul class="nav-dropdown">
-                                                <li><a href="#">Contact Layout 1</a></li>
-                                                <li><a href="#">Contact Layout 2</a></li>
-                                                <li><a href="#">Contact Layout 3</a></li>
-                                                <li><a href="#">Level 3</a>
-                                                    <ul class="nav-dropdown">
-                                                        <li><a href="#">Contact Layout 1</a></li>
-                                                        <li><a href="#">Contact Layout 2</a></li>
-                                                        <li><a href="#">Contact Layout 3</a></li>
-                                                        <li><a href="#">Contact Layout 4</a></li>
-                                                        <li><a href="#">Contact Layout 5</a></li>
-                                                        <li><a href="#">Contact Layout 6</a></li>
-                                                        <li><a href="#">Contact Layout 7</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Contact Layout 5</a></li>
-                                                <li><a href="#">Contact Layout 6</a></li>
-                                                <li><a href="#">Contact Layout 7</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Coming Soon</a>
-                                            <ul class="nav-dropdown">
-                                                <li><a href="#">Coming Soon - 1</a></li>
-                                                <li><a href="#">Coming Soon - 2</a></li>
-                                                <li><a href="#">Coming Soon - 3</a></li>
-                                                <li><a href="#">Coming Soon - 4</a></li>
-                                                <li><a href="#">Coming Soon - 5</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Premium Sliders</a></li>
-                                        <li><a href="#">Shortcodes</a></li>
-                                        <li><a href="#">Breadcumb</a></li>
-                                        <li><a href="#">Footer</a></li>
-                                        <li><a href="#">Icons</a></li>
-                                        <li><a href="#">Buttons</a></li>
-                                        <li><a href="#">Call to Action</a></li>
-                                        <li><a href="#">Google Maps</a></li>
-                                        <li><a href="#">Pie &amp; Skills</a></li>
-                                        <li><a href="#">Ratings</a></li>
-                                        <li><a href="#">Vector Maps</a></li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </li>
-                                <li><a href="#">Pages</a>
+                                
+                                <li><a href="#">บุคลากร</a>
+                                    <ul class="nav-dropdown">
+                                        <li> <a class="dropdown-item" href="<?= base_url(
+                                        'Personnel/คณะผู้บริหาร'
+                                    ) ?>"> <i class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
+                                        </li>
+
+                                        <?php foreach ($lear as $key => $v_lear): ?>
+                                        <li>
+                                            <a href="<?= base_url('Personnel/'
+                                    ) . $v_lear->lear_namethai ?>"><i class="icofont-dotted-right"></i>
+                                                กลุ่มสาระการเรียนรู้<?= $v_lear->lear_namethai ?></a>
+                                        </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </li>
+                                <li><a href="#">ประชาสัมพันธ์</a>
                                     <div class="megamenu-panel">
                                         <div class="megamenu-lists">
+                                            <?php $nameNews = array('ข่าวประชาสัมพันธ์','ข่าวกิจกรรม','ข่าวประกาศ' ); 
+                                        foreach ($nameNews as $key => $v_nameNews):
+                                            if($v_nameNews == 'ข่าวประชาสัมพันธ์'){
+                                                $news_to = $news_p;
+                                            }elseif($v_nameNews == 'ข่าวกิจกรรม'){
+                                                $news_to = $news_k;
+                                            }elseif($v_nameNews == 'ข่าวประกาศ'){
+                                                $news_to = $news_pg;
+                                            }
+                                        ?>
                                             <ul class="megamenu-list list-col-3">
-                                                <li><a href="#">About Us 1</a></li>
-                                                <li><a href="#">About Us 2</a></li>
-                                                <li><a href="#">About Us 3</a></li>
-                                                <li><a href="#">Service Layout 1</a></li>
-                                                <li><a href="#">Service Layout 2</a></li>
-                                                <li><a href="#">Service Layout 3</a></li>
-                                                <li><a href="#">404 Layout 1</a></li>
-                                                <li><a href="#">404 Layout 2</a></li>
-                                                <li><a href="#">404 Layout 3</a></li>
+                                                <h5 class="dropdown-header"><?=$v_nameNews;?></h5>
+                                                <?php foreach ($news_to as $key => $v_news_to): 
+                                                if($v_news_to->news_category == $v_nameNews):?>
+                                                <li><a href="<?= base_url('news/newsDetail/') .
+                        $v_news_to->news_id ?>"><i class="icofont-newspaper"></i> <?=$v_news_to->news_topic?></a></li>
+
+                                                <?php endif; ?>
+                                                <?php endforeach; ?>
                                             </ul>
-                                            <ul class="megamenu-list list-col-3">
-                                                <li><a href="#">Coming Soon Layout 1</a></li>
-                                                <li><a href="#">Coming Soon Layout 2</a></li>
-                                                <li><a href="#">Coming Soon Layout 3</a></li>
-                                                <li><a href="#">Coming Soon Layout 4</a></li>
-                                                <li><a href="#">Coming Soon Layout 5</a></li>
-                                                <li><a href="#">500 Error</a></li>
-                                                <li><a href="#">Empty Page</a></li>
-                                                <li><a href="#">FAQ</a></li>
-                                                <li><a href="#">Search Result</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-3">
-                                                <li><a href="#">Contact Layout 1</a></li>
-                                                <li><a href="#">Contact Layout 2</a></li>
-                                                <li><a href="#">Contact Layout 3</a></li>
-                                                <li><a href="#">Contact Layout 4</a></li>
-                                                <li><a href="#">Contact Layout 5</a></li>
-                                                <li><a href="#">Contact Layout 6</a></li>
-                                                <li><a href="#">Contact Layout 7</a></li>
-                                                <li><a href="#">Subscribe Newsletter</a></li>
-                                                <li><a href="#">Under Maintenance</a></li>
-                                            </ul>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="#">Portfolio</a>
-                                    <div class="megamenu-panel">
-                                        <div class="megamenu-lists">
-                                            <ul class="megamenu-list list-col-5">
-                                                <li class="megamenu-list-title"><a href="#">Masonary</a></li>
-                                                <li><a href="#">2 Column</a></li>
-                                                <li><a href="#">3 Column</a></li>
-                                                <li><a href="#">4 Column</a></li>
-                                                <li><a href="#">6 Column</a></li>
-                                                <li><a href="#">Full Width</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-5">
-                                                <li class="megamenu-list-title"><a href="#">Masonary No Gutter</a></li>
-                                                <li><a href="#">2 Column</a></li>
-                                                <li><a href="#">3 Column</a></li>
-                                                <li><a href="#">4 Column</a></li>
-                                                <li><a href="#">6 Column</a></li>
-                                                <li><a href="#">Full Width</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-5">
-                                                <li class="megamenu-list-title"><a href="#">Grid</a></li>
-                                                <li><a href="#">2 Column</a></li>
-                                                <li><a href="#">3 Column</a></li>
-                                                <li><a href="#">4 Column</a></li>
-                                                <li><a href="#">6 Column</a></li>
-                                                <li><a href="#">Full Width</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-5">
-                                                <li class="megamenu-list-title"><a href="#">Grid No Gutter</a></li>
-                                                <li><a href="#">2 Column</a></li>
-                                                <li><a href="#">3 Column</a></li>
-                                                <li><a href="#">4 Column</a></li>
-                                                <li><a href="#">6 Column</a></li>
-                                                <li><a href="#">Full Width</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-5">
-                                                <li class="megamenu-list-title"><a href="#">Portfolio Details</a></li>
-                                                <li><a href="#">Embed Video</a></li>
-                                                <li><a href="#">Masonary Thumb</a></li>
-                                                <li><a href="#">Single Thumb</a></li>
-                                                <li><a href="#">Slider Gallery</a></li>
-                                                <li><a href="#">YouTube Video</a></li>
-                                                <li><a href="#">Vimeo Video</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                <li><a href="#">กลุ่มบริหาร</a>
+                                    <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="<?= base_url(
+                                            'academic'
+                                        ) ?>">
+                                                <i class="icofont-dotted-right"></i>
+                                                บริหารวิชาการ
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="icofont-dotted-right"></i>
+                                                บริหารกิจการนักเรียน
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="icofont-dotted-right"></i>
+                                                บริหารทั่วไป
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Blog</a>
-                                    <div class="megamenu-panel">
-                                        <div class="megamenu-lists">
-                                            <ul class="megamenu-list list-col-4">
-                                                <li class="megamenu-list-title"><a href="#">Masonary Layout</a></li>
-                                                <li><a href="#">2 Column</a></li>
-                                                <li><a href="#">3 Column</a></li>
-                                                <li><a href="#">4 Column</a></li>
-                                                <li><a href="#">6 Column</a></li>
-                                                <li><a href="#">Full Width</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-4">
-                                                <li class="megamenu-list-title"><a href="#">Grid Layout</a></li>
-                                                <li><a href="#">2 Column</a></li>
-                                                <li><a href="#">3 Column</a></li>
-                                                <li><a href="#">4 Column</a></li>
-                                                <li><a href="#">6 Column</a></li>
-                                                <li><a href="#">Full Width</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-4">
-                                                <li class="megamenu-list-title"><a href="#">Sidebar Layout</a></li>
-                                                <li><a href="#">Left Sidebar Grid</a></li>
-                                                <li><a href="#">Left Sidebar Masonary</a></li>
-                                                <li><a href="#">Right Sidebar Grid</a></li>
-                                                <li><a href="#">Right Sidebar Masonary</a></li>
-                                                <li><a href="#">No Sidebar</a></li>
-                                                <li><a href="#">Both Side Sidebar</a></li>
-                                            </ul>
-                                            <ul class="megamenu-list list-col-4">
-                                                <li class="megamenu-list-title"><a href="#">Blog Details</a></li>
-                                                <li><a href="#">Single Blog Layout 1</a></li>
-                                                <li><a href="#">Single Blog Layout 2</a></li>
-                                                <li><a href="#">Single Blog Layout 3</a></li>
-                                                <li><a href="#">Single Blog Layout 4</a></li>
-                                                <li><a href="#">Single Blog Layout 5</a></li>
-                                                <li><a href="#">Single Blog Layout 6</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li><a href="#">Shortcodes</a></li>
-                                <li><a href="#">One Page</a></li>
+                                <li><a href="<?= base_url('Contact');?>">ติดต่อ</a></li>
+                                <li><a href="<?= base_url('login') ?>"><i class="icofont-lock"></i> Login</a></li>
                             </ul>
                         </div>
                     </nav>

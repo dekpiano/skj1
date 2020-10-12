@@ -7,17 +7,21 @@ class Control_personnel extends CI_Controller {
 		parent::__construct();
 		//$this->load->model('model_personnel');
 		
+
 	}
 	public static $title = "บุคลากรโรงเรียน";
 	public static $description = "บุคลากรโรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์";
-
+	
 	public function show_per_all()
 	{
 		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		// print_r($id);
 		$data['title'] = self::$title;
 		$data['description'] = self::$description;
-		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ	
+		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ
+		$data['news_p'] = $news_today = $this->db->where('news_category','ข่าวประชาสัมพันธ์')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
+		$data['news_k'] = $news_today = $this->db->where('news_category','ข่าวกิจกรรม')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
+		$data['news_pg'] = $news_today = $this->db->where('news_category','ข่าวประกาศ')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
 						$this->db->select('tb_personnel.pers_id, 
 											tb_personnel.pers_prefix, 
@@ -29,7 +33,7 @@ class Control_personnel extends CI_Controller {
 											tb_personnel.pers_img');
 						$this->db->from('tb_personnel');
 						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
-		$data['pers'] = $this->db->get()->result(); //เกี่ย่วกับโรงเรียน
+		$data['pers'] = $this->db->get()->result(); 
 		$this->db->select('tb_personnel.pers_id, 
 											tb_personnel.pers_prefix, 
 											tb_personnel.pers_firstname, 
@@ -40,7 +44,7 @@ class Control_personnel extends CI_Controller {
 											tb_personnel.pers_img');
 						$this->db->from('tb_personnel');
 						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
-		$data['pers_type'] = $this->db->get()->result(); //เกี่ย่วกับโรงเรียน
+		$data['pers_type'] = $this->db->get()->result(); 
 
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/personnel/personnel_all.php');
@@ -51,6 +55,9 @@ class Control_personnel extends CI_Controller {
 		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		$data['title'] = self::$title;
 		$data['description'] = self::$description;
+		$data['news_p'] = $news_today = $this->db->where('news_category','ข่าวประชาสัมพันธ์')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
+		$data['news_k'] = $news_today = $this->db->where('news_category','ข่าวกิจกรรม')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
+		$data['news_pg'] = $news_today = $this->db->where('news_category','ข่าวประกาศ')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
 		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ	
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
 						$this->db->select('	tb_personnel.pers_id, 

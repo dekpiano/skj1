@@ -53,13 +53,13 @@
 
 <section class="py-5 header " style="background: linear-gradient(to left, #249ffd, #89d2f6);">
     <div class="container py-4 ">
-        <header class="text-center mb-5 pb-5 text-white">
+        <header class="text-center mb-5 pb-5 text-white content-about">
             <h1 class="display-4">บริหารวิชาการ</h1>
 
         </header>
 
 
-        <div class="row">
+        <div class="row ">
             <div class="col-md-3">
                 <!-- Tabs nav -->
                 <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist"

@@ -82,9 +82,9 @@
                             <div class="form-group row">
                                 <label for="news_content" class="col-sm-2 col-form-label">เนื้อหา</label>
                                 <div class="col-sm-10">
-                                <!-- <div id="example" ></div> -->
-                                    <textarea class="form-control selector" name="news_content"
-                                        id="news_content" cols="500"> <?=$action == 'insert_news' ? '' : $news[0]->news_content;?></textarea>
+                                    <!-- <div id="example" ></div> -->
+                                    <textarea class="form-control selector" name="news_content" id="news_content"
+                                        cols="500"> <?=$action == 'insert_news' ? '' : $news[0]->news_content;?></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -98,8 +98,11 @@
                                 <label for="news_category" class="col-md-4 col-lg-2 col-form-label">ประเภทประกาศ</label>
                                 <div class="col-sm-6 col-md-8 col-lg-4">
                                     <select class="form-control" name="news_category" id="news_category">
-                                        <option value="ประชาสัมพันธ์">ประชาสัมพันธ์</option>
-                                        <option value="กิจกรรม">กิจกรรม</option>
+                                        <?php $news_s= array('ข่าวประชาสัมพันธ์','ข่าวกิจกรรม','ข่าวประกาศ' ); 
+                                foreach ($news_s as $key => $v_news_s):?>
+                                        <option <?php echo $v_news_s == $news[0]->news_category ? 'selected' : '' ?> value="<?=$v_news_s;?>"><?=$v_news_s;?></option>
+                                        <?php endforeach;?>
+
                                     </select>
                                 </div>
                             </div>
@@ -107,11 +110,11 @@
                             <div class="form-group row">
                                 <label for="banner_img" class="col-md-4 col-lg-2 col-form-label">รูปหน้าปก</label>
                                 <div class="col-sm-6 col-md-8 col-lg-4">
-                                    
-                                        <input type="file" name="banner_img" id="banner_img" class="banner_img" />
-                                        <small id="emailHelp" class="form-text text-muted">
-                                            (กรณีไม่มีรูปภาพไม่ต้องใส่)</small>
-                                    
+
+                                    <input type="file" name="banner_img" id="banner_img" class="banner_img" />
+                                    <small id="emailHelp" class="form-text text-muted">
+                                        (กรณีไม่มีรูปภาพไม่ต้องใส่)</small>
+
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -183,10 +186,13 @@
                         <div class="form-group row">
                             <label for="news_category" class="col-sm-2 col-form-label">ประเภทประกาศ</label>
                             <div class="col-sm-2">
-                                <select class="form-control" name="news_category" id="news_category">
-                                    <option value="ประชาสัมพันธ์">ประชาสัมพันธ์</option>
-                                    <option value="กิจกรรม">กิจกรรม</option>
-                                </select>
+                            <select class="form-control" name="news_category" id="news_category">
+                                        <?php $news_s= array('ข่าวประชาสัมพันธ์','ข่าวกิจกรรม','ข่าวประกาศ' ); 
+                                foreach ($news_s as $key => $v_news_s):?>
+                                        <option <?php echo $v_news_s == $news[0]->news_category ? 'selected' : '' ?> value="<?=$v_news_s;?>"><?=$v_news_s;?></option>
+                                        <?php endforeach;?>
+
+                                    </select>
                             </div>
                         </div>
 

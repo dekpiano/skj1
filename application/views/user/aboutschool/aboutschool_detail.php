@@ -1,4 +1,4 @@
-<section class="mt-5">
+<section class="mt-5 content-about">
 
     <div class="container ">
         <div class="row">

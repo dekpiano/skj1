@@ -106,17 +106,17 @@
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="<?= base_url() ?>/asset/user/vendor/jquery/jquery.min.js"></script>
-<script src="<?= base_url() ?>/asset/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="<?= base_url() ?>/asset/user/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="<?= base_url() ?>/asset/user/js/header.min.js"></script>
-<script src="<?= base_url() ?>/asset/user/vendor/php-email-form/validate.js"></script>
-<script src="<?= base_url() ?>/asset/user/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="<?= base_url() ?>/asset/user/vendor/counterup/counterup.min.js"></script>
-<script src="<?= base_url() ?>/asset/user/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="<?= base_url() ?>/asset/user/vendor/venobox/venobox.min.js"></script>
-<script src="<?= base_url() ?>/asset/user/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="<?= base_url() ?>/asset/user/vendor/jquery.countdown.min.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="<?= base_url() ?>asset/user/js/header.min.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/php-email-form/validate.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/counterup/counterup.min.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/venobox/venobox.min.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="<?= base_url() ?>asset/user/vendor/jquery.countdown.min.js"></script>
 
 <script src="<?= base_url() ?>asset/js/jquery.inputmask.min.js"></script>
 <script src="<?= base_url() ?>asset/js/imagesloaded.pkgd.min.js"></script>
@@ -125,8 +125,8 @@
 <!-- Template Main JS File -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="<?= base_url() ?>asset/js/slick.js?v=1001"></script>
-<script src="<?= base_url() ?>/asset/user/js/main.js?v=1000"></script>
-<script src="<?= base_url() ?>/asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
+<script src="<?= base_url() ?>asset/user/js/main.js?v=1000"></script>
+<script src="<?= base_url() ?>asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
 <script src="<?= base_url() ?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="<?= base_url() ?>asset/vendor/datatables/dataTables.buttons.min.js"></script>

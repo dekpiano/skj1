@@ -24,7 +24,7 @@
 }
 </style>
 <section id="" class=" section section-bg">
-    <div class="container pad-3">
+    <div class="container ">
         <?php
         $cowid19 = @file_get_contents(
             'https://covid19.th-stat.com/api/open/today'
@@ -111,7 +111,7 @@
                     <div class="section-title">
                         <h2>SKJ ประชาสัมพันธ์</h2>
                     </div>
-                    <div class="container " data-aos="fade-down">
+                    <div class=" " data-aos="fade-down">
                         <div class="row">                           
                                 <?php foreach ($news as $key => $v_news): ?>
                                 <?php if ($v_news->news_facebook !== ''): ?>
@@ -123,7 +123,7 @@
 
                                 <?php else: ?>
 
-                                <div class="col-md-6 mb-2 col-lg-4">
+                                <div class="col-md-6 mb-2 col-lg-4 ">
                                     <a href="<?= base_url('news/newsDetail/') .
                                     $v_news->news_id ?>">
                                         <div class="card box-shadow h-100 overflow zoom ">

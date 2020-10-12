@@ -1,7 +1,7 @@
 
 
 
-<section id="contact" class="section">
+<section id="contact" class="section content-about">
     <div class="container">
 
         <div class="row">
@@ -29,6 +29,7 @@
                     <div class="card-body text-center">
                         <i class="icofont-email icofont-5x"></i>
                         <h4 class="text-uppercase mb-5">email</h4>
+                        <p>skjns160@skj.ac.th</p>
                         <p>skjns160@gmail.com</p>
                     </div>
                 </div>

@@ -45,7 +45,9 @@ class Welcome extends CI_Controller
             ->limit(10)
             ->get('tb_institutiono')
             ->result(); //หน่วยงาน
-
+            $data['news_p'] = $news_today = $this->db->where('news_category','ข่าวประชาสัมพันธ์')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
+		$data['news_k'] = $news_today = $this->db->where('news_category','ข่าวกิจกรรม')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
+		$data['news_pg'] = $news_today = $this->db->where('news_category','ข่าวประกาศ')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
         $this->load->view('user/layout/header.php', $data);
         $this->load->view('user/main/index.php');
         $this->load->view('user/layout/footer.php');
