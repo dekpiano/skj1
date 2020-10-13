@@ -193,7 +193,7 @@ a.img,
     padding: 0;
     color: #fff;
     font-size: 24px;
-    text-decoration: none;   
+    text-decoration: none;
     font-family: Pattaya;
 }
 
@@ -1162,7 +1162,9 @@ a.img,
     }
 
     .bg_headertitel {
-        background-image: url(<?= base_url('asset/user/img/bg_titleheader.png') ?>);
+        background-image: url(<?= base_url(
+ 'asset/user/img/bg_titleheader.png'
+            ) ?>);
         background-repeat: no-repeat;
         background-position: bottom;
         bottom: 0;
@@ -1177,7 +1179,9 @@ a.img,
     }
 
     .bg_headertitel {
-        background-image: url(<?= base_url('asset/user/img/bg_titleheader.png') ?>);
+        background-image: url(<?= base_url(
+ 'asset/user/img/bg_titleheader.png'
+            ) ?>);
         background-repeat: no-repeat;
         background-position: bottom;
         bottom: 0;
@@ -1197,6 +1201,66 @@ a.img,
         margin-top: 8rem !important;
     }
 }
+
+
+.menu a {
+    font-size: 22px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    position: relative;
+    padding: 4px 0;
+}
+
+.menu a::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    transition: 0.5s transform ease;
+    transform: scale3d(0, 1, 1);
+    transform-origin: 0 50%;
+}
+
+.menu a:hover::before {
+    transform: scale3d(1, 1, 1);
+}
+
+.menu-1 a::before {
+    background: #E91E63;
+    transform-origin: 100% 50%;
+}
+
+.menu-1 a:hover::before {
+    transform-origin: 0 50%;
+}
+
+.menu-2 a::before {
+    background: #EC407A;
+}
+
+.menu-3 a::before {
+    transform-origin: 50% 50%;
+    background: #F06292;
+}
+
+.menu-4 a::before {
+    transform-origin: 100% 50%;
+    background: #EC407A;
+}
+
+.menu-5 a::before {
+    background: #E91E63;
+    transform-origin: 0 50%;
+}
+
+.menu-5 a:hover::before {
+    transform-origin: 100% 50%;
+}
 </style>
 
 <body>
@@ -1211,10 +1275,12 @@ a.img,
             <div class="main_header_area animated"
                 style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;background-color:rgba(232, 38, 158, 1);">
                 <div class="container">
-                    <nav id="navigation1" class="navigation">
+                    <nav id="navigation1" class="navigation menu menu-3">
                         <!-- Logo Area Start -->
                         <div class="nav-header">
-                            <a class="nav-brand" href="<?= base_url('welcome') ?>">
+                            <a class="nav-brand" href="<?= base_url(
+                                'welcome'
+                            ) ?>">
                                 <img loading="lazy" class="img-fluid" src="https://skj.ac.th/uploads/logo/LogoSKJ_5.png"
                                     alt=""> สวนกุหลาบ (จิรประวัติ) นครสวรรค์</a>
                             <div class="nav-toggle"></div>
@@ -1234,35 +1300,40 @@ a.img,
                         <!-- Main Menus Wrapper -->
                         <div class="nav-menus-wrapper">
                             <ul class="nav-menu align-to-right">
-                           
+
                                 <li><a href="#">เกี่ยวกับ สกจ</a>
-                                    <ul class="nav-dropdown ">                                       
+                                    <ul class="nav-dropdown ">
                                         <?php foreach (
                                             $Allabout
                                             as $key => $v_about
                                         ): ?>
                                         <li>
                                             <a href="<?= base_url(
-                                            'AboutSchool/'
-                                        ) .
-                                            $v_about->about_id ?>"><i class="icofont-dotted-right"></i>
+                                                'AboutSchool/'
+                                            ) .
+                                                $v_about->about_id ?>"><i class="icofont-dotted-right"></i>
                                                 <?= $v_about->about_menu ?></a>
                                         </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </li>
-                                
+
                                 <li><a href="#">บุคลากร</a>
                                     <ul class="nav-dropdown">
                                         <li> <a class="dropdown-item" href="<?= base_url(
-                                        'Personnel/คณะผู้บริหาร'
-                                    ) ?>"> <i class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
+                                            'Personnel/คณะผู้บริหาร'
+                                        ) ?>"> <i class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
                                         </li>
 
-                                        <?php foreach ($lear as $key => $v_lear): ?>
+                                        <?php foreach (
+                                            $lear
+                                            as $key => $v_lear
+                                        ): ?>
                                         <li>
-                                            <a href="<?= base_url('Personnel/'
-                                    ) . $v_lear->lear_namethai ?>"><i class="icofont-dotted-right"></i>
+                                            <a href="<?= base_url(
+                                                'Personnel/'
+                                            ) .
+                                                $v_lear->lear_namethai ?>"><i class="icofont-dotted-right"></i>
                                                 กลุ่มสาระการเรียนรู้<?= $v_lear->lear_namethai ?></a>
                                         </li>
                                         <?php endforeach; ?>
@@ -1271,27 +1342,53 @@ a.img,
                                 <li><a href="#">ประชาสัมพันธ์</a>
                                     <div class="megamenu-panel">
                                         <div class="megamenu-lists">
-                                            <?php $nameNews = array('ข่าวประชาสัมพันธ์','ข่าวกิจกรรม','ข่าวประกาศ' ); 
-                                        foreach ($nameNews as $key => $v_nameNews):
-                                            if($v_nameNews == 'ข่าวประชาสัมพันธ์'){
-                                                $news_to = $news_p;
-                                            }elseif($v_nameNews == 'ข่าวกิจกรรม'){
-                                                $news_to = $news_k;
-                                            }elseif($v_nameNews == 'ข่าวประกาศ'){
-                                                $news_to = $news_pg;
-                                            }
-                                        ?>
+                                            <?php
+                                            $nameNews = [
+                                                'ข่าวประชาสัมพันธ์',
+                                                'ข่าวกิจกรรม',
+                                                'ข่าวประกาศ',
+                                            ];
+                                            foreach (
+                                                $nameNews
+                                                as $key => $v_nameNews
+                                            ):
+                                                if (
+                                                    $v_nameNews ==
+                                                    'ข่าวประชาสัมพันธ์'
+                                                ) {
+                                                    $news_to = $news_p;
+                                                } elseif (
+                                                    $v_nameNews == 'ข่าวกิจกรรม'
+                                                ) {
+                                                    $news_to = $news_k;
+                                                } elseif (
+                                                    $v_nameNews == 'ข่าวประกาศ'
+                                                ) {
+                                                    $news_to = $news_pg;
+                                                } ?>
                                             <ul class="megamenu-list list-col-3">
-                                                <h5 class="dropdown-header"><?=$v_nameNews;?></h5>
-                                                <?php foreach ($news_to as $key => $v_news_to): 
-                                                if($v_news_to->news_category == $v_nameNews):?>
-                                                <li><a href="<?= base_url('news/newsDetail/') .
-                        $v_news_to->news_id ?>"><i class="icofont-newspaper"></i> <?=$v_news_to->news_topic?></a></li>
+                                                <h5 class="dropdown-header"><?= $v_nameNews ?></h5>
+                                                <?php foreach (
+                                                    $news_to
+                                                    as $key => $v_news_to
+                                                ):
+                                                    if (
+                                                        $v_news_to->news_category ==
+                                                        $v_nameNews
+                                                    ): ?>
+                                                <li><a href="<?= base_url(
+                                                    'news/newsDetail/'
+                                                ) .
+                                                    $v_news_to->news_id ?>"><i class="icofont-newspaper"></i>
+                                                        <?= $v_news_to->news_topic ?></a></li>
 
                                                 <?php endif; ?>
-                                                <?php endforeach; ?>
+                                                <?php
+                                                endforeach; ?>
                                             </ul>
-                                            <?php endforeach; ?>
+                                            <?php
+                                            endforeach;
+                                            ?>
                                         </div>
                                     </div>
                                 </li>
@@ -1299,8 +1396,8 @@ a.img,
                                     <ul class="nav-dropdown">
                                         <li>
                                             <a href="<?= base_url(
-                                            'academic'
-                                        ) ?>">
+                                                'academic'
+                                            ) ?>">
                                                 <i class="icofont-dotted-right"></i>
                                                 บริหารวิชาการ
                                             </a>
@@ -1319,8 +1416,12 @@ a.img,
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="<?= base_url('Contact');?>">ติดต่อ</a></li>
-                                <li><a href="<?= base_url('login') ?>"><i class="icofont-lock"></i> Login</a></li>
+                                <li><a href="<?= base_url(
+                                    'Contact'
+                                ) ?>">ติดต่อ</a></li>
+                                <li><a href="<?= base_url(
+                                    'login'
+                                ) ?>"><i class="icofont-lock"></i> Login</a></li>
                             </ul>
                         </div>
                     </nav>

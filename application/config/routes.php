@@ -114,6 +114,11 @@ $route['admin/class-schedule'] =
 $route['admin/class-schedule/add'] =
     'admin/academic/class_schedule/control_admin_class_schedule/add';
 
+$route['admin/students'] = 'admin/academic/students/control_admin_students';
+$route['admin/students/add'] =
+    'admin/academic/students/control_admin_students/add';
+
+// ---------------------------------------- ฝั่ง User --------------------------------------------------
 // บริหารวิชาการ
 $route['academic'] = 'control_academic';
 // ตารางสอน - เรียน
