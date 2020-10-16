@@ -55,28 +55,34 @@
 
                 <div class="card-body"> 
                     
-                    <form action="<?=base_url('admin/control_admin_facegroup/').$action;?>" method="post" enctype="multipart/form-data">
+                    <form action="<?=base_url('admin/control_admin_video/').$action;?>" method="post" enctype="multipart/form-data">
                       <div class="form-group row">
-                        <label for="facegroup_id" class="col-sm-2 col-form-label">รหัส<?=$title;?></label>
+                        <label for="video_id" class="col-sm-2 col-form-label">รหัส<?=$title;?></label>
                         <div class="col-sm-10">
-                          <input type="text" readonly  class="form-control" id="facegroup_id" name="facegroup_id" value="<?=$action == 'insert_facegroup' ? $facegroup : $facegroup[0]->facegroup_id;?>" required>
+                          <input type="text" readonly  class="form-control" id="video_id" name="video_id" value="<?=$action == 'insert_video' ? $video : $video[0]->video_id;?>" required>
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="facegroup_name" class="col-sm-2 col-form-label">ชื่อ Facebook กลุ่ม</label>
+                        <label for="video_name" class="col-sm-2 col-form-label">ชื่อ<?=$title;?></label>
                         <div class="col-sm-10">  
-                        <input type="text"   class="form-control" id="facegroup_name" name="facegroup_name" value="<?=$action == 'insert_facegroup' ? '' : $facegroup[0]->facegroup_name;?>" required>                      
+                        <input type="text"   class="form-control" id="video_name" name="video_name" value="<?=$action == 'insert_video' ? '' : $video[0]->video_name;?>" required>                      
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="facegroup_link" class="col-sm-2 col-form-label"><?=$title;?> ลิ้ง</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="facegroup_link" name="facegroup_link" value="<?=$action == 'insert_facegroup' ? '' : $facegroup[0]->facegroup_link;?>" >
+                        <label for="video_link" class="col-sm-2 col-form-label">ลิ้ง<?=$title;?> </label>
+                        <div class="col-sm-10">                        
+                          <input type="text" class="form-control" id="video_link" name="video_link" value="<?=$action == 'insert_video' ? '' : $video[0]->video_link;?>" >
+                          <small class="text-muted">ใส่ฝั่งโค้ด (embed) Ex. https://www.youtube.com/embed/llVovMr05Sg</small>    
+                          <?php if( $action != 'insert_video')  :?>
+                          <div class="embed-responsive embed-responsive-16by9">  
+                          <iframe class="embed-responsive-item" src="<?=$video[0]->video_link;?>" allowfullscreen></iframe>
+                          </div>  
+                          <?php endif;?>
                         </div>
                       </div>
                                 
                        <div class="form-group row">
-                        <label for="facegroup_namethai" class="col-sm-2 col-form-label"></label>
+                        <label for="video_namethai" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                           <button type="submit" class="btn btn-lg btn-<?=$color?>  btn-block"><?=$icon?> <?php echo end($breadcrumbs);?></button>
                         </div>

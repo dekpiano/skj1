@@ -76,7 +76,7 @@
                         <div class="form-group row">
                             <label for="about_detail" class="col-sm-2 col-form-label">เนื้อหา</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="about_detail"
+                                <textarea class="form-control selector_about" name="about_detail"
                                     id="about_detail"> <?=$action == 'insert_aboutschool' ? '' : $aboutschool[0]->about_detail;?></textarea>
                             </div>
                         </div>

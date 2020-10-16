@@ -105,8 +105,8 @@ $route['admin/document/add'] = 'admin/control_admin_document/add';
 $route['admin/facegroup'] = 'admin/control_admin_facegroup';
 $route['admin/facegroup/add'] = 'admin/control_admin_facegroup/add';
 
-$route['admin/vedio'] = 'admin/control_admin_vedio';
-$route['admin/vedio/add'] = 'admin/control_admin_vedio/add';
+$route['admin/video'] = 'admin/control_admin_video';
+$route['admin/video/add'] = 'admin/control_admin_video/add';
 
 // งานวิชาการ
 $route['admin/class-schedule'] =
@@ -152,3 +152,5 @@ $route['document/ListStudent'] = 'control_document/document_liststudent';
 $route['logoSKJ'] = 'control_document/document_logoSKJ';
 // ติดต่อ
 $route['Contact'] = 'control_contact/contact_main';
+// วีดีโอ
+$route['Video'] = 'Control_video/video_all';

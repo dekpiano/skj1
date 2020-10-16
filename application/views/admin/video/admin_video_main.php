@@ -10,7 +10,7 @@
            <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3 ">
-              <h6 class="m-0 font-weight-bold text-primary ">ตารางข้อมูล<?=$title;?> <a href="<?=base_url('admin/facegroup/add');?>" class="btn btn-primary btn-sm float-right"> <i class="far fa-plus-square"></i> เพิ่ม<?=$title;?></a></h6>
+              <h6 class="m-0 font-weight-bold text-primary ">ตารางข้อมูล<?=$title;?> <a href="<?=base_url('admin/video/add');?>" class="btn btn-primary btn-sm float-right"> <i class="far fa-plus-square"></i> เพิ่ม<?=$title;?></a></h6>
               
             </div>
             <div class="card-body">
@@ -23,14 +23,14 @@
                       <th>คำสั่ง</th>
                     </tr>
                   </thead>  
-                  <tbody class="sort_facegroup">
-                  <?php foreach ($facegroup as $key => $v_facegroup) : ?>             
-                    <tr rank="<?=$v_facegroup->facegroup_id;?>">
+                  <tbody class="sort_video">
+                  <?php foreach ($video as $key => $v_video) : ?>             
+                    <tr rank="<?=$v_video->video_id;?>">
                       
-                      <td><?=$v_facegroup->facegroup_name;?></td>
+                      <td><?=$v_video->video_name;?></td>
                       <td>
-                        <a  href="<?=base_url('admin/control_admin_facegroup/edit_facegroup/').$v_facegroup->facegroup_id?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> แก้ไข</a>
-                        <a  href="<?=base_url('admin/control_admin_facegroup/delete_facegroup/').$v_facegroup->facegroup_id;?>" class="btn btn-danger btn-sm" onClick="return confirm('ต้องการลบข้อมูลหรือไม่?')"><i class="fas fa-trash-alt"></i> ลบ</a>
+                        <a  href="<?=base_url('admin/control_admin_video/edit_video/').$v_video->video_id?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> แก้ไข</a>
+                        <a  href="<?=base_url('admin/control_admin_video/delete_video/').$v_video->video_id;?>" class="btn btn-danger btn-sm" onClick="return confirm('ต้องการลบข้อมูลหรือไม่?')"><i class="fas fa-trash-alt"></i> ลบ</a>
                       </td>
                     </tr>
                   <?php endforeach; ?>                   

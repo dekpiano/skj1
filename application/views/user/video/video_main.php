@@ -1,4 +1,4 @@
-<section class="pt-5 pb-5 bg-white">
+<section class="pt-5 pb-5 bg-white text-white" style="background-image:url(uploads/video/bg-video.webp);background-size: cover;">
     <div class="container">
         <article class="row   border-0 flex-md-row justify-content-between align-items-center card-top">
             <a class="col-md-7  order-md-2 order-1 w-md-50" href="#">
@@ -9,7 +9,7 @@
             <div class="card-body order-2 order-md-1 col-md-5 ">
                 <div class=" text-uppercase font-weight-bold mb-4 text-warning">Featured Article</div>
                 <h2 class="card-title display-4 font-weight-bold">
-                    <a href="#" class="text-dark" title="Blog title">SKJ Production</a>
+                    <a href="#" class="text-white" title="Blog title">SKJ Production</a>
                 </h2>
                 <div class="card-text mb-4">
                     <p class="lead">งานประชาสัมพันธ์ทางด้านมัลติมีเดีย</p>
@@ -23,7 +23,7 @@
                     <div class="d-block">
                         <div class="font-weight-bold">งานโสต สวนจิ</div>
                         <div class="text-grey">สวนกุหลาบ (จิรประวัติ) นครสวรรค์</div>
-                        <a href="#" class="btn btn-outline-primary mt-3">ดูทั้งหมด</a>
+                        <a href="<?=base_url('Video')?>" class="btn btn-outline-primary mt-3">ดูทั้งหมด</a>
                     </div>
 
                 </div>
