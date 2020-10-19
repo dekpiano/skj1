@@ -22,6 +22,9 @@ class Control_admin_banner extends CI_Controller {
 		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
 		$this->db->select('*');
 		$this->db->from('tb_banner');
+		if($this->session->userdata('login_id') != 1){
+			$this->db->where('banner_personnel_id',$this->session->userdata('login_id'));
+		}
 		$this->db->order_by('banner_id','DESC');
 		$data['banner'] =	$this->db->get()->result();
 

@@ -1271,7 +1271,7 @@ a.img,
     <div class="d-sm-block bg-top">
 
 
-        <header class="header_area" id="header_new">
+    <header class="header_area" id="header_new">
             <div class="main_header_area animated"
                 style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;background-color:rgba(232, 38, 158, 1);">
                 <div class="container">

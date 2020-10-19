@@ -22,6 +22,9 @@ class Control_admin_video extends CI_Controller {
 		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
 		$this->db->select('*');
 		$this->db->from('tb_video');
+		if($this->session->userdata('login_id') != 1){
+			$this->db->where('video_userid',$this->session->userdata('login_id'));
+		}$this->db->order_by('video_id','DESC');
 		$data['video'] =	$this->db->get()->result();
 
 		$this->load->view('admin/layout/header.php',$data);

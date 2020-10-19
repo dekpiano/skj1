@@ -31,24 +31,13 @@ class Control_login extends CI_Controller {
 
 	public function Login_main()
 	{
-		if(!empty(get_cookie('username')) && !empty(get_cookie('password')) ){
-			$username = get_cookie('username');
-			$password = get_cookie('password');
-			if($this->Model_login->record_count($username, $password) == 1)
-				{
-					$result = $this->Model_login->fetch_user_login($username, $password);
-					$this->session->set_userdata(array('login_id' => $result->pers_id,'fullname'=> $result->pers_prefix.$result->pers_firstname.' '.$result->pers_lastname,'status'=> 'user','permission_menu' => $result->pers_workother_id ,'user_img' => $result->pers_img));
-
-					set_cookie('username',$username,'3600'); 
-					set_cookie('password',$password,'3600');
-					 redirect('admin');
-				}
+		if(!empty(get_cookie('username_cookie')) && !empty(get_cookie('password_cookie')) ){
+					 redirect('admin');				
 		}else{
 			$data = $this->dataAll();
-
-		$this->load->view('user/layout/header.php',$data);
-		$this->load->view('login/login_main.php');
-		$this->load->view('user/layout/footer.php');
+					$this->load->view('user/layout/header.php',$data);
+					$this->load->view('login/login_main.php');
+					$this->load->view('user/layout/footer.php');
 		}
 		
 
@@ -68,16 +57,16 @@ class Control_login extends CI_Controller {
 				{
 					$result = $this->Model_login->fetch_user_login_admin($username, $password);
 
+					set_cookie('username_cookie',$username,'3600'); 
+					set_cookie('password_cookie',$password,'3600');
+
 					$this->session->set_userdata(array('login_id' => $result->admin_id,'fullname'=> $result->admin_fullname,'status'=> 'admin'));
 					 redirect('admin');
 				}
 				else
 				{
-					$this->session->set_flashdata(array('msgerr'=> '<p class="login-box-msg text-center mt-3" style="color:red;" >ชื่อผู้ใช้ หรือ รหัส ไม่ถูกต้อง!</p>'));
-					$data = $this->dataAll();
-					$this->load->view('user/layout/header.php',$data);
-					$this->load->view('login/login_main.php');
-					$this->load->view('user/layout/footer.php');
+					$this->session->set_flashdata(array('msgerr'=> '<center class="mt-4"><h4 class="p-2 badge-pill badge-danger">ชื่อผู้ใช้ หรือ รหัส ไม่ถูกต้อง!</h4></center>'));
+					redirect('login');
 				}
 			}
 
@@ -91,8 +80,8 @@ class Control_login extends CI_Controller {
 					$result = $this->Model_login->fetch_user_login($username, $password);
 					$this->session->set_userdata(array('login_id' => $result->pers_id,'fullname'=> $result->pers_prefix.$result->pers_firstname.' '.$result->pers_lastname,'status'=> 'user','permission_menu' => $result->pers_workother_id ,'user_img' => $result->pers_img));
 
-					set_cookie('username',$username,'3600'); 
-					set_cookie('password',$password,'3600');
+					set_cookie('username_cookie',$username,'3600'); 
+					set_cookie('password_cookie',$password,'3600');
 
 					$this->session->set_userdata(array('login_id' => $result->pers_id,'fullname'=> $result->pers_prefix.$result->pers_firstname.' '.$result->pers_lastname,'status'=> 'user','permission_menu' => $result->pers_workother_id,'user_img' => $result->pers_img));
 
@@ -100,11 +89,12 @@ class Control_login extends CI_Controller {
 				}
 				else
 				{
-					$this->session->set_flashdata(array('msgerr'=> '<p class="login-box-msg text-center mt-3" style="color:red;" >ชื่อผู้ใช้ หรือ รหัส ไม่ถูกต้อง!</p>'));
-					$data = $this->dataAll();
-					$this->load->view('user/layout/header.php',$data);
-					$this->load->view('login/login_main.php');
-					$this->load->view('user/layout/footer.php');
+					$this->session->set_flashdata(array('msgerr'=> '<center class="mt-4"><h4 class="p-2 badge-pill badge-danger">ชื่อผู้ใช้ หรือ รหัส ไม่ถูกต้อง!</h4></center>'));
+					redirect('login');
+					// $data = $this->dataAll();
+					// $this->load->view('user/layout/header.php',$data);
+					// $this->load->view('login/login_main.php');
+					// $this->load->view('user/layout/footer.php');
 				}
 			}
 		}
@@ -115,8 +105,8 @@ class Control_login extends CI_Controller {
 
 	public function logout()
 	{
-		delete_cookie('username'); 
-		delete_cookie('password'); 
+		delete_cookie('username_cookie'); 
+		delete_cookie('password_cookie'); 
 		$this->session->sess_destroy();
 		redirect('login', 'refresh');
 	}

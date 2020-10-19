@@ -22,6 +22,9 @@ class Control_admin_journal extends CI_Controller {
 		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
 		$this->db->select('*');
 		$this->db->from('tb_journal');
+		if($this->session->userdata('login_id') != 1){
+			$this->db->where('jour_user',$this->session->userdata('login_id'));
+		}
 		$this->db->order_by('jour_id','DESC');
 		$data['jour'] =	$this->db->get()->result();
 

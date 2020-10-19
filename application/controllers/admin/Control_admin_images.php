@@ -22,6 +22,9 @@ class Control_admin_images extends CI_Controller {
 		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
 		$this->db->select('*');
 		$this->db->from('tb_images');
+		if($this->session->userdata('login_id') != 1){
+			$this->db->where('img_userid',$this->session->userdata('login_id'));
+		}
 		$this->db->order_by('img_id','DESC');
 		$data['img'] =	$this->db->get()->result();
 

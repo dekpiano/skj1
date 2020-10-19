@@ -22,6 +22,9 @@ class Control_admin_document extends CI_Controller {
 		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
 		$this->db->select('*');
 		$this->db->from('tb_document');
+		if($this->session->userdata('login_id') != 1){
+			$this->db->where('doc_userid',$this->session->userdata('login_id'));
+		}
 		$this->db->order_by('doc_id','DESC');
 		$data['doc'] =	$this->db->get()->result();
 

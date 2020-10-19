@@ -125,7 +125,7 @@
 <!-- Template Main JS File -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="<?= base_url() ?>asset/js/slick.js?v=1001"></script>
-<script src="<?= base_url() ?>asset/user/js/main.js?v=1000"></script>
+<script src="<?= base_url() ?>asset/user/js/main.js?v=1001"></script>
 <script src="<?= base_url() ?>asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
 <script src="<?= base_url() ?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
