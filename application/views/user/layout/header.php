@@ -336,7 +336,6 @@ a.img,
 }
 
 .nav-menu>li>a {
-    height: 70px;
     padding: 26px 15px;
     display: inline-block;
     text-decoration: none;
@@ -398,7 +397,7 @@ a.img,
 .navigation-portrait .nav-menu.nav-menu-social>li>a {
     padding: 15px
 }
-
+/* 
 .submenu-indicator {
     margin-left: 8px;
     margin-top: 4px;
@@ -445,7 +444,7 @@ a.img,
 
 .nav-dropdown>li .submenu-indicator-chevron {
     border-color: transparent #999 #999 transparent
-}
+} */
 
 .nav-overlay-panel {
     width: 100%;
@@ -1168,7 +1167,7 @@ a.img,
         background-repeat: no-repeat;
         background-position: bottom;
         bottom: 0;
-        margin-top: 10px;
+        margin-top: 60px;
     }
 }
 
@@ -1261,6 +1260,22 @@ a.img,
 .menu-5 a:hover::before {
     transform-origin: 100% 50%;
 }
+
+.nav-menu > li > a {
+    margin: 11px 3px;
+    padding: 6px 7px;
+    text-align: center;
+    min-width: 70px;
+}
+
+
+.box_shadow{
+            border-top: 15px solid #fa1476;
+    /* box-shadow: 1px 5px 11px #58585899; */
+    -webkit-box-shadow: 0px 4px 12px 2px rgba(153,153,153,1);
+    -moz-box-shadow: 0px 4px 12px 2px rgba(153,153,153,1);
+    box-shadow: 0px 4px 12px 2px rgba(153,153,153,1);
+        }
 </style>
 
 <body>
@@ -1271,7 +1286,7 @@ a.img,
     <div class="d-sm-block bg-top">
 
 
-    <header class="header_area" id="header_new">
+        <header class="header_area" id="header_new">
             <div class="main_header_area animated"
                 style="background: linear-gradient(-90deg, #ff00007a, deeppink);border-bottom: 5px solid #249ffd;background-color:rgba(232, 38, 158, 1);">
                 <div class="container">
@@ -1301,7 +1316,9 @@ a.img,
                         <div class="nav-menus-wrapper">
                             <ul class="nav-menu align-to-right">
 
-                                <li><a href="#">เกี่ยวกับ สกจ</a>
+                                <li><a href="#"><img style="width:31px;" src="<?=base_url();?>uploads/logo/rose.svg">
+                                        <p>เกี่ยวกับ สกจ</p>
+                                    </a>
                                     <ul class="nav-dropdown ">
                                         <?php foreach (
                                             $Allabout
@@ -1318,7 +1335,7 @@ a.img,
                                     </ul>
                                 </li>
 
-                                <li><a href="#">บุคลากร</a>
+                                <li><a href="#"><i class="icofont-users-alt-5 icofont-2x"></i><p>บุคลากร</p></a>
                                     <ul class="nav-dropdown">
                                         <li> <a class="dropdown-item" href="<?= base_url(
                                             'Personnel/คณะผู้บริหาร'
@@ -1339,7 +1356,7 @@ a.img,
                                         <?php endforeach; ?>
                                     </ul>
                                 </li>
-                                <li><a href="#">ประชาสัมพันธ์</a>
+                                <li><a href="#"><i class="icofont-news icofont-2x"></i><p>ประชาสัมพันธ์</p></a>
                                     <div class="megamenu-panel">
                                         <div class="megamenu-lists">
                                             <?php
@@ -1392,7 +1409,7 @@ a.img,
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="#">กลุ่มบริหาร</a>
+                                <li><a href="#"><i class="icofont-database icofont-2x"></i><p>กลุ่มบริหาร</p></a>
                                     <ul class="nav-dropdown">
                                         <li>
                                             <a href="<?= base_url(
@@ -1418,10 +1435,10 @@ a.img,
                                 </li>
                                 <li><a href="<?= base_url(
                                     'Contact'
-                                ) ?>">ติดต่อ</a></li>
+                                ) ?>"><i class="icofont-contacts icofont-2x"></i><p>ติดต่อ</p></a></li>
                                 <li><a href="<?= base_url(
                                     'login'
-                                ) ?>"><i class="icofont-lock"></i> Login</a></li>
+                                ) ?>"><i class="icofont-lock icofont-2x"></i> <p>Login</p></a></li>
                             </ul>
                         </div>
                     </nav>

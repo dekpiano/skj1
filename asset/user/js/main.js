@@ -399,3 +399,10 @@ $(window).resize(function() {
         });
     }, false);
 })();
+
+
+//คลิกโชว์รูปภาพ Popup
+$(".popup img").click(function(){
+    $('.gallery').attr('src', $(this).attr('src'));
+    $('#my-modal').modal('show');
+});

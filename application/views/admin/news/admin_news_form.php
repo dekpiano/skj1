@@ -100,7 +100,7 @@
                                     <select class="form-control" name="news_category" id="news_category">
                                         <?php $news_s= array('ข่าวประชาสัมพันธ์','ข่าวกิจกรรม','ข่าวประกาศ' ); 
                                 foreach ($news_s as $key => $v_news_s):?>
-                                        <option <?php echo $v_news_s == $news[0]->news_category ? 'selected' : '' ?> value="<?=$v_news_s;?>"><?=$v_news_s;?></option>
+                                        <option <?php echo $v_news_s == @$news[0]->news_category ? 'selected' : '' ?>  value="<?=$v_news_s;?>"><?=$v_news_s;?></option>
                                         <?php endforeach;?>
 
                                     </select>

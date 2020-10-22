@@ -3,13 +3,14 @@ img {
     max-width: 100%;
     height: auto;
 }
+
 </style>
 
 <!--- หัวข้อ --->
-<div class="section " >
+<div class="section ">
     <div class="container">
         <div class="row">
-          
+
         </div>
     </div>
 </div>
@@ -38,9 +39,23 @@ img {
 
             <hr>
             <p>
+            <div class="popup">
                 <?=$news[0]->news_content;?>
+            </div>
             </p>
         </div>
 
     </div>
+
+    
+    <div id="my-modal" class="modal fade" aria-labelledby="my-modalLabel" aria-hidden="true" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" data-dismiss="modal">
+        <div class="modal-content"  >              
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <img src="" class="gallery" style="width: 100%;">
+            </div> 
+        </div>
+    </div>
+</div>
 </section><!-- End Portfolio Details Section -->

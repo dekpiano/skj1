@@ -36,22 +36,22 @@
 
     <div class="album bg-light">
         <div class="container">
-        <div class="row ">
-            <?php foreach ($news as $key => $v_news): ?>
-            <?php if ($v_news->news_facebook !== ''): ?>
+            <div class="row ">
+                <?php foreach ($news as $key => $v_news): ?>
+                <?php if ($v_news->news_facebook !== ''): ?>
 
-            <div class="mb-2">
-                <div loading="lazy" class="fb-post" data-href="<?= $v_news->news_facebook ?>" data-width="100%"
-                    data-show-text="true"></div>
-            </div>
+                <div class="mb-2">
+                    <div loading="lazy" class="fb-post" data-href="<?= $v_news->news_facebook ?>" data-width="100%"
+                        data-show-text="true"></div>
+                </div>
 
-            <?php else: ?>
+                <?php else: ?>
 
-           
+
                 <div class="col-md-6 mb-2 col-lg-4">
                     <a href="<?= base_url('news/newsDetail/') .
                         $v_news->news_id ?>">
-                        <div class="card box-shadow h-100 overflow zoom ">
+                        <div class="card box_shadow box-shadow h-100 overflow zoom ">
                             <?php if ($v_news->news_img == ''): ?>
                             <img loading="lazy" class="card-img-top" alt="Thumbnail [100%x225]"
                                 style="height: 225px; width: 100%; display: block;" src="<?= base_url(
@@ -61,18 +61,15 @@
                             <img style="object-fit: cover;" loading="lazy" class="card-img-top" src="<?= base_url(
                                 'uploads/news/'
                             ) .
-                                $v_news->news_img ?>" style="object-fit: cover;" height="225px" height="225px">
+                                $v_news->news_img ?>" style="object-fit: cover;" height="225px" >
                             <?php endif; ?>
-                            <div class="card-body">
-                                <h5 class="text-overflow"><?= $v_news->news_topic ?></h5>
-                                <!--  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                            <div class="card-body"> <!--text-overflow-->
+                                <h5 class=""><?= $v_news->news_topic ?></h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>  -->
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary"> <i
-                                                class="icofont-eye-alt"> <?= $v_news->news_view ?></i></button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-outline-secondary"><?= $v_news->news_category ?></button>
-                                    </div>
+                                   
+                                <small class="text-muted">   <i class="icofont-eye-alt"> <?= $v_news->news_view ?></i></small>
+                                  
                                     <small class="text-muted"><?php echo $time_elapsed = $this->timeago->timeAgo_T(
                                         $v_news->news_date
                                     ); ?></small>
@@ -81,8 +78,10 @@
                         </div>
                     </a>
                 </div>
+
                 <?php endif; ?>
                 <?php endforeach; ?>
+
             </div>
         </div>
     </div>
