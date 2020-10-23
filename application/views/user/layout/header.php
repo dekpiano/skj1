@@ -45,7 +45,7 @@
     <link href="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="<?= base_url() ?>/asset/user/css/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/css/style.css?v=1000" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/css/circles.css" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/css/footerskj.css" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/css/aos.css" rel="stylesheet">
@@ -271,7 +271,8 @@ a.img,
 }
 
 .navigation-portrait .nav-menus-wrapper.nav-menus-wrapper-open {
-    left: 0
+    left: 0;
+    height:100vh;
 }
 
 .navigation-portrait .nav-menus-wrapper.nav-menus-wrapper-right.nav-menus-wrapper-open {
@@ -318,7 +319,7 @@ a.img,
 .nav-menu>li {
     display: inline-block;
     float: left;
-    text-align: left
+    text-align: left;
 }
 
 .navigation-portrait .nav-menu>li {
@@ -1296,7 +1297,7 @@ a.img,
                             <a class="nav-brand" href="<?= base_url(
                                 'welcome'
                             ) ?>">
-                                <img loading="lazy" class="img-fluid" src="https://skj.ac.th/uploads/logo/LogoSKJ_5.png"
+                                <img loading="lazy" class="img-fluid" src="<?=base_url('uploads/logo/Logo-nav.png');?>"
                                     alt=""> สวนกุหลาบ (จิรประวัติ) นครสวรรค์</a>
                             <div class="nav-toggle"></div>
                         </div>

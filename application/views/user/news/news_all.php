@@ -32,9 +32,40 @@
             column-count: 3;
         }
     }
+
+       /* Laptop */
+       @media (min-width: 1024px) {
+            img.img_news {
+                height: 453px;
+            }
+
+            img.img_news_small {
+                height: 222px;
+            }
+
+            h2.post-title {
+                font-size: 26px;
+            }
+
+            .hvrbox-text {
+                font-size: 21px;
+            }
+        }
+
+        /* โทรศัพท์ 55*/
+        @media screen and (max-width: 576px) {
+            h2.post-title {
+                font-size: 14px;
+            }
+
+            .more-services .card-title a {
+                color: #222222;
+                font-size: 14px;
+            }
+        }
     </style>
 
-    <div class="album bg-light">
+    <div class="album bg-light  more-services">
         <div class="container">
             <div class="row ">
                 <?php foreach ($news as $key => $v_news): ?>
@@ -46,43 +77,62 @@
                 </div>
 
                 <?php else: ?>
-
-
-                <div class="col-md-6 mb-2 col-lg-4">
-                    <a href="<?= base_url('news/newsDetail/') .
-                        $v_news->news_id ?>">
-                        <div class="card box_shadow box-shadow h-100 overflow zoom ">
-                            <?php if ($v_news->news_img == ''): ?>
-                            <img loading="lazy" class="card-img-top" alt="Thumbnail [100%x225]"
-                                style="height: 225px; width: 100%; display: block;" src="<?= base_url(
+                    <?php if ($v_news->news_img == ''): ?>
+                    <div class="col-md-4 d-flex align-items-stretch mt-4">
+                        <div class="card aos-init aos-animate" style="background-image: url(<?= base_url(
                                     'asset/user/img/banner_main.jpg'
-                                ) ?>">
-                            <?php else: ?>
-                            <img style="object-fit: cover;" loading="lazy" class="card-img-top" src="<?= base_url(
-                                'uploads/news/'
-                            ) .
-                                $v_news->news_img ?>" style="object-fit: cover;" height="225px" >
-                            <?php endif; ?>
-                            <div class="card-body"> <!--text-overflow-->
-                                <h5 class=""><?= $v_news->news_topic ?></h5>
-                                <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>  -->
+                                ) ?>);" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="<?= base_url('news/newsDetail/') .
+                        $v_news->news_id ?>"><?= $v_news->news_topic ?></a></h5>
+                                <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                                        tempor ut labore et dolore magna aliqua.</p> -->
                                 <div class="d-flex justify-content-between align-items-center">
-                                   
-                                <small class="text-muted">   <i class="icofont-eye-alt"> <?= $v_news->news_view ?></i></small>
-                                  
+
+                                    <small class="text-muted"> <i class="icofont-eye-alt">
+                                            <?= $v_news->news_view ?></i></small>
+
                                     <small class="text-muted"><?php echo $time_elapsed = $this->timeago->timeAgo_T(
                                         $v_news->news_date
                                     ); ?></small>
                                 </div>
                             </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                    <?php else: ?>
+                    <div class="col-md-4 d-flex align-items-stretch mt-4">
+                        <div class="card aos-init aos-animate"
+                            style="background-image: url(<?= base_url('uploads/news/').$v_news->news_img ?>);"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="<?= base_url('news/newsDetail/') .
+                        $v_news->news_id ?>"><?= $v_news->news_topic ?></a></h5>
+                                <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                                        tempor ut labore et dolore magna aliqua.</p> -->
+                                <div class="d-flex justify-content-between align-items-center">
+
+                                    <small class="text-muted"> <i class="icofont-eye-alt">
+                                            <?= $v_news->news_view ?></i></small>
+
+                                    <small class="text-muted"><?php echo $time_elapsed = $this->timeago->timeAgo_T(
+                                        $v_news->news_date
+                                    ); ?></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
 
                 <?php endif; ?>
                 <?php endforeach; ?>
 
             </div>
+            <p>
+            <nav aria-label="Page navigation example">
+            <?php echo $links; ?>
+            </nav>
+            </p>
+         
         </div>
     </div>
 

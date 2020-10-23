@@ -1,6 +1,9 @@
 <?php
 class Model_news extends CI_Model
 {
+
+	protected $table = 'tb_news';
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -17,6 +20,31 @@ class Model_news extends CI_Model
 		return 	$this->db->update('tb_news',$data);
 		
 	}
+
+
+	public function get_count() {
+        return $this->db->count_all($this->table);
+    }
+
+    public function get_news($limit, $start) {
+
+		$this->db->limit($limit, $start);
+		$this->db->order_by('news_date','DESC');
+		$query = $this->db->get($this->table);
+		
+		if ($query->num_rows() > 0) 
+        {
+            foreach ($query->result() as $row) 
+            {
+                $data[] = $row;
+            }
+             
+            return $data;
+        }
+ 
+        return false;
+
+    }
 
 	
 

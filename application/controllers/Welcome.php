@@ -47,7 +47,8 @@ class Welcome extends CI_Controller
             ->result(); //หน่วยงาน
             $data['news_p'] = $news_today = $this->db->where('news_category','ข่าวประชาสัมพันธ์')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
 		$data['news_k'] = $news_today = $this->db->where('news_category','ข่าวกิจกรรม')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
-		$data['news_pg'] = $news_today = $this->db->where('news_category','ข่าวประกาศ')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
+        $data['news_pg'] = $news_today = $this->db->where('news_category','ข่าวประกาศ')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
+        $data['video'] = $news_today = $this->db->order_by('video_date','DESC')->get('tb_video')->result();
         $this->load->view('user/layout/header.php', $data);
         $this->load->view('user/main/index.php');
         $this->load->view('user/layout/footer.php');
@@ -69,5 +70,10 @@ class Welcome extends CI_Controller
     function mother_day12()
     {
         $this->load->view('user/popupSpecial/mother_day12.php');
+    }
+
+    function r5_23()
+    {
+        $this->load->view('user/popupSpecial/23.php');
     }
 }

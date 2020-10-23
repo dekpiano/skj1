@@ -1,8 +1,9 @@
 <section class="pt-5 pb-5 bg-white text-white" style="background-image:url(uploads/video/bg-video.webp);background-size: cover;">
     <div class="container">
         <article class="row   border-0 flex-md-row justify-content-between align-items-center card-top">
-            <a class="col-md-7  order-md-2 order-1 w-md-50" href="#">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/cuO4_qdSpHs" frameborder="0"
+            <a class="col-md-7  order-md-2 order-1 w-md-50 p-0 " href="#" style="height: 50vh;border: 8px solid #e62e74;
+    border-radius: 10px;">
+                <iframe width="100%" height="100%" src="<?=$video[0]->video_link;?>" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </a>

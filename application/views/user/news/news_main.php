@@ -1,29 +1,3 @@
-<style>
-@media (max-width: 575.98px) {
-    .card-columns {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .card-columns {
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
-        column-count: 2;
-    }
-}
-
-@media (min-width: 1366px) {
-    .card-columns {
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
-        column-count: 3;
-    }
-}
-
-</style>
 <section id="" class=" section section-bg">
     <div class="container ">
         <?php
@@ -89,6 +63,11 @@
             h2.post-title {
                 font-size: 14px;
             }
+
+            .more-services .card-title a {
+                color: #222222;
+                font-size: 14px;
+            }
         }
 
         .navigation-box {
@@ -98,6 +77,7 @@
             position: absolute;
         }
 
+      
         </style>
         <!--Container-->
 
@@ -107,7 +87,7 @@
 
 
         <!--Start code-->
-        <div class=" " data-aos="zoom-in">
+        <div class=" more-services" data-aos="zoom-in">
             <div class="album ">
                 <div class="section-title">
                     <h2>SKJ ประชาสัมพันธ์</h2>
@@ -115,9 +95,6 @@
 
             </div>
             <div class=" " data-aos="fade-down">
-
-
-
 
                 <div class="row">
                     <?php foreach ($news as $key => $v_news): ?>
@@ -129,39 +106,53 @@
                     </div>
 
                     <?php else: ?>
-
-                        <div class="col-md-6 mb-2 col-lg-4">
-                    <a href="<?= base_url('news/newsDetail/') .
-                        $v_news->news_id ?>">
-                        <div class="card box-shadow h-100 overflow zoom box_shadow">
-                            <?php if ($v_news->news_img == ''): ?>
-                            <img loading="lazy" class="card-img-top" alt="Thumbnail [100%x225]"
-                                style="height: 225px; width: 100%; display: block;" src="<?= base_url(
+                    <?php if ($v_news->news_img == ''): ?>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="card aos-init aos-animate" style="background-image: url(<?= base_url(
                                     'asset/user/img/banner_main.jpg'
-                                ) ?>">
-                            <?php else: ?>
-                            <img style="object-fit: cover;" loading="lazy" class="card-img-top" src="<?= base_url(
-                                'uploads/news/'
-                            ) .
-                                $v_news->news_img ?>" style="object-fit: cover;" height="225px" height="225px">
-                            <?php endif; ?>
-                            <div class="card-body"> <!--text-overflow-->
-                                <h5 class=""><?= $v_news->news_topic ?></h5>
-                                <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>  -->
+                                ) ?>);" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="<?= base_url('news/newsDetail/') .
+                        $v_news->news_id ?>"><?= $v_news->news_topic ?></a></h5>
+                                <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                                        tempor ut labore et dolore magna aliqua.</p> -->
                                 <div class="d-flex justify-content-between align-items-center">
-                                   
-                                <small class="text-muted">   <i class="icofont-eye-alt"> <?= $v_news->news_view ?></i></small>
-                                  
+
+                                    <small class="text-muted"> <i class="icofont-eye-alt">
+                                            <?= $v_news->news_view ?></i></small>
+
                                     <small class="text-muted"><?php echo $time_elapsed = $this->timeago->timeAgo_T(
                                         $v_news->news_date
                                     ); ?></small>
                                 </div>
                             </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                    <?php else: ?>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="card aos-init aos-animate"
+                            style="background-image: url(<?= base_url('uploads/news/').$v_news->news_img ?>);"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="<?= base_url('news/newsDetail/') .
+                        $v_news->news_id ?>"><?= $v_news->news_topic ?></a></h5>
+                                <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                                        tempor ut labore et dolore magna aliqua.</p> -->
+                                <div class="d-flex justify-content-between align-items-center">
 
-              
+                                    <small class="text-muted"> <i class="icofont-eye-alt">
+                                            <?= $v_news->news_view ?></i></small>
+
+                                    <small class="text-muted"><?php echo $time_elapsed = $this->timeago->timeAgo_T(
+                                        $v_news->news_date
+                                    ); ?></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+
+
                     <?php endif; ?>
                     <?php endforeach; ?>
 

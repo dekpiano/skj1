@@ -21,6 +21,12 @@
                             <i class="icofont-ui-home"></i> สังกัด องค์การบริหารส่วนจังหวัดนครสววรค์ ในสังกัดกองการศึกษา
                             ศาสนา และวัฒนธรรม กระทรวงมหาดไทย
                         </p>
+                        <p>
+                            <script type="text/javascript" src="https://www.counters-free.net/count/7r1m"></script><br>
+                            <a href='http://www.counter-zaehler.de'>profil counter</a>
+                            <script type='text/javascript'
+                                src='https://www.whomania.com/ctr?id=f2a759e919e693827d52f2dbf02835d8c9576ede'></script>
+                        </p>
                     </div>
                 </div>
 
@@ -93,6 +99,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-sm-7">
                     <p class="mb-0 f_400">© โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์ 2020 All rights reserved.
+                        Version 3.3
                     </p>
                 </div>
                 <div class="col-lg-6 col-sm-5 text-right">

@@ -49,7 +49,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method welcome/not_404/mother_day12
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'welcome/r5_23';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
 
@@ -127,6 +127,7 @@ $route['schedule'] = 'control_academic/schedule';
 // ข่าวสารทั้งหมด
 $route['news/newsDetail/(:any)'] = 'control_news/news_detail/$1';
 $route['news/all'] = 'control_news/news_all';
+$route['news/all/(:num)'] = 'control_news/news_all';
 
 // วารสาร
 $route['journal'] = 'control_journal/journal_all';

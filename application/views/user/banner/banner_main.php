@@ -311,7 +311,7 @@
 
 @media (min-width: 576px) {
     .content-area {
-        margin-top: -2rem !important;
+        margin-top: 3rem !important;
     }
 }
 
@@ -323,10 +323,30 @@
 }
 </style>
 
-<section class="content-area d-none d-md-block">
+<section class="content-area d-none d-md-block ">
     <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
+        <div class="carousel-item active">
+                <div class="mask d-flex align-items-center">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 col-12 order-md-1 order-2 text-center">
+                                <h5 >23 ตุลาคม </h5>
+                                <h4 style="font-family: Pattaya;    font-size: 36px;    color: #fff704;text-shadow: 2px 2px 2px #000000;"> วันปิยมหาราช</h4>
+                                <h5 class="text-white text-center">
+                                น้อมรำลึก ในพระมหากรุณาธิคุณ <br> พระบาทสมเด็จพระจุลจอมเกล้าเจ้าอยู่หัว <br>
+                                </h5>
+                                <p><a class="btn btn-outline-danger"
+                                        href="https://publicholidays.asia/thailand/th/chulalongkorn-memorial-day/">รายละเอียด</a> </p>
+                            </div>
+                            <div class="col-md-6 col-12  "><img loading="lazy" src="<?= base_url(
+                                'uploads/banner/23.png'
+                            ) ?>" class="mx-auto bounce" alt="slide"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
                 <div class="mask d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center">
