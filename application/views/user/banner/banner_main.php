@@ -321,23 +321,123 @@
         margin-top: 3rem !important;
     }
 }
+
+@keyframes mymove {
+    from {
+        left: -50px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.kt1 {
+    position: relative;
+    animation: mymove 40s infinite;
+}
+.kt2 {
+    position: relative;
+    animation: mymove 45s infinite;
+}
+
+.kt3 {
+    position: relative;
+    animation: mymove 50s infinite;
+}
+
+.kt4 {
+    position: relative;
+    animation: mymove 60s infinite;
+}
 </style>
 
 <section class="content-area d-none d-md-block ">
-    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="30000">
+
         <div class="carousel-inner">
-        <div class="carousel-item active">
+            <div class="carousel-item active" style="background-image: url(uploads/banner/kt/bg.webp);
+    background-size: 100% 100%;">
+
+                <div class="mask d-flex align-items-center" >
+                <div class="kt3 ">
+                        <img loading="lazy" src="<?= base_url(
+                                'uploads/banner/kt/kt2.png'
+                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
+                            animation: mover 5s infinite  alternate;animation-timing-function: linear;width: 80px;bottom: -147px;">
+                    </div>
+                    <div class="kt4 ">
+                        <img loading="lazy" src="<?= base_url(
+                                'uploads/banner/kt/kt2.png'
+                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
+                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 100px;bottom: -190px;">
+                    </div>
+                <div class="kt2 ">
+                        <img loading="lazy" src="<?= base_url(
+                                'uploads/banner/kt/kt1.png'
+                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
+                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 70px;bottom: -137px;">
+                    </div>
+                    <div class="kt1 ">
+                        <img loading="lazy" src="<?= base_url(
+                                'uploads/banner/kt/kt1.png'
+                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
+                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 91px;bottom: -157px;">
+                    </div>
+                    
+                    <div class="" style="    position: absolute;    width: inherit;">
+                        <div class="row align-items-center">
+                            <div class="col-md-12 col-12 order-md-1 order-2 text-center">
+                                <h4
+                                    style="font-family: Pattaya;    font-size: 36px;    color: #fff704;text-shadow: 2px 2px 2px #000000;">
+                                    ประเพณีลอยกระทง</h4>
+                                <h5 class="text-white text-center">
+                                    คืนวันเพ็ญเดือน 12 หรือวันขึ้น 15 ค่ำเดือน 12 <br> วันเสาร์ที่ 31 ตุลาคม 2563 <br>
+                                </h5>
+                            </div>
+                            <div class="col-md-6 col-12  order-1">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
                 <div class="mask d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-6 col-12 order-md-1 order-2 text-center">
-                                <h5 >23 ตุลาคม </h5>
-                                <h4 style="font-family: Pattaya;    font-size: 36px;    color: #fff704;text-shadow: 2px 2px 2px #000000;"> วันปิยมหาราช</h4>
+                                <h5>23 ตุลาคม </h5>
+                                <h4
+                                    style="font-family: Pattaya;    font-size: 36px;    color: #fff704;text-shadow: 2px 2px 2px #000000;">
+                                    วันปิยมหาราช</h4>
                                 <h5 class="text-white text-center">
-                                น้อมรำลึก ในพระมหากรุณาธิคุณ <br> พระบาทสมเด็จพระจุลจอมเกล้าเจ้าอยู่หัว <br>
+                                    น้อมรำลึก ในพระมหากรุณาธิคุณ <br> พระบาทสมเด็จพระจุลจอมเกล้าเจ้าอยู่หัว <br>
                                 </h5>
                                 <p><a class="btn btn-outline-danger"
-                                        href="https://publicholidays.asia/thailand/th/chulalongkorn-memorial-day/">รายละเอียด</a> </p>
+                                        href="https://publicholidays.asia/thailand/th/chulalongkorn-memorial-day/">รายละเอียด</a>
+                                </p>
                             </div>
                             <div class="col-md-6 col-12  "><img loading="lazy" src="<?= base_url(
                                 'uploads/banner/23.png'
