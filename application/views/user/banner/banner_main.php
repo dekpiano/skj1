@@ -355,75 +355,222 @@
 
 .kt1 {
     position: relative;
-    animation: mymove 40s infinite;
+    animation: mymove 40s ease 0s normal none infinite;
 }
+
 .kt2 {
     position: relative;
-    animation: mymove 45s infinite;
+    animation: mymove 45s ease 0s normal none infinite;
 }
 
 .kt3 {
     position: relative;
-    animation: mymove 50s infinite;
+    animation: mymove 50s ease 0s normal none infinite;
 }
 
 .kt4 {
     position: relative;
-    animation: mymove 60s infinite;
+    animation: mymove 60s ease 0s normal none infinite;
+}
+
+.kt5 {
+    position: relative;
+    animation: mymove 80s ease 0s normal none infinite;
+}
+
+.kt3 img {
+    position: relative;
+
+    animation: mover 61s ease 0s normal none infinite;
+    ;
+    animation-timing-function: ease-out;
+    width: 80px;
+}
+
+.river {
+    height: 144px;
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    bottom: 0;
+}
+
+.river .item-relative {
+    position: relative;
+}
+
+.river .item-base-slide {
+    position: absolute;
+    float: left;
+}
+
+
+@media (min-width: 300px) {
+    .text-title-kt {
+        position: absolute;
+        margin: 112px 0px;
+    }
+
+    .text-title-kt h4 {
+        font-family: Pattaya;
+        font-size: 46px;
+        color: #fff704;
+        text-shadow: 2px 2px 2px #000000;
+
+    }
+    .text-title-kt h3 {
+        font-family: Pattaya;
+    font-size: 36px;
+    color: #fa1477;
+    text-shadow: 2px 1px 3px #ffffff;
+    -webkit-text-stroke: 1px #000000eb;
+   
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 992px) {
+    .text-title-kt {
+        position: absolute;
+        margin: 256px 0px;
+    }
+
+    .text-title-kt h4 {
+        font-family: Pattaya;
+        font-size: 50px;
+        color: #fff704;
+        text-shadow: 2px 2px 2px #000000;
+    }
+    .text-title-kt h3 {
+        font-family: Pattaya;
+    font-size: 52px;
+    color: #fa1477;
+    text-shadow: 2px 1px 3px #ffffff;
+    -webkit-text-stroke: 1px #000000eb;
+   
+    }
+}
+
+@media (min-width: 576px) {}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .text-title-kt {
+        position: absolute;
+        margin: 256px -227px;
+    }
+
+    .text-title-kt h4 {
+        font-family: Pattaya;
+        font-size: 50px;
+        color: #fff704;
+        text-shadow: 2px 2px 2px #000000;
+    }
+    .text-title-kt h3 {
+        font-family: Pattaya;
+    font-size: 52px;
+    color: #fa1477;
+    text-shadow: 2px 1px 3px #ffffff;
+    -webkit-text-stroke: 1px #000000eb;
+    text-shadow: 3px 3px 0 #b7b7b7, -1px -1px 0 #e4e4e4, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
+    }
+}
+
+@media (min-width: 1440px) {
+    .text-title-kt {
+        position: absolute;
+        margin: 256px -330px;
+    }
+
+    .text-title-kt h4 {
+        font-family: Pattaya;
+        font-size: 95px;
+        color: #fff704;
+        text-shadow: 2px 2px 2px #000000;
+    }
+
+    .text-title-kt h3 {
+        font-family: Pattaya;
+    font-size: 52px;
+    color: #fa1477;
+    text-shadow: 2px 1px 3px #ffffff;
+    -webkit-text-stroke: 1px #000000eb;
+    text-shadow: 3px 3px 0 #b7b7b7, -1px -1px 0 #e4e4e4, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
+    }
 }
 </style>
+<!--  -->
+<div class="" style="background-image: url(uploads/banner/kt/bg.png);
+    background-size: cover;     min-height: 100vh;position: relative; width: 100%;overflow: hidden;">
 
-<section class="content-area d-none d-md-block ">
+
+    <div class="text-center text-title-kt w-100">
+        <h4 style=""> ประเพณีลอยกระทง </h4>
+        <h3 style=""> Loy Krathong Festival </h3>
+        <h5 class="text-white text-center">
+            คืนวันเพ็ญเดือน 12 หรือวันขึ้น 15 ค่ำเดือน 12 <br> วันเสาร์ที่ 31 ตุลาคม 2563 <br>
+        </h5>
+    </div>
+    >
+
+
+
+
+    <div class="river">
+        <div class="item-relative">
+            <div class="kt3 item-base-slide">
+                <img src="<?= base_url(
+                                'uploads/banner/kt/kt4.png'
+                            ) ?>" class="mx-auto bounce vert-move" alt="slide">
+            </div>
+        </div>
+        <div class="item-relative">
+            <div class="kt4 item-base-slide">
+                <img loading="lazy" src="<?= base_url(
+                                'uploads/banner/kt/kt2.png'
+                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
+                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 100px;">
+            </div>
+        </div>
+        <div class="item-relative">
+            <div class="kt2 item-base-slide">
+                <img loading="lazy" src="<?= base_url(
+                                'uploads/banner/kt/kt3.png'
+                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
+                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 70px;">
+            </div>
+        </div>
+        <div class="item-relative">
+            <div class="kt1 item-base-slide">
+                <img loading="lazy" src="<?= base_url(
+                                'uploads/banner/kt/kt1.png'
+                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
+                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 91px;">
+            </div>
+        </div>
+
+        <div class="item-relative">
+            <div class="kt5 item-base-slide">
+                <img loading="lazy" src="<?= base_url(
+                                'uploads/banner/kt/kt3.png'
+                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
+                            animation: mover -3s infinite  alternate;animation-timing-function: linear;width: 150px;">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- <section class="content-area d-none d-md-block ">
+
+
     <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="30000">
 
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url(uploads/banner/kt/bg.webp);
-    background-size: 100% 100%;">
-
-                <div class="mask d-flex align-items-center" >
-                <div class="kt3 ">
-                        <img loading="lazy" src="<?= base_url(
-                                'uploads/banner/kt/kt2.png'
-                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
-                            animation: mover 5s infinite  alternate;animation-timing-function: linear;width: 80px;bottom: -147px;">
-                    </div>
-                    <div class="kt4 ">
-                        <img loading="lazy" src="<?= base_url(
-                                'uploads/banner/kt/kt2.png'
-                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
-                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 100px;bottom: -190px;">
-                    </div>
-                <div class="kt2 ">
-                        <img loading="lazy" src="<?= base_url(
-                                'uploads/banner/kt/kt1.png'
-                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
-                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 70px;bottom: -137px;">
-                    </div>
-                    <div class="kt1 ">
-                        <img loading="lazy" src="<?= base_url(
-                                'uploads/banner/kt/kt1.png'
-                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
-                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 91px;bottom: -157px;">
-                    </div>
-                    
-                    <div class="" style="    position: absolute;    width: inherit;">
-                        <div class="row align-items-center">
-                            <div class="col-md-12 col-12 order-md-1 order-2 text-center">
-                                <h4
-                                    style="font-family: Pattaya;    font-size: 36px;    color: #fff704;text-shadow: 2px 2px 2px #000000;">
-                                    ประเพณีลอยกระทง</h4>
-                                <h5 class="text-white text-center">
-                                    คืนวันเพ็ญเดือน 12 หรือวันขึ้น 15 ค่ำเดือน 12 <br> วันเสาร์ที่ 31 ตุลาคม 2563 <br>
-                                </h5>
-                            </div>
-                            <div class="col-md-6 col-12  order-1">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item ">
+       
+            <div class="carousel-item active">
                 <div class="mask d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center">
@@ -506,7 +653,7 @@
                 class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
     </div>
 
-</section>
+</section> -->
 
 <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
 			<ol class="carousel-indicators">
