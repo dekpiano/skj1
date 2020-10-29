@@ -355,33 +355,33 @@
 
 .kt1 {
     position: relative;
-    animation: mymove 40s ease 0s normal none infinite;
+    animation: mymove <?php echo rand(180,200)."s";?> ease 0s normal none infinite;
 }
 
 .kt2 {
     position: relative;
-    animation: mymove 45s ease 0s normal none infinite;
+    animation: mymove <?php echo rand(150,170)."s";?> ease 0s normal none infinite;
 }
 
 .kt3 {
     position: relative;
-    animation: mymove 50s ease 0s normal none infinite;
+    animation: mymove <?php echo rand(130,160)."s";?> ease 0s normal none infinite;
 }
 
 .kt4 {
     position: relative;
-    animation: mymove 60s ease 0s normal none infinite;
+    animation: mymove <?php echo rand(100,200)."s";?> ease 0s normal none infinite;
 }
 
 .kt5 {
     position: relative;
-    animation: mymove 80s ease 0s normal none infinite;
+    animation: mymove <?php echo rand(200,300)."s";?> ease 0s normal none infinite;
 }
 
 .kt3 img {
     position: relative;
 
-    animation: mover 61s ease 0s normal none infinite;
+    animation: mover <?php echo rand(111,200)."s";?> ease 0s normal none infinite;
     ;
     animation-timing-function: ease-out;
     width: 80px;
@@ -505,8 +505,8 @@
 
 
     <div class="text-center text-title-kt w-100">
-        <h4 style=""> ประเพณีลอยกระทง </h4>
-        <h3 style=""> Loy Krathong Festival </h3>
+        <h4 > ประเพณีลอยกระทง </h4>
+        <h3> Loy Krathong Festival </h3>
         <h5 class="text-white text-center">
             คืนวันเพ็ญเดือน 12 หรือวันขึ้น 15 ค่ำเดือน 12 <br> วันเสาร์ที่ 31 ตุลาคม 2563 <br>
         </h5>
@@ -517,46 +517,17 @@
 
 
     <div class="river">
+    <?php   for ($i=1; $i <= 15; $i++) : ?>
         <div class="item-relative">
-            <div class="kt3 item-base-slide">
+            <div class="kt<?=rand(1,5);?> item-base-slide">
                 <img src="<?= base_url(
-                                'uploads/banner/kt/kt4.png'
-                            ) ?>" class="mx-auto bounce vert-move" alt="slide">
-            </div>
-        </div>
-        <div class="item-relative">
-            <div class="kt4 item-base-slide">
-                <img loading="lazy" src="<?= base_url(
-                                'uploads/banner/kt/kt2.png'
+                                'uploads/banner/kt/kt'.rand(1,7).'.png'
                             ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
-                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 100px;">
+                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: <?=rand(60,135);?>px;">
             </div>
         </div>
-        <div class="item-relative">
-            <div class="kt2 item-base-slide">
-                <img loading="lazy" src="<?= base_url(
-                                'uploads/banner/kt/kt3.png'
-                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
-                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 70px;">
-            </div>
-        </div>
-        <div class="item-relative">
-            <div class="kt1 item-base-slide">
-                <img loading="lazy" src="<?= base_url(
-                                'uploads/banner/kt/kt1.png'
-                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
-                            animation: mover 2s infinite  alternate;animation-timing-function: linear;width: 91px;">
-            </div>
-        </div>
+    <?php endfor; ?>
 
-        <div class="item-relative">
-            <div class="kt5 item-base-slide">
-                <img loading="lazy" src="<?= base_url(
-                                'uploads/banner/kt/kt3.png'
-                            ) ?>" class="mx-auto bounce vert-move" alt="slide" style="position: relative;-webkit-animation: mover 1s infinite  alternate;
-                            animation: mover -3s infinite  alternate;animation-timing-function: linear;width: 150px;">
-            </div>
-        </div>
 
     </div>
 
