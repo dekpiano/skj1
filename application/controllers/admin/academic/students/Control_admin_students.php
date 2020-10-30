@@ -3,13 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Control_admin_students extends CI_Controller
 {
-    var $title = 'ตารางเรียน';
+    var $title = 'นักเรียน';
 
     public function __construct()
     {
         parent::__construct();
         $this->load->helper(['form', 'url']);
-
+        
         $this->load->model('admin/academic/students/Admin_model_students');
         if ($this->session->userdata('fullname') == '') {
             redirect('login', 'refresh');
@@ -19,14 +19,14 @@ class Control_admin_students extends CI_Controller
     public function index()
     {
         // Load database academic
-        $db_academic = $this->load->database('db_academic', true);
+        $db_personnel = $this->load->database('db_personnel', true);
 
         $data['title'] = $this->title;
         $data['menu'] = $this->db->get('tb_adminmenu')->result();
-        $db_academic->select('*');
-        $db_academic->from('tb_students');
-        $db_academic->order_by('schestu_id', 'DESC');
-        $data['students'] = $db_academic->get()->result();
+        $db_personnel->select('*');
+        $db_personnel->from('tb_students');
+        $db_personnel->order_by('stu_id', 'DESC');
+        $data['students'] = $db_personnel->get()->result();
 
         $this->load->view('admin/layout/header.php', $data);
         $this->load->view('admin/layout/navber.php');
@@ -39,7 +39,7 @@ class Control_admin_students extends CI_Controller
     public function add()
     {
         // Load database academic
-        $db_academic = $this->load->database('db_academic', true);
+        $db_personnel = $this->load->database('db_personnel', true);
 
         $data['title'] = $this->title;
         $data['icon'] = '<i class="far fa-plus-square"></i>';
@@ -51,14 +51,14 @@ class Control_admin_students extends CI_Controller
         ];
         $data['menu'] = $this->db->get('tb_adminmenu')->result();
 
-        $db_academic->select('*');
-        $db_academic->from('tb_students');
-        $db_academic->order_by('schestu_id', 'DESC');
-        $data['students'] = $db_academic->get()->result();
+        $db_personnel->select('*');
+        $db_personnel->from('tb_students');
+        $db_personnel->order_by('stu_id', 'DESC');
+        $data['students'] = $db_personnel->get()->result();
 
-        $num = @explode('_', $data['students'][0]->schestu_id);
+        $num = @explode('_', $data['students'][0]->stu_id);
         $num1 = @sprintf('%03d', $num[1] + 1);
-        $data['students'] = 'schestu_' . $num1;
+        $data['students'] = 'stu_' . $num1;
         $data['action'] = 'insert_students';
 
         $this->load->view('admin/layout/header.php', $data);
@@ -79,15 +79,15 @@ class Control_admin_students extends CI_Controller
         $config['encrypt_name'] = true; //กำหนดเป็น true ให้ระบบ เปลียนชื่อ ไฟล์  อัตโนมัติ  ป้องกันกรณีชื่อไฟล์ซ้ำกัน
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-        if ($this->upload->do_upload('schestu_filename')) {
+        if ($this->upload->do_upload('stu_filename')) {
             $data = ['upload_data' => $this->upload->data()];
 
             $data_insert = [
-                'schestu_id' => $this->input->post('schestu_id'),
-                'schestu_classname' => $this->input->post('schestu_classname'),
-                'schestu_filename' => $data['upload_data']['file_name'],
-                'schestu_datetime' => date('Y-m-d H:i:s'),
-                'schestu_user' => $this->session->userdata('login_id'),
+                'stu_id' => $this->input->post('stu_id'),
+                'stu_classname' => $this->input->post('stu_classname'),
+                'stu_filename' => $data['upload_data']['file_name'],
+                'stu_datetime' => date('Y-m-d H:i:s'),
+                'stu_user' => $this->session->userdata('login_id'),
             ];
             if (
                 $this->Admin_model_students->students_insert($data_insert) == 1
@@ -117,7 +117,7 @@ window.history.back();
     public function edit_students($id)
     {
         // Load database academic
-        $db_academic = $this->load->database('db_academic', true);
+        $db_personnel = $this->load->database('db_personnel', true);
         /* Bread crum */
         $data['title'] = $this->title;
         $data['icon'] = '<i class="fas fa-edit"></i>';
@@ -128,12 +128,12 @@ window.history.back();
             '#' => 'แก้ไขข้อมูล' . $this->title,
         ];
         $data['menu'] = $this->db->get('tb_adminmenu')->result();
-        $db_academic->select('*');
-        $db_academic->from('tb_students');
-        $db_academic->where('schestu_id', $id);
-        $data['students'] = $db_academic->get()->result();
+        $db_personnel->select('*');
+        $db_personnel->from('tb_students');
+        $db_personnel->where('stu_id', $id);
+        $data['students'] = $db_personnel->get()->result();
         $data['action'] =
-            'update_students/' . $data['students'][0]->schestu_filename;
+            'update_students/' . $data['students'][0]->stu_filename;
 
         $this->load->view('admin/layout/header.php', $data);
         $this->load->view('admin/layout/navber.php');
@@ -151,15 +151,15 @@ window.history.back();
         $config['encrypt_name'] = true; //กำหนดเป็น true ให้ระบบ เปลียนชื่อ ไฟล์  อัตโนมัติ  ป้องกันกรณีชื่อไฟล์ซ้ำกัน
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-        if ($this->upload->do_upload('schestu_filename')) {
+        if ($this->upload->do_upload('stu_filename')) {
             $data = ['upload_data' => $this->upload->data()];
 
             @unlink('./uploads/academic/students/' . $img);
             $data_update = [
-                'schestu_classname' => $this->input->post('schestu_classname'),
-                'schestu_filename' => $data['upload_data']['file_name'],
-                'schestu_datetime' => date('Y-m-d H:i:s'),
-                'schestu_user' => $this->session->userdata('login_id'),
+                'stu_classname' => $this->input->post('stu_classname'),
+                'stu_filename' => $data['upload_data']['file_name'],
+                'stu_datetime' => date('Y-m-d H:i:s'),
+                'stu_user' => $this->session->userdata('login_id'),
             ];
             if (
                 $this->Admin_model_students->students_update($data_update) == 1
@@ -174,9 +174,9 @@ window.history.back();
             $error = ['error' => $this->upload->display_errors()];
 
             $data_update = [
-                'schestu_classname' => $this->input->post('schestu_classname'),
-                'schestu_datetime' => date('Y-m-d H:i:s'),
-                'schestu_user' => $this->session->userdata('login_id'),
+                'stu_classname' => $this->input->post('stu_classname'),
+                'stu_datetime' => date('Y-m-d H:i:s'),
+                'stu_user' => $this->session->userdata('login_id'),
             ];
             if (
                 $this->Admin_model_students->students_update($data_update) == 1
@@ -201,6 +201,16 @@ window.history.back();
             redirect('admin/class-schedule', 'refresh');
         }
     }
+
+
+    public function importStudent_All()
+	{ 
+	
+		
+		
+    }
+    
+    
 }
 
 ?>
