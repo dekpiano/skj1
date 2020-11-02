@@ -73,5 +73,10 @@ $(document).ready(function() {
 
     $('#dataTable_facebook').DataTable();
 
+    $('#dataTable_students').DataTable({
+        "order": [
+            [0, "asc"]
+        ]
+    });
 
 });

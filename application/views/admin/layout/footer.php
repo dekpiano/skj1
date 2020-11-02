@@ -69,7 +69,7 @@
       <script src="<?= base_url() ?>asset/vendor/datatables/vfs_fonts.js"></script>
       <script src="<?= base_url() ?>asset/vendor/datatables/buttons.html5.min.js"></script>
       <!-- Page level custom scripts -->
-      <script src="<?= base_url() ?>asset/js/demo/datatables-demo.js?v=1001"></script>
+      <script src="<?= base_url() ?>asset/js/demo/datatables-demo.js?v=1002"></script>
       <script src="<?= base_url() ?>asset/js/jquery.inputmask.min.js"></script>
       <script src="<?= base_url() ?>asset/vendor/sweetalert.min.js"></script>
       <script src="<?= base_url() ?>asset/js/passtrength.js"></script>
@@ -84,7 +84,7 @@
           src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.2.1/js/plugins/image.min.js"></script>
 
       </body>
-    <?php $this->load->view('admin/layout/textarea_editor.php'); ?>
+      <?php $this->load->view('admin/layout/textarea_editor.php'); ?>
       <script type="text/javascript">
 $(document).ready(function() {
     $(":input").inputmask();
@@ -95,24 +95,58 @@ $(document).ready(function() {
             var selectedData = new Array();
             $('.sort_facegroup>tr').each(function() {
                 selectedData.push($(this).attr("rank"));
-            });            
+            });
             updateOrder(selectedData);
         }
     });
+
     function updateOrder(data) {
         $.ajax({
-            url:"<?=base_url('admin/control_admin_facegroup/ranking');?>",
-            type:'post',
-            data:{position:data},
-            success:function(data){
+            url: "<?=base_url('admin/control_admin_facegroup/ranking');?>",
+            type: 'post',
+            data: {
+                position: data
+            },
+            success: function(data) {
                 console.log(data);
             }
         })
     }
     $(".sort_facegroup").disableSelection();
-   
+
 });
 
+$("#uploade_stuall").on('submit', function(e) {
+   
+    e.preventDefault();   
+    var action = $(this).attr('action');
+    $.ajax({
+        url: action,
+        type: "post",
+        data: new FormData(this),
+        processData: false,
+        contentType: false,
+        cache: false,
+        beforeSend: function() {
+            $('#uploadStatus').html(
+                '<div class="spinner-border text-primary" role="status">  <span class="sr-only">Loading...</span></div>'
+                );
+                $('#load1').hide();
+        },
+        error: function(resp) {
+            $('#uploadStatus').html(
+                '<p style="color:#EA4335;">File upload failed, please try again หรือข้อมูลซ้ำ.</p>');
+                console.log(resp);
+        },
+        success: function(resp) {         
+            window.location.href = "<?=base_url('admin/students');?>";
+            console.log(resp);
+        }
+
+
+    });
+
+});
       </script>
       <script type="text/javascript">
 function readURL(input) {

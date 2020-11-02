@@ -1,6 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+require FCPATH . '/vendor/autoload.php';
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Writer\Xls;
+
 class Control_admin_students extends CI_Controller
 {
     var $title = 'นักเรียน';
@@ -45,7 +51,7 @@ class Control_admin_students extends CI_Controller
         $data['icon'] = '<i class="far fa-plus-square"></i>';
         $data['color'] = 'primary';
         $data['breadcrumbs'] = [
-            base_url('admin/academic/students') =>
+            base_url('admin/students') =>
                 'จัดการข้อมูล' . $this->title,
             '#' => 'เพิ่มข้อมูล' . $this->title,
         ];
@@ -123,7 +129,7 @@ window.history.back();
         $data['icon'] = '<i class="fas fa-edit"></i>';
         $data['color'] = 'warning';
         $data['breadcrumbs'] = [
-            base_url('admin/academic/students') =>
+            base_url('admin/students') =>
                 'จัดการข้อมูล' . $this->title,
             '#' => 'แก้ไขข้อมูล' . $this->title,
         ];
@@ -133,7 +139,7 @@ window.history.back();
         $db_personnel->where('stu_id', $id);
         $data['students'] = $db_personnel->get()->result();
         $data['action'] =
-            'update_students/' . $data['students'][0]->stu_filename;
+            'update_students/' . $data['students'][0]->stu_id;
 
         $this->load->view('admin/layout/header.php', $data);
         $this->load->view('admin/layout/navber.php');
@@ -205,9 +211,20 @@ window.history.back();
 
     public function importStudent_All()
 	{ 
-	
-		
-		
+    
+    $file_mimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        if(isset($_FILES['fileStudent_All']['name']) && in_array($_FILES['fileStudent_All']['type'], $file_mimes))
+        {
+        
+        $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($_FILES['fileStudent_All']['tmp_name']);
+        $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);        
+        
+        
+        echo $this->Admin_model_students->students_insert_All($sheetData);
+        //print_r($sheetData);
+        }
+    
+        
     }
     
     
