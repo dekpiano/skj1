@@ -17,6 +17,8 @@
   <!-- Custom styles for this template-->
   <link href="<?=base_url();?>asset/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v3.0.1/dist/bootstrap-float-label.min.css"/>
+
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!-- Custom styles for this page -->

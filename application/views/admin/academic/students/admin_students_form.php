@@ -22,6 +22,7 @@
     top: 0;
     opacity: 0;
 }
+
 </style>
 <!-- Begin Page Content -->
 <div class="container-fluid">

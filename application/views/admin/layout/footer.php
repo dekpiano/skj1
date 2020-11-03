@@ -117,8 +117,8 @@ $(document).ready(function() {
 });
 
 $("#uploade_stuall").on('submit', function(e) {
-   
-    e.preventDefault();   
+
+    e.preventDefault();
     var action = $(this).attr('action');
     $.ajax({
         url: action,
@@ -130,15 +130,16 @@ $("#uploade_stuall").on('submit', function(e) {
         beforeSend: function() {
             $('#uploadStatus').html(
                 '<div class="spinner-border text-primary" role="status">  <span class="sr-only">Loading...</span></div>'
-                );
-                $('#load1').hide();
+            );
+            $('#load1').hide();
         },
         error: function(resp) {
             $('#uploadStatus').html(
-                '<p style="color:#EA4335;">File upload failed, please try again หรือข้อมูลซ้ำ.</p>');
-                console.log(resp);
+                '<p style="color:#EA4335;">File upload failed, please try again หรือข้อมูลซ้ำ.</p>'
+                );
+            console.log(resp);
         },
-        success: function(resp) {         
+        success: function(resp) {
             window.location.href = "<?=base_url('admin/students');?>";
             console.log(resp);
         }
@@ -200,4 +201,7 @@ swal("ผิดพลาด!", "<?= $this->session->flashdata('messge') ?>", "er
         });
     }, false);
 })();
+
+
+
       </script>
