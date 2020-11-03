@@ -4,7 +4,7 @@
 	<div class="container pad-3 " >
 		<div class="row">
 			<!-- รูปผู้อำนวยการ -->
-			<div class="col-lg-4 col-md-12 " data-aos="fade-right">
+			<div class="col-lg-4 col-md-12 ">
 				<div class="row">
 					<img loading="lazy" src="<?=base_url()?>asset/user/img/mn_1.png" style="padding-bottom: 20px; width: 100%;">
 					<h3 style="color: deeppink;" class="fm_name">นายอภิรักษ์  อุ่นใจ</h3><br>
@@ -14,7 +14,7 @@
 			</div>
 			<!-- รูปผู้อำนวยการ -->
 			<!-- ข้อความ -->
-			<div class="col-lg-8 col-md-12 my-auto " data-aos="fade-left">
+			<div class="col-lg-8 col-md-12 my-auto ">
 				<div class="row mx-auto">
 					<blockquote class="quote-card blue-card my-auto" style="background: deeppink; border-radius: 10px;">
 						<p>
