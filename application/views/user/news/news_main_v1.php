@@ -1,40 +1,49 @@
-<main role="main">
+<style>
 
-    <section class="jumbotron text-center bg_headertitel">
-        <div class="container">
-            <h1>ข่าวประชาสัมพันธ์</h1>
-            <p class="lead text-muted mb-5">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</p>
+</style>
+<section id="" class=" section section-bg">
+    <div class="container ">
+        <?php
+        $cowid19 = @file_get_contents(
+            'https://covid19.th-stat.com/api/open/today'
+        );
+        $users = json_decode($cowid19);
+        ?>
 
-        </div>
-    </section>
+        <style>
+        /* Tablet */
+        @media (min-width: 768px) {
+            img.img_news {
+                height: 275px;
+            }
 
-    <style>
-    @media (max-width: 575.98px) {
-        .card-columns {
-            -webkit-column-count: 1;
-            -moz-column-count: 1;
-            column-count: 1;
+            img.img_news_small {
+                height: 134px;
+            }
+
+            h2.post-title {
+                font-size: 20px;
+            }
+
+            .hvrbox-text {
+                font-size: 12px;
+            }
+
+            .breaking-caret:after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-top: 20px solid transparent;
+                border-left: 15px solid #007bff;
+                border-bottom: 20px solid transparent;
+                position: absolute;
+                right: -15px;
+                top: 0;
+            }
         }
-    }
 
-    @media (min-width: 768px) and (max-width: 991.98px) {
-        .card-columns {
-            -webkit-column-count: 2;
-            -moz-column-count: 2;
-            column-count: 2;
-        }
-    }
-
-    @media (min-width: 1366px) {
-        .card-columns {
-            -webkit-column-count: 3;
-            -moz-column-count: 3;
-            column-count: 3;
-        }
-    }
-
-       /* Laptop */
-       @media (min-width: 1024px) {
+        /* Laptop */
+        @media (min-width: 1024px) {
             img.img_news {
                 height: 453px;
             }
@@ -63,11 +72,32 @@
                 font-size: 14px;
             }
         }
-    </style>
 
-    <div class="album bg-light ">
-        <div class="container">
-        <div class="row">
+        .navigation-box {
+            top: .4rem;
+            right: .8rem;
+            width: 2rem;
+            position: absolute;
+        }
+        </style>
+        <!--Container-->
+
+
+        <!-- ข่าวด่วน -->
+        <!-- <?php $this->load->view('user/news/news_breaking.php'); ?> -->
+
+
+        <!--Start code-->
+        <div class="" data-aos="zoom-in">
+            <div class="album ">
+                <div class="section-title">
+                    <h2>SKJ ประชาสัมพันธ์</h2>
+                </div>
+
+            </div>
+            <div class=" " data-aos="fade-down">
+
+                <div class="row">
                     <?php foreach ($news as $key => $v_news): ?>
                     <?php if ($v_news->news_facebook !== ''): ?>
 
@@ -78,7 +108,7 @@
 
                     <?php else: ?>
                     <?php if ($v_news->news_img == ''): ?>
-                    <div class="col-md-4 d-flex align-items-stretch mt-4">
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mt-4">
                         <article class="card w-100">
 
                             <header class="card__thumb"
@@ -96,7 +126,7 @@
                         $v_news->news_id ?>"><?=$v_news->news_topic;?></a></div>
                                 <!-- <div class="card__subtitle">Donec posuere vulputate</div> -->
                                 <p class="card__description">
-                                <?=strip_tags($v_news->news_content);;?>
+                                    <?=strip_tags($v_news->news_content);;?>
                                 </p>
                             </div>
                             <footer class="card__footer">
@@ -108,7 +138,7 @@
                         </article>
                     </div>
                     <?php else: ?>
-                    <div class="col-md-4 d-flex align-items-stretch mt-4">
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mt-4">
                         <article class="card w-100">
                             <header class="card__thumb"
                                 style="background-image: url(<?= base_url('uploads/news/').$v_news->news_img ?>);">
@@ -130,10 +160,10 @@
                                 </p>
                             </div>
                             <footer class="card__footer">
-                                <span><?php echo $time_elapsed = $this->timeago->timeAgo_T(
+                                <span class="ml-2"><i class="icofont-wall-clock"></i> <?php echo $time_elapsed = $this->timeago->timeAgo_T(
                                         $v_news->news_date
                                     ); ?></span>
-                                <span><i class="icofont-eye-alt"> <?= $v_news->news_view ?></i></span>
+                                <span class="ml-2"><i class="icofont-eye-alt"> <?= $v_news->news_view ?></i></span>
                             </footer>
                         </article>
 
@@ -141,18 +171,21 @@
                     </div>
                     <?php endif; ?>
 
-
                     <?php endif; ?>
                     <?php endforeach; ?>
 
                 </div>
-            <p>
-            <nav aria-label="Page navigation example">
-            <?php echo $links; ?>
-            </nav>
-            </p>
-         
+            </div>
         </div>
     </div>
+    <!--end code-->
+    <center class="mb-5"><a href="<?= base_url('news/all') ?>"
+            class=" btn btn-outline-secondary mt-3 my-2 ">ข่าวสารทั้งหมด</a></center>
 
-</main>
+
+
+
+    </div>
+
+</section>
+
