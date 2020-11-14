@@ -140,7 +140,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<?= base_url() ?>asset/js/demo/datatables-demo.js?v=1001"></script>
 
-<script src="<?= base_url() ?>asset/user/js/countdownopenschool.js"></script>
+<script src="<?= base_url() ?>asset/user/js/countdownopenschool.js?v=1001"></script>
 <script type="text/javascript">
 
 </script>

@@ -4,18 +4,18 @@ $(function() {
     /* =========================================
         COUNTDOWN 1
      ========================================= */
-    $('#clock').countdown('2020/1/07').on('update.countdown', function(event) {
+    $('#clock').countdown('2020/11/17').on('update.countdown', function(event) {
         var $this = $(this).html(event.strftime('' +
-            '<span class="h1 font-weight-bold">%D</span> Day%!d' +
-            '<span class="h1 font-weight-bold">%H</span> Hr' +
-            '<span class="h1 font-weight-bold">%M</span> Min' +
-            '<span class="h1 font-weight-bold">%S</span> Sec'));
+            '<span class="">%D</span> Day%!d' +
+            '<span class="">%H</span> Hr' +
+            '<span class="">%M</span> Min' +
+            '<span class="">%S</span> Sec'));
     });
 
     /* =========================================
         COUNTDOWN 2
      ========================================= */
-    $('#clock-a').countdown('2021/1/10').on('update.countdown', function(event) {
+    $('#clock-a').countdown('2020/11/17').on('update.countdown', function(event) {
         var $this = $(this).html(event.strftime('' +
             '<span class="h1 font-weight-bold">%w</span> week%!w' +
             '<span class="h1 font-weight-bold">%D</span> Days'));
@@ -24,7 +24,7 @@ $(function() {
     /* =========================================
         COUNTDOWN 3
      ========================================= */
-    $('#clock-b').countdown('2020/7/01').on('update.countdown', function(event) {
+    $('#clock-b').countdown('2020/11/17').on('update.countdown', function(event) {
         var $this = $(this).html(event.strftime('' +
             '<div class="holder m-2"><span class="h1 font-weight-bold">%D</span> Day%!d</div>' +
             '<div class="holder m-2"><span class="h1 font-weight-bold">%H</span> Hr</div>' +
