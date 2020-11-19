@@ -22,6 +22,8 @@
     top: 0;
     opacity: 0;
 }
+
+
 </style>
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -65,54 +67,48 @@
                                             value="<?=$action == 'insert_personnel' ? $personnel : $pers[0]->pers_id;?>">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-2 mb-3">
-                                        <label for="pers_prefix">ชื่อคำนำหน้า</label>
-                                        <select class="custom-select d-block w-100" required name="pers_prefix"
-                                            id="pers_prefix">
-                                            <option value="">เลือก...</option>
-                                            <?php $data_prefix = array('นาย','นาง','นางสาว','ว่าที่ร้อยตรี','ว่าที่ร้อยตรีหญิง','Mr.','Mrs.','Miss.');
+                                
+                                <div class="row ">
+                                    <div class="col-md-3 mb-3  ">
+                                        <div class="">
+                                            <select class="custom-select" required name="pers_prefix" id="pers_prefix" >
+                                                <option value="">เลือก...</option>
+                                                <?php $data_prefix = array('นาย','นาง','นางสาว','ว่าที่ร้อยตรี','ว่าที่ร้อยตรีหญิง','Mr.','Mrs.','Miss.');
                               foreach ($data_prefix as $key => $v_prefix):?>
-                                            <?php if($action != 'insert_personnel') :?>
-                                            <option <?=$pers[0]->pers_prefix == $v_prefix ? 'selected' : '' ;?>
-                                                value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
-                                            <?php else: ?>
-                                            <option value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
-                                            <?php endif; ?>
-                                            <?php endforeach; ?>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            กรุณาเลือกคำนำหน้า
+                                                <?php if($action != 'insert_personnel') :?>
+                                                <option <?=$pers[0]->pers_prefix == $v_prefix ? 'selected' : '' ;?>
+                                                    value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
+                                                <?php else: ?>
+                                                <option value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
+                                                <?php endif; ?>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            <div class="invalid-feedback mt-2">
+                                                กรุณาเลือกคำนำหน้า
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-5 mb-3">
-                                        <label for="pers_firstname">ชื่อจริง</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fas fa-file-signature"></i></span>
-                                            </div>
+                                    <div class="col-md-4 mb-3 ">
+
+                                        <div class="form-outline">
                                             <input type="text" class="form-control" id="pers_firstname"
                                                 name="pers_firstname"
                                                 value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_firstname;?>"
                                                 required="">
+                                            <label class="form-label" for="pers_firstname">ชื่อจริง</label>
                                             <div class="invalid-feedback">
                                                 กรุณากรอกชื่อจริง
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div class="col-md-5 mb-3">
-                                        <label for="pers_lastname">นามสกุล</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fas fa-file-signature"></i></span>
-                                            </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="input-group form-outline">
                                             <input type="text" class="form-control" id="pers_lastname"
                                                 name="pers_lastname" placeholder=""
                                                 value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_lastname;?>"
                                                 required="">
+                                            <label class="form-label" for="pers_lastname">นามสกุล</label>
                                             <div class="invalid-feedback">
                                                 กรุณากรอกนามสกุล
                                             </div>
@@ -122,20 +118,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
-                                        <label for="pers_britday">วันเกิด เดือน ปี พ.ศ.</label>
+
                                         <?php $britday =  @$pers[0]->pers_britday; 
                              $dated = date("d-m-", strtotime($britday));
                              $datey = date("Y", strtotime($britday))+543;
                              $d =  $dated.$datey;
                             ?>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fas fa-birthday-cake"></i></span>
-                                            </div>
+                                        <div class="input-group form-outline">
                                             <input autocomplete="off" type="text" class="form-control "
                                                 id="pers_britday" name="pers_britday" placeholder=""
-                                                value="<?=$action == 'insert_personnel' ? '' : $d;?>" required="" data-inputmask="'mask': '99-99-9999'">
+                                                value="<?=$action == 'insert_personnel' ? '' : $d;?>" required=""
+                                                data-inputmask="'mask': '99-99-9999'">
+                                            <label class="form-label" for="pers_britday">วันเกิด เดือน ปี พ.ศ.</label>
                                             <div class="invalid-feedback">
                                                 กรุณาเลือกวันเกิด
                                             </div>
@@ -143,12 +137,12 @@
 
                                     </div>
                                     <div class="col-md-5 mb-3">
-                                        <label for="pers_phone">เบอร์โทรศัพท์</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control" id="pers_phone" name="pers_phone"   placeholder="" data-inputmask="'mask': '99-9999-9999'" value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_phone;?>">
+
+                                        <div class="input-group form-outline">
+                                            <input type="text" class="form-control" id="pers_phone" name="pers_phone"
+                                                placeholder="" data-inputmask="'mask': '99-9999-9999'"
+                                                value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_phone;?>">
+                                            <label class="form-label" for="pers_phone">เบอร์โทรศัพท์</label>
                                         </div>
                                         <div class="invalid-feedback">
                                             กรุณากรอกเบอร์โทรศัพท์
@@ -218,7 +212,8 @@
                                             <?php $academic = array('ชำนาญการ','ชำนาญการพิเศษ','เชี่ยวชาญ','เชี่ยวชาญพิเศษ' ); ?>
                                             <option value="">เลือก...</option>
                                             <?php foreach ($academic as $key => $v_academic):?>
-                                                <option <?=$v_academic == $pers[0]->pers_academic ? 'selected' : ''?> value="<?=$v_academic;?>"><?=$v_academic;?></option>
+                                            <option <?=$v_academic == $pers[0]->pers_academic ? 'selected' : ''?>
+                                                value="<?=$v_academic;?>"><?=$v_academic;?></option>
                                             <?php endforeach; ?>
                                         </select>
                                         <div class="invalid-feedback">
@@ -252,7 +247,7 @@
                                                 กรณีไม่ใช่ไม่ต้องเลือกใด ๆ ... </option>
                                             <option <?=$pers[0]->pers_groupleade == '1' ? 'selected' : '' ?> value="1">
                                                 หัวหน้ากลุ่มสาระ</option>
-                                                <option <?=$pers[0]->pers_groupleade == '2' ? 'selected' : '' ?> value="2">
+                                            <option <?=$pers[0]->pers_groupleade == '2' ? 'selected' : '' ?> value="2">
                                                 รองหัวหน้ากลุ่มสาระ</option>
                                             <?php else: ?>
                                             <option value="3">กรณีไม่ใช่ไม่ต้องเลือกใด ๆ ... </option>
@@ -286,7 +281,10 @@
                                     <div class="col-md-4 mb-3">
                                         <label for="pers_username">รีเซตรหัสผ่าน</label>
                                         <div class="input-group">
-                                            <a href="<?=base_url('admin/control_admin_personnel/reset_password/').$pers[0]->pers_id;?>" class="btn btn-danger" onClick="return confirm('คุณจะรีเซตรหัสผ่านหรือไม่!');">Reset password</a>
+                                            <a href="<?=base_url('admin/control_admin_personnel/reset_password/').$pers[0]->pers_id;?>"
+                                                class="btn btn-danger"
+                                                onClick="return confirm('คุณจะรีเซตรหัสผ่านหรือไม่!');">Reset
+                                                password</a>
                                         </div>
                                     </div>
                                 </div>
@@ -336,11 +334,11 @@
                                     </div>
                                 </div>
                             </div>
-                           
+
                             <img id="blah" class="img-fluid blah"
                                 src="<?php echo  @$pers[0]->pers_img == '' ? '#' : base_url().'uploads/personnel/'.$pers[0]->pers_img; ?>"
                                 alt="" />
-                           
+
                             <hr class="mb-4">
 
                             <button class="btn btn-<?=$color?> btn-lg btn-block" type="submit"><?=$icon?>

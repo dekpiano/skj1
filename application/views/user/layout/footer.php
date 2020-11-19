@@ -115,12 +115,12 @@
 <!-- Vendor JS Files -->
 <script src="<?= base_url() ?>asset/user/vendor/jquery/jquery.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/jquery.easing/jquery.easing.min.js"></script>
 <script src="<?= base_url() ?>asset/user/js/header.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/php-email-form/validate.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/waypoints/jquery.waypoints.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/counterup/counterup.min.js"></script>
-<script src="<?= base_url() ?>asset/user/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/venobox/venobox.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/owl.carousel/owl.carousel.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/jquery.countdown.min.js"></script>
@@ -175,6 +175,30 @@ var Tawk_API = Tawk_API || {},
 </body>
 <script>
 $(document).ready(function() {
+
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+    'use strict';
+
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+
+
     setTimeout(function() {
         $(".se-pre-con").fadeOut("slow");
     }, 500);
@@ -240,119 +264,6 @@ $('ul.tabs li').click(function() {
 </script>
 
 <script>
-/* ---- particles.js config ---- */
-particlesJS("particles-js", {
-    "particles": {
-        "number": {
-            "value": 400,
-            "density": {
-                "enable": true,
-                "value_area": 800
-            }
-        },
-        "color": {
-            "value": "#fff"
-        },
-        "shape": {
-            "type": "circle",
-            "stroke": {
-                "width": 0,
-                "color": "#000000"
-            },
-            "polygon": {
-                "nb_sides": 5
-            },
-            "image": {
-                "src": "img/github.svg",
-                "width": 100,
-                "height": 100
-            }
-        },
-        "opacity": {
-            "value": 0.5,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-            }
-        },
-        "size": {
-            "value": 10,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
-            }
-        },
-        "line_linked": {
-            "enable": false,
-            "distance": 500,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 2
-        },
-        "move": {
-            "enable": true,
-            "speed": 1.5,
-            "direction": "bottom",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
-            }
-        }
-    },
-    "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "bubble"
-            },
-            "onclick": {
-                "enable": true,
-                "mode": "repulse"
-            },
-            "resize": true
-        },
-        "modes": {
-            "grab": {
-                "distance": 400,
-                "line_linked": {
-                    "opacity": 0.5
-                }
-            },
-            "bubble": {
-                "distance": 400,
-                "size": 4,
-                "duration": 0.3,
-                "opacity": 1,
-                "speed": 3
-            },
-            "repulse": {
-                "distance": 200,
-                "duration": 0.4
-            },
-            "push": {
-                "particles_nb": 4
-            },
-            "remove": {
-                "particles_nb": 2
-            }
-        }
-    },
-    "retina_detect": true
-});
-</script>
-<script>
 $(document).on('click', '.count_face', function() {
     var d = $(this).attr('val');
     $.get('<?= base_url(
@@ -363,5 +274,6 @@ $(document).on('click', '.count_face', function() {
     });
 });
 </script>
+
 
 </html>

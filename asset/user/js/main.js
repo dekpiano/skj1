@@ -49,7 +49,7 @@
     });
 
     // Mobile Navigation
-  
+
 
     if ($(window).scrollTop() > 100) {
         $('#header').addClass('header-scrolled');
@@ -93,27 +93,7 @@
         time: 1000
     });
 
-    // Porfolio isotope and filter
-    $(window).on('load', function() {
-        var portfolioIsotope = $('.portfolio-container').isotope({
-            itemSelector: '.portfolio-item',
-            layoutMode: 'fitRows'
-        });
 
-        $('#portfolio-flters li').on('click', function() {
-            $("#portfolio-flters li").removeClass('filter-active');
-            $(this).addClass('filter-active');
-
-            portfolioIsotope.isotope({
-                filter: $(this).data('filter')
-            });
-        });
-
-        // Initiate venobox (lightbox feature used in portofilo)
-        $(document).ready(function() {
-            $('.venobox').venobox();
-        });
-    });
 
     // Testimonials carousel (uses the Owl Carousel library)
     $(".testimonials-carousel").owlCarousel({
@@ -378,31 +358,120 @@ $(window).resize(function() {
     }
 });
 
-(function() {
-    'use strict';
-
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    swal("แจ้งเตือน", "กรุณากรอกข้อมูลให้ครบ!", "warning")
-                }
-                form.classList.add('was-validated');
-
-            }, false);
-        });
-    }, false);
-})();
-
-
 //คลิกโชว์รูปภาพ Popup
-$(".popup img").click(function(){
+$(".popup img").click(function() {
     $('.gallery').attr('src', $(this).attr('src'));
     $('#my-modal').modal('show');
+});
+
+/* ---- particles.js config ---- */
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 400,
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+        },
+        "color": {
+            "value": "#fff"
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nb_sides": 5
+            },
+            "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+            }
+        },
+        "opacity": {
+            "value": 0.5,
+            "random": true,
+            "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 10,
+            "random": true,
+            "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+            }
+        },
+        "line_linked": {
+            "enable": false,
+            "distance": 500,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 2
+        },
+        "move": {
+            "enable": true,
+            "speed": 1.5,
+            "direction": "bottom",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
+        }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "bubble"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "repulse"
+            },
+            "resize": true
+        },
+        "modes": {
+            "grab": {
+                "distance": 400,
+                "line_linked": {
+                    "opacity": 0.5
+                }
+            },
+            "bubble": {
+                "distance": 400,
+                "size": 4,
+                "duration": 0.3,
+                "opacity": 1,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            },
+            "remove": {
+                "particles_nb": 2
+            }
+        }
+    },
+    "retina_detect": true
 });
