@@ -18,42 +18,42 @@ class Admin_model_students extends CI_Model
         $db_personnel = $this->load->database('db_personnel', true);
 
         foreach ($data as $key => $value) {
-                   
+            if($value['A'] > 0){
+                if($value['E'] == ''){
+                    $y = '';
+                    $md = '';
+                    $pass = '';
+                }else{
+                    $y = date('Y',strtotime($value['E']))-543;
+                    $md = date('-m-d',strtotime($value['E']));
+                    $pass = md5(md5(date('dmY',strtotime($value['E']))));
+                }
+                $data = array('stu_id' => $value['A'], 
+                'stu_prefix' => $value['B'], 
+                'stu_fristName' => $value['C'], 
+                'stu_lastName' => $value['D'], 
+                'stu_birth' => $y.$md, 
+                'stu_nationality' => $value['F'], 
+                'stu_race' => $value['G'], 
+                'stu_religion' => $value['H'], 
+                'stu_iden' => $value['I'], 
+                'stu_class' => $value['J'], 
+                'stu_room' => $value['K'], 
+                'stu_swine' => $value['L'], 
+                'stu_houseNumber' => $value['M'], 
+                'stu_subDistrict' => $value['N'], 
+                'stu_district' => $value['O'], 
+                'stu_province' => $value['P'], 
+                'stu_postCode' => $value['Q'], 
+                'stu_active' => 'กำลังศึกษา', 
+                'stu_username' => $value['A'], 
+                'stu_password' => $pass
+                );
+                
+                $db_personnel->insert('tb_students', $data);
+            }           
             
-            if($value['E'] == ''){
-                $y = '';
-                $md = '';
-                $pass = '';
-            }else{
-                $y = date('Y',strtotime($value['E']))-543;
-                $md = date('-m-d',strtotime($value['E']));
-                $pass = md5(md5(date('dmY',strtotime($value['E']))));
-            }
-            $data = array('stu_id' => $value['A'], 
-            'stu_prefix' => $value['B'], 
-            'stu_fristName' => $value['C'], 
-            'stu_lastName' => $value['D'], 
-            'stu_birth' => $y.$md, 
-            'stu_nationality' => $value['F'], 
-            'stu_race' => $value['G'], 
-            'stu_religion' => $value['H'], 
-            'stu_iden' => $value['I'], 
-            'stu_class' => $value['J'], 
-            'stu_room' => $value['K'], 
-            'stu_swine' => $value['L'], 
-            'stu_houseNumber' => $value['M'], 
-            'stu_subDistrict' => $value['N'], 
-            'stu_district' => $value['O'], 
-            'stu_province' => $value['P'], 
-            'stu_postCode' => $value['Q'], 
-            'stu_active' => 'กำลังศึกษา', 
-            'stu_username' => $value['A'], 
-            'stu_password' => $pass
-            );
-            
-            $db_personnel->insert('tb_students', $data);
         }
-       
       
         return "OK";
     }

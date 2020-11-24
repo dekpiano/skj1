@@ -37,7 +37,6 @@
     
     <!-- Vendor CSS Files -->
     <link href="<?= base_url() ?>/asset/user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.css" rel="stylesheet"/>
     <link href="<?= base_url() ?>/asset/user/vendor/icofont/icofont.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/vendor/animate.css/animate.min.css" rel="stylesheet">

@@ -115,7 +115,6 @@
 <!-- Vendor JS Files -->
 <script src="<?= base_url() ?>asset/user/vendor/jquery/jquery.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/jquery.easing/jquery.easing.min.js"></script>
 <script src="<?= base_url() ?>asset/user/js/header.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/php-email-form/validate.js"></script>
