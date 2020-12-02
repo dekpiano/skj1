@@ -162,6 +162,19 @@
                      </div>
                  </a>
              </div>
+             <div class="col-lg-4 col-md-6 col-sm-6 ">
+                 <a target="_black" href="https://docs.google.com/forms/d/e/1FAIpQLSffvo07h9TXVYYjfgCp3_7VCIHW-lT40gDYLNrkHIAfXRjO-g/viewform?usp=sf_link">
+                     <div class="serviceBox">
+                         <div class="service-icon">
+                             <i class="icofont-email"></i>
+                         </div>
+                         <h3 class="title">Email โรงเรียน</h3>
+                         <p class="description">
+                             ขออีเมล์ในนามโรงเรียน
+                         </p>
+                     </div>
+                 </a>
+             </div>
          </div>
 
          <h5 class="mt-3">หน่วยงานอื่น ๆ</h5>
