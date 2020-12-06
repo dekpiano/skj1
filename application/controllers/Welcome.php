@@ -59,7 +59,7 @@ class Welcome extends CI_Controller
         $this->load->view('errors/404.php');
     }
 
-    function father_day()
+    function father29_day()
     {
         $this->load->view('user/popupSpecial/father_day.php');
     }
@@ -76,6 +76,12 @@ class Welcome extends CI_Controller
     {
         $this->load->view('user/popupSpecial/23.php');
     }
+
+    function father5_day()
+    {
+        $this->load->view('user/popupSpecial/father5_day.php');
+    }
+
 
     
 }
