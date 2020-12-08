@@ -1281,7 +1281,7 @@ a.img,
 
 <body>
     <!-- LOADER -->
-    <div class="se-pre-con"></div>
+    <!-- <div class="se-pre-con"></div> -->
 
     <!-- end loader -->
     <div class="d-sm-block bg-top">
