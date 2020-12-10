@@ -5,15 +5,15 @@
         $users = json_decode($cowid19);
         ?>
 <section id="" class="section bg-dark">
-    <div class="  text-white   " data-aos="fade-down">
+    <div class="  text-white   ">
         <div class="container pad-3">
             <div class="row">
-                <div class="col-md-6 px-2 align-self-center">
+                <div class="col-md-6 px-2 align-self-center"  data-aos="fade-right">
                     <img loading="lazy" src="<?= base_url(
                         'asset/user/img/covid.png'
                     ) ?>" alt="" class="img-fluid">
                 </div>
-                <div class="col-md-6 px-2 align-self-center">
+                <div class="col-md-6 px-2 align-self-center"  data-aos="fade-left">
                     <h1 class="display-5 text-white">รายงานสถานการณ์ โควิด-19</h1>
                     <div class="list-group">
 

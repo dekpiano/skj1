@@ -43,6 +43,7 @@
     <link href="<?= base_url() ?>/asset/user/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="<?= base_url() ?>/asset/user/css/style.css?v=1000" rel="stylesheet">

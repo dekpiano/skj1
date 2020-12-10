@@ -1,55 +1,37 @@
-<section id="services" class="services section bg-pink">
-    <div class="container aos-init aos-animate" data-aos="fade-up">
+<section id="counts" class="counts bg-pink">
+      <div class="container aos-init aos-animate" data-aos="fade-up">
 
-        <div class="section-title">
-            <h2>หลักสูตรที่เปิดสอน ห้องเรียนความเป็นเลิศ</h2>
-        </div>
+        <!-- <div class="text-center title">
+          <h3>เกี่ยวกับโรงเรียน</h3>
+          <p>Iusto et labore modi qui sapiente xpedita tempora et aut non ipsum consequatur illo.</p>
+        </div> -->
 
-        <div class="row">
-            <div class="col-xl-2 col-md-4 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in"
-                data-aos-delay="100">
-                <div class="icon-box" style="padding:0px;">
-                    <div class="icon"><i class="icofont-unique-idea"></i></div>
-                    <h4><a href="">ด้านวิชาการ </a></h4>
-                </div>
-            </div>
+        <div class="row counters">
 
-            <div class="col-xl-2 col-md-4 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate"
-                data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box" style="padding:0px;">
-                    <div class="icon"><i class="icofont-library"></i></div>
-                    <h4><a href="">ด้านภาษา</a></h4>
-                </div>
-            </div>
+          <div class="col-lg-3 col-6 text-center" data-aos="fade-right" data-aos-duration="500">
+            <span data-toggle="counter-up">821</span>
+            <p>นักเรียน</p>
+          </div>
 
-            <div class="col-xl-3 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate"
-                data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box" style="padding:0px;">
-                    <div class="icon"><i class="icofont-music"></i></div>
-                    <h4><a href="">ด้านดนตรี ศิลปะ การแสดง</a></h4>
-                </div>
-            </div>
+          <div class="col-lg-3 col-6 text-center" data-aos="fade-right" data-aos-duration="1000">
+            <span data-toggle="counter-up">54</span>
+            <p>ครู</p>
+          </div>
 
-            <div class="col-xl-3 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate"
-                data-aos="zoom-in" data-aos-delay="400">
-                <div class="icon-box" style="padding:0px;">
-                    <div class="icon"><i class="icofont-home"></i></div>
-                    <h4><a href="">ด้านการงานอาชีพ</a></h4>
-                </div>
-            </div>
-            <div class="col-xl-2 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate"
-                data-aos="zoom-in" data-aos-delay="500">
-                <div class="icon-box" style="padding:0px;">
-                    <div class="icon"><i class="icofont-result-sport"></i></div>
-                    <h4><a href="">ด้านกีฬา</a></h4>
-                </div>
-            </div>
+          <div class="col-lg-3 col-6 text-center" data-aos="fade-right" data-aos-duration="2000">
+            <span data-toggle="counter-up">30</span>
+            <p>ห้องเรียน</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center" data-aos="fade-right" data-aos-duration="3000">
+            <span data-toggle="counter-up">15</span>
+            <p>ห้องแล๊ป</p>
+          </div>
 
         </div>
 
-    </div>
-</section>
-
+      </div>
+    </section>
 
 <style>
 .bg-pink {
@@ -67,5 +49,45 @@
 .bg-pink.services .icon-box h4 a {
     color: #ffffff;
     transition: 0.3s;
+}
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+    padding: 50px 0 50px 0;
+}
+
+.counts h3{
+    color: white;
+}
+
+.counts .title {
+  position: relative;
+  color: #0f394c;
+  margin-bottom: 40px;
+}
+
+.counts .title h3 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.counts .counters span {
+    color: #f1f1f8;
+    font: 700 3.5rem/4.25rem "kanit";
+    vertical-align: middle;
+}
+
+.counts .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-size: 22px;
+  color: #444444;
+}
+
+@media (min-width: 1200px) {
+  .counts {
+    background-attachment: fixed;
+  }
 }
 </style>

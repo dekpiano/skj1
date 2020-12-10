@@ -2,12 +2,12 @@
     <div class="container">
         <article class="row   border-0 flex-md-row justify-content-between align-items-center card-top">
             <a class="col-md-7  order-md-2 order-1 w-md-50 p-0 " href="#" style="height: 50vh;border: 8px solid #e62e74;
-    border-radius: 10px;">
+    border-radius: 10px;" data-aos="fade-left">
                 <iframe width="100%" height="100%" src="<?=$video[0]->video_link;?>" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </a>
-            <div class="card-body order-2 order-md-1 col-md-5 ">
+            <div class="card-body order-2 order-md-1 col-md-5 " data-aos="fade-right">
                 <div class=" text-uppercase font-weight-bold mb-4 text-warning">Featured Article</div>
                 <h2 class="card-title display-4 font-weight-bold">
                     <a href="#" class="text-white" title="Blog title">SKJ Production</a>

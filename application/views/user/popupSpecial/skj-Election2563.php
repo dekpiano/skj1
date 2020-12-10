@@ -363,7 +363,7 @@ h3.titel-skj {
 
     <div class="container seletion">
         <div class="row vh-100 mt-2">
-            <div class="col-md-6  text-center align-self-center mt-5">
+            <div class="col-md-6  text-center align-self-center mt-5"  data-aos="fade-right" data-aos-duration="3000">
                 <div class="logo ">
                     <img loading="lazy" src="<?=base_url('uploads/banner/Election/logo-Election.webp');?> "
                         class="img-fluid">
@@ -373,7 +373,7 @@ h3.titel-skj {
                 </div>
 
             </div>
-            <div class="col-md-6 text-center align-self-center">
+            <div class="col-md-6 text-center align-self-center"  data-aos="fade-left" data-aos-duration="3000">
                 <div class="embed-responsive embed-responsive-16by9 z-depth-1">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YaRvu9v5EOw"
                         allowfullscreen></iframe>
