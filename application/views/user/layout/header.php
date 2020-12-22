@@ -52,6 +52,7 @@
     <link href="<?= base_url() ?>/asset/user/css/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url() ?>asset/user/css/smartwizard/smart_wizard.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>asset/user/css/smartwizard/smart_wizard_theme_arrows.min.css">
+    <link href="<?= base_url() ?>/asset/css/snowy.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165844207-1"></script>
     <script>

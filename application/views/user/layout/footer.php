@@ -128,6 +128,7 @@
 <script src="<?= base_url() ?>asset/js/imagesloaded.pkgd.min.js"></script>
 <script src="<?= base_url() ?>asset/user/js/aos.js"></script>
 <script src="<?= base_url() ?>asset/user/js/particles.min.js"></script>
+<script src="<?= base_url() ?>asset/js/demo/snowy2020.js"></script>
 <!-- Template Main JS File -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="<?= base_url() ?>asset/js/slick.js?v=1000"></script>
