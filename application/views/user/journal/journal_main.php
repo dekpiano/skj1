@@ -5,6 +5,24 @@
 
 <section id="portfolio " class="section-bg section" data-aos="fade-down">
     <div class="container ">
+
+        <style>
+        .items {
+            width: 90%;
+            margin: 0px auto;
+        }
+
+        .slick-slide {
+            margin: 10px
+        }
+
+        .slick-slide img {
+            width: 100%;
+            border: 0px solid #fff
+        }
+        </style>
+
+        <!--- หัวข้อ --->
          <!--- หัวข้อ --->
          <div class="section ">
                 <div class="container">

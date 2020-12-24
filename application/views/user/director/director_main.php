@@ -1,11 +1,11 @@
 <div class="services">
     <div class="container">
-        <div class="section-title" data-aos="fade-up">
+        <div class="section-title" >
             <h2>หลักสูตรที่เปิดสอน ห้องเรียนความเป็นเลิศ</h2>
         </div>
         <div class="row">
             <div class="col-md-4 order-md-1 order-1">
-                <div class="services-box " data-aos="fade-right">
+                <div class="services-box " >
                     <span class="icon"><i class="fa fa-flask" aria-hidden="true"></i></span><!-- .Icon ends here -->
                     <div class="service-content">
                         <h4>ด้านวิชาการ</h4>
@@ -14,7 +14,7 @@
                     </div><!-- .Service-content ends here -->
                 </div><!-- .Services-box ends here -->
 
-                <div class="services-box" data-aos="fade-right">
+                <div class="services-box" >
                     <span class="icon"><i class="fa fa-language" aria-hidden="true"></i></span><!-- .Icon ends here -->
                     <div class="service-content">
                         <h4>ด้านภาษา</h4>
@@ -26,13 +26,13 @@
 
             </div><!-- .Col ends here -->
 
-            <div class="col-md-4 order-0 order-md-2" data-aos="flip-right">
+            <div class="col-md-4 order-0 order-md-2" >
                 <img class="img-responsive" loading="lazy" src="<?=base_url()?>asset/user/img/mn_1.png" alt=""
                     style="width: 100%;" />
             </div>
 
             <div class="col-md-4 order-2 order-md-3 " >
-                <div class="services-box" data-aos="fade-left">
+                <div class="services-box" >
                     <span class="icon"><i class="fa fa-music" aria-hidden="true"></i></i></span><!-- .Icon ends here -->
                     <div class="service-content">
                         <h4>ด้านดนตรี ศิลปะ การแสดง</h4>
@@ -41,7 +41,7 @@
                         </p>
                     </div><!-- .Service-content ends here -->
                 </div><!-- .Services-box ends here -->
-				<div class="services-box" data-aos="fade-left">
+				<div class="services-box" >
                     <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span><!-- .Icon ends here -->
                     <div class="service-content">
                         <h4>ด้านการงาน อาชีพ</h4>
@@ -55,7 +55,7 @@
         </div><!-- .Row ends here -->
         <div class="row justify-content-center ">
             <div class="col-md-4">
-                <div class="services-box" data-aos="fade-up">
+                <div class="services-box" >
                     <span class="icon"><i class="fa fa-trophy" aria-hidden="true"></i></span><!-- .Icon ends here -->
                     <div class="service-content">
                         <h4>ด้านกีฬา</h4>

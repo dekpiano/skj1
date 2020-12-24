@@ -84,7 +84,7 @@
 
          <div class="row">
              <div class="col-lg-4 col-md-6 col-sm-6 ">
-                 <a href="<?= base_url('academic') ?>">
+                 <a href="http://academic.skj.ac.th">
                      <div class="serviceBox">
                          <div class="service-icon">
                              <i class="icofont-brainstorming"></i>

@@ -14,7 +14,7 @@
 
 <?php $this->load->view('user/services/services_skj.php'); ?>
 
-<?php $this->load->view('user/covid/covid_main.php'); ?>
+<?php /*$this->load->view('user/covid/covid_main.php');*/ ?>
 
 <!-- director_main -->
 <?php $this->load->view('user/director/director_main.php'); ?>

@@ -10,7 +10,7 @@
                     <div class="card-body text-center">
                         <i class="icofont-ui-dial-phone icofont-5x"></i>
                         <h4 class="text-uppercase mb-5">call us</h4>
-                        <p>056 255 595</p>
+                        <p>056-009-667</p>
                     </div>
                 </div>
             </div>
