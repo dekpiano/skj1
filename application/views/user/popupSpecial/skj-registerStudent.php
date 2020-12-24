@@ -1,5 +1,5 @@
 <div style="background-color: #e8f2fd;">
-    <div class="container p-5"></div>
+    <div class="container p-5">
         <div class="row">
             <div class="col-md-6">
                 <img src="<?=base_url('uploads/recruitstudent/logo-registerStudent.png');?>" alt="" class="img-fluid">
