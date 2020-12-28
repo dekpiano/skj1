@@ -22,8 +22,6 @@
     top: 0;
     opacity: 0;
 }
-
-
 </style>
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -56,120 +54,110 @@
 
                 <div class="card-body">
                     <div class="row">
+
                         <div class="col-md-8 order-md-1">
                             <form class="needs-validation" novalidate=""
                                 action="<?=base_url('admin/control_admin_personnel/').$action;?>" method="post"
                                 enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="col-md-2 mb-3">
-                                        <label for="pers_id">รหัสประจำตัว</label>
+                                <div class="form-group row">
+                                    <label for="pers_id" class="col-sm-4 col-form-label">รหัสประจำตัว</label>
+                                    <div class="col-sm-8">
                                         <input type="text" readonly class="form-control" id="pers_id" name="pers_id"
                                             value="<?=$action == 'insert_personnel' ? $personnel : $pers[0]->pers_id;?>">
                                     </div>
                                 </div>
-                                
-                                <div class="row ">
-                                    <div class="col-md-3 mb-3  ">
-                                        <div class="">
-                                            <select class="custom-select" required name="pers_prefix" id="pers_prefix" >
-                                                <option value="">เลือก...</option>
-                                                <?php $data_prefix = array('นาย','นาง','นางสาว','ว่าที่ร้อยตรี','ว่าที่ร้อยตรีหญิง','Mr.','Mrs.','Miss.');
+                                <div class="form-group row">
+                                    <label for="pers_prefix" class="col-sm-4 col-form-label">คำนำหน้า</label>
+                                    <div class="col-sm-8">
+                                        <select class="custom-select"  name="pers_prefix" id="pers_prefix" required>
+                                            <option value="">เลือก...</option>
+                                            <?php $data_prefix = array('นาย','นาง','นางสาว','ว่าที่ร้อยตรี','ว่าที่ร้อยตรีหญิง','Mr.','Mrs.','Miss.');
                               foreach ($data_prefix as $key => $v_prefix):?>
-                                                <?php if($action != 'insert_personnel') :?>
-                                                <option <?=$pers[0]->pers_prefix == $v_prefix ? 'selected' : '' ;?>
-                                                    value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
-                                                <?php else: ?>
-                                                <option value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
-                                                <?php endif; ?>
-                                                <?php endforeach; ?>
-                                            </select>
-                                            <div class="invalid-feedback mt-2">
-                                                กรุณาเลือกคำนำหน้า
-                                            </div>
+                                            <?php if($action != 'insert_personnel') :?>
+                                            <option <?=$pers[0]->pers_prefix == $v_prefix ? 'selected' : '' ;?>
+                                                value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
+                                            <?php else: ?>
+                                            <option value="<?=$v_prefix;?>"><?=$v_prefix;?></option>
+                                            <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            เลือกคำนำหน้า
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3 ">
-
-                                        <div class="form-outline">
-                                            <input type="text" class="form-control" id="pers_firstname"
-                                                name="pers_firstname"
-                                                value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_firstname;?>"
-                                                required="">
-                                            <label class="form-label" for="pers_firstname">ชื่อจริง</label>
-                                            <div class="invalid-feedback">
-                                                กรุณากรอกชื่อจริง
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="input-group form-outline">
-                                            <input type="text" class="form-control" id="pers_lastname"
-                                                name="pers_lastname" placeholder=""
-                                                value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_lastname;?>"
-                                                required="">
-                                            <label class="form-label" for="pers_lastname">นามสกุล</label>
-                                            <div class="invalid-feedback">
-                                                กรุณากรอกนามสกุล
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-
-                                        <?php $britday =  @$pers[0]->pers_britday; 
-                             $dated = date("d-m-", strtotime($britday));
-                             $datey = date("Y", strtotime($britday))+543;
-                             $d =  $dated.$datey;
-                            ?>
-                                        <div class="input-group form-outline">
-                                            <input autocomplete="off" type="text" class="form-control "
-                                                id="pers_britday" name="pers_britday" placeholder=""
-                                                value="<?=$action == 'insert_personnel' ? '' : $d;?>" required=""
-                                                data-inputmask="'mask': '99-99-9999'">
-                                            <label class="form-label" for="pers_britday">วันเกิด เดือน ปี พ.ศ.</label>
-                                            <div class="invalid-feedback">
-                                                กรุณาเลือกวันเกิด
-                                            </div>
+                                <div class="form-group row">
+                                    <label for="pers_id" class="col-sm-4 col-form-label">ชื่อจริง</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pers_firstname"
+                                            name="pers_firstname"
+                                            value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_firstname;?>" required>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกชื่อจริง
                                         </div>
-
                                     </div>
-                                    <div class="col-md-5 mb-3">
-
-                                        <div class="input-group form-outline">
-                                            <input type="text" class="form-control" id="pers_phone" name="pers_phone"
-                                                placeholder="" data-inputmask="'mask': '99-9999-9999'"
-                                                value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_phone;?>">
-                                            <label class="form-label" for="pers_phone">เบอร์โทรศัพท์</label>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pers_id" class="col-sm-4 col-form-label">นามสกุล</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pers_lastname" name="pers_lastname"
+                                            placeholder=""
+                                            value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_lastname;?>" required>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกนามสกุล
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+
+                                    <?php $britday =  @$pers[0]->pers_britday; 
+                                            $dated = date("d-m-", strtotime($britday));
+                                            $datey = date("Y", strtotime($britday))+543;
+                                            $d =  $dated.$datey;
+                                            ?>
+                                    <label for="pers_id" class="col-sm-4 col-form-label">วันเกิด เดือน ปี พ.ศ.</label>
+                                    <div class="col-sm-8">
+                                        <input autocomplete="off" type="text" class="form-control " id="pers_britday"
+                                            name="pers_britday" placeholder=""
+                                            value="<?=$action == 'insert_personnel' ? '' : $d;?>" 
+                                            data-inputmask="'mask': '99-99-9999'">
+
+                                        <div class="invalid-feedback">
+                                            กรุณาเลือกวันเกิด
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pers_id" class="col-sm-4 col-form-label">เบอร์โทรศัพท์</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pers_phone" name="pers_phone"
+                                            placeholder="" data-inputmask="'mask': '99-9999-9999'"
+                                            value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_phone;?>">
                                         <div class="invalid-feedback">
                                             กรุณากรอกเบอร์โทรศัพท์
                                         </div>
                                     </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="pers_address">ที่อยู่</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                                        </div>
+                                </div>                          
+                                <div class="form-group row">
+                                    <label for="pers_id" class="col-sm-4 col-form-label">ที่อยู่</label>
+                                    <div class="col-sm-8">
                                         <input type="text" class="form-control" id="pers_address" name="pers_address"
                                             placeholder="1234 Main St"
                                             value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_address;?>">
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        กรุณากรอกที่อยู่
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกที่อยู่
+                                        </div>
                                     </div>
                                 </div>
+
+
 
                                 <hr class="mb-4">
                                 <h5 class="mb-3">ข้อมูลภายในโรงเรียน</h5>
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <label for="pers_position">ตำแหน่งงานหลักในโรงเรียน</label>
-                                        <select class="custom-select d-block w-100" required id="pers_position"
+                                        <select class="custom-select d-block w-100"  id="pers_position"
                                             name="pers_position">
                                             <option value="">เลือก...</option>
                                             <?php foreach ($posi as $key => $v_posi):?>

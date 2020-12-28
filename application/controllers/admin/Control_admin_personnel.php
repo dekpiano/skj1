@@ -37,6 +37,7 @@ class Control_admin_personnel extends CI_Controller {
 		$this->db->join('tb_learning','tb_personnel.pers_learning = tb_learning.lear_id','LEFT');
 		$this->db->order_by('pers_id','DESC');
 		$data['pers'] =	$this->db->get()->result();
+		$data['learning'] =	$this->db->get('tb_learning')->result();
 
 		$this->load->view('admin/layout/header.php',$data);
 		$this->load->view('admin/layout/navber.php');

@@ -46,7 +46,7 @@ $(document).ready(function() {
         ]
     });
 
-    $('#dataTable_personnel').DataTable({
+    $('.dataTable_personnel').DataTable({
         "order": [
             [0, "desc"]
         ]
