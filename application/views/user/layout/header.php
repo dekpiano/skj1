@@ -34,7 +34,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
-    
+
     <!-- Vendor CSS Files -->
     <link href="<?= base_url() ?>/asset/user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -274,7 +274,7 @@ a.img,
 
 .navigation-portrait .nav-menus-wrapper.nav-menus-wrapper-open {
     left: 0;
-    height:100vh;
+    height: 100vh;
 }
 
 .navigation-portrait .nav-menus-wrapper.nav-menus-wrapper-right.nav-menus-wrapper-open {
@@ -400,6 +400,7 @@ a.img,
 .navigation-portrait .nav-menu.nav-menu-social>li>a {
     padding: 15px
 }
+
 /* 
 .submenu-indicator {
     margin-left: 8px;
@@ -1264,7 +1265,7 @@ a.img,
     transform-origin: 100% 50%;
 }
 
-.nav-menu > li > a {
+.nav-menu>li>a {
     margin: 11px 3px;
     padding: 6px 7px;
     text-align: center;
@@ -1272,13 +1273,13 @@ a.img,
 }
 
 
-.box_shadow{
-            border-top: 15px solid #fa1476;
+.box_shadow {
+    border-top: 15px solid #fa1476;
     /* box-shadow: 1px 5px 11px #58585899; */
-    -webkit-box-shadow: 0px 4px 12px 2px rgba(153,153,153,1);
-    -moz-box-shadow: 0px 4px 12px 2px rgba(153,153,153,1);
-    box-shadow: 0px 4px 12px 2px rgba(153,153,153,1);
-        }
+    -webkit-box-shadow: 0px 4px 12px 2px rgba(153, 153, 153, 1);
+    -moz-box-shadow: 0px 4px 12px 2px rgba(153, 153, 153, 1);
+    box-shadow: 0px 4px 12px 2px rgba(153, 153, 153, 1);
+}
 </style>
 
 <body>
@@ -1303,19 +1304,7 @@ a.img,
                                     alt=""> สวนกุหลาบ (จิรประวัติ) นครสวรรค์</a>
                             <div class="nav-toggle"></div>
                         </div>
-                        <!-- Search panel Start -->
-                        <!-- <div class="nav-search">
-                            <div class="nav-search-button">
-                                <i class="nav-search-icon"></i>
-                            </div>
-                            <form>
-                                <div class="nav-search-inner">
-                                    <input type="search" name="search" placeholder="Search Here">
-                                    <input name='max-results' type='hidden' value='6'>
-                                </div>
-                            </form>
-                        </div> -->
-                        <!-- Main Menus Wrapper -->
+
                         <div class="nav-menus-wrapper">
                             <ul class="nav-menu align-to-right">
 
@@ -1338,7 +1327,9 @@ a.img,
                                     </ul>
                                 </li>
 
-                                <li><a href="#"><i class="icofont-users-alt-5 icofont-2x"></i><p>บุคลากร</p></a>
+                                <li><a href="#"><i class="icofont-users-alt-5 icofont-2x"></i>
+                                        <p>บุคลากร</p>
+                                    </a>
                                     <ul class="nav-dropdown">
                                         <li> <a class="dropdown-item" href="<?= base_url(
                                             'Personnel/คณะผู้บริหาร'
@@ -1359,7 +1350,9 @@ a.img,
                                         <?php endforeach; ?>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="icofont-news icofont-2x"></i><p>ประชาสัมพันธ์</p></a>
+                                <li><a href="#"><i class="icofont-news icofont-2x"></i>
+                                        <p>ประชาสัมพันธ์</p>
+                                    </a>
                                     <div class="megamenu-panel">
                                         <div class="megamenu-lists">
                                             <?php
@@ -1388,23 +1381,15 @@ a.img,
                                                 } ?>
                                             <ul class="megamenu-list list-col-3">
                                                 <h5 class="dropdown-header"><?= $v_nameNews ?></h5>
-                                                <?php foreach (
-                                                    $news_to
-                                                    as $key => $v_news_to
-                                                ):
-                                                    if (
-                                                        $v_news_to->news_category ==
-                                                        $v_nameNews
-                                                    ): ?>
-                                                <li><a href="<?= base_url(
-                                                    'news/newsDetail/'
-                                                ) .
-                                                    $v_news_to->news_id ?>"><i class="icofont-newspaper"></i>
+                                                <?php foreach ($news_to as $key => $v_news_to):
+                                                    if ($v_news_to->news_category == $v_nameNews): ?>
+                                                <li><a href="<?= base_url('news/newsDetail/').$v_news_to->news_id ?>"><i class="icofont-newspaper"></i>
                                                         <?= $v_news_to->news_topic ?></a></li>
 
-                                                <?php endif; ?>
+                                                <?php endif; ?>                                                
                                                 <?php
                                                 endforeach; ?>
+                                                <li class="text-center"><a href="<?=base_url('news/all');?>">ดูทั้งหมด...</a> </li>
                                             </ul>
                                             <?php
                                             endforeach;
@@ -1412,7 +1397,9 @@ a.img,
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="#"><i class="icofont-database icofont-2x"></i><p>กลุ่มบริหาร</p></a>
+                                <li><a href="#"><i class="icofont-database icofont-2x"></i>
+                                        <p>กลุ่มบริหาร</p>
+                                    </a>
                                     <ul class="nav-dropdown">
                                         <li>
                                             <a href="<?= base_url(
@@ -1438,10 +1425,14 @@ a.img,
                                 </li>
                                 <li><a href="<?= base_url(
                                     'Contact'
-                                ) ?>"><i class="icofont-contacts icofont-2x"></i><p>ติดต่อ</p></a></li>
+                                ) ?>"><i class="icofont-contacts icofont-2x"></i>
+                                        <p>ติดต่อ</p>
+                                    </a></li>
                                 <li><a href="<?= base_url(
                                     'login'
-                                ) ?>"><i class="icofont-lock icofont-2x"></i> <p>Login</p></a></li>
+                                ) ?>"><i class="icofont-lock icofont-2x"></i>
+                                        <p>Login</p>
+                                    </a></li>
                             </ul>
                         </div>
                     </nav>

@@ -162,8 +162,9 @@
                      </div>
                  </a>
              </div>
+           
              <div class="col-lg-4 col-md-6 col-sm-6 ">
-                 <a target="_black" href="https://docs.google.com/forms/d/e/1FAIpQLSffvo07h9TXVYYjfgCp3_7VCIHW-lT40gDYLNrkHIAfXRjO-g/viewform?usp=sf_link">
+                 <a  href="<?=base_url('Email');?>">
                      <div class="serviceBox">
                          <div class="service-icon">
                              <i class="icofont-email"></i>
