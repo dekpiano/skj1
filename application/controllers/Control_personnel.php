@@ -52,6 +52,11 @@ class Control_personnel extends CI_Controller {
 	}
 
 	public function show_per_type($name){
+
+		if($name == "สายสนับสนุนการสอน"){
+			$idtype = "posi_007";
+			$idtype1 = "posi_008";
+		}
 		$data['full_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		$data['title'] = self::$title;
 		$data['description'] = self::$description;
@@ -92,15 +97,20 @@ class Control_personnel extends CI_Controller {
 							tb_personnel.pers_groupleade,
 							tb_personnel.pers_learning,
 							tb_personnel.pers_academic,
+							tb_personnel.pers_numberGroup,
 							tb_learning.lear_namethai');
 						$this->db->from('tb_personnel');
-						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
-						$this->db->join('tb_learning','tb_personnel.pers_learning = tb_learning.lear_id');
+						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id','LEFT');
+						$this->db->join('tb_learning','tb_personnel.pers_learning = tb_learning.lear_id','LEFT');
 						$this->db->where('lear_namethai',$name);
 						$this->db->or_where('posi_name',$name);
-						$this->db->order_by('pers_groupleade');
+						$this->db->or_where('pers_position',@$idtype);
+						$this->db->or_where('pers_position',@$idtype1);
+						$this->db->order_by('pers_groupleade','asc');
+						$this->db->order_by('pers_numberGroup','asc');
 		$data['pers_type'] = $this->db->get()->result(); 
 
+		//print_r($data['pers_type']); exit();
 		$this->load->view('user/layout/header.php',$data);
 		$this->load->view('user/personnel/personnel_all.php');
 		$this->load->view('user/layout/footer.php');

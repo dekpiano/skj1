@@ -43,4 +43,19 @@ class Admin_model_personnel extends CI_Model
 		return $this->db->update('tb_personnel',$data,"pers_id='".$this->session->userdata('login_id')."'");
 	}
 
+	public function personnel_ChangeNumber($data,$id)
+	{
+		return $this->db->update('tb_personnel',$data,"pers_id='".$id."'");
+	}
+
+	public function personnel_CheckName($frist,$last)
+	{
+		return $this->db->select('pers_firstname,pers_lastname')
+						->where('pers_firstname',$frist)
+						->where('pers_lastname',$last)
+						->from('tb_personnel')
+						->get()->num_rows();
+	}
+
+
 }

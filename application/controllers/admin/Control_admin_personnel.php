@@ -31,7 +31,8 @@ class Control_admin_personnel extends CI_Controller {
 		tb_personnel.pers_phone, 
 		tb_learning.lear_namethai,
 		tb_personnel.pers_academic,
-		tb_personnel.pers_img');
+		tb_personnel.pers_img,
+		tb_personnel.pers_numberGroup');
 		$this->db->from('tb_personnel');
 		$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
 		$this->db->join('tb_learning','tb_personnel.pers_learning = tb_learning.lear_id','LEFT');
@@ -347,6 +348,19 @@ window.history.back();
 		$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'อัปเดพข้อมูลสำเร็จ'));
 		redirect('admin/personnel/profile');
 	}
+
+	function ChangeNumber_personnel(){
+		$data = array('pers_numberGroup' => $this->input->post('pers_numberGroup') );
+		echo $this->Admin_model_personnel->personnel_ChangeNumber($data,$this->input->post('pers_id'));
+		
+	}
+
+	function CheckName_personnel(){
+
+		$data = $this->Admin_model_personnel->personnel_CheckName($this->input->post('pers_firstname'),$this->input->post('pers_lastname'));
+		echo $data;
+	}
+
 
 }
 

@@ -1336,18 +1336,16 @@ a.img,
                                         ) ?>"> <i class="icofont-dotted-right"></i> คณะผู้บริหาร</a>
                                         </li>
 
-                                        <?php foreach (
-                                            $lear
-                                            as $key => $v_lear
-                                        ): ?>
+                                        <?php foreach ($lear as $key => $v_lear): ?>
                                         <li>
-                                            <a href="<?= base_url(
-                                                'Personnel/'
-                                            ) .
-                                                $v_lear->lear_namethai ?>"><i class="icofont-dotted-right"></i>
+                                            <a href="<?= base_url('Personnel/').$v_lear->lear_namethai ?>"><i class="icofont-dotted-right"></i>
                                                 กลุ่มสาระการเรียนรู้<?= $v_lear->lear_namethai ?></a>
                                         </li>
                                         <?php endforeach; ?>
+                                        <li>
+                                        <a href="<?= base_url('Personnel/สายสนับสนุนการสอน')?>"><i class="icofont-dotted-right"></i>
+                                                สายสนับสนุนการสอน</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="icofont-news icofont-2x"></i>

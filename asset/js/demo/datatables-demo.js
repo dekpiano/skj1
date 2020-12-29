@@ -48,9 +48,10 @@ $(document).ready(function() {
 
     $('.dataTable_personnel').DataTable({
         "order": [
-            [0, "desc"]
+            [0, "asc"]
         ]
     });
+
 
     $('.show_announce').DataTable({
         autoWidth: false,
@@ -74,4 +75,45 @@ $(document).ready(function() {
     $('#dataTable_facebook').DataTable();
 
 
+});
+
+$(document).on('change', '.pers_numberGroup,.pers_id', function() {
+
+    $.ajax({
+        type: "post",
+        url: "../admin/control_admin_personnel/ChangeNumber_personnel",
+        data: { pers_numberGroup: $(this).val(), pers_id: $(this).attr('pers_id') },
+        cache: false,
+        success: function(response) {
+            //console.log(response);
+            if (response == 1) {
+                alertify.success('เปลี่ยนลำดับสำเร็จ');
+            } else {
+                alertify.error('เปลี่ยนลำดับผิดพลาด');
+            }
+
+        }
+    });
+});
+
+$(document).on('keyup', '#pers_lastname', function() {
+
+    $.ajax({
+        type: "post",
+        url: "../../admin/control_admin_personnel/CheckName_personnel",
+        data: { pers_firstname: $("#pers_firstname").val(), pers_lastname: $("#pers_lastname").val() },
+        cache: false,
+        success: function(response) {
+            console.log(response);
+            if (response == 1) {
+                swal("แจ้งเตือน!", "ข้อมูลผู้ใช้งานมีในระบบแล้ว", "error");
+                $("#pers_firstname").val('');
+                $("#pers_firstname").focus();
+                $("#pers_lastname").val('');
+            } else {
+
+            }
+
+        }
+    });
 });

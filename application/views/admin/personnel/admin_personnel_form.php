@@ -158,7 +158,7 @@
                                     <div class="col-md-4 mb-3">
                                         <label for="pers_position">ตำแหน่งงานหลักในโรงเรียน</label>
                                         <select class="custom-select d-block w-100"  id="pers_position"
-                                            name="pers_position">
+                                            name="pers_position" required>
                                             <option value="">เลือก...</option>
                                             <?php foreach ($posi as $key => $v_posi):?>
                                             <?php if($action != 'insert_personnel') :?>
@@ -322,11 +322,10 @@
                                     </div>
                                 </div>
                             </div>
-
+                                    
                             <img id="blah" class="img-fluid blah"
-                                src="<?php echo  @$pers[0]->pers_img == '' ? '#' : base_url().'uploads/personnel/'.$pers[0]->pers_img; ?>"
+                                src="<?php echo $action == "insert_personnel" ? '#' : base_url().'uploads/personnel/'.$pers[0]->pers_img; ?>"
                                 alt="" />
-
                             <hr class="mb-4">
 
                             <button class="btn btn-<?=$color?> btn-lg btn-block" type="submit"><?=$icon?>

@@ -65,10 +65,11 @@
       <script src="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
       <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
       <script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script>
-      
+      <!-- JavaScript Alert-->
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
       <!-- Page level custom scripts -->
-      <script src="<?= base_url() ?>asset/js/demo/datatables-demo.js?v=1002"></script>
+      <script src="<?= base_url() ?>asset/js/demo/datatables-demo.js?v=1001"></script>
       <script src="<?= base_url() ?>asset/js/jquery.inputmask.min.js"></script>
       <script src="<?= base_url() ?>asset/vendor/sweetalert.min.js"></script>
       <script src="<?= base_url() ?>asset/js/passtrength.js"></script>

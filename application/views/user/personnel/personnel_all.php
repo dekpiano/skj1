@@ -71,8 +71,7 @@
                     data-aos-delay="100">
                     <div class="member">
                         <div class="member-img">
-                            <img loading="lazy" src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>"
-                                class="img-fluid" alt="">
+                            <img loading="lazy" src="<?=$v_pers->pers_img == '' ? $img_e : $img_p.$v_pers->pers_img;?>" class="img-fluid" alt="">
                             <div class="social">
                                 <?php if($v_pers->pers_facebook != ''):?>
                                 <a target="_blank" href="https://www.facebook.com/<?=$v_pers->pers_facebook?>"
@@ -105,7 +104,7 @@
             
         <?php endif; endforeach?>
         </div>
-
+<!-- <?php echo $this->uri->segment('2');?> -->
         <div class="row ">
             <?php  foreach ($pers_type as $key => $v_pers_type): ?>
             <?php if($v_pers_type->posi_name != 'รองผู้อำนวยการโรงเรียน' && $v_pers_type->posi_name != 'ผู้อำนวยการโรงเรียน'): ?>
@@ -113,7 +112,8 @@
                 data-aos-delay="<?=$key;?>00">
                 <div class="member">
                     <div class="member-img">
-                        <img loading="lazy" src="<?=$img_p.$v_pers_type->pers_img;?>" class="img-fluid" alt="">
+                       
+                        <img loading="lazy" src="<?=$v_pers_type->pers_img == '' ? $img_e : $img_p.$v_pers_type->pers_img;?>" class="img-fluid" alt="">
                         <div class="social">
                             <?php if($v_pers_type->pers_facebook != ''):?>
                             <a target="_blank" href="https://www.facebook.com/<?=$v_pers_type->pers_facebook?>"
@@ -156,11 +156,6 @@
             </div>
             <?php endif; ?>
             <?php endforeach; ?>
-
-
-
-
-
         </div>
 
     </div>
