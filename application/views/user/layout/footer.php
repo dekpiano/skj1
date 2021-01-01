@@ -112,6 +112,30 @@
 <?php endif; ?>
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
+
+<!-- Modal -->
+<div class="modal fade" id="showyear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    
+     
+     <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
+  <!-- Your embedded video player code -->
+  <div class="fb-video" data-href="https://www.facebook.com/230288483730783/videos/1253283225045281/" data-width="800"
+  data-allowfullscreen="true"  data-autoplay="true"  data-show-captions="true">    
+  <div class="fb-xfbml-parse-ignore">
+     
+    </div>
+  </div>
+      
+     
+    </div>
+  </div>
+</div>
+
 <!-- Vendor JS Files -->
 <script src="<?= base_url() ?>asset/user/vendor/jquery/jquery.min.js"></script>
 <script src="<?= base_url() ?>asset/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -175,7 +199,7 @@ var Tawk_API = Tawk_API || {},
 </body>
 <script>
 $(document).ready(function() {
-
+    $('#showyear').modal('show');
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
