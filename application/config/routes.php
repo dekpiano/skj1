@@ -155,6 +155,7 @@ $route['logoSKJ'] = 'control_document/document_logoSKJ';
 $route['Contact'] = 'control_contact/contact_main';
 // วีดีโอ
 $route['Video'] = 'Control_video/video_all';
-
-// วีดีโอ
+// อีเมอล์
 $route['Email'] = 'Control_email';
+//ห้องเรียนออนไลน์
+$route['RoomLearning'] = 'Control_RoomLearning';

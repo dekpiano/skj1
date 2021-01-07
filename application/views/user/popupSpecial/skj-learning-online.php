@@ -81,8 +81,8 @@ section h2 {
                                 <img src="https://img.icons8.com/color/48/000000/youtube--v2.png" />
                                 <img src="https://img.icons8.com/cute-clipart/64/000000/zoom.png" />
                             </div>
-                            <a href="<?=base_url('FecebookGroup');?>"
-                                class="btn btn-outline-primary mt-3">ห้องเรียนออนไลน์</a>
+                            <a href="<?=base_url('RoomLearning');?>"
+                                class="btn btn-primary mt-3">SKJ ห้องเรียนออนไลน์</a>
                         </div>
                         <div class="col-md-6">
                             <img src="<?=base_url('uploads/banner/learningonline/bg1-01.png');?>" alt="เรียนออนไลน์"
@@ -101,7 +101,7 @@ section h2 {
                             <p>เรียนที่บ้าน ซึ่งแบ่งออกเป็นระดับชั้นอนุบาล-มัธยมศึกษาปีที 3 ใช้สื่อของ DLTV
                                 และระดับชั้นมัธยมศึกษาปีที่ 4-มัธยมศึกษาปีที่ 6 โดยใช้สื่อของ สพฐ.</p>
                             <a href="https://www.dltv.ac.th/home" target="_blank"
-                                class="btn btn-outline-primary">เข้าสู่บทเรียน</a>
+                                class="btn btn-primary">เข้าสู่บทเรียน</a>
                         </div>
                     </div>
                 </div>
