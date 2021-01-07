@@ -1301,7 +1301,7 @@ a.img,
                                 'welcome'
                             ) ?>">
                                 <img loading="lazy" class="img-fluid" src="<?=base_url('uploads/logo/Logo-nav.png');?>"
-                                    alt=""> สวนกุหลาบ (จิรประวัติ) นครสวรรค์</a>
+                                    alt=""> สวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</a>
                             <div class="nav-toggle"></div>
                         </div>
 
