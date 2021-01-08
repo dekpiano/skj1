@@ -108,13 +108,9 @@ section h2 {
             </div>
             <div class="row p-4 justify-content-center" data-aos="fade-down" data-aos-duration="5000">
 
-                <div style="color: #e83e8c;
-    border-color: #e83e8c;
-    border: 2px solid;
-    padding: 8px;
-    border-radius: 35px;font-size: 1.5rem;">
-                    <div style="padding: 8px;">
-                        <b>โรงเรียนหยุด นักเรียนไม่หยุดการเรียนรู้ </b> <br>
+                <div style="color: #e83e8c;border-color: #e83e8c;border: 2px solid;padding: 8px;border-radius: 35px;font-size: 1.5rem;">
+                    <div style="padding: 8px;" class="text-center">
+                        <b>"การเรียนรู้ไม่มีวันหยุด"</b> <br>
                         <small>เราจะผ่าน Covid-19 ไปด้วยกัน ครอบครัวสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</small>
                     </div>
 

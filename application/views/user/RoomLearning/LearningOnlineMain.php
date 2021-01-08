@@ -178,7 +178,7 @@
                         <li class="col-md-4">
                             <div class="categories-view1-wrap">
                                 <i ><?=$v_lear->lear_icon?></i>
-                                <a href="#"><?=$v_lear->lear_namethai?></a>
+                                <a target="_blank" href="<?=$v_lear->lear_link?>"><?=$v_lear->lear_namethai?></a>
                                 <small><?=$v_lear->lear_nameeng?></small>
                                 <span><?=$key+1;?></span>
                             </div>
@@ -187,7 +187,7 @@
                    <li class="col-md-4">
                             <div class="categories-view1-wrap">
                                 <i ><img src="https://img.icons8.com/color/48/000000/tour-guide.png"/></i>
-                                <a href="#">แนะแนว</a>
+                                <a target="_blank" href="https://sites.google.com/skj.ac.th/guide/%E0%B8%AB%E0%B8%99%E0%B8%B2%E0%B9%81%E0%B8%A3%E0%B8%81">แนะแนว</a>
                                 <small>Guidance work</small>
                                 <span>9</span>
                             </div>

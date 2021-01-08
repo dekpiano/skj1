@@ -21,9 +21,7 @@
     <meta property="og:title" content="<?= $title ?> | SKJ" />
     <meta property="og:description" content="<?= $description ?>" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="<?= @$news[0]->news_img == ''
-        ? base_url('asset/user/img/banner_main.jpg')
-        : base_url('uploads/news/') . $news[0]->news_img ?>" />
+    <meta property="og:image" content="<?= @$news[0]->news_img == '' ? base_url('asset/user/img/banner_main.jpg'): base_url('uploads/news/') . $news[0]->news_img ?>" />
     <link rel="image_src" href="images/content/content-37.png" />
 
 
@@ -1338,12 +1336,14 @@ a.img,
 
                                         <?php foreach ($lear as $key => $v_lear): ?>
                                         <li>
-                                            <a href="<?= base_url('Personnel/').$v_lear->lear_namethai ?>"><i class="icofont-dotted-right"></i>
+                                            <a href="<?= base_url('Personnel/').$v_lear->lear_namethai ?>"><i
+                                                    class="icofont-dotted-right"></i>
                                                 กลุ่มสาระการเรียนรู้<?= $v_lear->lear_namethai ?></a>
                                         </li>
                                         <?php endforeach; ?>
                                         <li>
-                                        <a href="<?= base_url('Personnel/สายสนับสนุนการสอน')?>"><i class="icofont-dotted-right"></i>
+                                            <a href="<?= base_url('Personnel/สายสนับสนุนการสอน')?>"><i
+                                                    class="icofont-dotted-right"></i>
                                                 สายสนับสนุนการสอน</a>
                                         </li>
                                     </ul>
@@ -1381,13 +1381,15 @@ a.img,
                                                 <h5 class="dropdown-header"><?= $v_nameNews ?></h5>
                                                 <?php foreach ($news_to as $key => $v_news_to):
                                                     if ($v_news_to->news_category == $v_nameNews): ?>
-                                                <li><a href="<?= base_url('news/newsDetail/').$v_news_to->news_id ?>"><i class="icofont-newspaper"></i>
+                                                <li><a href="<?= base_url('news/newsDetail/').$v_news_to->news_id ?>"><i
+                                                            class="icofont-newspaper"></i>
                                                         <?= $v_news_to->news_topic ?></a></li>
 
-                                                <?php endif; ?>                                                
+                                                <?php endif; ?>
                                                 <?php
                                                 endforeach; ?>
-                                                <li class="text-center"><a href="<?=base_url('news/all');?>">ดูทั้งหมด...</a> </li>
+                                                <li class="text-center"><a
+                                                        href="<?=base_url('news/all');?>">ดูทั้งหมด...</a> </li>
                                             </ul>
                                             <?php
                                             endforeach;
@@ -1400,9 +1402,7 @@ a.img,
                                     </a>
                                     <ul class="nav-dropdown">
                                         <li>
-                                            <a href="<?= base_url(
-                                                'academic'
-                                            ) ?>">
+                                            <a href="<?= base_url('academic') ?>">
                                                 <i class="icofont-dotted-right"></i>
                                                 บริหารวิชาการ
                                             </a>
@@ -1421,15 +1421,14 @@ a.img,
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="<?= base_url(
-                                    'Contact'
-                                ) ?>"><i class="icofont-contacts icofont-2x"></i>
+                                <li><a href="<?= base_url('Contact') ?>"><i class="icofont-contacts icofont-2x"></i>
                                         <p>ติดต่อ</p>
                                     </a></li>
-                                <li><a href="<?= base_url(
-                                    'login'
-                                ) ?>"><i class="icofont-lock icofont-2x"></i>
+                                <!-- <li><a href="<?= base_url('login') ?>"><i class="icofont-lock icofont-2x"></i>
                                         <p>Login</p>
+                                    </a></li> -->
+                                    <li><a href="<?= base_url('RoomLearning') ?>"><i class="icofont-learn icofont-2x"></i>
+                                        <p>ห้องเรียนออนไลน์</p>
                                     </a></li>
                             </ul>
                         </div>
