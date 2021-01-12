@@ -1402,7 +1402,7 @@ a.img,
                                     </a>
                                     <ul class="nav-dropdown">
                                         <li>
-                                            <a href="<?= base_url('academic') ?>">
+                                            <a href="http://academic.skj.ac.th">
                                                 <i class="icofont-dotted-right"></i>
                                                 บริหารวิชาการ
                                             </a>
