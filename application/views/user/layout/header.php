@@ -51,6 +51,34 @@
     <link rel="stylesheet" href="<?= base_url() ?>asset/user/css/smartwizard/smart_wizard.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>asset/user/css/smartwizard/smart_wizard_theme_arrows.min.css">
     <link href="<?= base_url() ?>/asset/css/snowy.css" rel="stylesheet">
+
+    
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v9.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="230288483730783"
+  theme_color="#e73e8c"
+  logged_in_greeting="สวัสดี สวนกุหลาบวิทยาลัย (จิรประวัติ)  นครสวรรค์ ยินดีต้อนรับ มีอะไรให้เราช่่วย "
+  logged_out_greeting="สวัสดี สวนกุหลาบวิทยาลัย (จิรประวัติ)  นครสวรรค์ ยินดีต้อนรับ มีอะไรให้เราช่่วย ">
+      </div>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165844207-1"></script>
     <script>

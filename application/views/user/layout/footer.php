@@ -112,7 +112,6 @@
 <?php endif; ?>
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-
 <!-- Modal สวัสดีปีใหม่-->
 <!-- <div class="modal fade" id="showyear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -145,7 +144,6 @@
 <script src="<?= base_url() ?>asset/js/imagesloaded.pkgd.min.js"></script>
 <script src="<?= base_url() ?>asset/user/js/aos.js"></script>
 <script src="<?= base_url() ?>asset/user/js/particles.min.js"></script>
-<script src="<?= base_url() ?>asset/js/demo/snowy2020.js"></script>
 <!-- Template Main JS File -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="<?= base_url() ?>asset/js/slick.js?v=1000"></script>
@@ -160,33 +158,6 @@
 <script src="<?= base_url() ?>asset/user/js/countdownopenschool.js?v=1001"></script>
 <script type="text/javascript">
 
-</script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API = Tawk_API || {},
-    Tawk_LoadStart = new Date();
-(function() {
-    var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/5ebe330f8ee2956d73a14f22/default';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
 </script>
 
 </body>
