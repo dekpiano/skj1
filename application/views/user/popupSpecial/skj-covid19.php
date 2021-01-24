@@ -88,7 +88,7 @@ section h2{
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-6 " data-aos="fade-left" data-aos-duration="800">
+                <div class="col-md-4 col-6 " data-aos="fade-in" data-aos-duration="800">
                     <img loading="lazy" src="<?=base_url('uploads/banner/covid19/preplo.png');?>" alt=""
                         class="img-fluid">
                 </div>

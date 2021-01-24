@@ -112,21 +112,7 @@
 <?php endif; ?>
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-<!-- Modal สวัสดีปีใหม่-->
-<!-- <div class="modal fade" id="showyear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">   
-  <div id="fb-root"></div>  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
-  <div class="fb-video" data-href="https://www.facebook.com/230288483730783/videos/1253283225045281/" data-width="800"
-  data-allowfullscreen="true"  data-autoplay="true"  data-show-captions="true">    
-  <div class="fb-xfbml-parse-ignore">
-     
-    </div>
-  </div>
-    </div>
-  </div>
-</div> -->
 
 <!-- Vendor JS Files -->
 <script src="<?= base_url() ?>asset/user/vendor/jquery/jquery.min.js"></script>
@@ -165,26 +151,26 @@
 $(document).ready(function() {
     $('#showyear').modal('show');
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-    'use strict';
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict';
 
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
 
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
 
 
     setTimeout(function() {
