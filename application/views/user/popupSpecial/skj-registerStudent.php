@@ -1,7 +1,7 @@
-<div style="background-color: #e8f2fd;padding-top: 5rem;    padding-bottom: 4rem;">
+<div style="background-color: #e8f2fd">
     <div class="container p-5">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row vh-100">
+            <div class="col-md-4 align-self-center">
                 <img src="<?=base_url('uploads/recruitstudent/logo-registerStudent.png');?>" alt="" class="img-fluid">
             </div>
             <div class="col-md-8 align-self-center">

@@ -1364,9 +1364,8 @@ a.img,
 
                                         <?php foreach ($lear as $key => $v_lear): ?>
                                         <li>
-                                            <a href="<?= base_url('Personnel/').$v_lear->lear_namethai ?>"><i
-                                                    class="icofont-dotted-right"></i>
-                                                กลุ่มสาระการเรียนรู้<?= $v_lear->lear_namethai ?></a>
+                                            <a href="<?= base_url('Personnel/').$v_lear->lear_namethai ?>"><i class="icofont-dotted-right"></i>
+                                            <?= $v_lear->lear_namethai == "งานแนะแนว" ? $v_lear->lear_namethai : "กลุ่มสาระการเรียนรู้".$v_lear->lear_namethai ?></a>
                                         </li>
                                         <?php endforeach; ?>
                                         <li>
