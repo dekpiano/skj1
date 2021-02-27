@@ -278,18 +278,23 @@ window.history.back();
 		   || ($mime == "image/png"))
 		   && in_array($extension, $allowedExts)) {
 			   // Generate new random name.
+			   $directory = getcwd() . "/uploads/news/detail/";
+			   $date =date('Y-m-d');
 			   $name = sha1(microtime()) . "." . $extension;
-	   
+			   if (!file_exists($directory.$date)) {				
+				mkdir($directory.$date, 0777, true);
+			   }			 
 			   // Save file in the uploads folder.
-			   move_uploaded_file($_FILES["image_param"]["tmp_name"], getcwd() . "/uploads/news/detail/" . $name);
-	   
+			   move_uploaded_file($_FILES["image_param"]["tmp_name"], getcwd() . "/uploads/news/detail/".$date."/".$name);		 
+			 			  		  
 			   // Generate response.
 			   $response = new StdClass;
-			   $response->link = base_url()."uploads/news/detail/" . $name;
+			   $response->link = base_url()."uploads/news/detail/".$date."/". $name;
 			   echo stripslashes(json_encode($response));
+
+			   
 		   }
 	}
-
 	public function news_uploads_delete()
 	{
 		   // Get src.
@@ -300,7 +305,6 @@ window.history.back();
 			
 	}
 
-	
 	
 	
 
