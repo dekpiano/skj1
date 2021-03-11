@@ -59,7 +59,7 @@
     <div class="container ">
         <div class="row vh-100">
             <div class="col-md-7 align-self-sm-start align-self-md-center content1">
-                <div class="text-center" style="    background: #e8f2fd; padding: 8px;border-radius: 10px;">
+                <div class="text-center" style="background: #e8f2fd; padding: 8px;border-radius: 10px;">
     <div>
     <h1 style=""> เปิดรับสมัครนักกีฬา <br><b>วันที่ 20 - 21 กุมภาพันธ์ 2564</b> <br></h1>
                     <h3> รุ่นอายุ U13 U14 U15 U16 U17 U18</h3>
