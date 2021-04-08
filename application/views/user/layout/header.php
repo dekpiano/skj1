@@ -21,7 +21,8 @@
     <meta property="og:title" content="<?= $title ?> | SKJ" />
     <meta property="og:description" content="<?= $description ?>" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="<?= @$news[0]->news_img == '' ? base_url('asset/user/img/banner_main.jpg'): base_url('uploads/news/') . $news[0]->news_img ?>" />
+    <meta property="og:image"
+        content="<?= @$news[0]->news_img == '' ? base_url('asset/user/img/banner_main.jpg'): base_url('uploads/news/') . $news[0]->news_img ?>" />
     <link rel="image_src" href="images/content/content-37.png" />
 
 
@@ -52,33 +53,32 @@
     <link rel="stylesheet" href="<?= base_url() ?>asset/user/css/smartwizard/smart_wizard_theme_arrows.min.css">
     <link href="<?= base_url() ?>/asset/css/snowy.css" rel="stylesheet">
 
-    
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v9.0'
-          });
-        };
 
-        (function(d, s, id) {
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml: true,
+            version: 'v9.0'
+        });
+    };
+
+    (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
+        js = d.createElement(s);
+        js.id = id;
         js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-      <!-- Your Chat Plugin code -->
-      <div class="fb-customerchat"
-        attribution=setup_tool
-        page_id="230288483730783"
-  theme_color="#e73e8c"
-  logged_in_greeting="สวัสดี สวนกุหลาบวิทยาลัย (จิรประวัติ)  นครสวรรค์ ยินดีต้อนรับ มีอะไรให้เราช่่วย "
-  logged_out_greeting="สวัสดี สวนกุหลาบวิทยาลัย (จิรประวัติ)  นครสวรรค์ ยินดีต้อนรับ มีอะไรให้เราช่่วย ">
-      </div>
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat" attribution=setup_tool page_id="230288483730783" theme_color="#e73e8c"
+        logged_in_greeting="สวัสดี สวนกุหลาบวิทยาลัย (จิรประวัติ)  นครสวรรค์ ยินดีต้อนรับ มีอะไรให้เราช่่วย "
+        logged_out_greeting="สวัสดี สวนกุหลาบวิทยาลัย (จิรประวัติ)  นครสวรรค์ ยินดีต้อนรับ มีอะไรให้เราช่่วย ">
+    </div>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165844207-1"></script>
     <script>
@@ -1310,7 +1310,7 @@ a.img,
 
 <body>
     <!-- LOADER -->
-    <div class="se-pre-con"></div>
+    <!-- <div class="se-pre-con"></div> -->
 
     <!-- end loader -->
     <div class="d-sm-block bg-top">
@@ -1364,8 +1364,9 @@ a.img,
 
                                         <?php foreach ($lear as $key => $v_lear): ?>
                                         <li>
-                                            <a href="<?= base_url('Personnel/').$v_lear->lear_namethai ?>"><i class="icofont-dotted-right"></i>
-                                            <?= $v_lear->lear_namethai == "งานแนะแนว" ? $v_lear->lear_namethai : "กลุ่มสาระการเรียนรู้".$v_lear->lear_namethai ?></a>
+                                            <a href="<?= base_url('Personnel/').$v_lear->lear_namethai ?>"><i
+                                                    class="icofont-dotted-right"></i>
+                                                <?= $v_lear->lear_namethai == "งานแนะแนว" ? $v_lear->lear_namethai : "กลุ่มสาระการเรียนรู้".$v_lear->lear_namethai ?></a>
                                         </li>
                                         <?php endforeach; ?>
                                         <li>
@@ -1454,9 +1455,48 @@ a.img,
                                 <!-- <li><a href="<?= base_url('login') ?>"><i class="icofont-lock icofont-2x"></i>
                                         <p>Login</p>
                                     </a></li> -->
-                                    <li><a href="<?= base_url('RoomLearning') ?>"><i class="icofont-learn icofont-2x"></i>
-                                        <p>ห้องเรียนออนไลน์</p>
-                                    </a></li>
+
+                                <li><a href="#"><i class="icofont-network icofont-2x"></i>
+                                        <p>SKJ บริการ</p>
+                                    </a>
+                                    <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="#"><i
+                                                    class="icofont-group-students icofont-1x"></i>
+                                                สำหรับนักเรียน
+                                            </a>
+                                            <ul class="nav-dropdown">
+                                                <li>
+                                                    <a href="http://academic.skj.ac.th/Login"><i
+                                                            class="icofont-login icofont-1x"></i>
+                                                        เข้าสู่ระบบ
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('RoomLearning') ?>"><i
+                                                    class="icofont-teacher icofont-1x"></i>
+                                                สำหรับครู
+                                            </a>
+                                            <ul class="nav-dropdown">
+                                                <li>
+                                                    <a href="<?= base_url('login') ?>"><i
+                                                            class="icofont-login icofont-1x"></i>
+                                                        เข้าสู่ระบบ
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('RoomLearning') ?>"><i
+                                                    class="icofont-learn icofont-1x"></i>
+                                                ห้องเรียนออนไลน์
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </nav>
