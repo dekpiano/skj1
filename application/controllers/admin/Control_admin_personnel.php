@@ -39,6 +39,7 @@ class Control_admin_personnel extends CI_Controller {
 		$this->db->order_by('pers_id','DESC');
 		$data['pers'] =	$this->db->get()->result();
 		$data['learning'] =	$this->db->get('tb_learning')->result();
+		$data['position'] =	$this->db->where('posi_id >=','posi_007')->get('tb_position')->result();
 
 		$this->load->view('admin/layout/header.php',$data);
 		$this->load->view('admin/layout/navber.php');

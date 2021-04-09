@@ -33,13 +33,19 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
+        <?php $this->load->view('user/popupSpecial/SKJ-Admission64.php'); ?>
+        </div>
+        <div class="carousel-item">
+        <?php $this->load->view('user/popupSpecial/skj-640215-Vlogger.php'); ?>
+        </div>
+        <div class="carousel-item ">
+        <?php $this->load->view('user/popupSpecial/skj-regisport.php'); ?>
+        </div>
+        <div class="carousel-item ">
         <?php $this->load->view('user/popupSpecial/skj-CheckregisterStudent.php'); ?>
         </div>
         <div class="carousel-item">
         <?php $this->load->view('user/popupSpecial/skj-registerStudent.php'); ?>
-        </div>
-        <div class="carousel-item">
-        <?php $this->load->view('user/popupSpecial/skj-learning-online.php'); ?>
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

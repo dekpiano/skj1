@@ -27,7 +27,7 @@ class Model_news extends CI_Model
     }
 
     public function get_news($limit, $start) {
-
+		$this->db->where('news_vision',0);
 		$this->db->limit($limit, $start);
 		$this->db->order_by('news_date','DESC');
 		$query = $this->db->get($this->table);

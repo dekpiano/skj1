@@ -19,6 +19,7 @@ class Control_login extends CI_Controller {
  		$data['title'] = self::$title;
 		$data['description'] = self::$description;
  		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ
+		$data['posi'] =	$this->db->where('posi_id >=','posi_007')->get('tb_position')->result(); //ตำแหน่งบุคลากร
 		$data['about'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
 		$data['banner'] =	$this->db->get('tb_banner')->result(); //ประชาสัมพันธ์
@@ -39,9 +40,6 @@ class Control_login extends CI_Controller {
 					$this->load->view('login/login_main.php');
 					$this->load->view('user/layout/footer.php');
 		}
-		
-
-		
 	}
 
 	public function validlogin()

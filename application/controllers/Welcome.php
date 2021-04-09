@@ -21,6 +21,7 @@ class Welcome extends CI_Controller
         $data['description'] = self::$description;
         $data['lear'] = $this->db->get('tb_learning')->result(); //กลุ่มสาระ
         $data['news'] = $this->db
+            ->where('news_vision',0)
             ->order_by('news_date', 'desc')
             ->limit(6)
             ->get('tb_news')

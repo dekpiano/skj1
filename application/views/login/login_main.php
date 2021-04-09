@@ -34,78 +34,39 @@
     }
 }
 
-.form-control-google {
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
     position: relative;
-    width: 100%;
-    height: 50px;
-    margin-top: 5px;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
     margin-bottom: 10px;
-}
-
-.form-control-google input {
-    width: 100%;
-    border: 0;
-    outline: none;
-    height: 100%;
-    padding: 0 15px;
-    transition: 0.4s;
-}
-
-.form-control-google input:valid+label {
-    top: -0.45rem;
-    left: 10px;
-    font-size: 0.9rem;
-    z-index: 100;
-    width: auto;
-    height: 0.9rem;
-    padding: 0 10px;
-    color: rgba(0, 0, 0, 0.3);
-}
-
-input:not(:focus) {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.form-control-google input:focus+label {
-    top: -0.45rem;
-    left: 10px;
-    font-size: 0.9rem;
-    z-index: 100;
-    width: auto;
-    height: 0.9rem;
-    padding: 0 10px;
-    color: #3484f0;
-}
-
-.form-control-google input:focus~div.border-around {
-    border: 2px solid #3484f0;
-}
-
-.form-control-google label {
-    position: absolute;
-    top: 0;
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
-    width: 100%;
-    height: 100%;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: rgba(0, 0, 0, 0.5);
-    background-color: #fff;
-    pointer-events: none;
-}
-
-.form-control-google div.border-around {
-    position: absolute;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    height: 100%;
-    width: 100%;
-    padding-right: 25px;
-    top: 0;
-    pointer-events: none;
-    border-radius: 3px;
-    transition: 0.2s;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 </style>
 <section class="vh-100" id="page">
@@ -118,36 +79,30 @@ input:not(:focus) {
             </div>
             <!-- Registeration Form -->
             <div class="col-md-5 col-lg-6 ml-auto">
-                <h1>ระบบล็อคอิน </h1>
-                <form method="post" action="<?=base_url('Control_login/validlogin');?>" class="needs-validation"
-                    novalidate>
 
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <input id="username" class="form-control " type="text" name="username" required/>
-                        <label class="form-label" for="username">ชื่อผู้ใช้งาน</label>
-                        <div class="invalid-feedback">
-                            กรุณากรอกชื่อผู้ใช้งาน
-                        </div>
+                <form class="form-signin needs-validation" method="post" action="<?=base_url('Control_login/validlogin');?>"novalidate>
+                    <img class="mb-4" src="<?=base_url();?>uploads/logo/Logo-nav.png" alt=""
+                        width="72" height="72">
+                    <h1 class="h3 mb-3 font-weight-normal">เข้าสู่ระบบ</h1>
+                    <label for="username" class="sr-only">Email address</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Email address"
+                        required autofocus>
+                    <div class="invalid-feedback">
+                        กรุณากรอกชื่อผู้ใช้งาน
                     </div>
-
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                        <input id="password" type="password" name="password" class="form-control" required/>
-                        <label class="form-label" for="password">รหัสผ่าน</label>
-                        <div class="invalid-feedback">
-                            กรุณากรอกรหัสผ่าน
-                        </div>
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                    <div class="invalid-feedback">
+                        กรุณากรอกรหัสผ่าน
                     </div>
-
 
                     <button type="submit" class="btn btn-primary btn-block">
                         <span class="font-weight-bold"><i class="icofont-login"></i> Login</span>
                     </button>
                     <?=$this->session->flashdata('msgerr');?>
-
-
+                    <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
                 </form>
+
 
 
             </div>
