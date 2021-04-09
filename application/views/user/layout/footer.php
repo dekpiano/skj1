@@ -57,6 +57,8 @@
                                     href="https://www.skj.ac.th/">สวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a target="_blank"
                                     href="http://www.sk-thonburi.ac.th/">สวนกุหลาบวิทยาลัย ธนบุรี</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
+                                    href="http://www.skns.ac.th/">สวนกุหลาบวิทยาลัย นครศรีธรรมราช</a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,9 +82,9 @@
                         <br>
                         <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
                         <div class="f_social_icon">
-                            <a href="#"><i class="icofont-facebook"></i></a>
-                            <a href="#"><i class="icofont-youtube-play"></i></a>
-                            <a href="#"><i class="icofont-line-messenger"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%AA%E0%B8%A7%E0%B8%99%E0%B8%81%E0%B8%B8%E0%B8%AB%E0%B8%A5%E0%B8%B2%E0%B8%9A%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2-%E0%B8%88%E0%B8%B4%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%B4-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AA%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B9%8C-230288483730783"><i class="icofont-facebook"></i></a>
+                            <a target="_blank" href="https://www.youtube.com/channel/UC7p4cQQuIFLyrF68p7JbWDw"><i class="icofont-youtube-play"></i></a>
+                            <a target="_blank" href="#"><i class="icofont-line-messenger"></i></a>
 
                         </div>
                     </div>

@@ -16,6 +16,7 @@ class Control_academic extends CI_Controller
                 ? 'https'
                 : 'http') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $data['lear'] = $this->db->get('tb_learning')->result(); //กลุ่มสาระ
+        $data['posi'] =	$this->db->where('posi_id >=','posi_007')->get('tb_position')->result(); //ตำแหน่งบุคลากร
         $data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
         $data['banner'] = $this->db->get('tb_banner')->result(); //ประชาสัมพันธ์
         $data['news_p'] = $news_today = $this->db->where('news_category','ข่าวประชาสัมพันธ์')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();

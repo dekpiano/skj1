@@ -1310,7 +1310,7 @@ a.img,
 
 <body>
     <!-- LOADER -->
-    <!-- <div class="se-pre-con"></div> -->
+    <div class="se-pre-con"></div>
 
     <!-- end loader -->
     <div class="d-sm-block bg-top">
@@ -1369,11 +1369,15 @@ a.img,
                                                 <?= $v_lear->lear_namethai == "งานแนะแนว" ? $v_lear->lear_namethai : "กลุ่มสาระการเรียนรู้".$v_lear->lear_namethai ?></a>
                                         </li>
                                         <?php endforeach; ?>
+                                        <?php foreach ($posi as $key => $v_posi): ?>
                                         <li>
-                                            <a href="<?= base_url('Personnel/สายสนับสนุนการสอน')?>"><i
+                                            <a href="<?= base_url('Personnel/').$v_posi->posi_name?>"><i
                                                     class="icofont-dotted-right"></i>
-                                                สายสนับสนุนการสอน</a>
+                                               <?=$v_posi->posi_name;?>
+                                                </a>
                                         </li>
+                                        <?php endforeach; ?>
+                                       
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="icofont-news icofont-2x"></i>
@@ -1461,8 +1465,7 @@ a.img,
                                     </a>
                                     <ul class="nav-dropdown">
                                         <li>
-                                            <a href="#"><i
-                                                    class="icofont-group-students icofont-1x"></i>
+                                            <a href="#"><i class="icofont-group-students icofont-1x"></i>
                                                 สำหรับนักเรียน
                                             </a>
                                             <ul class="nav-dropdown">

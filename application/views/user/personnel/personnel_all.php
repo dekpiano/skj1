@@ -18,8 +18,12 @@
 <section class=" team" style="background: #fff0;">
     <!-- ======= Team Section ======= -->
     <div class="container">
-        <?php  $img_p = base_url('uploads/personnel/');
+
+    <?php  $img_p = base_url('uploads/personnel/');
               $img_e = base_url('asset/img/user-icon.svg');
+    ?>
+
+        <?php  if($this->uri->segment('2') == "คณะผู้บริหาร") :
         foreach ($pers as $key => $v_pers) :
               if($v_pers->posi_name == 'ผู้อำนวยการโรงเรียน'): ?>
         <center>
@@ -65,8 +69,6 @@
         <div class="row justify-content-md-center">
         <?php foreach ($pers as $key => $v_pers) :
          if($v_pers->posi_name == 'รองผู้อำนวยการโรงเรียน'): ?>
-       
-           
                 <div class="col-lg-4 col-md-6 align-items-stretch aos-init aos-animate" data-aos="zoom-in"
                     data-aos-delay="100">
                     <div class="member">
@@ -102,10 +104,14 @@
                     </div>
                 </div>
             
-        <?php endif; endforeach?>
+        <?php endif; endforeach; ?>
         </div>
-<!-- <?php echo $this->uri->segment('2');?> -->
-        <div class="row ">
+        <?php endif;?>
+
+
+
+
+        <div class="row">
             <?php  foreach ($pers_type as $key => $v_pers_type): ?>
             <?php if($v_pers_type->posi_name != 'รองผู้อำนวยการโรงเรียน' && $v_pers_type->posi_name != 'ผู้อำนวยการโรงเรียน'): ?>
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in"

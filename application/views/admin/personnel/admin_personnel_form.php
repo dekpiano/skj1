@@ -69,7 +69,7 @@
                                 <div class="form-group row">
                                     <label for="pers_prefix" class="col-sm-4 col-form-label">คำนำหน้า</label>
                                     <div class="col-sm-8">
-                                        <select class="custom-select"  name="pers_prefix" id="pers_prefix" required>
+                                        <select class="custom-select" name="pers_prefix" id="pers_prefix" required>
                                             <option value="">เลือก...</option>
                                             <?php $data_prefix = array('นาย','นาง','นางสาว','ว่าที่ร้อยตรี','ว่าที่ร้อยตรีหญิง','Mr.','Mrs.','Miss.');
                               foreach ($data_prefix as $key => $v_prefix):?>
@@ -91,7 +91,8 @@
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="pers_firstname"
                                             name="pers_firstname"
-                                            value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_firstname;?>" required>
+                                            value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_firstname;?>"
+                                            required>
                                         <div class="invalid-feedback">
                                             กรุณากรอกชื่อจริง
                                         </div>
@@ -102,7 +103,8 @@
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="pers_lastname" name="pers_lastname"
                                             placeholder=""
-                                            value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_lastname;?>" required>
+                                            value="<?=$action == 'insert_personnel' ? '' : $pers[0]->pers_lastname;?>"
+                                            required>
                                         <div class="invalid-feedback">
                                             กรุณากรอกนามสกุล
                                         </div>
@@ -119,7 +121,7 @@
                                     <div class="col-sm-8">
                                         <input autocomplete="off" type="text" class="form-control " id="pers_britday"
                                             name="pers_britday" placeholder=""
-                                            value="<?=$action == 'insert_personnel' ? '' : $d;?>" 
+                                            value="<?=$action == 'insert_personnel' ? '' : $d;?>"
                                             data-inputmask="'mask': '99-99-9999'">
 
                                         <div class="invalid-feedback">
@@ -137,7 +139,7 @@
                                             กรุณากรอกเบอร์โทรศัพท์
                                         </div>
                                     </div>
-                                </div>                          
+                                </div>
                                 <div class="form-group row">
                                     <label for="pers_id" class="col-sm-4 col-form-label">ที่อยู่</label>
                                     <div class="col-sm-8">
@@ -157,7 +159,7 @@
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <label for="pers_position">ตำแหน่งงานหลักในโรงเรียน</label>
-                                        <select class="custom-select d-block w-100"  id="pers_position"
+                                        <select class="custom-select d-block w-100" id="pers_position"
                                             name="pers_position" required>
                                             <option value="">เลือก...</option>
                                             <?php foreach ($posi as $key => $v_posi):?>
@@ -285,7 +287,7 @@
                           ?>
                                 <div class="custom-control custom-checkbox">
                                     <?php if($action == 'insert_personnel'):?>
-                                    <input type="checkbox" class="custom-control-input" id="pers_workother_id<?=$key?>"
+                                    <input <?=$key==0 ? 'checked' : '';?> type="checkbox" class="custom-control-input" id="pers_workother_id<?=$key?>"
                                         name="pers_workother_id[]" value="<?=$v_work->work_id;?>">
                                     <?php else : ?>
                                     <input type="checkbox" class="custom-control-input" id="pers_workother_id<?=$key?>"
@@ -322,7 +324,7 @@
                                     </div>
                                 </div>
                             </div>
-                                    
+
                             <img id="blah" class="img-fluid blah"
                                 src="<?php echo $action == "insert_personnel" ? '#' : base_url().'uploads/personnel/'.$pers[0]->pers_img; ?>"
                                 alt="" />
