@@ -1373,11 +1373,11 @@ a.img,
                                         <li>
                                             <a href="<?= base_url('Personnel/').$v_posi->posi_name?>"><i
                                                     class="icofont-dotted-right"></i>
-                                               <?=$v_posi->posi_name;?>
-                                                </a>
+                                                <?=$v_posi->posi_name;?>
+                                            </a>
                                         </li>
                                         <?php endforeach; ?>
-                                       
+
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="icofont-news icofont-2x"></i>
@@ -1435,19 +1435,19 @@ a.img,
                                     <ul class="nav-dropdown">
                                         <li>
                                             <a href="http://academic.skj.ac.th">
-                                                <i class="icofont-dotted-right"></i>
+                                                <i class="icofont-brainstorming"></i>
                                                 บริหารวิชาการ
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="">
-                                                <i class="icofont-dotted-right"></i>
+                                            <a href="#">
+                                                <i class="icofont-group-students"></i>
                                                 บริหารกิจการนักเรียน
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="">
-                                                <i class="icofont-dotted-right"></i>
+                                            <a href="#">
+                                                <i class="icofont-presentation"></i>
                                                 บริหารทั่วไป
                                             </a>
                                         </li>
@@ -1495,6 +1495,24 @@ a.img,
                                             <a href="<?= base_url('RoomLearning') ?>"><i
                                                     class="icofont-learn icofont-1x"></i>
                                                 ห้องเรียนออนไลน์
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('document') ?>">
+                                                <i class="icofont-file-document"></i>
+                                                ดาวน์โหลดเอกสาร
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('logoSKJ') ?>">
+                                                <i class="icofont-medal "></i>
+                                                ตราโรงเรียน
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('FecebookGroup') ?>">
+                                                <i class="icofont-facebook"></i>
+                                                Fecebook กลุ่ม
                                             </a>
                                         </li>
 

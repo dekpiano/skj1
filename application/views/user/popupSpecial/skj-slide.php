@@ -33,6 +33,9 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
+        <?php $this->load->view('user/popupSpecial/skj-songkran64.php'); ?>
+        </div>
+        <div class="carousel-item ">
         <?php $this->load->view('user/popupSpecial/SKJ-Admission64.php'); ?>
         </div>
         <div class="carousel-item">
