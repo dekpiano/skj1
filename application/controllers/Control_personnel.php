@@ -2,12 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Control_personnel extends CI_Controller {
-
+	protected $DBSKJ,$DBPers;
 	public function __construct() {
 		parent::__construct();
 		//$this->load->model('model_personnel');
-		
-
+		$this->DBSKJ = $this->load->database('default', TRUE);
+		$this->DBPers = $this->load->database('db_personnel', TRUE);
 	}
 	public static $title = "บุคลากรโรงเรียน";
 	public static $description = "บุคลากรโรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์";
@@ -67,7 +67,7 @@ class Control_personnel extends CI_Controller {
 		$data['news_pg'] = $news_today = $this->db->where('news_category','ข่าวประกาศ')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
 		$data['lear'] =	$this->db->get('tb_learning')->result(); //กลุ่มสาระ	
 		$data['Allabout'] = $this->db->get('tb_aboutschool')->result(); //เกี่ย่วกับโรงเรียน
-						$this->db->select('	tb_personnel.pers_id, 
+						$this->DBPers->select('	tb_personnel.pers_id, 
 										tb_personnel.pers_prefix, 
 										tb_personnel.pers_firstname, 
 										tb_personnel.pers_lastname, 
@@ -80,11 +80,12 @@ class Control_personnel extends CI_Controller {
 										tb_personnel.pers_position, 
 										tb_personnel.pers_academic,
 										tb_personnel.pers_img');
-						$this->db->from('tb_personnel');
-						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id');
-		$data['pers'] = $this->db->get()->result(); 
+						$this->DBPers->from('tb_personnel');
+						$this->DBPers->join($this->DBSKJ->database.'.tb_position','tb_personnel.pers_position = tb_position.posi_id');
+		$data['pers'] = $this->DBPers->get()->result(); 
 
-		$this->db->select('	tb_personnel.pers_id, 
+		
+		$this->DBPers->select('	tb_personnel.pers_id, 
 							tb_personnel.pers_prefix, 
 							tb_personnel.pers_firstname, 
 							tb_personnel.pers_lastname, 
@@ -101,16 +102,18 @@ class Control_personnel extends CI_Controller {
 							tb_personnel.pers_academic,
 							tb_personnel.pers_numberGroup,
 							tb_learning.lear_namethai');
-						$this->db->from('tb_personnel');
-						$this->db->join('tb_position','tb_personnel.pers_position = tb_position.posi_id','LEFT');
-						$this->db->join('tb_learning','tb_personnel.pers_learning = tb_learning.lear_id','LEFT');
-						$this->db->where('lear_namethai',$name);
-						$this->db->or_where('posi_name',$name);
-						$this->db->or_where('pers_position',@$idtype);
-						$this->db->or_where('pers_position',@$idtype1);
-						$this->db->order_by('pers_groupleade','asc');
-						$this->db->order_by('pers_numberGroup','asc');
-		$data['pers_type'] = $this->db->get()->result(); 
+						$this->DBPers->from('tb_personnel');
+						$this->DBPers->join($this->DBSKJ->database.'.tb_position','tb_personnel.pers_position = tb_position.posi_id','LEFT');
+						$this->DBPers->join($this->DBSKJ->database.'.tb_learning','tb_personnel.pers_learning = tb_learning.lear_id','LEFT');
+						$this->DBPers->where('lear_namethai',$name);
+						$this->DBPers->or_where('posi_name',$name);
+						$this->DBPers->or_where('pers_position',@$idtype);
+						$this->DBPers->or_where('pers_position',@$idtype1);
+						$this->DBPers->order_by('pers_groupleade','asc');
+						$this->DBPers->order_by('pers_numberGroup','asc');
+		$data['pers_type'] = $this->DBPers->get()->result(); 
+
+		//print_r($data['pers_type']); exit();
 
 		//print_r($data['pers_type']); exit();
 		$this->load->view('user/layout/header.php',$data);

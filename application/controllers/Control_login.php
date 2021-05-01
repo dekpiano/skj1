@@ -2,13 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Control_login extends CI_Controller {
-
+	protected $DBSKJ,$DBPers;
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('Model_login');
+		
+		$this->DBSKJ = $this->load->database('default', TRUE);
+		$this->DBPers = $this->load->database('db_personnel', TRUE);
 	}
 
 	public static $title = "เข้าสู่ระบบ";
