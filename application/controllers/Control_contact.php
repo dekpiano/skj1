@@ -2,11 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Control_contact extends CI_Controller {
-
+	protected $DBPers;
 	public function __construct() {
 		parent::__construct();
 		$this->load->library('timeago');
 		$this->load->model('model_news');
+		$this->DBSKJ = $this->load->database('default', TRUE);
+		$this->DBPers = $this->load->database('db_personnel', TRUE);
 		
 	}
 
@@ -35,7 +37,7 @@ class Control_contact extends CI_Controller {
 		$data['title'] = "ติดต่อ";
         $data['description'] = "ติดต่อสอบถามเกี่ยวกับโรงเรียน";
         
-        $data['Executive'] = $this->db->select('tb_personnel.pers_id, 
+        $data['Executive'] = $this->DBPers->select('tb_personnel.pers_id, 
         tb_personnel.pers_prefix, 
         tb_personnel.pers_firstname, 
         tb_personnel.pers_lastname, 
@@ -43,7 +45,7 @@ class Control_contact extends CI_Controller {
         tb_personnel.pers_position, 
         tb_position.posi_name, 
         tb_personnel.pers_img')
-        ->join('tb_position','tb_personnel.pers_position = tb_position.posi_id')
+        ->join($this->DBSKJ->database.'.tb_position','tb_personnel.pers_position = tb_position.posi_id')
         ->where('tb_position.posi_name','ผู้อำนวยการโรงเรียน')
         ->or_where('tb_position.posi_name','รองผู้อำนวยการโรงเรียน')
         ->get('tb_personnel')->result();

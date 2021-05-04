@@ -308,7 +308,7 @@ window.history.back();
 	
 	public function reset_password($id)
 	{	
-		$data = $this->db->where('pers_id',$id)->get('tb_personnel')->result();
+		$data = $this->DBPers->where('pers_id',$id)->get('tb_personnel')->result();
 		$date_thai = $this->chang_date_eng($data[0]->pers_britday);
 		//print_r($date_thai);exit();
 		$reset = array('pers_password' => md5(md5($date_thai)));

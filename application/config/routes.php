@@ -50,7 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method welcome/not_404/mother_day12
 */
 $route['default_controller'] = 'welcome';
-$route['404_override'] = '';
+$route['404_override'] = 'welcome/not_404';
 $route['translate_uri_dashes'] = false;
 
 $route['login'] = 'control_login/login_main';

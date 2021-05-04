@@ -50,6 +50,7 @@ class Welcome extends CI_Controller
 		$data['news_k'] = $news_today = $this->db->where('news_category','ข่าวกิจกรรม')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
         $data['news_pg'] = $news_today = $this->db->where('news_category','ข่าวประกาศ')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
         $data['video'] = $news_today = $this->db->order_by('video_date','DESC')->get('tb_video')->result();
+        $data['posi'] =	$this->db->where('posi_id >=','posi_007')->get('tb_position')->result(); //ตำแหน่งบุคลากร
         $this->load->view('user/layout/header.php', $data);
         $this->load->view('user/main/index.php');
         $this->load->view('user/layout/footer.php');
@@ -60,28 +61,6 @@ class Welcome extends CI_Controller
         $this->load->view('errors/404.php');
     }
 
-    function father29_day()
-    {
-        $this->load->view('user/popupSpecial/father_day.php');
-    }
-    function mother_day()
-    {
-        $this->load->view('user/popupSpecial/mother_day.php');
-    }
-    function mother_day12()
-    {
-        $this->load->view('user/popupSpecial/mother_day12.php');
-    }
-
-    function r5_23()
-    {
-        $this->load->view('user/popupSpecial/23.php');
-    }
-
-    function father5_day()
-    {
-        $this->load->view('user/popupSpecial/father5_day.php');
-    }
 
 
 

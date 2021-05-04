@@ -29,29 +29,13 @@
 }
 
 </style>
-<div class="regis-sm" style="background: #e62e71;    color: white;    padding: 20px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 textRight mb-2">
-            <h1>รับสมัครนักเรียน 2564</h1>
-             <h2><span style="background: #427bff;padding: 5px;border-radius: 5px;">24 - 28 เมษายน 2564 นี้</span></h2>
-            </div>
-            <div class="col-md-6 align-self-center textLeft">
-                <a href="http://admission.skj.ac.th/" class="btn btn-outline-light">รายละเอียดเพิ่มเติม -></a>
-            </div>
-        </div>
-        
-    </div>
-</div>
-
+<?php $this->load->view('user/popupSpecial/skj-covid19.php'); ?>
 <!-- ประชาสัมพันธ์ -->
 <?php $this->load->view('user/news/news_main_v2.php'); ?>
 
 <?php $this->load->view('user/video/video_main.php'); ?>
 
 <?php $this->load->view('user/services/services_skj.php'); ?>
-
-<?php $this->load->view('user/popupSpecial/skj-covid19.php'); ?>
 
 <!-- director_main -->
 <?php $this->load->view('user/director/director_main.php'); ?>
