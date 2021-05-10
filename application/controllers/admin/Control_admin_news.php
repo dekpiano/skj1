@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Control_admin_news extends CI_Controller {
 	
 	var  $title = "ประชาสัมพันธ์/กิจกรรม";
-	
+	protected $DBSKJ,$DBPers;
+
 	public function __construct() {
 		parent::__construct();
 		$this->load->helper(array('form', 'url'));
@@ -12,9 +13,10 @@ class Control_admin_news extends CI_Controller {
 		if ($this->session->userdata('fullname') == '') {
 			redirect('login','refresh');
 		}
-	}
 
-	
+		$this->DBSKJ = $this->load->database('default', TRUE);
+		$this->DBPers = $this->load->database('db_personnel', TRUE);
+	}
 
 	public function index()
 	{	
@@ -25,7 +27,7 @@ class Control_admin_news extends CI_Controller {
 							tb_personnel.pers_lastname, 
 							tb_news.*');
 		$this->db->from('tb_news');
-		$this->db->join('tb_personnel','tb_news.personnel_id = tb_personnel.pers_id','LEFT');
+		$this->db->join($this->DBPers->database.'.tb_personnel','tb_news.personnel_id = tb_personnel.pers_id','LEFT');
 		if($this->session->userdata('login_id') != 1){
 			$this->db->where('tb_news.personnel_id',$this->session->userdata('login_id'));
 		}

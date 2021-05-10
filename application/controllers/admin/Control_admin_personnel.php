@@ -311,7 +311,7 @@ window.history.back();
 		$data = $this->DBPers->where('pers_id',$id)->get('tb_personnel')->result();
 		$date_thai = $this->chang_date_eng($data[0]->pers_britday);
 		//print_r($date_thai);exit();
-		$reset = array('pers_password' => md5(md5($date_thai)));
+		$reset = array('pers_password' => md5(md5($date_thai)) ,'pers_changepassword' => '');
 		$this->Admin_model_personnel->personnel_resetpassword($reset,$id);
 		redirect('admin/control_admin_personnel/edit_personnel/'.$id);
 	}
