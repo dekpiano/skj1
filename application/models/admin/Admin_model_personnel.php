@@ -64,3 +64,5 @@ class Admin_model_personnel extends CI_Model
 
 
 }
+
+

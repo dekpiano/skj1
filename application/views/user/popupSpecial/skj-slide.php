@@ -32,27 +32,23 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-    <div class="carousel-item active">
-        <?php $this->load->view('user/popupSpecial/skj-640429-Announcement-postponement .php'); ?>
-        </div>
-        <div class="carousel-item ">
-        <?php $this->load->view('user/popupSpecial/SKJ-Admission64.php'); ?>
-        </div>
-        <div class="carousel-item ">
-        <?php $this->load->view('user/popupSpecial/skj-songkran64.php'); ?>
+        <div class="carousel-item active">
+            <?php $this->load->view('user/popupSpecial/skj-640517-schoolback.php'); ?>
         </div>
         <div class="carousel-item">
-        <?php $this->load->view('user/popupSpecial/skj-640215-Vlogger.php'); ?>
+            <?php $this->load->view('user/popupSpecial/skj-640429-Announcement-postponement.php'); ?>
         </div>
         <div class="carousel-item ">
-        <?php $this->load->view('user/popupSpecial/skj-regisport.php'); ?>
+            <?php $this->load->view('user/popupSpecial/SKJ-Admission64.php'); ?>
         </div>
         <div class="carousel-item ">
-        <?php $this->load->view('user/popupSpecial/skj-CheckregisterStudent.php'); ?>
+            <?php $this->load->view('user/popupSpecial/skj-songkran64.php'); ?>
         </div>
         <div class="carousel-item">
-        <?php $this->load->view('user/popupSpecial/skj-registerStudent.php'); ?>
+            <?php $this->load->view('user/popupSpecial/skj-640215-Vlogger.php'); ?>
         </div>
+        
+
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
