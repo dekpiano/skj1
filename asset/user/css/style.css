@@ -2066,7 +2066,7 @@ h3.small_heading {
 }
 
 .card a {
-    color: inherit;
+    /* color: inherit; */
     text-decoration: none;
 }
 

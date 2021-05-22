@@ -14,8 +14,6 @@ class Control_admin_images extends CI_Controller {
 		}
 	}
 
-	
-
 	public function index()
 	{	
 		$data['title'] = $this->title;

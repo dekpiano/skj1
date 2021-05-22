@@ -45,7 +45,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="<?= base_url() ?>/asset/user/css/style.css?v=1000" rel="stylesheet">
+    <link href="<?= base_url() ?>/asset/user/css/style.css?v=1001" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/css/circles.css" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/css/footerskj.css" rel="stylesheet">
     <link href="<?= base_url() ?>/asset/user/css/aos.css" rel="stylesheet">
@@ -1513,6 +1513,12 @@ a.img,
                                             <a href="<?= base_url('FecebookGroup') ?>">
                                                 <i class="icofont-facebook"></i>
                                                 Fecebook กลุ่ม
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('Email') ?>">
+                                                <i class="icofont-email"></i>
+                                                Email โรงเรียน
                                             </a>
                                         </li>
 
