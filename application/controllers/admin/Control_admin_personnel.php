@@ -372,6 +372,22 @@ window.history.back();
 		echo $data;
 	}
 
+	function profile_update_Privateinfo_personnel(){
+		$data = array(	
+			'pers_prefix' => $this->input->post('pers_prefix'),
+			'pers_firstname' => $this->input->post('pers_firstname'),
+			'pers_lastname' => $this->input->post('pers_lastname'),
+			'pers_britday' => $this->chang_date_thai($this->input->post('pers_britday')),
+			'pers_address' => $this->input->post('pers_address'),
+			'pers_phone' => $this->input->post('pers_phone'),
+			'pers_userEdit' => $this->session->userdata('login_id')
+		);
+		if($this->Admin_model_personnel->personnel_update($data) == 1){
+			echo "1";
+		}
+
+	}
+
 
 }
 

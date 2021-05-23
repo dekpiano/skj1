@@ -76,7 +76,9 @@
       <script src="<?= base_url() ?>asset/js/jquery.inputmask.min.js"></script>
       <script src="<?= base_url() ?>asset/vendor/sweetalert.min.js"></script>
       <script src="<?= base_url() ?>asset/js/passtrength.js"></script>
-      <script src="<?= base_url() ?>asset/js/personnel_profile.js?v=1002"></script>
+      <script src="<?= base_url() ?>asset/js/personnel_profile.js?v=1002"></script> 
+
+  
 
       <!-- <script src="https://cdn.tiny.cloud/1/y6b2omlkddg6mbwjuwhrf96ufg0wjfhrf5xw1xes3o6oahi4/tinymce/5/tinymce.min.js"
           referrerpolicy="origin"></script> -->

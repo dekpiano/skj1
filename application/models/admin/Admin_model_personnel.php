@@ -17,7 +17,7 @@ class Admin_model_personnel extends CI_Model
 	public function personnel_update($data)
 	{
 	
-		return $this->DBPers->update('tb_personnel',$data,"pers_id='".$this->input->post('pers_id')."'");
+		return $this->DBPers->update('tb_personnel',$data,"pers_id='".$this->session->userdata('login_id')."'");
 	}
 
 	public function personnel_delete($id)

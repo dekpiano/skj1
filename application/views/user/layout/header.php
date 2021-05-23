@@ -1470,7 +1470,7 @@ a.img,
                                             </a>
                                             <ul class="nav-dropdown">
                                                 <li>
-                                                    <a href="http://academic.skj.ac.th/Login"><i
+                                                    <a href="http://academic.skj.ac.th/LoginStudent"><i
                                                             class="icofont-login icofont-1x"></i>
                                                         เข้าสู่ระบบ
                                                     </a>
