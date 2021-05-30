@@ -14,16 +14,22 @@
     <meta name="robots" content="index, follow" />
     <meta name="revisit-after" content="1 day" />
     <meta name="author" content="Dekpiano" />
-
-
-
     <meta property="og:url" content="<?= $full_url ?>" />
     <meta property="og:title" content="<?= $title ?> | SKJ" />
     <meta property="og:description" content="<?= $description ?>" />
     <meta property="og:type" content="website" />
+    <link rel="image_src" href="images/content/content-37.png" />
+
+    <?php if($this->uri->segment(1)=="SkjClassroom"): ?>
+    <meta property="og:image" content="<?=base_url('asset/user/img/SkjClassroom/bg.png');?>" />
+    <?php elseif($this->uri->segment(1)=="Email"): ?>
+    <meta property="og:image" content="<?=base_url('asset/user/img/BannerEmailSchool.PNG');?>" />
+    <?php else: ?>
     <meta property="og:image"
         content="<?= @$news[0]->news_img == '' ? base_url('asset/user/img/banner_main.jpg'): base_url('uploads/news/') . $news[0]->news_img ?>" />
-    <link rel="image_src" href="images/content/content-37.png" />
+    <?php endif; ?>
+
+
 
 
     <!-- Favicons -->
@@ -1310,7 +1316,7 @@ a.img,
 
 <body>
     <!-- LOADER -->
-    <!-- <div class="se-pre-con"></div> -->
+    <div class="se-pre-con"></div>
 
     <!-- end loader -->
     <div class="d-sm-block bg-top">
@@ -1469,10 +1475,16 @@ a.img,
                                                 สำหรับนักเรียน
                                             </a>
                                             <ul class="nav-dropdown">
-                                                <li>
+                                                <!-- <li>
                                                     <a href="http://academic.skj.ac.th/LoginStudent"><i
                                                             class="icofont-login icofont-1x"></i>
                                                         เข้าสู่ระบบ
+                                                    </a>
+                                                </li> -->
+                                                <li>
+                                                    <a href="<?= base_url('SkjClassroom') ?>"><i
+                                                            class="icofont-login icofont-1x"></i>
+                                                        ห้องรวมนักเรียน
                                                     </a>
                                                 </li>
                                             </ul>

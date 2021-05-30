@@ -33,6 +33,9 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
+            <?php $this->load->view('user/popupSpecial/skj-640528-emailSchool.php'); ?>
+        </div>
+        <div class="carousel-item ">
             <?php $this->load->view('user/popupSpecial/skj-640517-schoolback.php'); ?>
         </div>
         <div class="carousel-item">

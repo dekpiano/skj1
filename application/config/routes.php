@@ -159,3 +159,5 @@ $route['Video'] = 'Control_video/video_all';
 $route['Email'] = 'Control_email';
 //ห้องเรียนออนไลน์
 $route['RoomLearning'] = 'Control_RoomLearning';
+//ห้องรวมนักเรียน
+$route['SkjClassroom'] = 'Control_SkjClassroom';
