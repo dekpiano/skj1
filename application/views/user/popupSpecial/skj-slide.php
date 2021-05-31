@@ -32,7 +32,10 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-        <div class="carousel-item active">
+    <div class="carousel-item active">
+            <?php $this->load->view('user/popupSpecial/skj-640531-StudentList.php'); ?>
+        </div>
+        <div class="carousel-item ">
             <?php $this->load->view('user/popupSpecial/skj-640528-emailSchool.php'); ?>
         </div>
         <div class="carousel-item ">
@@ -41,15 +44,7 @@
         <div class="carousel-item">
             <?php $this->load->view('user/popupSpecial/skj-640429-Announcement-postponement.php'); ?>
         </div>
-        <div class="carousel-item ">
-            <?php $this->load->view('user/popupSpecial/SKJ-Admission64.php'); ?>
-        </div>
-        <div class="carousel-item ">
-            <?php $this->load->view('user/popupSpecial/skj-songkran64.php'); ?>
-        </div>
-        <div class="carousel-item">
-            <?php $this->load->view('user/popupSpecial/skj-640215-Vlogger.php'); ?>
-        </div>
+        
         
 
     </div>
