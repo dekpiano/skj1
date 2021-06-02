@@ -231,7 +231,7 @@ h3 {
 
 <body>
     <div class="con-video">
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-con">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-con" >
             <source src="<?= base_url('uploads/video/video-bg-gold.mp4') ?>" type="video/mp4">
         </video>
     </div>

@@ -3,13 +3,7 @@
 </style>
 <section id="" class=" section section-bg">
     <div class="container ">
-        <?php
-        $cowid19 = @file_get_contents(
-            'https://covid19.th-stat.com/api/open/today'
-        );
-        $users = json_decode($cowid19);
-        ?>
-
+      
         <style>
         /* Tablet */
         @media (min-width: 768px) {

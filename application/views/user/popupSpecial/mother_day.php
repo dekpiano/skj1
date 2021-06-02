@@ -229,7 +229,7 @@ h3 {
 
 <body>
     <div class="con-video">
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-con">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-con" poster="<?=base_url('uploads/video/bg-violet.PNG')?>">
             <source src="<?=base_url('uploads/video/video-bg-violet.mp4')?>" type="video/mp4">
         </video>
     </div>
@@ -239,7 +239,7 @@ h3 {
                 <div class="">
                     <h2> เนื่องในโอกาสวันเฉลิมพระชนมพรรษา <br>
                         สมเด็จพระนางเจ้า ฯ พระบรมราชินี<br>
-                        ๓ มิถุนายน ๒๕๖๓
+                        ๓ มิถุนายน ๒๕๖๔
                     </h2><br>
 
                     <p class="logo-r">

@@ -61,7 +61,10 @@ class Welcome extends CI_Controller
         $this->load->view('errors/404.php');
     }
 
-
+    public function mother_day()
+    {
+        $this->load->view('user/popupSpecial/mother_day.php');
+    }
 
 
     
