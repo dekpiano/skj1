@@ -1482,9 +1482,33 @@ a.img,
                                                     </a>
                                                 </li> -->
                                                 <li>
-                                                    <a href="<?= base_url('SkjClassroom') ?>"><i
-                                                            class="icofont-login icofont-1x"></i>
+                                                    <a href="<?= base_url('SkjClassroom') ?>">
+                                                    <i class="icofont-library"></i>
                                                         ห้องรวมนักเรียน
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://academic.skj.ac.th/LoginStudent">
+                                                    <i class="icofont-read-book"></i>
+                                                        ผลการเรียน
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://academic.skj.ac.th/ClassSchedule">
+                                                    <i class="icofont-table"></i>
+                                                        ตารางเรียน
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://academic.skj.ac.th/ExamSchedule">
+                                                    <i class="icofont-table"></i>
+                                                        ตารางสอบ
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://academic.skj.ac.th/StudentsList">
+                                                    <i class="icofont-list"></i>
+                                                        รายชื่อนักเรียน
                                                     </a>
                                                 </li>
                                             </ul>

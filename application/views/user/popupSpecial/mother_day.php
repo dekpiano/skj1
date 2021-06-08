@@ -3,9 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>เนื่องในโอกาสวันเฉลิมพระชนมพรรษา สมเด็จพระนางเจ้า ฯ พระบรมราชินี ๓ มิถุนายน ๒๕๖๓</title>
+    <title>เนื่องในโอกาสวันเฉลิมพระชนมพรรษา สมเด็จพระนางเจ้า ฯ พระบรมราชินี ๓ มิถุนายน ๒๕๖๔</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="description"
+        content="เป็นผู้นำ รักเพื่อน นับถือพี่ เคารพครู กตัญญูพ่อแม่ ดูแลน้อง สนองคุณแผ่นดิน โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์" />
+    <meta
+        content="โรงเรียนสวนกุหลาบวิทยาลัย,โรงเรียน,สวนกุหลาบ,จิรประวัติ,นครสวรรค์,สวนกุหลาบจิรประวัติ,โรงเรียนสวนกุหลาบ"
+        name="keywords">
+    <meta http-equiv="content-language" content="th" />
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="author" content="Dekpiano" />
+    <meta property="og:url" content="https://skj.ac.th" />
+    <meta property="og:title" content="เนื่องในโอกาสวันเฉลิมพระชนมพรรษา สมเด็จพระนางเจ้า ฯ พระบรมราชินี ๓ มิถุนายน ๒๕๖๔" />
+    <meta property="og:description"
+        content="เป็นผู้นำ รักเพื่อน นับถือพี่ เคารพครู กตัญญูพ่อแม่ ดูแลน้อง สนองคุณแผ่นดิน โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์" />
+    <meta property="og:type" content="website" />
+    <link rel="image_src" href="images/content/content-37.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -229,7 +243,8 @@ h3 {
 
 <body>
     <div class="con-video">
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-con" poster="<?=base_url('uploads/video/bg-violet.PNG')?>">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-con"
+            poster="<?=base_url('uploads/video/bg-violet.PNG')?>">
             <source src="<?=base_url('uploads/video/video-bg-violet.mp4')?>" type="video/mp4">
         </video>
     </div>
@@ -243,7 +258,7 @@ h3 {
                     </h2><br>
 
                     <p class="logo-r">
-                        <h1>ทรงพระเจริญ</h1>
+                    <h1>ทรงพระเจริญ</h1>
                     </p>
                     <H3 class="mt-5"> ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา
                         นักเรียนและผู้ปกครอง <br> โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</H3>
