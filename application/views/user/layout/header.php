@@ -1475,12 +1475,12 @@ a.img,
                                                 สำหรับนักเรียน
                                             </a>
                                             <ul class="nav-dropdown">
-                                                <!-- <li>
+                                                <li>
                                                     <a href="http://academic.skj.ac.th/LoginStudent"><i
                                                             class="icofont-login icofont-1x"></i>
                                                         เข้าสู่ระบบ
                                                     </a>
-                                                </li> -->
+                                                </li>
                                                 <li>
                                                     <a href="<?= base_url('SkjClassroom') ?>">
                                                     <i class="icofont-library"></i>

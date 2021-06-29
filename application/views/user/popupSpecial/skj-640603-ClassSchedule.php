@@ -2,6 +2,9 @@
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .skjStudentList .banner{
+        padding-top: 0px;
+    }
+    .skjStudentList .setion-text{
         padding-top: 100px;
     }
     .skjStudentList h1{
@@ -38,7 +41,7 @@
 <div class="skjStudentList" style=" background-image: linear-gradient(180deg, #52a0fd, #e8f2fd);">
     <div class="container ">
         <div class="row vh-100">
-        <div class="col-md-7 align-self-md-center Vlogger-setion1">
+        <div class="col-md-7 align-self-md-center setion-text">
                 <div class="text-center">
                     <h1> ตารางเรียนสำหรับนักเรียน</h1>
                     <h1> ภาคเรียนที่ 1 ปีการศึกษา 2564 </h1>
