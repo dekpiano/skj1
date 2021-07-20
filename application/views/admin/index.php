@@ -1,15 +1,18 @@
-<?php $status = $this->session->userdata('status')?>
-<!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="app-wrapper">
 
-    <div class="text-center">
-    <img src="<?=base_url('asset/img/welcome.png')?>" >
-    <h2>ยินดีต้อนรับ <?php echo $this->session->userdata('fullname');?></h2>
-    <p>ระบบจัดการสารสนเทศ สวนกุหลาบ (จิรประวัติ) นครสวรรค์</p>
-    </div>
-    
-    <!-- Content Row -->
-    <!-- <div class="row">
+  
+    <?php $status = $this->session->userdata('status')?>
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <div class="text-center">
+            <img src="<?=base_url('asset/img/welcome.png')?>">
+            <h2>ยินดีต้อนรับ <?php echo $this->session->userdata('fullname');?></h2>
+            <p>ระบบจัดการสารสนเทศ สวนกุหลาบ (จิรประวัติ) นครสวรรค์</p>
+        </div>
+
+        <!-- Content Row -->
+        <!-- <div class="row">
   
         <?php foreach ($menu as $key => $v_menu): ?>
         <?php 
@@ -44,8 +47,8 @@
 
 
 
-</div>
-<!-- /.container-fluid -->
+    </div>
+    <!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->

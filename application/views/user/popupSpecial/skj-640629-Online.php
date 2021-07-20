@@ -134,7 +134,7 @@
             <div class="col-lg-6 col-md-12 align-self-md-center setion-text">
                 <div class="text-center">
                     <h1> เลื่อนการเปิดเรียนแบบ <u>ON-SITE</u></h1>
-                    <h1> เป็นวันที่ 12 กรกฎาคม 2564 </h1>
+                    <h1> เป็นวันที่ 23 กรกฎาคม 2564 </h1>
                     <h3 class="mt-5">
                         ยังเปิดเรียนในรูปแบบ
                     </h3>

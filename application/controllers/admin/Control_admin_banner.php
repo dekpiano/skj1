@@ -28,12 +28,10 @@ class Control_admin_banner extends CI_Controller {
 		$this->db->order_by('banner_id','DESC');
 		$data['banner'] =	$this->db->get()->result();
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/banner/admin_banner_main.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function add()
@@ -56,12 +54,10 @@ class Control_admin_banner extends CI_Controller {
         $data['banner'] = 'banner_'.$num1;
         $data['action'] = 'insert_banner';
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/banner/admin_banner_form.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function insert_banner()
@@ -120,12 +116,10 @@ class Control_admin_banner extends CI_Controller {
 		$data['banner'] =	$this->db->get()->result();
 		$data['action'] = 'update_banner/'.$data['banner'][0]->banner_img;
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/banner/admin_banner_form.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function update_banner($img)

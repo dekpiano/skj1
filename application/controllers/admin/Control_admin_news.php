@@ -35,12 +35,10 @@ class Control_admin_news extends CI_Controller {
 		$this->db->order_by('news_id','DESC');
 		$data['news'] =	$this->db->get()->result();
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/news/admin_news_main.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function add()
@@ -63,12 +61,10 @@ class Control_admin_news extends CI_Controller {
         $data['news'] = 'news_'.$num1;
         $data['action'] = 'insert_news';
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/news/admin_news_form.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function insert_news()
@@ -162,12 +158,10 @@ window.history.back();
 		$img = $data['news'][0]->news_img == '' ? '0' : $data['news'][0]->news_img;
 		$data['action'] = 'update_news/'.$img;
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/news/admin_news_form.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function update_news($img)
@@ -248,11 +242,19 @@ window.history.back();
 
 	public function delete_news($data,$img)
 	{
-		@unlink("./uploads/news/".$img);
-		if($this->Admin_model_news->news_delete($data) == 1){
-			$this->session->set_flashdata(array('msg'=> 'ok','messge' => 'ลบข้อมูลสำเร็จ'));
-			redirect('admin/news', 'refresh');
+		if($img != '0'){
+			@unlink("./uploads/news/".$img);
+			if($this->Admin_model_news->news_delete($data) == 1){
+				$this->session->set_flashdata(array('msg'=> 'ok','icon' => "success",'messge' => 'ลบข้อมูลสำเร็จ'));
+				redirect('admin/news', 'refresh');
+			}
+		}else{
+			if($this->Admin_model_news->news_delete($data) == 1){
+				$this->session->set_flashdata(array('msg'=> 'ok','icon' => "success",'messge' => 'ลบข้อมูลสำเร็จ'));
+				redirect('admin/news', 'refresh');
+			}
 		}
+		
 	}
 
 	public function news_uploads()

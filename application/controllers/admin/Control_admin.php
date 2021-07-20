@@ -15,14 +15,12 @@ var  $title = "แผงควบคุม";
 
 	public function index()
 	{
-		$data['title'] = $this->title;
-		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$data['title'] = "หน้าแรก";
+		$data['menu'] =	$this->db->get('tb_adminmenu')->result();		
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/index.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function news()

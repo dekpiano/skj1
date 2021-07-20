@@ -7,16 +7,14 @@ class Admin_model_personnel extends CI_Model
 		parent::__construct();	
 		$this->DBPers = $this->load->database('db_personnel', TRUE);	
 	}
-	
+		
 	public function personnel_insert($data)
 	{
-	
 		return $this->DBPers->insert('tb_personnel',$data);
 	}
 
 	public function personnel_update($data)
-	{
-	
+	{	
 		return $this->DBPers->update('tb_personnel',$data,"pers_id='".$this->session->userdata('login_id')."'");
 	}
 

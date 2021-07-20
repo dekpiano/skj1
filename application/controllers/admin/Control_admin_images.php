@@ -26,12 +26,10 @@ class Control_admin_images extends CI_Controller {
 		$this->db->order_by('img_id','DESC');
 		$data['img'] =	$this->db->get()->result();
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/images/admin_images_main.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function add()
@@ -54,12 +52,10 @@ class Control_admin_images extends CI_Controller {
         $data['images'] = 'img_'.$num1;
         $data['action'] = 'insert_images';
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/images/admin_images_form.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function insert_images()
@@ -118,12 +114,10 @@ class Control_admin_images extends CI_Controller {
 		$data['img'] =	$this->db->get()->result();
 		$data['action'] = 'update_images/'.$data['img'][0]->img_mainpic;
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/images/admin_images_form.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function update_images($img)

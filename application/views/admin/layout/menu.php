@@ -25,7 +25,8 @@
     <?php   $ar = array('เมนูหลัก','ข้อมูลเบื้องต้น','ข้อมูลระบบ','ระบบโรงเรียน');
       foreach ($ar as $k_value => $value) :  ?>
 
-      <?php if($this->session->userdata('status') != 'user') : ?> <div class="sidebar-heading"><?=$value;?></div> <?php endif; ?>
+    <?php if($this->session->userdata('status') != 'user') : ?> <div class="sidebar-heading mx-3"><?=$value;?></div>
+    <?php endif; ?>
 
     <?php  foreach ($menu as $k_menu => $v_menu) :
                 if($v_menu->Amenu_group == $k_value && $v_menu->Amenu_submenu == ''): 
@@ -42,9 +43,9 @@
             <span><?=$v_menu->Amenu_name?></span>
         </a>
     </li>
-                        <?php endif; ?>
-                    <?php  endforeach; ?>
-                <?php else: ?>
+    <?php endif; ?>
+    <?php  endforeach; ?>
+    <?php else: ?>
     <?php 
                       foreach ($permi_menu as $key => $v_permi):
                           if(in_array($v_permi,$permi_user)  || $status =='admin'):
@@ -72,8 +73,9 @@
     <?php endif;
               endif;
             endforeach;?>
-            <?php if($this->session->userdata('status') != 'user') : ?> <hr class="sidebar-divider"><?php endif; ?>
-    
+    <?php if($this->session->userdata('status') != 'user') : ?>
+    <hr class="sidebar-divider"><?php endif; ?>
+
     <?php endforeach; 
           ?>
 

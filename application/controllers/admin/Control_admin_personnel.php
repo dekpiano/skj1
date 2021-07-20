@@ -25,8 +25,6 @@ class Control_admin_personnel extends CI_Controller {
 		$data['title'] = $this->title;
 		$data['menu'] =	$this->db->get('tb_adminmenu')->result();
 
-		
-
 		$data['pers'] =	 $this->DBPers->select('tb_personnel.pers_id, 
 		tb_personnel.pers_prefix, 
 		tb_personnel.pers_firstname, 
@@ -49,12 +47,10 @@ class Control_admin_personnel extends CI_Controller {
 		$data['learning'] =	$this->db->get('tb_learning')->result();
 		$data['position'] =	$this->db->where('posi_id >=','posi_007')->get('tb_position')->result();
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/personnel/admin_personnel_main.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function add()
@@ -81,12 +77,10 @@ class Control_admin_personnel extends CI_Controller {
         $data['personnel'] = 'pers_'.$num1;
         $data['action'] = 'insert_personnel';
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
 		$this->load->view('admin/personnel/admin_personnel_form.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 															
 	public function insert_personnel()
@@ -186,12 +180,10 @@ window.history.back();
 		$data['pers'] =	$DBPers->get()->result();
 		$data['action'] = 'update_personnel/'.($data['pers'][0]->pers_img == '' ? '0' : $data['pers'][0]->pers_img);
 
-		$this->load->view('admin/layout/header.php',$data);
-		$this->load->view('admin/layout/navber.php');
-
-		$this->load->view('admin/personnel/admin_personnel_form.php');
-
-		$this->load->view('admin/layout/footer.php');
+		$this->load->view('admin/layout/admin_header.php',$data);
+		$this->load->view('admin/layout/admin_navbar.php');
+		$this->load->view('admin/personnel/admin_personnel_form.php');	
+		$this->load->view('admin/layout/admin_footer.php');
 	}
 
 	public function update_personnel($img)
