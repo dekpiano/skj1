@@ -46,20 +46,17 @@
 @media (min-width: 576px) and (max-width: 767.98px) {}
 
 /* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {}
-
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
     .skjOnline .banner {
         padding-top: 0px;
     }
 
     .skjOnline .setion-text {
-        padding-top: 100px;
+        padding-top: 55px;
     }
 
     .skjOnline h1 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .skjOnline h2 {
@@ -72,14 +69,14 @@
 
     .circle {
         background: #0875f7;
-        border-radius: 200px;
-        color: white;
-        height: 230px;
-        font-weight: bold;
-        width: 230px;
-        display: table;
-        margin: 20px auto;
-        padding-top: 20px;
+    border-radius: 200px;
+    color: white;
+    height: 151px;
+    font-weight: bold;
+    width: 156px;
+    display: table;
+    margin: 20px auto;
+    padding-top: 20px;
     }
 
     .circle p {
@@ -87,7 +84,50 @@
         display: block;
         margin-top: 0;
         margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .skjOnline .banner {
+        padding-top: 0px;
+    }
+
+    .skjOnline .setion-text {
+        padding-top: 100px;
+    }
+
+    .skjOnline h1 {
+        font-size: 3rem;
+    }
+
+    .skjOnline h2 {
+        font-size: 1rem;
+    }
+
+    .skjOnline h3 {
         font-size: 2rem;
+    }
+
+    .circle {
+        background: #0875f7;
+    border-radius: 200px;
+    color: white;
+    height: 128px;
+    font-weight: bold;
+    width: 125px;
+    display: table;
+    margin: 20px auto;
+    padding-top: 20px;
+    }
+
+    .circle p {
+        vertical-align: middle;
+        display: block;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1rem;
     }
 }
 
@@ -134,7 +174,7 @@
             <div class="col-lg-6 col-md-12 align-self-md-center setion-text">
                 <div class="text-center">
                     <h1> เลื่อนการเปิดเรียนแบบ <u>ON-SITE</u></h1>
-                    <h1> เป็นวันที่ 23 กรกฎาคม 2564 </h1>
+                    <h1> เป็นวันที่ 2 สิงหาคม 2564 </h1>
                     <h3 class="mt-5">
                         ยังเปิดเรียนในรูปแบบ
                     </h3>

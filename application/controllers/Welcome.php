@@ -66,6 +66,11 @@ class Welcome extends CI_Controller
         $this->load->view('user/popupSpecial/mother_day.php');
     }
 
+    public function father29_day()
+    {
+        $this->load->view('user/popupSpecial/father29_day.php');
+    }
+
 
     
 }

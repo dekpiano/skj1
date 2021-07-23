@@ -7,14 +7,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
-        content="ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา นักเรียนและผู้ปกครอง  โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์">
+        content=" โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์">
     <meta name="author" content="ทีมงานครูคอม,Dekpiano">
 
     <meta property="og:url" content="https://skj.ac.th/">
     <meta property="og:title"
         content="วันเฉลิมพระชนมพรรษา สมเด็จพระเจ้าอยู่หัวมหาวชิราลงกรณบดินทรเทพยวรางกูร 28 กรกฎาคม">
     <meta property="og:description"
-        content="ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา นักเรียนและผู้ปกครอง  โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์">
+        content="โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://skj.ac.th/uploads/video/logo-father.png">
     <meta property="og:image:type" content="image/png">
@@ -247,7 +247,6 @@ h3 {
                     บดินทรเทพยวรางกูร
                     รัชกาลที่ ๑๐ <br>
                 </h2><br>
-
                 <h1 data-aos="zoom-in-up" data-aos-delay="1000"  data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">ทรงพระเจริญ</h1><br>
 
@@ -258,15 +257,12 @@ h3 {
             </div>
             <div style="text-align-last: center;" class="mt-3">
                 <button onclick="forking()" target="_blank"
-                    class="btn btn-outline-warning btn-father " data-aos="fade-right" data-aos-delay="1500">ลงนาม
-                    (ข้าราชการและเจ้าหน้าที่ของรัฐ)</button>
-                <button onclick="people()" target="_blank"
-                    class="btn btn-outline-warning btn-father" data-aos="fade-left" data-aos-delay="1500">ลงนาม
-                    (ประชาชนทั่วไป)</button>
+                    class="btn btn-outline-warning btn-father " >ลงนามถวายพระพร</button>
+                    <button onclick="sigewebsite()"
+                    class="btn btn-warning " >เข้าสู่เว็บไซต์</button>
             </div>
             <div style="text-align-last: center;">
-                <button onclick="sigewebsite()"
-                    class="golden-btn "  data-aos="flip-up" data-aos-delay="2000">เข้าสู่เว็บไซต์</button>
+                
             </div>
 
         </div>
@@ -292,12 +288,9 @@ function sigewebsite() {
 }
 
 function forking() {
-    window.location.href = "https://web.ocsc.go.th/forking/node/add/pledge-2563-gov";
+    window.location.href = "https://wellwishes.royaloffice.th/";
 }
 
-function people() {
-    window.location.href = "https://web.ocsc.go.th/forking/node/add/pledge-2563-people";
-}
 </script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
