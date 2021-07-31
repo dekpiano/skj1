@@ -174,7 +174,7 @@
             <div class="col-lg-6 col-md-12 align-self-md-center setion-text">
                 <div class="text-center">
                     <h1> เลื่อนการเปิดเรียนแบบ <u>ON-SITE</u></h1>
-                    <h1> เป็นวันที่ 2 สิงหาคม 2564 </h1>
+                    <h1> จนกว่าสถานการณ์โควิด 19 จะคลี่คลาย </h1>
                     <h3 class="mt-5">
                         ยังเปิดเรียนในรูปแบบ
                     </h3>

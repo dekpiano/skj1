@@ -35,8 +35,11 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <?php $this->load->view('user/popupSpecial/skj-640722-SKJRELAX.php'); ?>
+            <?php $this->load->view('user/popupSpecial/skj-640603-ClassSchedule.php'); ?>
         </div>
+        <!-- <div class="carousel-item ">
+            <?php $this->load->view('user/popupSpecial/skj-640722-SKJRELAX.php'); ?>
+        </div> -->
 
         <div class="carousel-item">
             <?php $this->load->view('user/popupSpecial/skj-640629-Online.php'); ?>
@@ -45,17 +48,9 @@
             <?php $this->load->view('user/popupSpecial/skj-640610-Classroom.php'); ?>
         </div>
         <div class="carousel-item ">
-            <?php $this->load->view('user/popupSpecial/skj-640603-ClassSchedule.php'); ?>
-        </div>
-        <div class="carousel-item ">
-            <?php $this->load->view('user/popupSpecial/skj-640531-StudentList.php'); ?>
-        </div>
-        <div class="carousel-item ">
             <?php $this->load->view('user/popupSpecial/skj-640528-emailSchool.php'); ?>
         </div>
-        <div class="carousel-item ">
-            <?php $this->load->view('user/popupSpecial/skj-640517-schoolback.php'); ?>
-        </div>
+     
 
 
 
