@@ -23,7 +23,12 @@ class Control_news extends CI_Controller {
 		$data['news_p'] = $news_today = $this->db->where('news_category','ข่าวประชาสัมพันธ์')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
 		$data['news_k'] = $news_today = $this->db->where('news_category','ข่าวกิจกรรม')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
 		$data['news_pg'] = $news_today = $this->db->where('news_category','ข่าวประกาศ')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
-
+		$data['news_count'] =	$this->db->order_by("ABS(news_date)", "desc")->get('tb_news')->num_rows();
+		$data['news_group'] =	$this->db->select('COUNT(tb_news.news_category) AS C,
+													tb_news.news_category,
+													tb_news.news_topic')
+												->group_by('news_category')->get('tb_news')->result();
+		$data['news_banner'] =	$this->db->order_by("ABS(news_date)", "desc")->limit('3')->get('tb_news')->result(); 
 		return $data;
 	}
 	
@@ -52,7 +57,6 @@ class Control_news extends CI_Controller {
 		$data = $this->dataAll();
 		$data['title'] = 'ข่าวประชาสัมพันธ์ทั้งหมด';
 		$data['description'] = 'ข่าวประชาสัมพันธ์ทั้งหมด';
-		//$data['news'] =	$this->db->order_by("ABS(news_date)", "desc")->get('tb_news')->result(); 
 
 		$config = array();
         $config["base_url"] = base_url() . "news/all";
@@ -65,24 +69,24 @@ class Control_news extends CI_Controller {
             $config['reuse_query_string'] = TRUE;
 		// Bootstrap 4, work very fine.
 		$config['next_link']        = 'Next';
-    $config['prev_link']        = 'Prev';
-    $config['first_link']       = false;
-    $config['last_link']        = false;
-    $config['full_tag_open']    = '<ul class="pagination justify-content-center">';
-    $config['full_tag_close']   = '</ul>';
-    $config['attributes']       = ['class' => 'page-link'];
-    $config['first_tag_open']   = '<li class="page-item">';
-    $config['first_tag_close']  = '</li>';
-    $config['prev_tag_open']    = '<li class="page-item">';
-    $config['prev_tag_close']   = '</li>';
-    $config['next_tag_open']    = '<li class="page-item">';
-    $config['next_tag_close']   = '</li>';
-    $config['last_tag_open']    = '<li class="page-item">';
-    $config['last_tag_close']   = '</li>';
-    $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
-    $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
-    $config['num_tag_open']     = '<li class="page-item">';
-    $config['num_tag_close']    = '</li>';
+		$config['prev_link']        = 'Prev';
+		$config['first_link']       = false;
+		$config['last_link']        = false;
+		$config['full_tag_open']    = '<ul class="clearfix">';
+		$config['full_tag_close']   = '</ul>';
+		$config['attributes']       = ['class' => 'page-link'];
+		$config['first_tag_open']   = '<li> ';
+		$config['first_tag_close']  = '</li>';
+		$config['prev_tag_open']    = '<li>';
+		$config['prev_tag_close']   = '</li>';
+		$config['next_tag_open']    = '<li>';
+		$config['next_tag_close']   = '</li>';
+		$config['last_tag_open']    = '<li>';
+		$config['last_tag_close']   = '</li>';
+		$config['cur_tag_open']     = '<li class="active"><span class="page-link">';
+		$config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+		$config['num_tag_open']     = '<li>';
+		$config['num_tag_close']    = '</li>';
 
         $this->pagination->initialize($config);
 

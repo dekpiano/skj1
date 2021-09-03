@@ -43,7 +43,7 @@
         <div class="row vh-100">
         <div class="col-md-7 align-self-md-center setion-text">
                 <div class="">
-                    <h1> ประกาศ</h1>
+                    <h1> ตารางเรียนออนไลน์</h1>
                     <h2> ให้นักเรียนดูตารางเรียนปรับปรุงโควิด 19 เพื่อสะดวกในการเข้าเรียนของนักเรียน ใช้เรียนตั้งแต่วันที่ 2 สิงหาคม 2564 เป็นต้นไปจนจบภาคเรียนที่ 1/2564  หรือ จนกว่าสถานการณ์ COVID 19 จะคลี่คลาย </h2>
                     <a href="http://academic.skj.ac.th/ClassSchedule" target="_blank"
                         class="btn btn-primary mb-2">ค้นหาตารางเรียน</a>

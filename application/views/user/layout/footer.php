@@ -1,255 +1,359 @@
-<?php if (
-    $this->uri->segment(1) != 'login' &&
-    $this->uri->segment(1) != 'RegStudent' &&
-    $this->uri->segment(1) != 'checkRegister' &&
-    $this->uri->segment(1) != 'Announce' &&
-    $this->uri->segment(1) != 'Admissions'
-): ?>
+    <!-- Main Footer -->
+    <style>
+ul {
+    margin: 0px;
+    padding: 0px;
+}
 
-<footer class="new_footer_area bg_color">
-    <div class="new_footer_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                        <h3 class="f-title f_600 t_color f_size_18"><i class="icofont-school-bus"></i>
-                            โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</h3>
-                        <p><i class="icofont-google-map"></i> 160 ม.1 ต.นครสวรรค์ออก อ.เมืองนครสวรรค์ จ.นครสวรรค์ 60000
-                        </p>
-                        <p>
-                            <i class="icofont-ui-home"></i> สังกัด องค์การบริหารส่วนจังหวัดนครสววรค์ ในสังกัดกองการศึกษา
-                            ศาสนา และวัฒนธรรม กระทรวงมหาดไทย
-                        </p>
-                        <p>
-                            <script type="text/javascript" src="https://www.counters-free.net/count/7r1m"></script><br>
-                            <a href='http://www.counter-zaehler.de'>profil counter</a>
-                            <script type='text/javascript'
-                                src='https://www.whomania.com/ctr?id=f2a759e919e693827d52f2dbf02835d8c9576ede'></script>
-                        </p>
+.footer-section {
+   
+    position: relative;
+}
+
+.footer-cta {
+    border-bottom: 1px solid #373636;
+}
+
+.single-cta i {
+    color: #ff5e14;
+    font-size: 30px;
+    float: left;
+    margin-top: 8px;
+}
+
+.cta-text {
+    padding-left: 15px;
+    display: inline-block;
+}
+
+.cta-text h4 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.cta-text span {
+    color: #757575;
+    font-size: 15px;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-pattern img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 330px;
+    background-size: cover;
+    background-position: 100% 100%;
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    max-width: 200px;
+}
+
+.footer-text p {
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #7e7e7e;
+    line-height: 28px;
+}
+
+.footer-social-icon span {
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+.footer-social-icon a {
+    color: #fff;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.footer-social-icon i {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+}
+
+.facebook-bg {
+    background: #3B5998;
+}
+
+.twitter-bg {
+    background: #55ACEE;
+}
+
+.google-bg {
+    background: #DD4B39;
+}
+
+.footer-widget-heading h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.footer-widget-heading h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    height: 2px;
+    width: 50px;
+    background: #ff5e14;
+}
+
+.footer-widget ul li {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin-bottom: 12px;
+}
+
+.footer-widget ul li a:hover {
+    color: #ff5e14;
+}
+
+.footer-widget ul li a {
+    color: #878787;
+    text-transform: capitalize;
+}
+
+.subscribe-form {
+    position: relative;
+    overflow: hidden;
+}
+
+.subscribe-form input {
+    width: 100%;
+    padding: 14px 28px;
+    background: #2E2E2E;
+    border: 1px solid #2E2E2E;
+    color: #fff;
+}
+
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+
+.subscribe-form button i {
+    color: #fff;
+    font-size: 22px;
+    transform: rotate(-6deg);
+}
+
+.copyright-area {
+    background: #202020;
+    padding: 25px 0;
+}
+
+.copyright-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #878787;
+}
+
+.copyright-text p a {
+    color: #ff5e14;
+}
+
+.footer-menu li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.footer-menu li:hover a {
+    color: #ff5e14;
+}
+
+.footer-menu li a {
+    font-size: 14px;
+    color: #878787;
+}
+    </style>
+    <footer class="main-footer">
+        <div class="auto-container">
+            <div class="logo-box">
+                <div class="logo"><a href="index.html"><img src="<?=base_url();?>asset/user/images/logo.png" alt=""
+                            style="width: 180px;" /></a></div>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="about.html">หน้าหลัก</a></li>
+                <li><a href="about.html">Services</a></li>
+                <li><a href="about.html">Contact</a></li>
+                <li><a href="about.html">Reviews & Media</a></li>
+            </ul>
+            <!-- Social Box -->
+
+            <footer class="footer-section">
+                <div class="container">
+                    <div class="footer-cta pt-5 pb-5">
+                        <div class="row">
+                            <div class="col-xl-4 col-md-4 mb-30">
+                                <div class="single-cta">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="cta-text">
+                                        <h4>Find us</h4>
+                                        <span>1010 Avenue, sw 54321, chandigarh</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-4 mb-30">
+                                <div class="single-cta">
+                                    <i class="fas fa-phone"></i>
+                                    <div class="cta-text">
+                                        <h4>Call us</h4>
+                                        <span>9876543210 0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-4 mb-30">
+                                <div class="single-cta">
+                                    <i class="far fa-envelope-open"></i>
+                                    <div class="cta-text">
+                                        <h4>Mail us</h4>
+                                        <span>mail@info.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s"
-                        style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-                        <h3 class="f-title f_600 t_color f_size_18"><i class="icofont-company"></i>
-                            โรงเรียนในเครือข่ายสวนกุหลาบฯ</h3>
-                        <ul class="list-unstyled f_list">
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="http://www.sk.ac.th/">สวนกุหลาบวิทยาลัย</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="http://www.skn.ac.th/">สวนกุหลาบวิทยาลัย นนทบุรี</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="http://www.skr.ac.th/">สวนกุหลาบวิทยาลัย รังสิต</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="http://www.sks.ac.th/">นวมินทราชินูทิศ สวนกุหลาบวิทยาลัย สมุทรปราการ</a>
-                            </li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="http://www.skp.ac.th/">นวมินทราชินูทิศ สวนกุหลาบวิทยาลัย ปทุมธานี</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="http://www.skpb.ac.th/">สวนกุหลาบวิทยาลัย เพชรบูรณ์</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="https://www.sksb.ac.th/">สวนกุหลาบวิทยาลัย สระบุรี</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="http://www.suanchon.ac.th/">สวนกุหลาบวิทยาลัย ชลบุรี</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="https://www.skj.ac.th/">สวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="http://www.sk-thonburi.ac.th/">สวนกุหลาบวิทยาลัย ธนบุรี</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a target="_blank"
-                                    href="http://www.skns.ac.th/">สวนกุหลาบวิทยาลัย นครศรีธรรมราช</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="f_widget about-widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s"
-                        style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
-                        <h3 class="f-title f_600 t_color f_size_18"><i class="icofont-company"></i>
-                            หน่วยงานที่เกี่ยวข้อง</h3>
-                        <ul class="list-unstyled f_list">
-                            <li><i class="bx bx-chevron-right"></i>
-                                <a target="_blank"
-                                    href="http://www.nakhonsawanpao.go.th/">องค์การบริหารส่วนจังหวัดนครสวรรค์</a>
-                            </li>
-                            <li><i class="bx bx-chevron-right"></i>
-                                <a target="_blank" href="#">กรมส่งเสริมการปกครองท้องถิ่น</a>
-                            </li>
-                            <li><i class="bx bx-chevron-right"></i>
-                                <a target="_blank" href="#">กองการศึกษา ศาสนาและวัฒนธรรม อบจ.นครสวรรค์</a>
-                            </li>
-                        </ul>
-                        <br>
-                        <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
-                        <div class="f_social_icon">
-                            <a target="_blank" href="https://www.facebook.com/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%AA%E0%B8%A7%E0%B8%99%E0%B8%81%E0%B8%B8%E0%B8%AB%E0%B8%A5%E0%B8%B2%E0%B8%9A%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2-%E0%B8%88%E0%B8%B4%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%B4-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AA%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B9%8C-230288483730783"><i class="icofont-facebook"></i></a>
-                            <a target="_blank" href="https://www.youtube.com/channel/UC7p4cQQuIFLyrF68p7JbWDw"><i class="icofont-youtube-play"></i></a>
-                            <a target="_blank" href="#"><i class="icofont-line-messenger"></i></a>
-
+                    <div class="footer-content pt-5 pb-5">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4 mb-50">
+                                <div class="footer-widget">
+                                    <div class="footer-logo">
+                                        <a href="index.html"><img src="https://i.ibb.co/QDy827D/ak-logo.png"
+                                                class="img-fluid" alt="logo"></a>
+                                    </div>
+                                    <div class="footer-text">
+                                        <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod
+                                            tempor incididuntut consec tetur adipisicing
+                                            elit,Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                    <div class="footer-social-icon">
+                                        <span>Follow us</span>
+                                        <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                        <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                        <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                                <div class="footer-widget">
+                                    <div class="footer-widget-heading">
+                                        <h3>Useful Links</h3>
+                                    </div>
+                                    <ul>
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">about</a></li>
+                                        <li><a href="#">services</a></li>
+                                        <li><a href="#">portfolio</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Our Services</a></li>
+                                        <li><a href="#">Expert Team</a></li>
+                                        <li><a href="#">Contact us</a></li>
+                                        <li><a href="#">Latest News</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                                <div class="footer-widget">
+                                    <div class="footer-widget-heading">
+                                        <h3>Subscribe</h3>
+                                    </div>
+                                    <div class="footer-text mb-25">
+                                        <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                                    </div>
+                                    <div class="subscribe-form">
+                                        <form action="#">
+                                            <input type="text" placeholder="Email Address">
+                                            <button><i class="fab fa-telegram-plane"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="copyright-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                                <div class="copyright-text">
+                                    <p>Copyright &copy; 2018, All Right Reserved <a
+                                            href="https://codepen.io/anupkumar92/">Anup</a></p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                                <div class="footer-menu">
+                                    <ul>
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">Terms</a></li>
+                                        <li><a href="#">Privacy</a></li>
+                                        <li><a href="#">Policy</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <div class="copyright">
+                <p>&copy; 2021 <b class="text-white">โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์</b> by
+                    <a class="text-white" href="https://www.facebook.com/dekpiano/"><b>งานสารสนเทศและเทคโนโลยี</b></a>
+                </p>
             </div>
         </div>
-        <div class="footer_bg">
-            <div class="footer_bg_one"></div>
-            <div class="footer_bg_two"></div>
-        </div>
+    </footer>
+    <!-- End Main Footer -->
+
     </div>
-    <div class="footer_bottom">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-sm-7">
-                    <p class="mb-0 f_400">© โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์ 2020 All rights reserved.
-                        Version 3.3
-                    </p>
-                </div>
-                <div class="col-lg-6 col-sm-5 text-right">
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+    <!--End pagewrapper-->
 
-<?php endif; ?>
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <!-- Scroll To Top -->
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-up"></span></div>
 
+    <script src="<?=base_url();?>asset/user/js/jquery.js"></script>
+    <script src="<?=base_url();?>asset/user/js/popper.min.js"></script>
+    <script src="<?=base_url();?>asset/user/js/bootstrap.min.js"></script>
+    <script src="<?=base_url();?>asset/user/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="<?=base_url();?>asset/user/js/jquery.fancybox.js"></script>
+    <script src="<?=base_url();?>asset/user/js/appear.js"></script>
+    <script src="<?=base_url();?>asset/user/js/wow.js"></script>
+    <script src="<?=base_url();?>asset/user/js/parallax.min.js"></script>
+    <script src="<?=base_url();?>asset/user/js/tilt.jquery.min.js"></script>
+    <script src="<?=base_url();?>asset/user/js/jquery.paroller.min.js"></script>
+    <script src="<?=base_url();?>asset/user/js/swiper.min.js"></script>
+    <script src="<?=base_url();?>asset/user/js/validate.js"></script>
+    <script src="<?=base_url();?>asset/user/js/jquery-ui.js"></script>
+    <script src="<?=base_url();?>asset/user/js/script.js"></script>
 
+    </body>
 
-<!-- Vendor JS Files -->
-<script src="<?= base_url() ?>asset/user/vendor/jquery/jquery.min.js"></script>
-<script src="<?= base_url() ?>asset/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="<?= base_url() ?>asset/user/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="<?= base_url() ?>asset/user/js/header.min.js"></script>
-<script src="<?= base_url() ?>asset/user/vendor/php-email-form/validate.js"></script>
-<script src="<?= base_url() ?>asset/user/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="<?= base_url() ?>asset/user/vendor/counterup/counterup.min.js"></script>
-<script src="<?= base_url() ?>asset/user/vendor/venobox/venobox.min.js"></script>
-<script src="<?= base_url() ?>asset/user/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="<?= base_url() ?>asset/user/vendor/jquery.countdown.min.js"></script>
-
-<script src="<?= base_url() ?>asset/js/jquery.inputmask.min.js"></script>
-<script src="<?= base_url() ?>asset/js/imagesloaded.pkgd.min.js"></script>
-<script src="<?= base_url() ?>asset/user/js/aos.js"></script>
-<script src="<?= base_url() ?>asset/user/js/particles.min.js"></script>
-<!-- Template Main JS File -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="<?= base_url() ?>asset/js/slick.js?v=1000"></script>
-<script src="<?= base_url() ?>asset/user/js/main.js?v=1002"></script>
-<script src="<?= base_url() ?>asset/user/js/smartwizard/jquery.smartWizard.min.js"></script>
-<script src="<?= base_url() ?>asset/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-<script src="<?= base_url() ?>asset/vendor/datatables/dataTables.buttons.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="<?= base_url() ?>asset/js/demo/datatables-demo.js?v=1001"></script>
-
-<script src="<?= base_url() ?>asset/user/js/countdownopenschool.js?v=1001"></script>
-<script type="text/javascript">
-
-</script>
-
-</body>
-<script>
-$(document).ready(function() {
-    $('#showyear').modal('show');
-
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-        'use strict';
-
-        window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-
-
-    setTimeout(function() {
-        $(".se-pre-con").fadeOut("slow");
-    }, 500);
-
-    $(document).on('click', '.stu_id', function() {
-        var stuid = $(this).attr('stuid');
-        $('#idstu').val(stuid);
-    });
-
-    $(document).on('click', '#report_stu', function() {
-        var stuid = $('#idstu').val();
-        var d = $('#recruit_birthdayD').val();
-        var m = $('#recruit_birthdayM').val();
-        var y = $('#recruit_birthdayY').val();
-        $(this).prop("disabled", true);
-        $(this).html(
-            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> กำลังโหลด...'
-        );
-        $.post("<?= base_url('Control_recruitstudent/check_print') ?>", {
-            recruit_birthdayD: d,
-            recruit_birthdayM: m,
-            recruit_birthdayY: y,
-            id: stuid
-        }, function(data) {
-            //alert(data);
-            if (data == 0) {
-                alert('วันเกิดคุณไม่ถูกต้อง');
-                window.location.href = "<?= base_url('PrintStudent') ?>"
-            } else {
-                window.location.href = data;
-            }
-
-
-        });
-    });
-});
-</script>
-
-<script>
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll("img.lazyload");
-    images.forEach(img => {
-        img.src = img.dataset.src;
-    });
-} else {
-    // Dynamically import the LazySizes library
-    let script = document.createElement("script");
-    script.async = true;
-    script.src =
-        "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
-    document.body.appendChild(script);
-}
-
-$('ul.tabs li').click(function() {
-    var tab_id = $(this).attr('href');
-
-    $('ul.tabs li').removeClass('current');
-    $('.tab-content').removeClass('current');
-
-    $(this).addClass('current');
-    $("#" + tab_id).addClass('current');
-})
-</script>
-
-<script>
-$(document).on('click', '.count_face', function() {
-    var d = $(this).attr('val');
-    $.get('<?= base_url(
-        'control_facebookgroup/count_face/'
-    ) ?>' + d, function(response) {
-        // Log the response to the console
-        console.log("Response: " + response);
-    });
-});
-</script>
-
-
-</html>
+    </html>

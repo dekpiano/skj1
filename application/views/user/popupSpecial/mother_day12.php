@@ -193,7 +193,7 @@ h3 {
                 <div class="box-all">
                     <h2 data-aos="zoom-in" data-aos-delay="500"> เนื่องในโอกาสวันเฉลิมพระชนมพรรษา <br>
                         สมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ พระบรมราชชนนีพันปีหลวง<br>
-                        ๑๒ สิงหาคม ๒๕๖๓
+                        ๑๒ สิงหาคม
                     </h2>
 
                     <p class="logo-r" data-aos="zoom-in-up" data-aos-delay="1000" data-aos-easing="ease-out-cubic"
@@ -204,6 +204,7 @@ h3 {
                     <H3 class="mt-3 contrin-bottum " data-aos="zoom-in" data-aos-delay="500"> ด้วยเกล้าด้วยกระหม่อม
                         ขอเดชะ ข้าพระพุทธเจ้า ผู้บริหาร คณะครู บุคลากรทางการศึกษา
                         นักเรียนและผู้ปกครอง <br> โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์ <br>
+                        <button onclick="day12()" class="btn btn-outline-light">ลงนามถวายพระพร</button>
                         <button onclick="sigewebsite()" class="btn btn-outline-light">เข้าสู่เว็บไซต์</button>
                     </H3>
 
@@ -228,6 +229,9 @@ h3 {
 <script>
 function sigewebsite() {
     window.location.href = "<?=base_url('welcome')?>";
+}
+function day12() {
+    window.location.href = "https://wellwishes.royaloffice.th/";
 }
 </script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

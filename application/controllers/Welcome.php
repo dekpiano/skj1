@@ -7,6 +7,8 @@ class Welcome extends CI_Controller
     {
         parent::__construct();
         $this->load->library('timeago');
+        $this->DBSKJ = $this->load->database('default', TRUE);
+        $this->DBPers = $this->load->database('db_personnel', TRUE);
     }
     public static $title = 'โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์';
     public static $description = 'เป็นผู้นำ รักเพื่อน นับถือพี่ เคารพครู กตัญญูพ่อแม่ ดูแลน้อง สนองคุณแผ่นดิน โรงเรียนสวนกุหลาบวิทยาลัย (จิรประวัติ) นครสวรรค์';
@@ -51,9 +53,24 @@ class Welcome extends CI_Controller
         $data['news_pg'] = $news_today = $this->db->where('news_category','ข่าวประกาศ')->order_by('news_date','DESC')->limit('5')->get('tb_news')->result();
         $data['video'] = $news_today = $this->db->order_by('video_date','DESC')->get('tb_video')->result();
         $data['posi'] =	$this->db->where('posi_id >=','posi_007')->get('tb_position')->result(); //ตำแหน่งบุคลากร
+       
+        $data['pers'] = $this->DBPers->select('tb_personnel.pers_prefix,
+                                        tb_personnel.pers_firstname,
+                                        tb_personnel.pers_lastname,
+                                        tb_personnel.pers_department,
+                                        tb_personnel.pers_img,
+                                        tb_personnel.pers_department,
+                                        tb_personnel.pers_position,
+                                        tb_position.posi_name')
+                                        ->from('tb_personnel')
+                                        ->join($this->DBSKJ->database.'.tb_department','tb_personnel.pers_department = tb_department.depart_id')
+                                        ->join($this->DBSKJ->database.'.tb_position','tb_personnel.pers_position = tb_position.posi_id')
+                                        ->where('pers_department','depart_001')
+                                       ->get()->result(); 
+        //print_r( $data['pers'] ); exit();
         $this->load->view('user/layout/header.php', $data);
         $this->load->view('user/main/index.php');
-        $this->load->view('user/layout/footer.php');
+      $this->load->view('user/layout/footer.php');
     }
 
     public function not_404()
@@ -69,6 +86,11 @@ class Welcome extends CI_Controller
     public function father29_day()
     {
         $this->load->view('user/popupSpecial/father29_day.php');
+    }
+
+    public function mother_day12()
+    {
+        $this->load->view('user/popupSpecial/mother_day12.php');
     }
 
 
