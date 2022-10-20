@@ -1,14 +1,11 @@
 <section class="banner-section-two">
     <div class="main-slider-carousel swiper-container-horizontal">
-
         <div class="swiper-wrapper " style="transform: translate3d(-1146px, 0px, 0px); transition-duration: 0ms;">
-
             <?php foreach ($news_banner as $key => $v_news_banner) : ?>
             <div class="swiper-slide swiper-slide-next "
                 style="background-image: linear-gradient(0deg, rgba(46,46,46,0.6166841736694677) 0%, rgba(46,46,46,1.5) 100%), url(<?= base_url('uploads/news/').$v_news_banner->news_img ?>); width: 1146px;"
                 data-swiper-slide-index="1">
                 <div class="auto-container">
-
                     <div class="content-boxed">
                         <div class="inner-box">
                             <div class="title"><?=$v_news_banner->news_category?></div>

@@ -66,8 +66,8 @@
                     </div>
                 </div>
                 <?php endforeach; ?>
-
-
+                <center class="mb-5"><a href="<?= base_url('news/all') ?>"
+            class=" btn btn-outline-secondary mt-3 my-2 ">ข่าวสารทั้งหมด</a></center>
             </div>
 
 
